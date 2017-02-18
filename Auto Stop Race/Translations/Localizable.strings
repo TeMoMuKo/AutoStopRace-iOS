@@ -1,0 +1,18 @@
+/* 
+  File.strings
+  Auto Stop Race
+
+  Created by Robert Ignasiak on 16.02.2017.
+  Copyright © 2017 Torianin. All rights reserved.
+*/
+"app_version" = "Wersja 1.0.0";
+"app_name" = "Auto Stop Race";
+
+"title_my_team_locations" = "Lokalizacje mojego teamu";
+"title_teams" = "Mapa lokalizacji";
+"title_campus" = "Mapa campingu";
+"title_phrasebook" = "Krótkie rozmówki";
+"title_contact" = "Kontakt do organizatorów";
+"title_partners" = "Partnerzy";
+"title_settings" = "Ustawienia";
+"title_about" = "O aplikacji";
