@@ -14,7 +14,17 @@
 		E271C2C41E56353600CD4F15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E271C2C31E56353600CD4F15 /* Assets.xcassets */; };
 		E271C2C61E56460D00CD4F15 /* DashboardCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E271C2C51E56460C00CD4F15 /* DashboardCoordinator.swift */; };
 		E271C2CE1E5660EC00CD4F15 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E271C2CD1E5660EC00CD4F15 /* DashboardViewModel.swift */; };
+		E27CB7A51E58187C006B2396 /* CampusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27CB7A41E58187C006B2396 /* CampusViewController.swift */; };
+		E27CB7A81E5867C3006B2396 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27CB7A71E5867C3006B2396 /* LocationsViewController.swift */; };
+		E27CB7AC1E5869AD006B2396 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27CB7AB1E5869AD006B2396 /* ContactViewController.swift */; };
+		E27CB7AF1E586AAB006B2396 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27CB7AE1E586AAB006B2396 /* ContactCell.swift */; };
+		E27CB7B21E586B59006B2396 /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27CB7B11E586B59006B2396 /* ContactViewModel.swift */; };
 		E29CDC911E56876F00F59B4C /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29CDC901E56876F00F59B4C /* MenuViewModel.swift */; };
+		E2C239CA1E59423C003818FB /* UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C239C91E59423C003818FB /* UIKit.swift */; };
+		E2C239CC1E594732003818FB /* UIViewControllerWithMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C239CB1E594732003818FB /* UIViewControllerWithMenu.swift */; };
+		E2C239CF1E594B53003818FB /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C239CE1E594B53003818FB /* AboutViewController.swift */; };
+		E2C239D21E594D33003818FB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C239D11E594D33003818FB /* LoginViewController.swift */; };
+		E2D90C7D1E596CAA00435A9F /* PhrasebookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D90C7C1E596CAA00435A9F /* PhrasebookViewController.swift */; };
 		E2D9A20F1E5530FC003324F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D9A20E1E5530FC003324F7 /* AppDelegate.swift */; };
 		E2D9A2191E5530FC003324F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2D9A2171E5530FC003324F7 /* LaunchScreen.storyboard */; };
 		E2D9A2241E5530FC003324F7 /* Auto_Stop_RaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D9A2231E5530FC003324F7 /* Auto_Stop_RaceTests.swift */; };
@@ -62,7 +72,17 @@
 		E271C2C31E56353600CD4F15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E271C2C51E56460C00CD4F15 /* DashboardCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardCoordinator.swift; sourceTree = "<group>"; };
 		E271C2CD1E5660EC00CD4F15 /* DashboardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashboardViewModel.swift; path = ViewModels/DashboardViewModel.swift; sourceTree = "<group>"; };
+		E27CB7A41E58187C006B2396 /* CampusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CampusViewController.swift; path = Camping/CampusViewController.swift; sourceTree = "<group>"; };
+		E27CB7A71E5867C3006B2396 /* LocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationsViewController.swift; path = Locations/LocationsViewController.swift; sourceTree = "<group>"; };
+		E27CB7AB1E5869AD006B2396 /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactViewController.swift; path = Contact/ContactViewController.swift; sourceTree = "<group>"; };
+		E27CB7AE1E586AAB006B2396 /* ContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactCell.swift; path = Contact/Views/ContactCell.swift; sourceTree = "<group>"; };
+		E27CB7B11E586B59006B2396 /* ContactViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactViewModel.swift; path = Contact/ViewModel/ContactViewModel.swift; sourceTree = "<group>"; };
 		E29CDC901E56876F00F59B4C /* MenuViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewModel.swift; path = Menu/ViewModel/MenuViewModel.swift; sourceTree = "<group>"; };
+		E2C239C91E59423C003818FB /* UIKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIKit.swift; path = Extension/UIKit.swift; sourceTree = "<group>"; };
+		E2C239CB1E594732003818FB /* UIViewControllerWithMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewControllerWithMenu.swift; path = "Auto Stop Race/Views/UIViewControllerWithMenu.swift"; sourceTree = SOURCE_ROOT; };
+		E2C239CE1E594B53003818FB /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutViewController.swift; path = About/AboutViewController.swift; sourceTree = "<group>"; };
+		E2C239D11E594D33003818FB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Login/LoginViewController.swift; sourceTree = "<group>"; };
+		E2D90C7C1E596CAA00435A9F /* PhrasebookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhrasebookViewController.swift; path = Phrasebook/PhrasebookViewController.swift; sourceTree = "<group>"; };
 		E2D9A20B1E5530FC003324F7 /* Auto Stop Race.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Auto Stop Race.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2D9A20E1E5530FC003324F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2D9A2181E5530FC003324F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -145,12 +165,78 @@
 			name = ViewModel;
 			sourceTree = "<group>";
 		};
+		E27CB7A31E581796006B2396 /* Campus */ = {
+			isa = PBXGroup;
+			children = (
+				E27CB7A41E58187C006B2396 /* CampusViewController.swift */,
+			);
+			name = Campus;
+			sourceTree = "<group>";
+		};
+		E27CB7A61E5863A7006B2396 /* Locations */ = {
+			isa = PBXGroup;
+			children = (
+				E27CB7A71E5867C3006B2396 /* LocationsViewController.swift */,
+			);
+			name = Locations;
+			sourceTree = "<group>";
+		};
+		E27CB7AA1E586993006B2396 /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				E27CB7B01E586B38006B2396 /* ViewModel */,
+				E27CB7AD1E586A91006B2396 /* Views */,
+				E27CB7AB1E5869AD006B2396 /* ContactViewController.swift */,
+			);
+			name = Contact;
+			sourceTree = "<group>";
+		};
+		E27CB7AD1E586A91006B2396 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E27CB7AE1E586AAB006B2396 /* ContactCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		E27CB7B01E586B38006B2396 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E27CB7B11E586B59006B2396 /* ContactViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
 		E29CDC921E56877500F59B4C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				E29CDC901E56876F00F59B4C /* MenuViewModel.swift */,
 			);
 			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		E2C239CD1E594B18003818FB /* About */ = {
+			isa = PBXGroup;
+			children = (
+				E2C239CE1E594B53003818FB /* AboutViewController.swift */,
+			);
+			name = About;
+			sourceTree = "<group>";
+		};
+		E2C239D01E594D1B003818FB /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				E2C239D11E594D33003818FB /* LoginViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		E2D90C7B1E596C8C00435A9F /* Phrasebook */ = {
+			isa = PBXGroup;
+			children = (
+				E2D90C7C1E596CAA00435A9F /* PhrasebookViewController.swift */,
+			);
+			name = Phrasebook;
 			sourceTree = "<group>";
 		};
 		E2D9A2021E5530FC003324F7 = {
@@ -214,8 +300,14 @@
 		E2D9A23C1E55337A003324F7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E2D90C7B1E596C8C00435A9F /* Phrasebook */,
+				E2C239D01E594D1B003818FB /* Login */,
+				E2C239CD1E594B18003818FB /* About */,
+				E27CB7AA1E586993006B2396 /* Contact */,
+				E27CB7A61E5863A7006B2396 /* Locations */,
+				E27CB7A31E581796006B2396 /* Campus */,
 				E25F73D61E56AD7E003DEB3C /* Partners */,
-				E2D9A25B1E557042003324F7 /* Views */,
+				E2D9A25B1E557042003324F7 /* BaseViews */,
 				E2D9A2501E554915003324F7 /* Menu */,
 				E2D9A2451E55365D003324F7 /* Dashboard */,
 			);
@@ -302,6 +394,7 @@
 			children = (
 				E2D9A2561E555E6C003324F7 /* UIColor.swift */,
 				E2D9A25E1E55744E003324F7 /* UIView.swift */,
+				E2C239C91E59423C003818FB /* UIKit.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -314,12 +407,13 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
-		E2D9A25B1E557042003324F7 /* Views */ = {
+		E2D9A25B1E557042003324F7 /* BaseViews */ = {
 			isa = PBXGroup;
 			children = (
 				E2D9A25C1E557057003324F7 /* BaseCell.swift */,
+				E2C239CB1E594732003818FB /* UIViewControllerWithMenu.swift */,
 			);
-			name = Views;
+			name = BaseViews;
 			sourceTree = "<group>";
 		};
 		E2E0D88C1E57F9E300844509 /* Views */ = {
@@ -625,19 +719,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2C239CA1E59423C003818FB /* UIKit.swift in Sources */,
+				E2C239CC1E594732003818FB /* UIViewControllerWithMenu.swift in Sources */,
+				E2C239CF1E594B53003818FB /* AboutViewController.swift in Sources */,
+				E2C239D21E594D33003818FB /* LoginViewController.swift in Sources */,
+				E27CB7AF1E586AAB006B2396 /* ContactCell.swift in Sources */,
 				E2D9A25A1E556FFA003324F7 /* MenuCell.swift in Sources */,
 				E271C2C61E56460D00CD4F15 /* DashboardCoordinator.swift in Sources */,
 				E2D9A2441E5534DA003324F7 /* AppCoordinator.swift in Sources */,
+				E27CB7AC1E5869AD006B2396 /* ContactViewController.swift in Sources */,
+				E27CB7A81E5867C3006B2396 /* LocationsViewController.swift in Sources */,
 				E2D9A2571E555E6C003324F7 /* UIColor.swift in Sources */,
 				E2E0D88E1E57F9FF00844509 /* PartnerCell.swift in Sources */,
+				E27CB7B21E586B59006B2396 /* ContactViewModel.swift in Sources */,
 				E25F73D81E56ADA7003DEB3C /* PartnersViewController.swift in Sources */,
 				E271C2CE1E5660EC00CD4F15 /* DashboardViewModel.swift in Sources */,
 				E2D9A2531E55492D003324F7 /* MenuViewController.swift in Sources */,
 				E2D9A25D1E557057003324F7 /* BaseCell.swift in Sources */,
 				E2D9A2421E5533EE003324F7 /* Coordinator.swift in Sources */,
+				E27CB7A51E58187C006B2396 /* CampusViewController.swift in Sources */,
 				E2D9A20F1E5530FC003324F7 /* AppDelegate.swift in Sources */,
 				E29CDC911E56876F00F59B4C /* MenuViewModel.swift in Sources */,
 				E2D9A25F1E55744E003324F7 /* UIView.swift in Sources */,
+				E2D90C7D1E596CAA00435A9F /* PhrasebookViewController.swift in Sources */,
 				E2D9A2481E55369E003324F7 /* DashboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

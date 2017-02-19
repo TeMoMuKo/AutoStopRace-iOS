@@ -8,24 +8,10 @@
 
 import UIKit
 
-class PartnersViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class PartnersViewController: UIViewControllerWithMenu, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     let partnersImagesNames = ["logo_beactive", "logo_cafe_borowka", "logo_express", "logo_cafe_borowka", "logo_grzeski", "logo_kf", "logo_kravmaga", "logo_lerni"]
     
     let cellHeight: CGFloat = 250
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        collectionView.register(PartnerCell.self, forCellWithReuseIdentifier: PartnerCell.Identifier)
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        
-        setupNavigationBar()
-        setupNavigationBarButtons()
-        setupCollectionView()
-        
-        view.backgroundColor = UIColor.white
-    }
     
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -34,26 +20,23 @@ class PartnersViewController: UIViewController, UICollectionViewDelegate, UIColl
         return collectionView
     }()
     
-    func setupNavigationBar() {
-        navigationController?.navigationBar.isTranslucent = false
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        let titleLabel = UILabel(frame: CGRect.init(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
-        navigationItem.titleView = titleLabel
-        titleLabel.text = NSLocalizedString("title_partners", comment: "")
-        titleLabel.textColor = UIColor.white
-        titleLabel.font = UIFont.systemFont(ofSize: 20)
+        collectionView.register(PartnerCell.self, forCellWithReuseIdentifier: PartnerCell.Identifier)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        setupNavigationBarTitle()
+
+        setupCollectionView()
+        
+        view.backgroundColor = UIColor.white
     }
     
-    func setupNavigationBarButtons() {
-        let menuImage = UIImage(named: "menu_icon")?.withRenderingMode(.alwaysOriginal)
-        let menuBarButtonItem = UIBarButtonItem(image: menuImage, style: .plain, target: self, action: #selector(handleMenu))
-        navigationItem.leftBarButtonItems = [menuBarButtonItem]
-    }
-    
-    func handleMenu() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let appCoordinator = appDelegate.coordinator as! AppCoordinator
-        appCoordinator.menuSelected()
+    func setupNavigationBarTitle() {
+        let titleLabel = navigationItem.titleView as! UILabel
+        titleLabel.text = NSLocalizedString("title_contact", comment: "")
     }
     
     func setupCollectionView() {

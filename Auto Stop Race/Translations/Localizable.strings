@@ -16,3 +16,7 @@
 "title_partners" = "Partnerzy";
 "title_settings" = "Ustawienia";
 "title_about" = "O aplikacji";
+"title_login" = "Logowanie";
+
+"dashboard_login_button" = "PRZEJDŹ DO LOGOWANIA";
+"dashboard_contact_button" = "KONTAKT DO ORGANIZATORÓW";

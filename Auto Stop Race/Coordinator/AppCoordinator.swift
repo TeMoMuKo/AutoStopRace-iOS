@@ -38,7 +38,7 @@ extension AppCoordinator: MenuViewControllerDelegate {
     
     func menuSelected(menu: MenuDestination) {
         
-        self.navigationController?.popViewController(animated: false)
+        _ = self.navigationController?.popViewController(animated: false)
         
         switch menu {
         case .teams:
@@ -48,10 +48,14 @@ extension AppCoordinator: MenuViewControllerDelegate {
         case .locations:
             break
         case .campus:
+            let viewController = CampusViewController()
+            self.navigationController?.present(viewController, animated: true, completion: nil)
             break
         case .phrasebook:
             break
         case .contact:
+            let viewController = ContactViewController()
+            self.navigationController?.pushViewController(viewController, animated: true)
             break
         case .partners:
             let viewController = PartnersViewController()
@@ -60,7 +64,22 @@ extension AppCoordinator: MenuViewControllerDelegate {
         case .settings:
             break
         case .about:
+            let viewController = AboutViewController()
+            self.navigationController?.pushViewController(viewController, animated: true)
             break
         }
+    }
+}
+
+extension AppCoordinator: DashboardViewControllerDelegate {
+    func loginButtonTapped() {
+        let viewController = LoginViewController()
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    func contactButtonTapped() {
+        _ = self.navigationController?.popViewController(animated: false)
+        let viewController = LoginViewController()
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }

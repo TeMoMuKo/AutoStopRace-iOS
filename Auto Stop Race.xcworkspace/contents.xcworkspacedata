@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Test.storyboard">
-   </FileRef>
-   <FileRef
       location = "group:Auto Stop Race.xcodeproj">
    </FileRef>
    <FileRef

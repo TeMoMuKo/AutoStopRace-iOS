@@ -35,13 +35,13 @@ class MenuCell: BaseCell {
     
     let nameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 15)
+        label.font = UIFont.systemFont(ofSize: 15, weight: UIFontWeightLight)
         return label
     }()
     
     let iconImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
@@ -51,10 +51,8 @@ class MenuCell: BaseCell {
         addSubview(nameLabel)
         addSubview(iconImageView)
         
-        addConstraintsWithFormat(format: "H:|-16-[v0]-16-[v1]|", views: iconImageView, nameLabel)
-        
+        addConstraintsWithFormat(format: "H:|-16-[v0]-16-[v1]", views: iconImageView, nameLabel)
         addConstraintsWithFormat(format: "V:|[v0]|", views: nameLabel)
-        
         addConstraintsWithFormat(format: "V:[v0(30)]", views: iconImageView)
         
         addConstraint(NSLayoutConstraint(item: iconImageView, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0))
