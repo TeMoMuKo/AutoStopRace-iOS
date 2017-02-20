@@ -7,28 +7,33 @@
 //
 
 import Foundation
-
-class Contact: NSObject {
-    let type: String
-    let value: String
-    let imageName: String
-    let contactDescription: String
-    
-    init(type: String, value: String, imageName: String, contactDescription: String) {
-        self.type = type
-        self.value = value
-        self.imageName = imageName
-        self.contactDescription = contactDescription
-    }
-}
-
-enum ContactType {
-    case email, phone_number, sms, web_page, fan_page
-}
+import RxSwift
 
 final class ContactViewModel {
-    init( delegate: MenuViewControllerDelegate) {
-        //self.delegate = delegate
+    
+    private let disposeBag = DisposeBag()
+    private weak var delegate: ContactViewControllerDelegate?
+    
+    let itemSelected = PublishSubject<IndexPath>()
+    
+    let contacts = Observable.just([
+        Contact(type: "phone_number", value: "+48698402117", imageName: "contact_phone", contactDescription: "Numer do organizatorów (alarmowy)"),
+        Contact(type: "sms", value: "+48799448409", imageName: "contact_sms", contactDescription: "Numer do relacji SMS"),
+        Contact(type: "email", value: "kontakt@autostoprace.pl", imageName: "contact_mail", contactDescription: "Email organizatorów"),
+        Contact(type: "web_page", value: "www.autostoprace.pl", imageName: "contact_webpage", contactDescription: "Strona Internetowa"),
+        Contact(type: "fan_page", value: "AutoStopRace", imageName: "contact_facebook", contactDescription: "Fanpage")
+        ])
+    
+    init( delegate: ContactViewControllerDelegate) {
+        self.delegate = delegate
+    
+        itemSelected
+            .subscribe(onNext: { clickedContact in
+                print(clickedContact)
+                
+                // self.delegate?.contactSelected(contact: clickedContact )
+            })
+            .addDisposableTo(disposeBag)
         
     }
 }

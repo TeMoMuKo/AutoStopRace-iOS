@@ -22,7 +22,7 @@ final class DashboardCoordinator: Coordinator {
     func start() {
         let viewModel = DashboardViewModel(delegate: self)
         let viewController = DashboardViewController(viewModel: viewModel)
-        navigationController?.pushViewController(viewController, animated: true)
+        navigationController?.show(viewController, sender: nil)
     }
     
     func stop() {
@@ -33,8 +33,14 @@ final class DashboardCoordinator: Coordinator {
 
 
 extension DashboardCoordinator: DashboardViewControllerDelegate {
-    func menuSelected() {
-
+    func loginButtonTapped() {
+        let coordinator = LoginCoordinator(navigationController: navigationController)
+        coordinator.start()
+    }
+    
+    func contactButtonTapped() {
+        let coordinator = ContactCoordinator(navigationController: navigationController)
+        coordinator.start()
     }
 }
 

@@ -12,7 +12,8 @@ import RxCocoa
 import SnapKit
 
 protocol DashboardViewControllerDelegate: class {
-    func menuSelected()
+    func loginButtonTapped()
+    func contactButtonTapped()
 }
 
 class DashboardViewController: UIViewControllerWithMenu {
@@ -98,15 +99,11 @@ class DashboardViewController: UIViewControllerWithMenu {
     }
     
     func loginButtonTapped() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let appCoordinator = appDelegate.coordinator as! AppCoordinator
-        appCoordinator.loginButtonTapped()
+        viewModel.loginButtonTapped()
     }
     
     func contactButtonTapped() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let appCoordinator = appDelegate.coordinator as! AppCoordinator
-        appCoordinator.contactButtonTapped()
+        viewModel.contactButtonTapped()
     }
 
     override func didReceiveMemoryWarning() {

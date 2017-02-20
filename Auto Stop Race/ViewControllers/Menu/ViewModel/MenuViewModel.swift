@@ -9,19 +9,6 @@
 import Foundation
 import RxSwift
 
-class Menu: NSObject {
-    let name: String
-    let imageName: String
-    
-    init(name: String, imageName: String) {
-        self.name = name
-        self.imageName = imageName
-    }
-}
-enum MenuDestination: Int {
-    case teams = 0, locations, campus, phrasebook, contact, partners, settings, about
-}
-
 final class MenuViewModel {
     
     private let disposeBag = DisposeBag()

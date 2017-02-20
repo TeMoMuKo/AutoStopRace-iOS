@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         
         let navigationController = UINavigationController()
+
         window?.rootViewController = navigationController
         let coordinator = AppCoordinator(navigationController: navigationController)
         
@@ -25,14 +26,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.coordinator = coordinator
         
         window?.makeKeyAndVisible()
-
-        UINavigationBar.appearance().isTranslucent = false
-        UINavigationBar.appearance().barTintColor = UIColor.blueMenu
-
+        
+        setUpNavigationBar()
         application.statusBarStyle = .lightContent
+
         return true
     }
-
-
+    
+    func setUpNavigationBar() {
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().barTintColor = UIColor.blueMenu
+        UINavigationBar.appearance().tintColor = UIColor.white
+    }
+    
 }
 

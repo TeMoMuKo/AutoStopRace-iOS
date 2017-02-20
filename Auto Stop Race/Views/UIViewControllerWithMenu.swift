@@ -25,6 +25,8 @@ class UIViewControllerWithMenu: UIViewController {
     }
     
     func setupNavigationBar() {
+        self.navigationController?.navigationBar.topItem?.title = ""
+
         let titleLabel = UILabel(frame: CGRect.init(x: 0, y: 0, width: view.frame.width, height: self.navigationController!.view.frame.height))
         titleLabel.clipsToBounds = true
         navigationItem.titleView = titleLabel
@@ -36,11 +38,13 @@ class UIViewControllerWithMenu: UIViewController {
         let menuImage = UIImage(named: "menu_icon")?.withRenderingMode(.alwaysOriginal)
         let menuBarButtonItem = UIBarButtonItem(image: menuImage, style: .plain, target: self, action: #selector(handleMenu))
         navigationItem.leftBarButtonItems = [menuBarButtonItem]
+        
     }
 
     func handleMenu() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let appCoordinator = appDelegate.coordinator as! AppCoordinator
-        appCoordinator.menuSelected()
+        let nc = NotificationCenter.default
+        nc.post(name:Notification.Name(rawValue: "showMenu"),
+                object: nil,
+                userInfo:nil)
     }
 }

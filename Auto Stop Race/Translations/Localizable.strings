@@ -20,3 +20,7 @@
 
 "dashboard_login_button" = "PRZEJDŹ DO LOGOWANIA";
 "dashboard_contact_button" = "KONTAKT DO ORGANIZATORÓW";
+
+"menu_help" = "Pomoc";
+"msg_login_info" = "Zaloguj się za pomocą danych ustalonych przy aktywacji swojego konta. Instrukcje znajdują się w mailu od organizatorów";
+"ok" = "OK";

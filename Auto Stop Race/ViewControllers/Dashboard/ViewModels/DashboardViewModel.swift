@@ -18,7 +18,11 @@ final class DashboardViewModel {
         self.delegate = delegate
     }
     
-    func menuSelected() {
-        delegate?.menuSelected()
+    func loginButtonTapped() {
+        delegate?.loginButtonTapped()
+    }
+    
+    func contactButtonTapped() {
+        delegate?.contactButtonTapped()
     }
 }
