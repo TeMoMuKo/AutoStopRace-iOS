@@ -15,19 +15,15 @@ final class PhrasebookViewModel {
     
     let languages: Observable<[String]>
         
-    var allPhrases: [Phrase] = []
+    var allPhrases = Variable<[PhraseViewModelType]>([])
     
-    let phrases = Variable<[(Phrase, PhraseViewModelType)]>([])
-    
-    lazy var allPhrasesObservable: Observable<[PhraseViewModelType]>  = self.phrases.asObservable().map { $0.map { $0.1 }}
-    
-    lazy var phrasesObservable: Observable<[PhraseViewModelType]>  = self.phrases.asObservable().map { $0.map { $0.1 }}
+    var phrases = Variable<[PhraseViewModelType]>([])
     
     init (provider: ServiceProviderType) {
         
         languages = provider.csvService.loadLanguages()
-        allPhrases = provider.csvService.loadPhrases() as [Phrase]
-        self.phrases.value = allPhrases.map { ($0, PhraseViewModel(phrase: $0)) }
+        allPhrases = provider.csvService.loadPhrases()
+        phrases.value = allPhrases.value
         
     }
 }

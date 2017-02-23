@@ -10,11 +10,13 @@ import Foundation
 
 class Phrase: NSObject {
     let polishPhrase: String
+    var selectedLanguage: Int
     var currentTranslationPhrase: String
     let translationPhrases: [String]
     
-    init(polishPhrase: String, currentTranslationPhrase:String, translationPhrases: [String]) {
+    init(polishPhrase: String, selectedLanguage:Int, currentTranslationPhrase:String, translationPhrases: [String]) {
         self.polishPhrase = polishPhrase
+        self.selectedLanguage = selectedLanguage
         self.currentTranslationPhrase = currentTranslationPhrase
         self.translationPhrases = translationPhrases
     }

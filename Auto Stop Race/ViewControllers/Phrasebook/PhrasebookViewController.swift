@@ -66,29 +66,29 @@ class PhrasebookViewController: UIViewControllerWithMenu, UITableViewDelegate {
             }).addDisposableTo(disposeBag)
         
         
-        wordSearchBar.rx.text.orEmpty.asObservable()
-            .subscribe(onNext: {[weak self] query in
+        _ = Observable.combineLatest(
+            wordSearchBar.rx.text.orEmpty.asObservable(),
+            languageSegmentedControl.rx.selectedSegmentIndex.asObservable()) { query, selectedIndex in
+                return (query, selectedIndex)
+            }
+            .subscribe(onNext: { [weak self] (query, selectedIndex) in
+                    print("\(query) , \(selectedIndex)")
                 guard let _ = self else { return }
-                viewModel.phrases.value = viewModel.allPhrases.filter { phrase in
+                viewModel.phrases.value = viewModel.allPhrases.value.filter { phrase in
+                    phrase.selectedLanguage.value = selectedIndex
+                    phrase.currentTranslationPhrase.value = phrase.translationPhrases.value[selectedIndex]
                     if query.isEmpty {
                         return true
                     } else {
-                        let isInPolishPhrase = phrase.polishPhrase.lowercased().contains(query.lowercased())
-                        let isInTranslationPhrase = phrase.currentTranslationPhrase.lowercased().contains(query.lowercased())
+                        let isInPolishPhrase = phrase.polishPhrase.value.lowercased().contains(query.lowercased())
+                        let isInTranslationPhrase = phrase.currentTranslationPhrase.value.lowercased().contains(query.lowercased())
                         return isInPolishPhrase || isInTranslationPhrase
                     }
-                }.map { ($0, PhraseViewModel(phrase: $0)) }
-            }).addDisposableTo(disposeBag)
+                    }.map { $0 }
+                 })
+            .disposed(by: disposeBag)
         
-        languageSegmentedControl.rx.selectedSegmentIndex.asObservable()
-            .subscribe(onNext: {[weak self] selectedIndex in
-                guard let _ = self else { return }
-                    for (phrase, phraseViewModel) in viewModel.phrases.value  {
-                        phraseViewModel.currentTranslationPhrase.value = phrase.translationPhrases[selectedIndex]
-                    }
-                }).addDisposableTo(disposeBag)
-
-        viewModel.phrasesObservable
+        viewModel.phrases.asObservable()
             .bindTo(phrasesTableView.rx.items) { tableView, i, item in
                 let indexPath = IndexPath(row: i, section: 0)
                 let cell = tableView.dequeueReusableCell(withIdentifier: PhraseCell.Identifier, for: indexPath) as! PhraseCell

@@ -28,7 +28,7 @@ class PhraseCell: UITableViewCell {
     }
     
     func setupBindings() {
-        viewModel?.polishPhrase.bindTo(polishPhraseLabel.rx.text).addDisposableTo(disposeBag)
+        viewModel?.polishPhrase.asObservable().bindTo(polishPhraseLabel.rx.text).addDisposableTo(disposeBag)
         viewModel?.currentTranslationPhrase.asObservable().bindTo(translationPhraseLabel.rx.text).addDisposableTo(disposeBag)
     }
     

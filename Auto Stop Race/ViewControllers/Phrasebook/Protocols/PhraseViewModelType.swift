@@ -9,7 +9,8 @@
 import RxSwift
 
 protocol PhraseViewModelType {
-    var polishPhrase: Observable<String> { get }
+    var polishPhrase: Variable<String> { get }
+    var selectedLanguage: Variable<Int> { get }
     var currentTranslationPhrase: Variable<String> { get }
-    var translationPhrases: Observable<[String]> { get }
+    var translationPhrases: Variable<[String]> { get }
 }

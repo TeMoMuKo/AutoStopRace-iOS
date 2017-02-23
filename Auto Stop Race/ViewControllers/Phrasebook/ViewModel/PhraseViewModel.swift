@@ -9,14 +9,16 @@
 import RxSwift
 
 final class PhraseViewModel: PhraseViewModelType {
-    let polishPhrase: Observable<String>
+    let polishPhrase: Variable<String>
+    let selectedLanguage: Variable<Int>
     let currentTranslationPhrase: Variable<String>
-    let translationPhrases: Observable<[String]>
+    let translationPhrases: Variable<[String]>
     
     init(phrase: Phrase) {
-        polishPhrase = .just( phrase.polishPhrase )
-        translationPhrases = .just( phrase.translationPhrases )
-        currentTranslationPhrase = Variable<String>( phrase.translationPhrases[0] )
+        polishPhrase = Variable<String>( phrase.polishPhrase )
+        translationPhrases = Variable<[String]>( phrase.translationPhrases )
+        selectedLanguage = Variable<Int>( phrase.selectedLanguage )
+        currentTranslationPhrase = Variable<String>( phrase.translationPhrases[selectedLanguage.value] )
     }
     
 }

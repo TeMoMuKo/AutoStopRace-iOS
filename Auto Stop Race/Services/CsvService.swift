@@ -12,7 +12,7 @@ import RxSwift
 
 protocol CsvServiceType {
     func loadLanguages() -> Observable<[String]>
-    func loadPhrases() -> [Phrase]
+    func loadPhrases() -> Variable<[PhraseViewModelType]>
 }
 
 final class CsvService: BaseService, CsvServiceType {
@@ -35,9 +35,11 @@ final class CsvService: BaseService, CsvServiceType {
         return .just([])
     }
     
-    func loadPhrases() -> [Phrase] {
+    func loadPhrases() -> Variable<[PhraseViewModelType]> {
         
         var phrases: [Phrase] = []
+        var phrasesViewModels: [PhraseViewModel] = []
+        
         let bundle = Bundle.main
         var csv: CSV
         
@@ -48,13 +50,16 @@ final class CsvService: BaseService, CsvServiceType {
                     for row in csv {
                         let polishPhrase = row[0]
                         let translationPhrases = Array(row[1..<row.count])
-                        phrases.append(Phrase.init(polishPhrase: polishPhrase, currentTranslationPhrase: translationPhrases[0], translationPhrases: translationPhrases))
+                        phrases.append(Phrase.init(polishPhrase: polishPhrase, selectedLanguage: 0, currentTranslationPhrase: translationPhrases[0], translationPhrases: translationPhrases))
                     }
                 } catch {
                     print("Error reading csv file.")
                 }
             }
         }
-        return phrases
+        
+        phrasesViewModels = phrases.map { PhraseViewModel(phrase: $0) }
+        
+        return Variable<[PhraseViewModelType]>(phrasesViewModels)
     }
 }
