@@ -10,6 +10,7 @@
 		0A1589B79D3652F9180AB054 /* Pods_Auto_Stop_Race.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B0A3759C56A5662057903A6 /* Pods_Auto_Stop_Race.framework */; };
 		389E1ED3F6D98F24B6C8E9AA /* Pods_Auto_Stop_RaceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44A6CE3DA2C00A93DC757CB8 /* Pods_Auto_Stop_RaceTests.framework */; };
 		57AFFE52EE7A7C9BA0F2D9F4 /* Pods_Auto_Stop_RaceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1A4AB4B5E2EC7E4EEFC5E5 /* Pods_Auto_Stop_RaceUITests.framework */; };
+		E24FFC451E5B174D00F7686F /* PhrasebookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24FFC441E5B174D00F7686F /* PhrasebookViewModel.swift */; };
 		E25F73D81E56ADA7003DEB3C /* PartnersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25F73D71E56ADA7003DEB3C /* PartnersViewController.swift */; };
 		E271C2C41E56353600CD4F15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E271C2C31E56353600CD4F15 /* Assets.xcassets */; };
 		E271C2C61E56460D00CD4F15 /* DashboardCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E271C2C51E56460C00CD4F15 /* DashboardCoordinator.swift */; };
@@ -32,6 +33,14 @@
 		E2C239CC1E594732003818FB /* UIViewControllerWithMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C239CB1E594732003818FB /* UIViewControllerWithMenu.swift */; };
 		E2C239CF1E594B53003818FB /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C239CE1E594B53003818FB /* AboutViewController.swift */; };
 		E2C239D21E594D33003818FB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C239D11E594D33003818FB /* LoginViewController.swift */; };
+		E2D011401E5BE5920021936A /* PhraseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D0113F1E5BE5920021936A /* PhraseCell.swift */; };
+		E2D011421E5BE6680021936A /* Phrase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D011411E5BE6680021936A /* Phrase.swift */; };
+		E2D0114E1E5D94F00021936A /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D0114D1E5D94F00021936A /* ServiceProvider.swift */; };
+		E2D011501E5D95AB0021936A /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D0114F1E5D95AB0021936A /* BaseService.swift */; };
+		E2D011521E5D95DD0021936A /* CsvService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D011511E5D95DD0021936A /* CsvService.swift */; };
+		E2D011541E5D9D810021936A /* PhraseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D011531E5D9D810021936A /* PhraseViewModel.swift */; };
+		E2D011571E5D9DC50021936A /* PhraseViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D011561E5D9DC50021936A /* PhraseViewModelType.swift */; };
+		E2D011591E5DA03E0021936A /* PhrasebookViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D011581E5DA03E0021936A /* PhrasebookViewModelType.swift */; };
 		E2D2EB3D1E5AEDF000C56A61 /* LoginViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2EB3C1E5AEDF000C56A61 /* LoginViewCoordinator.swift */; };
 		E2D2EB3F1E5AF6B000C56A61 /* UIViewControllerWithBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2EB3E1E5AF6B000C56A61 /* UIViewControllerWithBackButton.swift */; };
 		E2D90C7D1E596CAA00435A9F /* PhrasebookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D90C7C1E596CAA00435A9F /* PhrasebookViewController.swift */; };
@@ -78,6 +87,7 @@
 		44A6CE3DA2C00A93DC757CB8 /* Pods_Auto_Stop_RaceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Auto_Stop_RaceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D1A4AB4B5E2EC7E4EEFC5E5 /* Pods_Auto_Stop_RaceUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Auto_Stop_RaceUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC9705EB6663FB9812E5DE33 /* Pods-Auto Stop RaceUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Auto Stop RaceUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Auto Stop RaceUITests/Pods-Auto Stop RaceUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E24FFC441E5B174D00F7686F /* PhrasebookViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhrasebookViewModel.swift; path = Phrasebook/ViewModel/PhrasebookViewModel.swift; sourceTree = "<group>"; };
 		E25F73D71E56ADA7003DEB3C /* PartnersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PartnersViewController.swift; path = Partners/PartnersViewController.swift; sourceTree = "<group>"; };
 		E271C2C31E56353600CD4F15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E271C2C51E56460C00CD4F15 /* DashboardCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardCoordinator.swift; sourceTree = "<group>"; };
@@ -100,6 +110,14 @@
 		E2C239CB1E594732003818FB /* UIViewControllerWithMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewControllerWithMenu.swift; path = "Auto Stop Race/Views/UIViewControllerWithMenu.swift"; sourceTree = SOURCE_ROOT; };
 		E2C239CE1E594B53003818FB /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutViewController.swift; path = About/AboutViewController.swift; sourceTree = "<group>"; };
 		E2C239D11E594D33003818FB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Login/LoginViewController.swift; sourceTree = "<group>"; };
+		E2D0113F1E5BE5920021936A /* PhraseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhraseCell.swift; path = Phrasebook/View/PhraseCell.swift; sourceTree = "<group>"; };
+		E2D011411E5BE6680021936A /* Phrase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Phrase.swift; path = Model/Phrase.swift; sourceTree = "<group>"; };
+		E2D0114D1E5D94F00021936A /* ServiceProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceProvider.swift; path = Services/ServiceProvider.swift; sourceTree = "<group>"; };
+		E2D0114F1E5D95AB0021936A /* BaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseService.swift; path = Services/BaseService.swift; sourceTree = "<group>"; };
+		E2D011511E5D95DD0021936A /* CsvService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CsvService.swift; path = Services/CsvService.swift; sourceTree = "<group>"; };
+		E2D011531E5D9D810021936A /* PhraseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhraseViewModel.swift; path = Phrasebook/ViewModel/PhraseViewModel.swift; sourceTree = "<group>"; };
+		E2D011561E5D9DC50021936A /* PhraseViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhraseViewModelType.swift; path = Phrasebook/Protocols/PhraseViewModelType.swift; sourceTree = "<group>"; };
+		E2D011581E5DA03E0021936A /* PhrasebookViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhrasebookViewModelType.swift; path = Phrasebook/Protocols/PhrasebookViewModelType.swift; sourceTree = "<group>"; };
 		E2D2EB3C1E5AEDF000C56A61 /* LoginViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewCoordinator.swift; sourceTree = "<group>"; };
 		E2D2EB3E1E5AF6B000C56A61 /* UIViewControllerWithBackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewControllerWithBackButton.swift; path = "Auto Stop Race/Views/UIViewControllerWithBackButton.swift"; sourceTree = SOURCE_ROOT; };
 		E2D90C7C1E596CAA00435A9F /* PhrasebookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhrasebookViewController.swift; path = Phrasebook/PhrasebookViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +184,15 @@
 				1ABA8979579DBC2A66D9C763 /* Pods-Auto Stop RaceUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		E24FFC431E5B170D00F7686F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E24FFC441E5B174D00F7686F /* PhrasebookViewModel.swift */,
+				E2D011531E5D9D810021936A /* PhraseViewModel.swift */,
+			);
+			name = ViewModel;
 			sourceTree = "<group>";
 		};
 		E25F73D61E56AD7E003DEB3C /* Partners */ = {
@@ -248,6 +275,7 @@
 			children = (
 				E2C061411E5A99860022D6F1 /* Contact.swift */,
 				E2C061431E5A99F50022D6F1 /* Menu.swift */,
+				E2D011411E5BE6680021936A /* Phrase.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -279,9 +307,39 @@
 			name = Login;
 			sourceTree = "<group>";
 		};
+		E2D0113E1E5BE5710021936A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E2D0113F1E5BE5920021936A /* PhraseCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		E2D011491E5D80CF0021936A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				E2D0114D1E5D94F00021936A /* ServiceProvider.swift */,
+				E2D0114F1E5D95AB0021936A /* BaseService.swift */,
+				E2D011511E5D95DD0021936A /* CsvService.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		E2D011551E5D9DA20021936A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E2D011561E5D9DC50021936A /* PhraseViewModelType.swift */,
+				E2D011581E5DA03E0021936A /* PhrasebookViewModelType.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
 		E2D90C7B1E596C8C00435A9F /* Phrasebook */ = {
 			isa = PBXGroup;
 			children = (
+				E2D011551E5D9DA20021936A /* Protocols */,
+				E2D0113E1E5BE5710021936A /* View */,
+				E24FFC431E5B170D00F7686F /* ViewModel */,
 				E2D90C7C1E596CAA00435A9F /* PhrasebookViewController.swift */,
 			);
 			name = Phrasebook;
@@ -312,6 +370,7 @@
 		E2D9A20D1E5530FC003324F7 /* Auto Stop Race */ = {
 			isa = PBXGroup;
 			children = (
+				E2D011491E5D80CF0021936A /* Service */,
 				E2C061451E5AB08F0022D6F1 /* Assets */,
 				E2C061401E5A992D0022D6F1 /* Model */,
 				E2D9A2551E555CBF003324F7 /* Extension */,
@@ -778,17 +837,25 @@
 			files = (
 				E2C239CA1E59423C003818FB /* UIKit.swift in Sources */,
 				E2C239CC1E594732003818FB /* UIViewControllerWithMenu.swift in Sources */,
+				E2D011541E5D9D810021936A /* PhraseViewModel.swift in Sources */,
 				E2C239CF1E594B53003818FB /* AboutViewController.swift in Sources */,
 				E2C239D21E594D33003818FB /* LoginViewController.swift in Sources */,
 				E27CB7AF1E586AAB006B2396 /* ContactCell.swift in Sources */,
+				E2D011521E5D95DD0021936A /* CsvService.swift in Sources */,
+				E24FFC451E5B174D00F7686F /* PhrasebookViewModel.swift in Sources */,
 				E2D9A25A1E556FFA003324F7 /* MenuCell.swift in Sources */,
 				E271C2C61E56460D00CD4F15 /* DashboardCoordinator.swift in Sources */,
+				E2D011571E5D9DC50021936A /* PhraseViewModelType.swift in Sources */,
+				E2D011501E5D95AB0021936A /* BaseService.swift in Sources */,
 				E2D9A2441E5534DA003324F7 /* AppCoordinator.swift in Sources */,
 				E27CB7AC1E5869AD006B2396 /* ContactViewController.swift in Sources */,
 				E27CB7A81E5867C3006B2396 /* LocationsViewController.swift in Sources */,
+				E2D011421E5BE6680021936A /* Phrase.swift in Sources */,
+				E2D011401E5BE5920021936A /* PhraseCell.swift in Sources */,
 				E2D9A2571E555E6C003324F7 /* UIColor.swift in Sources */,
 				E2E0D88E1E57F9FF00844509 /* PartnerCell.swift in Sources */,
 				E2C0613F1E5A67A90022D6F1 /* MenuCoordinator.swift in Sources */,
+				E2D0114E1E5D94F00021936A /* ServiceProvider.swift in Sources */,
 				E2D2EB3D1E5AEDF000C56A61 /* LoginViewCoordinator.swift in Sources */,
 				E27CB7B21E586B59006B2396 /* ContactViewModel.swift in Sources */,
 				E25F73D81E56ADA7003DEB3C /* PartnersViewController.swift in Sources */,
@@ -796,6 +863,7 @@
 				E2C061441E5A99F50022D6F1 /* Menu.swift in Sources */,
 				E2D9A2531E55492D003324F7 /* MenuViewController.swift in Sources */,
 				E2D9A25D1E557057003324F7 /* BaseCell.swift in Sources */,
+				E2D011591E5DA03E0021936A /* PhrasebookViewModelType.swift in Sources */,
 				E2C0614D1E5AB2920022D6F1 /* ContactCoordinator.swift in Sources */,
 				E2D9A2421E5533EE003324F7 /* Coordinator.swift in Sources */,
 				E28622901E5AECAA008938FC /* LoginViewModel.swift in Sources */,
@@ -950,6 +1018,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PS6RWDDX97;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Auto Stop Race/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -965,6 +1037,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PS6RWDDX97;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Auto Stop Race/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

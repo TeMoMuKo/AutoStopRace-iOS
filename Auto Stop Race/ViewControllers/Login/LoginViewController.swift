@@ -33,8 +33,6 @@ class LoginViewController: UIViewControllerWithBackButton {
         self.viewModel = viewModel
     }
     
-    
-    
     func setupNavigationBarTitle() {
         let titleLabel = navigationItem.titleView as! UILabel
         titleLabel.text = NSLocalizedString("title_login", comment: "")

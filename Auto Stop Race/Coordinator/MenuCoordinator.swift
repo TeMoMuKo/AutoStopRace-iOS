@@ -13,7 +13,9 @@ import UIKit
 final class MenuCoordinator: Coordinator {
 
     let myNotification = Notification.Name(rawValue:"showMenu")
-
+    
+    let serviceProvider = ServiceProvider()
+    
     var menuViewModel: MenuViewModel!
     var menuViewController: MenuViewController!
     
@@ -41,28 +43,39 @@ extension MenuCoordinator: MenuViewControllerDelegate {
         _ = self.navigationController?.popViewController(animated: false)
         
         switch menu {
+        
         case .teams:
             let coordinator = DashboardCoordinator(navigationController: navigationController)
             coordinator.start()
             break
+            
         case .locations:
             break
+        
         case .campus:
             let viewController = CampusViewController()
             self.navigationController?.present(viewController, animated: true, completion: nil)
             break
+        
         case .phrasebook:
+            let prasebookViewModel = PhrasebookViewModel(provider: serviceProvider)
+            let viewController = PhrasebookViewController(viewModel: prasebookViewModel)
+            self.navigationController?.pushViewController(viewController, animated: true)
             break
+        
         case .contact:
             let coordinator = ContactCoordinator(navigationController: navigationController)
             coordinator.start()
             break
+        
         case .partners:
             let viewController = PartnersViewController()
             self.navigationController?.pushViewController(viewController, animated: true)
             break
+        
         case .settings:
             break
+        
         case .about:
             let viewController = AboutViewController()
             self.navigationController?.pushViewController(viewController, animated: true)

@@ -5,7 +5,9 @@ target 'Auto Stop Race' do
 
   pod 'RxCocoa'
   pod 'SnapKit', '~> 3.2.0'
-
+  pod 'Reveal-SDK'
+  pod 'CSV.swift'
+  
   target 'Auto Stop RaceTests' do
     inherit! :search_paths
     # Pods for testing

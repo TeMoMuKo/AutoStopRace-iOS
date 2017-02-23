@@ -27,4 +27,10 @@ extension UIColor {
             return UIColor.init(netHex: 0x1976d2)
         }
     }
+    
+    open class var grayBackground: UIColor {
+        get {
+            return UIColor.init(netHex: 0xceced2)
+        }
+    }
 }
