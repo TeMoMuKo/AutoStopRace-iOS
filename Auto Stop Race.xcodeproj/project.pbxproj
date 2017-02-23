@@ -1017,6 +1017,7 @@
 			baseConfigurationReference = 07E7E369D96D589B7A05BA35 /* Pods-Auto Stop Race.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = PS6RWDDX97;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1036,6 +1037,7 @@
 			baseConfigurationReference = 0C711BDFAC49916758D9D1A4 /* Pods-Auto Stop Race.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = PS6RWDDX97;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

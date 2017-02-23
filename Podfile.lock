@@ -1,6 +1,5 @@
 PODS:
   - CSV.swift (1.1.2)
-  - Reveal-SDK (6)
   - RxCocoa (3.2.0):
     - RxSwift (~> 3.1)
   - RxSwift (3.2.0)
@@ -8,17 +7,15 @@ PODS:
 
 DEPENDENCIES:
   - CSV.swift
-  - Reveal-SDK
   - RxCocoa
   - SnapKit (~> 3.2.0)
 
 SPEC CHECKSUMS:
   CSV.swift: 0aad3b06980034c8fa296456b708ac9128ebbdf9
-  Reveal-SDK: 67460e58f93711c7b18631d12c2b5de7740e48b5
   RxCocoa: ccdf43101a70407097a29082f648ba1676075b30
   RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
 
-PODFILE CHECKSUM: 0607d0ecd3a0395f1d8550df00ef54d2a0766474
+PODFILE CHECKSUM: 7c6a2eaa7a476efcbbc8a7c1cc15d680370f308f
 
 COCOAPODS: 1.2.0
