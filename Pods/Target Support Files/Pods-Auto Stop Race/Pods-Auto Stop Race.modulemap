@@ -1,6 +1,0 @@
-framework module Pods_Auto_Stop_Race {
-  umbrella header "Pods-Auto Stop Race-umbrella.h"
-
-  export *
-  module * { export * }
-}
