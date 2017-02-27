@@ -21,6 +21,17 @@
 "dashboard_login_button" = "PRZEJDŹ DO LOGOWANIA";
 "dashboard_contact_button" = "KONTAKT DO ORGANIZATORÓW";
 
+"hint_email" = "Adres e-mail";
+"hint_password" = "Hasło";
+"action_login" = "Zaloguj";
+"action_reset_pass" = "Przypomnij mi hasło";
+"forgotten_password" = "Przypomnij mi hasło";
+"title_activity_reset_pass" = "Resetowanie hasła";
+
 "menu_help" = "Pomoc";
 "msg_login_info" = "Zaloguj się za pomocą danych ustalonych przy aktywacji swojego konta. Instrukcje znajdują się w mailu od organizatorów";
 "ok" = "OK";
+
+
+"search_hint" = "Szukane wyrażenie...";
+"hint_enter_team_number" = "Wpisz numer drużyny...";

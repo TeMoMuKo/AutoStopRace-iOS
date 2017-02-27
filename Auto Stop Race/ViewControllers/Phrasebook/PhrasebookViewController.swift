@@ -13,12 +13,10 @@ import RxSwift
 import RxCocoa
 
 class PhrasebookViewController: UIViewControllerWithMenu, UITableViewDelegate {
-    var shownPhrases: [String] = ["Test"]
-    
     var viewModel: PhrasebookViewModel!
     let disposeBag = DisposeBag()
     
-    let wordSearchBar: UISearchBar = {
+    let phraseSearchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.barTintColor = UIColor.blueMenu
         return searchBar
@@ -67,12 +65,11 @@ class PhrasebookViewController: UIViewControllerWithMenu, UITableViewDelegate {
         
         
         _ = Observable.combineLatest(
-            wordSearchBar.rx.text.orEmpty.asObservable(),
+            phraseSearchBar.rx.text.orEmpty.asObservable(),
             languageSegmentedControl.rx.selectedSegmentIndex.asObservable()) { query, selectedIndex in
                 return (query, selectedIndex)
             }
             .subscribe(onNext: { [weak self] (query, selectedIndex) in
-                    print("\(query) , \(selectedIndex)")
                 guard let _ = self else { return }
                 viewModel.phrases.value = viewModel.allPhrases.value.filter { phrase in
                     phrase.selectedLanguage.value = selectedIndex
@@ -105,23 +102,25 @@ class PhrasebookViewController: UIViewControllerWithMenu, UITableViewDelegate {
         super.viewDidLoad()
         
         setupNavigationBarTitle()
+        setupSearchBar()
         
         view.addSubview(phrasesTableView)
         view.addSubview(segmentedControlView)
         view.addSubview(languageSegmentedControl)
-        view.addSubview(wordSearchBar)
+        view.addSubview(phraseSearchBar)
                 
         setupConstraints()
+        setupKeyboard()
     }
 
     func setupConstraints() {
-        wordSearchBar.snp.makeConstraints { (make) -> Void in
+        phraseSearchBar.snp.makeConstraints { (make) -> Void in
             make.left.top.right.equalTo(view)
             make.height.equalTo(self.navigationController!.navigationBar.frame.height)
         }
         
         segmentedControlView.snp.makeConstraints{ (make) -> Void in
-            make.top.equalTo(wordSearchBar.snp.bottom)
+            make.top.equalTo(phraseSearchBar.snp.bottom)
             make.left.right.equalTo(view)
             make.height.equalTo(self.navigationController!.navigationBar.frame.height)
         }
@@ -141,6 +140,27 @@ class PhrasebookViewController: UIViewControllerWithMenu, UITableViewDelegate {
     func setupNavigationBarTitle() {
         let titleLabel = navigationItem.titleView as! UILabel
         titleLabel.text = NSLocalizedString("title_phrasebook", comment: "")
+    }
+    
+    func setupSearchBar() {
+        let textfield:UITextField = phraseSearchBar.value(forKey:"searchField") as! UITextField
+
+        let attributedString = NSAttributedString(string: NSLocalizedString("search_hint", comment: ""), attributes: [NSForegroundColorAttributeName : UIColor.lightGray])
+        
+        textfield.attributedPlaceholder = attributedString
+        }
+    
+    func setupKeyboard() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        
+        if let window = UIApplication.shared.keyWindow {
+            window.addGestureRecognizer(tap)
+        }
+    }
+    
+    func dismissKeyboard() {
+        phraseSearchBar.resignFirstResponder()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

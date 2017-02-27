@@ -50,6 +50,8 @@ extension MenuCoordinator: MenuViewControllerDelegate {
             break
             
         case .locations:
+            let coordinator = LocationsCoordinator(navigationController: navigationController)
+            coordinator.start()
             break
         
         case .campus:

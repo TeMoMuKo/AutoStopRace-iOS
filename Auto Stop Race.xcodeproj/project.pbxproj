@@ -22,8 +22,12 @@
 		E27CB7B21E586B59006B2396 /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27CB7B11E586B59006B2396 /* ContactViewModel.swift */; };
 		E28622901E5AECAA008938FC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E286228F1E5AECAA008938FC /* LoginViewModel.swift */; };
 		E29CDC911E56876F00F59B4C /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29CDC901E56876F00F59B4C /* MenuViewModel.swift */; };
+		E29F88991E5EFFC1008F1F46 /* LocationsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F88981E5EFFC1008F1F46 /* LocationsCoordinator.swift */; };
+		E29F889C1E5F01A1008F1F46 /* LocationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F889B1E5F01A1008F1F46 /* LocationsViewModel.swift */; };
+		E29F889E1E5F08AF008F1F46 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F889D1E5F08AF008F1F46 /* Constants.swift */; };
+		E29F88A01E5F15E2008F1F46 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F889F1E5F15E2008F1F46 /* Location.swift */; };
+		E29F88A21E5F15F5008F1F46 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F88A11E5F15F5008F1F46 /* Contact.swift */; };
 		E2C0613F1E5A67A90022D6F1 /* MenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C0613E1E5A67A90022D6F1 /* MenuCoordinator.swift */; };
-		E2C061421E5A99860022D6F1 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C061411E5A99860022D6F1 /* Contact.swift */; };
 		E2C061441E5A99F50022D6F1 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C061431E5A99F50022D6F1 /* Menu.swift */; };
 		E2C061491E5AB0BE0022D6F1 /* contact_data.csv in Resources */ = {isa = PBXBuildFile; fileRef = E2C061461E5AB0BE0022D6F1 /* contact_data.csv */; };
 		E2C0614A1E5AB0BE0022D6F1 /* licenses.html in Resources */ = {isa = PBXBuildFile; fileRef = E2C061471E5AB0BE0022D6F1 /* licenses.html */; };
@@ -99,8 +103,12 @@
 		E27CB7B11E586B59006B2396 /* ContactViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactViewModel.swift; path = Contact/ViewModel/ContactViewModel.swift; sourceTree = "<group>"; };
 		E286228F1E5AECAA008938FC /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = Login/ViewModel/LoginViewModel.swift; sourceTree = "<group>"; };
 		E29CDC901E56876F00F59B4C /* MenuViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewModel.swift; path = Menu/ViewModel/MenuViewModel.swift; sourceTree = "<group>"; };
+		E29F88981E5EFFC1008F1F46 /* LocationsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsCoordinator.swift; sourceTree = "<group>"; };
+		E29F889B1E5F01A1008F1F46 /* LocationsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationsViewModel.swift; path = Locations/ViewModel/LocationsViewModel.swift; sourceTree = "<group>"; };
+		E29F889D1E5F08AF008F1F46 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Config/Constants.swift; sourceTree = "<group>"; };
+		E29F889F1E5F15E2008F1F46 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Location.swift; path = Model/Location.swift; sourceTree = "<group>"; };
+		E29F88A11E5F15F5008F1F46 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Contact.swift; path = Model/Contact.swift; sourceTree = "<group>"; };
 		E2C0613E1E5A67A90022D6F1 /* MenuCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCoordinator.swift; sourceTree = "<group>"; };
-		E2C061411E5A99860022D6F1 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		E2C061431E5A99F50022D6F1 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Menu.swift; path = Model/Menu.swift; sourceTree = "<group>"; };
 		E2C061461E5AB0BE0022D6F1 /* contact_data.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = contact_data.csv; path = Assets/contact_data.csv; sourceTree = "<group>"; };
 		E2C061471E5AB0BE0022D6F1 /* licenses.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = licenses.html; path = Assets/licenses.html; sourceTree = "<group>"; };
@@ -223,6 +231,7 @@
 		E27CB7A61E5863A7006B2396 /* Locations */ = {
 			isa = PBXGroup;
 			children = (
+				E29F889A1E5F0178008F1F46 /* ViewModel */,
 				E27CB7A71E5867C3006B2396 /* LocationsViewController.swift */,
 			);
 			name = Locations;
@@ -270,12 +279,21 @@
 			name = ViewModel;
 			sourceTree = "<group>";
 		};
+		E29F889A1E5F0178008F1F46 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E29F889B1E5F01A1008F1F46 /* LocationsViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
 		E2C061401E5A992D0022D6F1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E2C061411E5A99860022D6F1 /* Contact.swift */,
+				E29F88A11E5F15F5008F1F46 /* Contact.swift */,
 				E2C061431E5A99F50022D6F1 /* Menu.swift */,
 				E2D011411E5BE6680021936A /* Phrase.swift */,
+				E29F889F1E5F15E2008F1F46 /* Location.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -455,6 +473,7 @@
 				E2C0613E1E5A67A90022D6F1 /* MenuCoordinator.swift */,
 				E2C0614C1E5AB2920022D6F1 /* ContactCoordinator.swift */,
 				E2D2EB3C1E5AEDF000C56A61 /* LoginViewCoordinator.swift */,
+				E29F88981E5EFFC1008F1F46 /* LocationsCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -479,6 +498,7 @@
 		E2D9A24C1E553B58003324F7 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				E29F889D1E5F08AF008F1F46 /* Constants.swift */,
 			);
 			name = Config;
 			sourceTree = "<group>";
@@ -841,7 +861,9 @@
 				E2C239CF1E594B53003818FB /* AboutViewController.swift in Sources */,
 				E2C239D21E594D33003818FB /* LoginViewController.swift in Sources */,
 				E27CB7AF1E586AAB006B2396 /* ContactCell.swift in Sources */,
+				E29F88991E5EFFC1008F1F46 /* LocationsCoordinator.swift in Sources */,
 				E2D011521E5D95DD0021936A /* CsvService.swift in Sources */,
+				E29F889E1E5F08AF008F1F46 /* Constants.swift in Sources */,
 				E24FFC451E5B174D00F7686F /* PhrasebookViewModel.swift in Sources */,
 				E2D9A25A1E556FFA003324F7 /* MenuCell.swift in Sources */,
 				E271C2C61E56460D00CD4F15 /* DashboardCoordinator.swift in Sources */,
@@ -860,15 +882,17 @@
 				E27CB7B21E586B59006B2396 /* ContactViewModel.swift in Sources */,
 				E25F73D81E56ADA7003DEB3C /* PartnersViewController.swift in Sources */,
 				E271C2CE1E5660EC00CD4F15 /* DashboardViewModel.swift in Sources */,
+				E29F88A21E5F15F5008F1F46 /* Contact.swift in Sources */,
 				E2C061441E5A99F50022D6F1 /* Menu.swift in Sources */,
 				E2D9A2531E55492D003324F7 /* MenuViewController.swift in Sources */,
 				E2D9A25D1E557057003324F7 /* BaseCell.swift in Sources */,
 				E2D011591E5DA03E0021936A /* PhrasebookViewModelType.swift in Sources */,
 				E2C0614D1E5AB2920022D6F1 /* ContactCoordinator.swift in Sources */,
+				E29F889C1E5F01A1008F1F46 /* LocationsViewModel.swift in Sources */,
 				E2D9A2421E5533EE003324F7 /* Coordinator.swift in Sources */,
+				E29F88A01E5F15E2008F1F46 /* Location.swift in Sources */,
 				E28622901E5AECAA008938FC /* LoginViewModel.swift in Sources */,
 				E2D2EB3F1E5AF6B000C56A61 /* UIViewControllerWithBackButton.swift in Sources */,
-				E2C061421E5A99860022D6F1 /* Contact.swift in Sources */,
 				E27CB7A51E58187C006B2396 /* CampusViewController.swift in Sources */,
 				E2D9A20F1E5530FC003324F7 /* AppDelegate.swift in Sources */,
 				E29CDC911E56876F00F59B4C /* MenuViewModel.swift in Sources */,

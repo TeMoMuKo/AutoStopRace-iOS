@@ -17,7 +17,29 @@ protocol DashboardViewControllerDelegate: class {
 }
 
 class DashboardViewController: UIViewControllerWithMenu {
-    var loginButton: UIButton!
+    
+    var loginButton: UIButton = {
+        let button = UIButton()
+        button.layer.cornerRadius = 5
+        button.setTitle(NSLocalizedString("dashboard_login_button", comment: ""), for: .normal)
+        button.backgroundColor = UIColor.blueMenu
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.titleLabel!.font = UIFont.systemFont(ofSize: 15, weight: UIFontWeightUltraLight)
+        button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        return button
+    }()
+    
+    let contactButton: UIButton = {
+        let button = UIButton()
+        button.layer.cornerRadius = 5
+        button.setTitle(NSLocalizedString("dashboard_contact_button", comment: ""), for: .normal)
+        button.setTitleColor(UIColor.blueMenu, for: .normal)
+        button.titleLabel!.font = UIFont.systemFont(ofSize: 15, weight: UIFontWeightUltraLight)
+        button.backgroundColor = UIColor.white
+        button.addTarget(self, action: #selector(contactButtonTapped), for: .touchUpInside)
+        return button
+    }()
+    
     var backgroundView: UIView!
     var backgroundImageLogo: UIView!
     
@@ -62,22 +84,6 @@ class DashboardViewController: UIViewControllerWithMenu {
     }
     
     func setupButtons() {
-        loginButton = UIButton()
-        loginButton.layer.cornerRadius = 5
-        loginButton.setTitle(NSLocalizedString("dashboard_login_button", comment: ""), for: .normal)
-        loginButton.backgroundColor = UIColor.blueMenu
-        loginButton.setTitleColor(UIColor.white, for: .normal)
-        loginButton.titleLabel!.font = UIFont.systemFont(ofSize: 15, weight: UIFontWeightUltraLight)
-        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
-        
-        let contactButton = UIButton()
-        contactButton.layer.cornerRadius = 5
-        contactButton.setTitle(NSLocalizedString("dashboard_contact_button", comment: ""), for: .normal)
-        contactButton.setTitleColor(UIColor.blueMenu, for: .normal)
-        contactButton.titleLabel!.font = UIFont.systemFont(ofSize: 15, weight: UIFontWeightUltraLight)
-        contactButton.backgroundColor = UIColor.white
-        contactButton.addTarget(self, action: #selector(contactButtonTapped), for: .touchUpInside)
-        
         view.addSubview(loginButton)
         view.addSubview(contactButton)
         
