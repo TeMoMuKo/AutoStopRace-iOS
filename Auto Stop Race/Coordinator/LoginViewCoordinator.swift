@@ -10,9 +10,11 @@ import Foundation
 import UIKit
 
 final class LoginCoordinator: Coordinator {
+    let serviceProvider = ServiceProvider()
     
     func start() {
-        let viewController = LoginViewController()
+        let viewModel = LoginViewModel(delegate: self, provider: serviceProvider)
+        let viewController = LoginViewController(viewModel: viewModel)
         self.navigationController?.pushViewController(viewController, animated: false)
     }
 }

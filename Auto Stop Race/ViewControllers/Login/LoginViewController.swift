@@ -80,6 +80,7 @@ class LoginViewController: UIViewControllerWithBackButton {
         let stackView = UIView()
         stackView.backgroundColor = UIColor.white
         stackView.layer.cornerRadius = 5
+        stackView.layer.borderWidth = 1
         stackView.layer.masksToBounds = true
         return stackView
     }()
@@ -95,9 +96,40 @@ class LoginViewController: UIViewControllerWithBackButton {
 
 
     var viewModel: LoginViewModel!
-
+    
+    let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        usernameTextField.delegate = self
+        passwordTextField.delegate = self
+        
+        viewModel.setUpAuthDetails(email: usernameTextField.rx.text.orEmpty.asDriver(), password: passwordTextField.rx.text.orEmpty.asDriver())
+        
+        viewModel.inputBackgroundColor
+            .drive(onNext: { [weak self] color in
+                guard let `self` = self else { return }
+                UIView.animate(withDuration: 0.2) {
+                    self.inputContainerView.layer.borderColor = color.cgColor
+                }
+            })
+            .addDisposableTo(disposeBag)
+        
+        viewModel.credentialsValid
+            .drive(onNext: { [weak self] valid in
+                guard let `self` = self else { return }
+                
+                self.loginButton.isEnabled = valid
+                
+                if valid {
+                    self.loginButton.alpha = 1
+                } else {
+                    self.loginButton.alpha = 0.5
+                }
+            })
+            .addDisposableTo(disposeBag)
+        
         
         inputContainerView.addSubview(usernameTextField)
         inputContainerView.addSubview(passwordTextField)
@@ -143,7 +175,7 @@ class LoginViewController: UIViewControllerWithBackButton {
     }
     
     func handleLoginTap() {
-
+        viewModel.signIn(email: usernameTextField.text!, password: passwordTextField.text!)
     }
     
     func handleResetPasswordTap() {
@@ -188,10 +220,24 @@ class LoginViewController: UIViewControllerWithBackButton {
         }
     
         stackView.snp.makeConstraints { (make) -> Void in
-            make.top.bottom.equalTo(view).offset(32)
+            make.top.equalTo(view).offset(32)
             make.left.equalTo(view).offset(32)
             make.right.equalTo(view).offset(-32)
             make.height.equalTo(view).dividedBy(2)
         }
     }
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField === usernameTextField {
+            passwordTextField.becomeFirstResponder()
+        }
+        else {
+            textField.resignFirstResponder()
+        }
+        return false
+    }
+    
 }

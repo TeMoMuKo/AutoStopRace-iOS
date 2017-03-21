@@ -10,8 +10,12 @@ import Foundation
 
 protocol ServiceProviderType: class {
     var csvService: CsvServiceType { get }
+    var authService: AuthServiceType { get }
+    var userDefaultsService: UserDefaultsServiceType { get }
 }
 
 final class ServiceProvider: ServiceProviderType {
     lazy var csvService: CsvServiceType = CsvService(provider: self)
+    lazy var authService: AuthServiceType = AuthService(provider: self)
+    lazy var userDefaultsService: UserDefaultsServiceType = UserDefaultsService(provider: self)
 }

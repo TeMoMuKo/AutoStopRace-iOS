@@ -12,7 +12,7 @@ import UIKit
 final class DashboardCoordinator: Coordinator {
     
     var appCoordinator: AppCoordinator?
-    
+
     convenience init(navigationController: UINavigationController?, appCoordinator: AppCoordinator?) {
         self.init(navigationController: navigationController)
         

@@ -10,8 +10,9 @@ import Foundation
 import UIKit
 
 final class AppCoordinator: Coordinator {
+    let serviceProvider = ServiceProvider()
 
-    func start() {
+    func start() {        
         let coordinator = DashboardCoordinator(navigationController: navigationController, appCoordinator: self)
         coordinator.start()
         childCoordinators.append(coordinator)
