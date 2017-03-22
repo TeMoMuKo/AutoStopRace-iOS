@@ -35,3 +35,11 @@
 
 "search_hint" = "Szukane wyrażenie...";
 "hint_enter_team_number" = "Wpisz numer drużyny...";
+
+"about_app" = "Aplikację przygotował Robert Ignasiak we współpracy z członkami koła naukowego TeMoMuKo działającego przy Politechnice Wrocławskiej.";
+"msg_rate_app_question" = "Spodobała Ci się ta aplikacja?";
+"msg_rate_app" = "Oceń ją w sklepie App Store!";
+"action_rate" = "Oceń aplikację";
+
+
+"app_store_error_title"  = "Nie można otworzyć App Store";
