@@ -69,4 +69,4 @@ codesigndoc_exports/146cd6f8-1e74-46f0-bec4-a60611ba9346.iOSTeamProvisioningProf
 codesigndoc_exports/Identities.p12
 codesigndoc_exports/xcodebuild-output.log
 
-EnvironmentVariables.swift
+Keys.plist
