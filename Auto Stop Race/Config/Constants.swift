@@ -7,7 +7,7 @@
 //
 
 struct ApiConfig {
-    static let baseURL = "http://asrapidev.robert-i.com"
+    static let baseURL = "https://api.autostoprace.pl"
     static let headerFieldToken = "access-token"
     static let headerFieldClient = "client"
     static let headerFieldUid = "uid"
@@ -31,7 +31,9 @@ struct UIConfig {
 }
 
 struct GMSConfig {
-    
+    static let initialLatitude = 51.108029
+    static let initialLongitude = 14.270389
+    static let initialZoom = 5.0
 }
 
 struct PhrasebookConfig {
@@ -40,4 +42,11 @@ struct PhrasebookConfig {
 
 struct ContactConfig {
     static let csvAssetName = "contact_data"
+}
+
+// TODO Change YOUR_APP_ID_HERE
+ 
+struct AboutConfig {
+    static let appStoreRateUrl = "itms-apps://itunes.apple.com/gb/app/idYOUR_APP_ID_HERE?action=write-review&mt=8"
+    static let appStoreShareUrl = "https://itunes.apple.com/us/app/myapp/idYOUR_APP_ID_HERE?ls=1&mt=8"
 }

@@ -179,7 +179,19 @@ class LoginViewController: UIViewControllerWithBackButton {
     }
     
     func handleResetPasswordTap() {
+        let alert = UIAlertController(title: "input_email_for_reset_message", message: NSLocalizedString("input_email_for_reset", comment: ""), preferredStyle: .alert)
         
+        alert.addTextField(configurationHandler: { (textField) -> Void in
+            textField.placeholder = NSLocalizedString("input_email_for_reset_placeholder", comment: "")
+        })
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+            let textField = alert.textFields![0] as UITextField
+            let tempStyle = textField.text!
+            print(tempStyle)
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
     func setupConstraints() {

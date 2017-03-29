@@ -37,7 +37,7 @@ class MenuViewController: NSObject, UICollectionViewDelegateFlowLayout {
         
         collectionView.register(MenuCell.self, forCellWithReuseIdentifier: MenuCell.Identifier)
 
-        viewModel.menu
+        viewModel.menu.asObservable()
             .bindTo(collectionView.rx.items(cellIdentifier: MenuCell.Identifier, cellType:MenuCell.self)) { row, menu, cell in
                 cell.menu = menu
         }

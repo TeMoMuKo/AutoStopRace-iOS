@@ -20,7 +20,7 @@ final class LoginViewModel {
     
     private let disposeBag = DisposeBag()
     
-    private weak var delegate: LoginViewControllerDelegate?
+    private var delegate: LoginViewControllerDelegate?
     
     var inputBackgroundColor: Driver<UIColor>!
     var credentialsValid: Driver<Bool>!
@@ -61,6 +61,8 @@ final class LoginViewModel {
                 
                     if let user = try response.mapObject(User.self) as? User {
                         self.serviceProvider.userDefaultsService.setUserData(user: user)
+                        self.serviceProvider.authService.loginStatus().value = .logged
+                        self.handleLogin()
                     }
                     
                 } catch {
@@ -70,5 +72,13 @@ final class LoginViewModel {
                 self.error.onNext("Request error. Try again later.")
             }
         })
+    }
+    
+    func resetPassword() {
+        
+    }
+    
+    func handleLogin() {
+        self.delegate!.loginButtonTapped()
     }
 }

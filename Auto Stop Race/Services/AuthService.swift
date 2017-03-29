@@ -18,20 +18,50 @@ enum AutenticationError: Error {
 enum AutenticationStatus {
     case none
     case error(AutenticationError)
+    case logged
     case user(String)
 }
 
 protocol AuthServiceType {
-    func login(_ username:String, password: String) -> Observable<AutenticationStatus>
+    var isUserLoggedIn: Bool { get }
+    func loginStatus() -> Variable<AutenticationStatus>
+    func validateToken()
     func logout()
 }
 
 final class AuthService: BaseService, AuthServiceType {
-    let status = Variable(AutenticationStatus.none)
-    
-    func login(_ username: String, password: String) -> Observable<AutenticationStatus> {
+    private let status = Variable(AutenticationStatus.none)
+    var isUserLoggedIn: Bool = false
+    private let disposeBag = DisposeBag()
 
-        return Variable(AutenticationStatus.none).asObservable()
+    override init(provider: ServiceProviderType) {
+        super.init(provider: provider)
+
+        status
+            .asObservable()
+            .subscribe(onNext: { [unowned self] status in
+                switch status {
+                case .none:
+                    self.isUserLoggedIn = false
+                case .logged:
+                    self.isUserLoggedIn = true
+                default:
+                    self.isUserLoggedIn = false
+                }
+            })
+            .addDisposableTo(disposeBag)
+    }
+    
+    func loginStatus() -> Variable<AutenticationStatus> {
+        return status
+    }
+    
+    func validateToken() {
+        if self.provider.userDefaultsService.getUserData() != nil {
+            status.value = .logged
+        } else {
+            status.value = .none
+        }
     }
     
     func logout() {

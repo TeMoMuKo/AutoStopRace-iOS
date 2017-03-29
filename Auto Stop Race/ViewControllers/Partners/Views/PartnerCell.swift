@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class PartnerCell: BaseCell {
+class PartnerCell: BaseUICollectionCell {
     
     static let Identifier = "PartnerCell"
     

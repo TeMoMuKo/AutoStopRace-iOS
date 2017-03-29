@@ -58,6 +58,7 @@ final class UserDefaultsService: BaseService, UserDefaultsServiceType {
         self.defaults.removeObject(forKey: UserDefaultsKeys.authToken)
         self.defaults.removeObject(forKey: UserDefaultsKeys.authUid)
         self.defaults.removeObject(forKey: UserDefaultsKeys.authClient)
+        self.defaults.removeObject(forKey: UserDefaultsKeys.currentUser)
     }
 
     func setAuthorizationHeaders(httpResponse: HTTPURLResponse) {

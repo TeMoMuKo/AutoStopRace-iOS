@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import SnapKit
 
-class ContactCell: BaseCell {
+class ContactCell: BaseUICollectionCell {
     
     static let Identifier = "ContactCell"
     

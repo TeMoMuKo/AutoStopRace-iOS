@@ -8,20 +8,27 @@
 
 import Foundation
 import UIKit
+import RxReachability
+import ReachabilitySwift
 
 final class AppCoordinator: Coordinator {
     let serviceProvider = ServiceProvider()
+    let reachability = Reachability()
 
-    func start() {        
-        let coordinator = DashboardCoordinator(navigationController: navigationController, appCoordinator: self)
+    func start() {
+        try? reachability?.startNotifier()
+        
+        serviceProvider.authService.validateToken()
+        
+        let coordinator = DashboardCoordinator(navigationController: navigationController, appCoordinator: self, serviceProvider: serviceProvider)
         coordinator.start()
         childCoordinators.append(coordinator)
-        
-        let menuCoordinator = MenuCoordinator(navigationController: navigationController)
+    
+        let menuCoordinator = MenuCoordinator(navigationController: navigationController, appCoordinator: self, serviceProvider: serviceProvider)
         menuCoordinator.start()
     }
     
-    func  dashboardCoordinatorCompleted(coordinator: DashboardCoordinator) {
+    func dashboardCoordinatorCompleted(coordinator: DashboardCoordinator) {
         if let index = childCoordinators.index(where: { $0 === coordinator }) {
             childCoordinators.remove(at: index)
         }
@@ -30,4 +37,15 @@ final class AppCoordinator: Coordinator {
 
 
 
+extension AppCoordinator: SettingsViewControllerDelegate {
+    
+    func logoutButtonTapped() {
+        serviceProvider.userDefaultsService.clearAuth()
+        self.serviceProvider.authService.logout()
+        _ = self.navigationController?.popViewController(animated: false)
+        let coordinator = DashboardCoordinator(navigationController: navigationController, appCoordinator: self, serviceProvider: serviceProvider)
+        coordinator.start()
+    }
+    
+}
 

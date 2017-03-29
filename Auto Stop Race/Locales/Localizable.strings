@@ -5,9 +5,12 @@
   Created by Robert Ignasiak on 16.02.2017.
   Copyright © 2017 Torianin. All rights reserved.
 */
+
+// App
 "app_version" = "Wersja 1.0.0";
 "app_name" = "Auto Stop Race";
 
+// Menu
 "title_my_team_locations" = "Lokalizacje mojego teamu";
 "title_teams" = "Mapa lokalizacji";
 "title_campus" = "Mapa campingu";
@@ -18,24 +21,31 @@
 "title_about" = "O aplikacji";
 "title_login" = "Logowanie";
 
+// Dashboard
 "dashboard_login_button" = "PRZEJDŹ DO LOGOWANIA";
 "dashboard_contact_button" = "KONTAKT DO ORGANIZATORÓW";
 
+// Login
 "hint_email" = "Adres e-mail";
 "hint_password" = "Hasło";
 "action_login" = "Zaloguj";
 "action_reset_pass" = "Przypomnij mi hasło";
 "forgotten_password" = "Przypomnij mi hasło";
-"title_activity_reset_pass" = "Resetowanie hasła";
-
 "menu_help" = "Pomoc";
 "msg_login_info" = "Zaloguj się za pomocą danych ustalonych przy aktywacji swojego konta. Instrukcje znajdują się w mailu od organizatorów";
 "ok" = "OK";
 
+// Reset pass
+"title_activity_reset_pass" = "Resetowanie hasła";
+"input_email_for_reset_message" = "Podaj adres email, na który zarejestrowane jest konto";
+"input_email_for_reset_title" = "Resetowanie hasła";
+"input_email_for_reset_placeholder" = "Adres e-mail";
 
+// Phrasebook
 "search_hint" = "Szukane wyrażenie...";
 "hint_enter_team_number" = "Wpisz numer drużyny...";
 
+// About
 "about_app" = "Aplikację przygotował Robert Ignasiak we współpracy z członkami koła naukowego TeMoMuKo działającego przy Politechnice Wrocławskiej.";
 "msg_rate_app_question" = "Spodobała Ci się ta aplikacja?";
 "msg_rate_app" = "Oceń ją w sklepie App Store!";
@@ -43,3 +53,21 @@
 
 
 "app_store_error_title"  = "Nie można otworzyć App Store";
+
+// Settings
+"pref_main_settings" = "Główne";
+"pref_logout" = "Wyloguj się";
+"msg_logout_question" = "Czy na pewno chcesz się wylogować?";
+"msg_logout_info" = "Wszystkie lokalizacje niewysłane na serwer zostaną usunięte.";
+"msg_cancel" = "Anuluj";
+"msg_logout" = "Wyloguj";
+
+// Post location
+"title_post_location" = "Wysyłanie lokalizacji";
+"msg_your_location" = "Twoja przybliżona lokalizacja";
+"msg_establishing_approximate_location" = "Trwa ustalanie przybliżonej lokalizacji…";
+"saved_location" = "Zapisano lokalizację";
+"hint_message" = "Opcjonalna relacja (max 160 znaków)";
+"location_fail" = "Brak sygnału GPS";
+"add_photo_title" = "Dodaj zdjęcie";
+"add_location_button_title" = "Wyślij lokalizację";

@@ -19,5 +19,5 @@ class Menu: NSObject {
 }
 
 enum MenuDestination: Int {
-    case teams = 0, locations, campus, phrasebook, contact, partners, settings, about
+    case teams, locations, campus, phrasebook, contact, partners, about, settings
 }

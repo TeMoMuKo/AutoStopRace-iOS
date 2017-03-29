@@ -88,6 +88,7 @@ class AboutViewController: UIViewControllerWithMenu {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBarTitle()
+        setupShareBarButton()
         setupStackView()
         setupConstraints()
     }
@@ -106,7 +107,6 @@ class AboutViewController: UIViewControllerWithMenu {
         stackView.addArrangedSubview(rateAppButton)
         scrollView.addSubview(stackView)
         view.addSubview(scrollView)
-        setupShareBarButton()
         self.view.layoutIfNeeded()
 
     }
@@ -118,10 +118,9 @@ class AboutViewController: UIViewControllerWithMenu {
         navigationItem.rightBarButtonItems = [menuBarButtonItem]
     }
     
-    // TODO Change YOUR_APP_ID_HERE
 
     func handleShareTap() {
-        if let name = NSURL(string: "https://itunes.apple.com/us/app/myapp/idYOUR_APP_ID_HERE?ls=1&mt=8") {
+        if let name = NSURL(string: AboutConfig.appStoreShareUrl) {
             let objectsToShare = [name]
             let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
             self.present(activityVC, animated: true, completion: nil)
@@ -158,12 +157,9 @@ class AboutViewController: UIViewControllerWithMenu {
         }
     }
     
-    // TODO Change YOUR_APP_ID_HERE
-    
     func rateAppButtonTapped() {
-        let openAppStoreForRating = "itms-apps://itunes.apple.com/gb/app/idYOUR_APP_ID_HERE?action=write-review&mt=8"
-        if UIApplication.shared.canOpenURL(URL(string: openAppStoreForRating)!) {
-            UIApplication.shared.openURL(URL(string: openAppStoreForRating)!)
+        if UIApplication.shared.canOpenURL(URL(string: AboutConfig.appStoreRateUrl)!) {
+            UIApplication.shared.openURL(URL(string: AboutConfig.appStoreRateUrl)!)
         } else {
             showAlert(title: NSLocalizedString("app_store_error_title", comment: ""), message: "")
         }
