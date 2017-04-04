@@ -26,6 +26,11 @@ class PostNewLocationViewController: FormViewControllerWithBackButton, CLLocatio
     
     var isFormValid = false
     
+    var latitude: Double?
+    var longitude: Double?
+    var message: String?
+    var image: String?
+    
     convenience init(viewModel: PostNewLocationViewModel) {
         self.init()
         self.viewModel = viewModel
@@ -65,26 +70,26 @@ class PostNewLocationViewController: FormViewControllerWithBackButton, CLLocatio
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation:CLLocation = locations[0] as CLLocation
-
-        let coordinations = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude,longitude: userLocation.coordinate.longitude)
+        latitude = userLocation.coordinate.latitude
+        longitude = userLocation.coordinate.longitude
+        let coordinate = CLLocationCoordinate2D(latitude: latitude!, longitude: longitude!)
     
         geocoder.reverseGeocodeLocation(userLocation, completionHandler: { placemarks, error in
             if let addressDict = placemarks?[0].addressDictionary {
                 if let formattedAddress = addressDict["FormattedAddressLines"] as? [String] {
                     self.form.rowBy(tag: "location_row")?.title = formattedAddress.joined(separator: ", ")
                     self.form.rowBy(tag: "location_row")?.reload()
-                    self.form.sectionBy(tag: "location_section")?.footer?.title = "\(coordinations.dms.latitude), \(coordinations.dms.longitude)"
+                    self.form.sectionBy(tag: "location_section")?.footer?.title = "\(coordinate.dms.latitude), \(coordinate.dms.longitude)"
                     self.form.sectionBy(tag: "location_section")?.reload()
                     self.form.rowBy(tag: "add_location_button_row")?.disabled = false
                     self.form.rowBy(tag: "add_location_button_row")?.updateCell()
 
                 }
             } else {
-                self.form.rowBy(tag: "location_row")?.title = "\(coordinations.dms.latitude), \(coordinations.dms.longitude)"
+                self.form.rowBy(tag: "location_row")?.title = "\(coordinate.dms.latitude), \(coordinate.dms.longitude)"
                 self.form.rowBy(tag: "location_row")?.reload()
             }
         })
-
         manager.stopUpdatingLocation()
     }
     
@@ -129,11 +134,14 @@ class PostNewLocationViewController: FormViewControllerWithBackButton, CLLocatio
                         $0.title = NSLocalizedString("add_location_button_title", comment: "")
                     }
                     .onCellSelection { [weak self] (cell, row) in
-                        self?.showAlert()
+                        self?.postNewLocation()
                     }
     }
     
-    func showAlert() {
+    func postNewLocation() {
+        let newLocation = CreateLocationRecordRequest(latitude: latitude!, longitude: longitude!)
+        viewModel.postNewLocation(newLocation: newLocation)
+        
         let alertController = UIAlertController(title: "OnCellSelection", message: "Button Row Action", preferredStyle: .alert)
         let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(defaultAction)

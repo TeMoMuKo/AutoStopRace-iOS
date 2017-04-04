@@ -18,7 +18,6 @@ protocol LoginViewControllerDelegate: class {
 
 class LoginViewController: UIViewControllerWithBackButton {
     
-    
     let usernameTextField: UITextField = {
         let textField = UITextField()
         textField.backgroundColor = UIColor.white

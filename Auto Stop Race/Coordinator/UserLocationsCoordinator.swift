@@ -22,9 +22,13 @@ final class UserLocationsCoordinator: Coordinator {
     }
     
     func start() {
-        let viewModel = UserLocationsViewModel(delegate: self)
+        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+
+        let viewModel = UserLocationsViewModel(delegate: self, provider: serviceProvider!)
         let viewController = UserLocationsViewController(viewModel: viewModel)
-        navigationController?.show(viewController, sender: nil)
+        navigationController?.viewControllers = [viewController]
+        appDelegate.window?.rootViewController = navigationController
+        appDelegate.window?.makeKeyAndVisible()
     }
 }
 

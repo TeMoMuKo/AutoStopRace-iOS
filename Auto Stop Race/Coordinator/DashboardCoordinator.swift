@@ -8,12 +8,14 @@
 
 import Foundation
 import UIKit
+import RxSwift
 
 final class DashboardCoordinator: Coordinator {
     
     var appCoordinator: AppCoordinator?
     var serviceProvider: ServiceProvider?
-    
+    private let disposeBag = DisposeBag()
+
     convenience init(navigationController: UINavigationController?, appCoordinator: AppCoordinator?, serviceProvider: ServiceProvider ) {
         self.init(navigationController: navigationController)
         
@@ -22,15 +24,37 @@ final class DashboardCoordinator: Coordinator {
     }
     
     func start() {
-        if serviceProvider!.authService.isUserLoggedIn {
-            let coordinator = UserLocationsCoordinator(navigationController: navigationController, appCoordinator: self.appCoordinator, serviceProvider:serviceProvider!)
-            coordinator.start()
-            childCoordinators.append(coordinator)
-        } else {
-            let viewModel = DashboardViewModel(delegate: self)
-            let viewController = DashboardViewController(viewModel: viewModel)
-            navigationController?.show(viewController, sender: nil)
-        }
+        serviceProvider!.authService.loginStatus()
+            .asObservable()
+            .subscribe(onNext: { [weak self] status in
+                guard let `self` = self else { return }
+
+                switch status {
+                case .none:
+                    self.showDashboard()
+                case .logged:
+                    self.showUserLocations()
+                default:
+                    self.showDashboard()
+                }
+            })
+            .addDisposableTo(disposeBag)
+    }
+    
+    func showDashboard() {
+        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        let viewModel = DashboardViewModel(delegate: self)
+        let viewController = DashboardViewController(viewModel: viewModel)
+        navigationController?.viewControllers = [viewController]
+        appDelegate.window?.rootViewController = navigationController
+        appDelegate.window?.makeKeyAndVisible()
+    }
+    
+    func showUserLocations() {
+        let coordinator = UserLocationsCoordinator(navigationController: navigationController, appCoordinator: self.appCoordinator, serviceProvider:serviceProvider!)
+        coordinator.start()
+        self.childCoordinators.append(coordinator)
     }
     
     func stop() {

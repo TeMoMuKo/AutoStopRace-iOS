@@ -51,7 +51,9 @@ final class LoginViewModel {
     }
     
     func signIn(email: String, password: String) {
-        apiProvider.request(.singIn(email: email, password: password), completion: { [unowned self] result in
+        apiProvider.request(.singIn(email: email, password: password), completion: { [weak self] result in
+            guard let `self` = self else { return }
+            
             switch result {
             case let .success(response):
                 do {
@@ -63,8 +65,8 @@ final class LoginViewModel {
                         self.serviceProvider.userDefaultsService.setUserData(user: user)
                         self.serviceProvider.authService.loginStatus().value = .logged
                         self.handleLogin()
+                        Toast.showPositiveMessage(message: "Zalogowany jako \(user.firstName)")
                     }
-                    
                 } catch {
                     self.error.onNext("Parsing error. Try again later.")
                 }

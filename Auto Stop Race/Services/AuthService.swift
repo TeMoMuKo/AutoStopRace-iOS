@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import Moya
 import RxSwift
+import Moya_ObjectMapper
 
-enum AutenticationError: Error {
+enum AutenticationError: Swift.Error {
     case server
     case badReponse
     case badCredentials
@@ -32,6 +34,7 @@ protocol AuthServiceType {
 final class AuthService: BaseService, AuthServiceType {
     private let status = Variable(AutenticationStatus.none)
     var isUserLoggedIn: Bool = false
+    
     private let disposeBag = DisposeBag()
 
     override init(provider: ServiceProviderType) {
@@ -57,11 +60,44 @@ final class AuthService: BaseService, AuthServiceType {
     }
     
     func validateToken() {
-        if self.provider.userDefaultsService.getUserData() != nil {
-            status.value = .logged
+        if self.provider.userDefaultsService.getAuthAccessToken() != nil {
+            checkTokenLifespan()
         } else {
             status.value = .none
         }
+    }
+    
+    func checkTokenLifespan() {
+        
+        let endpointClosure = {  (target: AsrApi) ->  Endpoint<AsrApi> in
+            let defaultEndpoint = MoyaProvider.defaultEndpointMapping(for: target)
+            return defaultEndpoint.adding(newHTTPHeaderFields: ["access-token": self.provider.userDefaultsService.getAuthAccessToken()!, "client":self.provider.userDefaultsService.getAuthClient()!, "uid":self.provider.userDefaultsService.getAuthUid()!])
+        }
+        
+        let apiProvider = MoyaProvider<AsrApi>(endpointClosure: endpointClosure)
+        
+        apiProvider.request(.validateToken, completion: { [unowned self] result in
+            switch result {
+            case let .success(response):
+                do {
+                    if let httpResponse = response.response as? HTTPURLResponse {
+                        self.provider.userDefaultsService.setAuthorizationHeaders(httpResponse: httpResponse)
+                    }
+                    
+                    if let user = try response.mapObject(User.self) as? User {
+                        self.provider.userDefaultsService.setUserData(user: user)
+                        Toast.showPositiveMessage(message: "Zalogowany jako \(user.firstName)")
+                    }
+                    
+                    self.status.value = .logged
+                } catch {
+                    
+                }
+            case .failure:
+                self.status.value = .none
+                break
+            }
+        })
     }
     
     func logout() {
