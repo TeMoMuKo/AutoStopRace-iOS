@@ -9,12 +9,32 @@
 import Moya
 import Alamofire
 
-enum AsrApi {
-    case singIn(email: String, password: String)
-    case validateToken
-    case postNewLocation(location: CreateLocationRecordRequest)
-    case userLocations(String)
+public enum HttpStatus: Int{
+    case OK = 200
+    case Created = 201
+    
+    case BadRequest = 400
+    case Unauthorized = 401
+    case Forbidden = 403
+    case NotFound = 404
+    
+    case InternalServerError = 500
+    case BadGateway = 502
+    
+    public var isSuccess:Bool{
+        return self.rawValue >= 200 && self.rawValue <= 299
+    }
+    
+    public var isClientError:Bool{
+        return self.rawValue >= 400 && self.rawValue <= 499
+    }
+    
+    public var isServerError:Bool{
+        return self.rawValue >= 500 && self.rawValue <= 599
+    }
 }
+
+
 
 struct JsonDictionaryEncoding: Moya.ParameterEncoding {
     
@@ -30,6 +50,15 @@ struct JsonDictionaryEncoding: Moya.ParameterEncoding {
     
 }
 
+enum AsrApi {
+    case singIn(email: String, password: String)
+    case signOut
+    case validateToken
+    case resetPassword(email: String, redirectUrl: String)
+    case postNewLocation(location: CreateLocationRecordRequest)
+    case userLocations(String)
+}
+
 extension AsrApi: TargetType {
     
     var baseURL: URL { return URL(string: ApiConfig.baseURL)! }
@@ -37,13 +66,18 @@ extension AsrApi: TargetType {
     var path: String {
         switch self {
         case .singIn(_,_):
-            return "/api/v2/auth/sign_in"
+            return "auth/sign_in"
+        case .signOut:
+            return "auth/sign_out"
         case .validateToken:
-            return "/api/v2/auth/validate_token"
+            return "auth/validate_token"
+        case .resetPassword:
+            return "auth/password"
         case .postNewLocation(_):
-            return "/api/v2/locations"
+            return "locations"
         case .userLocations(let slug):
-            return "/api/v2/teams/\(slug)/locations"
+            return "teams/\(slug)/locations"
+            
             
         }
     }
@@ -52,17 +86,21 @@ extension AsrApi: TargetType {
         switch self {
         case .validateToken, .userLocations(_):
             return .get
-        case .singIn, .postNewLocation:
+        case .signOut:
+            return .delete
+        case .singIn, .postNewLocation, .resetPassword:
             return .post
         }
     }
         
     var parameters: [String: Any]? {
         switch self {
-        case .validateToken, .userLocations(_):
+        case .signOut, .validateToken, .userLocations(_):
             return nil
         case .singIn(let email, let password):
             return ["email": email, "password": password]
+        case .resetPassword(let email, let redirectUrl):
+            return ["email": email, "redirect_url": redirectUrl]
         case .postNewLocation(let location):
             return location.toDictionary()
         }
@@ -73,23 +111,23 @@ extension AsrApi: TargetType {
         switch self {
         case .postNewLocation:
             return JsonDictionaryEncoding.default
-        case .validateToken:
+        case .signOut, .validateToken:
             return URLEncoding.default
-        case .singIn, .userLocations(_):
+        case .singIn, .userLocations(_), .resetPassword:
             return JSONEncoding.default
         }
     }
     
     var sampleData: Data {
         switch self {
-        case .validateToken, .singIn, .postNewLocation, .userLocations(_):
+        case .signOut, .validateToken, .singIn, .postNewLocation, .userLocations(_), .resetPassword:
             return "".utf8Encoded
         }
     }
     
     var task:Task {
         switch self {
-        case .singIn, .validateToken, .postNewLocation, .userLocations(_):
+        case .signOut, .singIn, .validateToken, .postNewLocation, .userLocations(_), .resetPassword:
             return .request
         }
     }

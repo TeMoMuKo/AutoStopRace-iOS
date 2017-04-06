@@ -76,7 +76,9 @@ final class AuthService: BaseService, AuthServiceType {
         
         let apiProvider = MoyaProvider<AsrApi>(endpointClosure: endpointClosure)
         
-        apiProvider.request(.validateToken, completion: { [unowned self] result in
+        apiProvider.request(.validateToken, completion: { [weak self] result in
+            guard let `self` = self else { return }
+            
             switch result {
             case let .success(response):
                 do {
@@ -86,7 +88,7 @@ final class AuthService: BaseService, AuthServiceType {
                     
                     if let user = try response.mapObject(User.self) as? User {
                         self.provider.userDefaultsService.setUserData(user: user)
-                        Toast.showPositiveMessage(message: "Zalogowany jako \(user.firstName)")
+                        Toast.showPositiveMessage(message: "Zalogowany jako \(user.firstName) \(user.lastName)")
                     }
                     
                     self.status.value = .logged

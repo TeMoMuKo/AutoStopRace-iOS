@@ -25,7 +25,18 @@
 "dashboard_login_button" = "PRZEJDŹ DO LOGOWANIA";
 "dashboard_contact_button" = "KONTAKT DO ORGANIZATORÓW";
 
+// HttpStatusErrors
+
+"error_400" = "Nieprawidłowe żądanie";
+"error_401" = "Nieprawidłowe dane logowania";
+"error_403" = "Brak uprawnień";
+"error_404" = "Coś się popsuło. Spróbuj ponownie później…";
+"error_500" = "Błąd połączenia z serwerem";
+"error_502" = "Spróbuj ponownie za chwilę.";
+
 // Login
+"title_activity_login" = "Logowanie";
+"msg_after_login" = "Zalogowany jako ";
 "hint_email" = "Adres e-mail";
 "hint_password" = "Hasło";
 "action_login" = "Zaloguj";

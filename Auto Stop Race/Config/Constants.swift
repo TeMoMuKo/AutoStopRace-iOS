@@ -7,10 +7,11 @@
 //
 
 struct ApiConfig {
-    static let baseURL = "https://api.autostoprace.pl"
+    static let baseURL = "https://api.autostoprace.pl/api/v2/"
     static let headerFieldToken = "access-token"
     static let headerFieldClient = "client"
     static let headerFieldUid = "uid"
+    static let apiResetPassRedirectUrl = "http://autostoprace.pl"
 }
 
 struct UserDefaultsKeys {

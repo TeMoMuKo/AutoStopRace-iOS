@@ -33,7 +33,7 @@ class UserLocationCell: BaseUICollectionCell {
     var countryLabel:UILabel = {
         let label = UILabel()
         label.text = ""
-        label.font = UIFont.systemFont(ofSize: 25, weight: UIFontWeightBold)
+        label.font = UIFont.systemFont(ofSize: 17, weight: UIFontWeightBold)
         label.textAlignment = .center
         label.textColor = UIColor.white
         label.backgroundColor = UIColor.blueMenu

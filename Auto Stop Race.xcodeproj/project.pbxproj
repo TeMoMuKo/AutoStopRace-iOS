@@ -32,6 +32,8 @@
 		E27CB7AF1E586AAB006B2396 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27CB7AE1E586AAB006B2396 /* ContactCell.swift */; };
 		E27CB7B21E586B59006B2396 /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27CB7B11E586B59006B2396 /* ContactViewModel.swift */; };
 		E28622901E5AECAA008938FC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E286228F1E5AECAA008938FC /* LoginViewModel.swift */; };
+		E288730F1E95DFB20005237D /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = E288730E1E95DFB20005237D /* ProgressHUD.swift */; };
+		E28873111E95F9910005237D /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28873101E95F9910005237D /* ErrorResponse.swift */; };
 		E28C83581E93F52000878BEB /* LocationRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28C83571E93F52000878BEB /* LocationRecord.swift */; };
 		E29293B91E8108D80083A1DD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29293B81E8108D80083A1DD /* User.swift */; };
 		E29293BC1E8223350083A1DD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29293BB1E8223350083A1DD /* SettingsViewController.swift */; };
@@ -132,6 +134,8 @@
 		E27CB7AE1E586AAB006B2396 /* ContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactCell.swift; path = Contact/Views/ContactCell.swift; sourceTree = "<group>"; };
 		E27CB7B11E586B59006B2396 /* ContactViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactViewModel.swift; path = Contact/ViewModel/ContactViewModel.swift; sourceTree = "<group>"; };
 		E286228F1E5AECAA008938FC /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = Login/ViewModel/LoginViewModel.swift; sourceTree = "<group>"; };
+		E288730E1E95DFB20005237D /* ProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgressHUD.swift; path = "Auto Stop Race/Views/ProgressHUD.swift"; sourceTree = SOURCE_ROOT; };
+		E28873101E95F9910005237D /* ErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		E28C83571E93F52000878BEB /* LocationRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationRecord.swift; sourceTree = "<group>"; };
 		E29293B81E8108D80083A1DD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E29293BB1E8223350083A1DD /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Settings/SettingsViewController.swift; sourceTree = "<group>"; };
@@ -575,6 +579,7 @@
 				E29293B81E8108D80083A1DD /* User.swift */,
 				E2C0E2041E8CD53A002511F5 /* CreateLocationRequest.swift */,
 				E28C83571E93F52000878BEB /* LocationRecord.swift */,
+				E28873101E95F9910005237D /* ErrorResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -666,6 +671,7 @@
 				E2D2EB3E1E5AF6B000C56A61 /* UIViewControllerWithBackButton.swift */,
 				E24420761E84CE2700556FDC /* Toast.swift */,
 				E29F1BD81E8B106F006D8178 /* FormViewControllerWithBackButton.swift */,
+				E288730E1E95DFB20005237D /* ProgressHUD.swift */,
 			);
 			name = BaseViews;
 			sourceTree = "<group>";
@@ -984,6 +990,7 @@
 				E2C239D21E594D33003818FB /* LoginViewController.swift in Sources */,
 				E27CB7AF1E586AAB006B2396 /* ContactCell.swift in Sources */,
 				E29F88991E5EFFC1008F1F46 /* LocationsCoordinator.swift in Sources */,
+				E28873111E95F9910005237D /* ErrorResponse.swift in Sources */,
 				E2D011521E5D95DD0021936A /* CsvService.swift in Sources */,
 				E29F889E1E5F08AF008F1F46 /* Constants.swift in Sources */,
 				E28C83581E93F52000878BEB /* LocationRecord.swift in Sources */,
@@ -997,6 +1004,7 @@
 				E2D011571E5D9DC50021936A /* PhraseViewModelType.swift in Sources */,
 				E2D011501E5D95AB0021936A /* BaseService.swift in Sources */,
 				E2D9A2441E5534DA003324F7 /* AppCoordinator.swift in Sources */,
+				E288730F1E95DFB20005237D /* ProgressHUD.swift in Sources */,
 				E27CB7AC1E5869AD006B2396 /* ContactViewController.swift in Sources */,
 				E27CB7A81E5867C3006B2396 /* LocationsViewController.swift in Sources */,
 				E29F1BE11E8B1D8C006D8178 /* ImageRow.swift in Sources */,
