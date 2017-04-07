@@ -33,4 +33,10 @@ extension UIColor {
             return UIColor.init(netHex: 0xceced2)
         }
     }
+    
+    open class var success: UIColor {
+        get {
+            return UIColor.init(netHex: 0x5cb85c)
+        }
+    }
 }

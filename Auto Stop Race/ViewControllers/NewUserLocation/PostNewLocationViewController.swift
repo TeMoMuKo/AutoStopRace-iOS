@@ -140,12 +140,6 @@ class PostNewLocationViewController: FormViewControllerWithBackButton, CLLocatio
     
     func postNewLocation() {
         let newLocation = CreateLocationRecordRequest(latitude: latitude!, longitude: longitude!)
-        viewModel.postNewLocation(newLocation: newLocation)
-        
-        let alertController = UIAlertController(title: "OnCellSelection", message: "Button Row Action", preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alertController.addAction(defaultAction)
-        present(alertController, animated: true)
-        
+        viewModel.postNewLocation(newLocation: newLocation)  
     }
 }

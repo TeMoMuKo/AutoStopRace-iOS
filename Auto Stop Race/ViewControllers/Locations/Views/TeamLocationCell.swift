@@ -1,8 +1,8 @@
 //
-//  UserLocationCell.swift
+//  TeamLocationCell.swift
 //  Auto Stop Race
 //
-//  Created by Robert Ignasiak on 24.03.2017.
+//  Created by Robert Ignasiak on 07.04.2017.
 //  Copyright © 2017 Torianin. All rights reserved.
 //
 
@@ -10,27 +10,27 @@ import Foundation
 import UIKit
 import SnapKit
 
-class UserLocationCell: BaseUICollectionCell {
+class TeamLocationCell: BaseUICollectionCell {
     
-    static let Identifier = "UserLocationCell"
+    static let Identifier = "TeamLocationCell"
     
-    var locationRecord: LocationRecord? {
+    var team: Team? {
         didSet {
-            if let locationCountry = locationRecord?.country_code {
-                countryLabel.text =  locationCountry
+            if let teamNumber = team?.teamNumber {
+                teamNumberLabel.text = "\(teamNumber)"
             }
             
-            if let locationAdress = locationRecord?.address {
-                addressLabel.text = locationAdress
+            if let latitude = team?.lastLocation?.latitude, let longitude = team?.lastLocation?.longitude  {
+                addressLabel.text = "\(latitude) \(longitude)"
             }
             
-            if let locationMessage = locationRecord?.message {
-                messageLabel.text = locationMessage
+            if let teamLastLocationTime = team?.lastLocation?.created_at {
+                timeLabel.text = teamLastLocationTime.toString()
             }
         }
     }
     
-    var countryLabel:UILabel = {
+    var teamNumberLabel:UILabel = {
         let label = UILabel()
         label.text = ""
         label.font = UIFont.systemFont(ofSize: 17, weight: UIFontWeightBold)
@@ -50,7 +50,7 @@ class UserLocationCell: BaseUICollectionCell {
         return label
     }()
     
-    var messageLabel: UILabel = {
+    var timeLabel: UILabel = {
         let label = UILabel()
         label.text = ""
         label.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightLight)
@@ -66,28 +66,28 @@ class UserLocationCell: BaseUICollectionCell {
     
     override func setupViews() {
         super.setupViews()
-        addSubview(countryLabel)
+        addSubview(teamNumberLabel)
         addSubview(addressLabel)
-        addSubview(messageLabel)
+        addSubview(timeLabel)
         addSubview(separator)
         
         setupConstraints()
     }
     
     func setupConstraints() {
-        countryLabel.snp.makeConstraints { (make) -> Void in
+        teamNumberLabel.snp.makeConstraints { (make) -> Void in
             make.left.equalTo(self).offset(15)
             make.centerY.equalTo(self)
             make.height.width.equalTo(50)
         }
         
         addressLabel.snp.makeConstraints { (make) -> Void in
-            make.left.equalTo(countryLabel.snp.right).offset(15)
+            make.left.equalTo(teamNumberLabel.snp.right).offset(15)
             make.top.equalTo(self.snp.top).offset(14)
         }
         
-        messageLabel.snp.makeConstraints { (make) -> Void in
-            make.left.equalTo(countryLabel.snp.right).offset(15)
+        timeLabel.snp.makeConstraints { (make) -> Void in
+            make.left.equalTo(teamNumberLabel.snp.right).offset(15)
             make.top.equalTo(addressLabel.snp.bottom).offset(5)
         }
         

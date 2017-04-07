@@ -34,6 +34,7 @@
 		E28622901E5AECAA008938FC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E286228F1E5AECAA008938FC /* LoginViewModel.swift */; };
 		E288730F1E95DFB20005237D /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = E288730E1E95DFB20005237D /* ProgressHUD.swift */; };
 		E28873111E95F9910005237D /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28873101E95F9910005237D /* ErrorResponse.swift */; };
+		E28873131E9717720005237D /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28873121E9717720005237D /* Team.swift */; };
 		E28C83581E93F52000878BEB /* LocationRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28C83571E93F52000878BEB /* LocationRecord.swift */; };
 		E29293B91E8108D80083A1DD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29293B81E8108D80083A1DD /* User.swift */; };
 		E29293BC1E8223350083A1DD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29293BB1E8223350083A1DD /* SettingsViewController.swift */; };
@@ -59,6 +60,8 @@
 		E2C239CC1E594732003818FB /* UIViewControllerWithMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C239CB1E594732003818FB /* UIViewControllerWithMenu.swift */; };
 		E2C239CF1E594B53003818FB /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C239CE1E594B53003818FB /* AboutViewController.swift */; };
 		E2C239D21E594D33003818FB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C239D11E594D33003818FB /* LoginViewController.swift */; };
+		E2C5EE8E1E971C4900BD5838 /* TeamLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C5EE8D1E971C4900BD5838 /* TeamLocationCell.swift */; };
+		E2C5EE901E971FD000BD5838 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C5EE8F1E971FD000BD5838 /* Date.swift */; };
 		E2D011401E5BE5920021936A /* PhraseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D0113F1E5BE5920021936A /* PhraseCell.swift */; };
 		E2D011421E5BE6680021936A /* Phrase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D011411E5BE6680021936A /* Phrase.swift */; };
 		E2D0114E1E5D94F00021936A /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D0114D1E5D94F00021936A /* ServiceProvider.swift */; };
@@ -80,7 +83,7 @@
 		E2D9A2531E55492D003324F7 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D9A2511E55492D003324F7 /* MenuViewController.swift */; };
 		E2D9A2571E555E6C003324F7 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D9A2561E555E6C003324F7 /* UIColor.swift */; };
 		E2D9A25A1E556FFA003324F7 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D9A2591E556FFA003324F7 /* MenuCell.swift */; };
-		E2D9A25D1E557057003324F7 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D9A25C1E557057003324F7 /* BaseCell.swift */; };
+		E2D9A25D1E557057003324F7 /* BaseUICollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D9A25C1E557057003324F7 /* BaseUICollectionCell.swift */; };
 		E2D9A25F1E55744E003324F7 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D9A25E1E55744E003324F7 /* UIView.swift */; };
 		E2E0D8881E57EFB100844509 /* Partners.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2E0D8871E57EFB100844509 /* Partners.xcassets */; };
 		E2E0D88E1E57F9FF00844509 /* PartnerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E0D88D1E57F9FF00844509 /* PartnerCell.swift */; };
@@ -136,6 +139,7 @@
 		E286228F1E5AECAA008938FC /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = Login/ViewModel/LoginViewModel.swift; sourceTree = "<group>"; };
 		E288730E1E95DFB20005237D /* ProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgressHUD.swift; path = "Auto Stop Race/Views/ProgressHUD.swift"; sourceTree = SOURCE_ROOT; };
 		E28873101E95F9910005237D /* ErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		E28873121E9717720005237D /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		E28C83571E93F52000878BEB /* LocationRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationRecord.swift; sourceTree = "<group>"; };
 		E29293B81E8108D80083A1DD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E29293BB1E8223350083A1DD /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Settings/SettingsViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +165,8 @@
 		E2C239CB1E594732003818FB /* UIViewControllerWithMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewControllerWithMenu.swift; path = "Auto Stop Race/Views/UIViewControllerWithMenu.swift"; sourceTree = SOURCE_ROOT; };
 		E2C239CE1E594B53003818FB /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutViewController.swift; path = About/AboutViewController.swift; sourceTree = "<group>"; };
 		E2C239D11E594D33003818FB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Login/LoginViewController.swift; sourceTree = "<group>"; };
+		E2C5EE8D1E971C4900BD5838 /* TeamLocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamLocationCell.swift; path = Locations/Views/TeamLocationCell.swift; sourceTree = "<group>"; };
+		E2C5EE8F1E971FD000BD5838 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Date.swift; path = Extension/Date.swift; sourceTree = "<group>"; };
 		E2D0113F1E5BE5920021936A /* PhraseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhraseCell.swift; path = Phrasebook/View/PhraseCell.swift; sourceTree = "<group>"; };
 		E2D011411E5BE6680021936A /* Phrase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Phrase.swift; path = Model/Phrase.swift; sourceTree = "<group>"; };
 		E2D0114D1E5D94F00021936A /* ServiceProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceProvider.swift; path = Services/ServiceProvider.swift; sourceTree = "<group>"; };
@@ -188,7 +194,7 @@
 		E2D9A2511E55492D003324F7 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = Menu/MenuViewController.swift; sourceTree = "<group>"; };
 		E2D9A2561E555E6C003324F7 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColor.swift; path = Extension/UIColor.swift; sourceTree = "<group>"; };
 		E2D9A2591E556FFA003324F7 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuCell.swift; path = Menu/Views/MenuCell.swift; sourceTree = "<group>"; };
-		E2D9A25C1E557057003324F7 /* BaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseCell.swift; path = "Auto Stop Race/Views/BaseCell.swift"; sourceTree = SOURCE_ROOT; };
+		E2D9A25C1E557057003324F7 /* BaseUICollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseUICollectionCell.swift; path = "Auto Stop Race/Views/BaseUICollectionCell.swift"; sourceTree = SOURCE_ROOT; };
 		E2D9A25E1E55744E003324F7 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIView.swift; path = Extension/UIView.swift; sourceTree = "<group>"; };
 		E2E0D8871E57EFB100844509 /* Partners.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Partners.xcassets; sourceTree = "<group>"; };
 		E2E0D88D1E57F9FF00844509 /* PartnerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PartnerCell.swift; path = Partners/Views/PartnerCell.swift; sourceTree = "<group>"; };
@@ -317,6 +323,7 @@
 		E27CB7A61E5863A7006B2396 /* Locations */ = {
 			isa = PBXGroup;
 			children = (
+				E2C5EE8C1E971C1100BD5838 /* Views */,
 				E29F889A1E5F0178008F1F46 /* ViewModel */,
 				E27CB7A71E5867C3006B2396 /* LocationsViewController.swift */,
 			);
@@ -435,6 +442,14 @@
 			name = Login;
 			sourceTree = "<group>";
 		};
+		E2C5EE8C1E971C1100BD5838 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E2C5EE8D1E971C4900BD5838 /* TeamLocationCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		E2D0113E1E5BE5710021936A /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -540,13 +555,13 @@
 			isa = PBXGroup;
 			children = (
 				E244207C1E8529D000556FDC /* NewUserLocation */,
+				E27CB7A61E5863A7006B2396 /* Locations */,
 				E244206B1E84B58500556FDC /* UserLocations */,
 				E29293BA1E82229C0083A1DD /* Settings */,
 				E2D90C7B1E596C8C00435A9F /* Phrasebook */,
 				E2C239D01E594D1B003818FB /* Login */,
 				E2C239CD1E594B18003818FB /* About */,
 				E27CB7AA1E586993006B2396 /* Contact */,
-				E27CB7A61E5863A7006B2396 /* Locations */,
 				E27CB7A31E581796006B2396 /* Campus */,
 				E25F73D61E56AD7E003DEB3C /* Partners */,
 				E2D9A25B1E557042003324F7 /* BaseViews */,
@@ -580,6 +595,7 @@
 				E2C0E2041E8CD53A002511F5 /* CreateLocationRequest.swift */,
 				E28C83571E93F52000878BEB /* LocationRecord.swift */,
 				E28873101E95F9910005237D /* ErrorResponse.swift */,
+				E28873121E9717720005237D /* Team.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -651,6 +667,7 @@
 				E2D9A25E1E55744E003324F7 /* UIView.swift */,
 				E2C239C91E59423C003818FB /* UIKit.swift */,
 				E29F1BE21E8B2F44006D8178 /* CLLocationCoordinate2D.swift */,
+				E2C5EE8F1E971FD000BD5838 /* Date.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -666,7 +683,7 @@
 		E2D9A25B1E557042003324F7 /* BaseViews */ = {
 			isa = PBXGroup;
 			children = (
-				E2D9A25C1E557057003324F7 /* BaseCell.swift */,
+				E2D9A25C1E557057003324F7 /* BaseUICollectionCell.swift */,
 				E2C239CB1E594732003818FB /* UIViewControllerWithMenu.swift */,
 				E2D2EB3E1E5AF6B000C56A61 /* UIViewControllerWithBackButton.swift */,
 				E24420761E84CE2700556FDC /* Toast.swift */,
@@ -990,6 +1007,7 @@
 				E2C239D21E594D33003818FB /* LoginViewController.swift in Sources */,
 				E27CB7AF1E586AAB006B2396 /* ContactCell.swift in Sources */,
 				E29F88991E5EFFC1008F1F46 /* LocationsCoordinator.swift in Sources */,
+				E2C5EE901E971FD000BD5838 /* Date.swift in Sources */,
 				E28873111E95F9910005237D /* ErrorResponse.swift in Sources */,
 				E2D011521E5D95DD0021936A /* CsvService.swift in Sources */,
 				E29F889E1E5F08AF008F1F46 /* Constants.swift in Sources */,
@@ -1011,6 +1029,7 @@
 				E2D011421E5BE6680021936A /* Phrase.swift in Sources */,
 				E2D011401E5BE5920021936A /* PhraseCell.swift in Sources */,
 				E2D9A2571E555E6C003324F7 /* UIColor.swift in Sources */,
+				E28873131E9717720005237D /* Team.swift in Sources */,
 				E29F1BD91E8B106F006D8178 /* FormViewControllerWithBackButton.swift in Sources */,
 				E2E0D88E1E57F9FF00844509 /* PartnerCell.swift in Sources */,
 				E2C0613F1E5A67A90022D6F1 /* MenuCoordinator.swift in Sources */,
@@ -1029,12 +1048,13 @@
 				E2C061441E5A99F50022D6F1 /* Menu.swift in Sources */,
 				E24420831E852D5D00556FDC /* PostNewLocationCoordinator.swift in Sources */,
 				E2D9A2531E55492D003324F7 /* MenuViewController.swift in Sources */,
-				E2D9A25D1E557057003324F7 /* BaseCell.swift in Sources */,
+				E2D9A25D1E557057003324F7 /* BaseUICollectionCell.swift in Sources */,
 				E244206D1E84B6A600556FDC /* UserLocationsViewController.swift in Sources */,
 				E24420811E852D0400556FDC /* PostNewLocationViewModel.swift in Sources */,
 				E2D011591E5DA03E0021936A /* PhrasebookViewModelType.swift in Sources */,
 				E2C0614D1E5AB2920022D6F1 /* ContactCoordinator.swift in Sources */,
 				E29F889C1E5F01A1008F1F46 /* LocationsViewModel.swift in Sources */,
+				E2C5EE8E1E971C4900BD5838 /* TeamLocationCell.swift in Sources */,
 				E2D9A2421E5533EE003324F7 /* Coordinator.swift in Sources */,
 				E24420771E84CE2700556FDC /* Toast.swift in Sources */,
 				E28622901E5AECAA008938FC /* LoginViewModel.swift in Sources */,

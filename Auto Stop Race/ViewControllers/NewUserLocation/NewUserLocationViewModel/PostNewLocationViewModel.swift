@@ -35,16 +35,41 @@ final class PostNewLocationViewModel {
         
         let apiProvider = MoyaProvider<AsrApi>(endpointClosure: endpointClosure)
                 
-        apiProvider.request(.postNewLocation(location: newLocation), completion: { [unowned self] result in
+        apiProvider.request(.postNewLocation(location: newLocation), completion: { [weak self] result in
+            guard let `self` = self else { return }
+            
             switch result {
             case let .success(response):
-                do {
-
-                } catch {
-                    
+                let statusCode = response.statusCode
+                
+                if let status = HttpStatus(rawValue: statusCode) {
+                    switch status {
+                    case .Created:
+                        do {
+                            
+                        } catch {
+                            
+                        }
+                    case .UnprocessableEntity:
+                        do {
+                            let error = try response.mapObject(ErrorResponse.self) as ErrorResponse
+                            Toast.showNegativeMessage(message: error.errors)
+                        } catch {
+                            
+                        }
+                    case .Unauthorized:
+                        do {
+                            let error = try response.mapObject(ErrorResponse.self) as ErrorResponse
+                            Toast.showNegativeMessage(message: error.errors)
+                        } catch {
+                            
+                        }
+                    default:
+                        Toast.showHttpStatusError(status: status)
+                    }
                 }
-            case .failure:
-                break
+            case let .failure(error):
+                Toast.showNegativeMessage(message: error.localizedDescription)
             }
         })
     }

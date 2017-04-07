@@ -17,6 +17,7 @@ public enum HttpStatus: Int{
     case Unauthorized = 401
     case Forbidden = 403
     case NotFound = 404
+    case UnprocessableEntity = 422
     
     case InternalServerError = 500
     case BadGateway = 502
@@ -34,10 +35,7 @@ public enum HttpStatus: Int{
     }
 }
 
-
-
 struct JsonDictionaryEncoding: Moya.ParameterEncoding {
-    
     public static var `default`: JsonDictionaryEncoding { return JsonDictionaryEncoding() }
     
     public func encode(_ urlRequest: URLRequestConvertible, with parameters: Parameters?) throws -> URLRequest {
@@ -57,6 +55,7 @@ enum AsrApi {
     case resetPassword(email: String, redirectUrl: String)
     case postNewLocation(location: CreateLocationRecordRequest)
     case userLocations(String)
+    case allTeams()
 }
 
 extension AsrApi: TargetType {
@@ -77,14 +76,14 @@ extension AsrApi: TargetType {
             return "locations"
         case .userLocations(let slug):
             return "teams/\(slug)/locations"
-            
-            
+        case .allTeams:
+            return "teams"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .validateToken, .userLocations(_):
+        case .validateToken, .userLocations(_), .allTeams:
             return .get
         case .signOut:
             return .delete
@@ -95,7 +94,7 @@ extension AsrApi: TargetType {
         
     var parameters: [String: Any]? {
         switch self {
-        case .signOut, .validateToken, .userLocations(_):
+        case .signOut, .validateToken, .userLocations(_), .allTeams:
             return nil
         case .singIn(let email, let password):
             return ["email": email, "password": password]
@@ -111,7 +110,7 @@ extension AsrApi: TargetType {
         switch self {
         case .postNewLocation:
             return JsonDictionaryEncoding.default
-        case .signOut, .validateToken:
+        case .signOut, .validateToken, .allTeams:
             return URLEncoding.default
         case .singIn, .userLocations(_), .resetPassword:
             return JSONEncoding.default
@@ -120,14 +119,14 @@ extension AsrApi: TargetType {
     
     var sampleData: Data {
         switch self {
-        case .signOut, .validateToken, .singIn, .postNewLocation, .userLocations(_), .resetPassword:
+        case .signOut, .validateToken, .singIn, .postNewLocation, .userLocations(_), .resetPassword, .allTeams:
             return "".utf8Encoded
         }
     }
     
     var task:Task {
         switch self {
-        case .signOut, .singIn, .validateToken, .postNewLocation, .userLocations(_), .resetPassword:
+        case .signOut, .singIn, .validateToken, .postNewLocation, .userLocations(_), .resetPassword, .allTeams:
             return .request
         }
     }

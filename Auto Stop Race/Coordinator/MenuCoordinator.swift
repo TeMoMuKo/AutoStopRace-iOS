@@ -57,7 +57,7 @@ extension MenuCoordinator: MenuViewControllerDelegate {
             break
             
         case .locations:
-            let coordinator = LocationsCoordinator(navigationController: navigationController)
+            let coordinator = LocationsCoordinator(navigationController: navigationController, appCoordinator: appCoordinator, serviceProvider: serviceProvider!)
             coordinator.start()
             break
         

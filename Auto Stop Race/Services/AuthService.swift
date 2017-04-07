@@ -81,24 +81,39 @@ final class AuthService: BaseService, AuthServiceType {
             
             switch result {
             case let .success(response):
-                do {
-                    if let httpResponse = response.response as? HTTPURLResponse {
-                        self.provider.userDefaultsService.setAuthorizationHeaders(httpResponse: httpResponse)
+                let statusCode = response.statusCode
+                
+                if let status = HttpStatus(rawValue: statusCode) {
+                    switch status {
+                    case .OK :
+                        do {
+                            if let httpResponse = response.response as? HTTPURLResponse {
+                                self.provider.userDefaultsService.setAuthorizationHeaders(httpResponse: httpResponse)
+                            }
+                            let user = try response.mapObject(User.self) as User
+                            Toast.showPositiveMessage(message: NSLocalizedString("msg_after_login", comment: "") + "\(user.firstName!) \(user.lastName!)")
+                        } catch {
+                            
+                        }
+                        self.status.value = .logged
+                    case .Unauthorized:
+                        do {
+                            let error = try response.mapObject(ErrorResponse.self) as ErrorResponse
+                            Toast.showNegativeMessage(message: error.errors)
+                        } catch {
+                            
+                        }
+                        self.status.value = .none
+                    default:
+                        Toast.showHttpStatusError(status: status)
+                        self.status.value = .none
                     }
-                    
-                    if let user = try response.mapObject(User.self) as? User {
-                        self.provider.userDefaultsService.setUserData(user: user)
-                        Toast.showPositiveMessage(message: "Zalogowany jako \(user.firstName) \(user.lastName)")
-                    }
-                    
-                    self.status.value = .logged
-                } catch {
-                    
                 }
-            case .failure:
+            case let .failure(error):
+                Toast.showNegativeMessage(message: error.localizedDescription)
                 self.status.value = .none
-                break
             }
+
         })
     }
     
