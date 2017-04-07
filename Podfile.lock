@@ -1,7 +1,10 @@
 PODS:
   - Alamofire (4.4.0)
+  - Crashlytics (3.8.4):
+    - Fabric (~> 1.6.3)
   - CSV.swift (1.1.2)
   - Eureka (2.0.1)
+  - Fabric (1.6.11)
   - GoogleMaps (2.2.0):
     - GoogleMaps/Maps (= 2.2.0)
   - GoogleMaps/Base (2.2.0)
@@ -35,8 +38,10 @@ PODS:
   - SnapKit (3.2.0)
 
 DEPENDENCIES:
+  - Crashlytics
   - CSV.swift
   - Eureka
+  - Fabric
   - GoogleMaps
   - Moya-ObjectMapper
   - RealmSwift
@@ -47,8 +52,10 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  Crashlytics: 79e236942ca1e7fc641df1feb9a275360a78ab6a
   CSV.swift: 0aad3b06980034c8fa296456b708ac9128ebbdf9
   Eureka: ae837bb1dfae0c07bc1bda7aeef87876eeb537c2
+  Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   GoogleMaps: 104c418d61ab8a05dff06ed0784c25ea9d37da45
   Moya: d3721622e3cc0cc2f038d69a258686f0b66e7252
   Moya-ObjectMapper: 952be2b261d38cf8d973b7e429708eb03d256e23
@@ -62,6 +69,6 @@ SPEC CHECKSUMS:
   RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
 
-PODFILE CHECKSUM: af6d96a0fb598ab80614229a83d53ab7e79b813f
+PODFILE CHECKSUM: fd85f5190ec8fa11983ae7220f64045addace167
 
 COCOAPODS: 1.2.0

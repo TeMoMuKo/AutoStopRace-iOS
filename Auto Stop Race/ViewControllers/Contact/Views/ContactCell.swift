@@ -40,6 +40,8 @@ class ContactCell: BaseUICollectionCell {
     var valueLabel: UILabel = {
         let label = UILabel()
         label.text = ""
+        label.minimumScaleFactor = 0.5
+        label.adjustsFontSizeToFitWidth = true
         label.font = UIFont.systemFont(ofSize: 25, weight: UIFontWeightLight)
         return label
     }()
@@ -76,6 +78,7 @@ class ContactCell: BaseUICollectionCell {
         
         valueLabel.snp.makeConstraints { (make) -> Void in
             make.left.equalTo(imageView.snp.right).offset(15)
+            make.right.equalToSuperview().offset(-10)
             make.top.equalTo(self.snp.top).offset(14)
         }
         

@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 import RxReachability
 import ReachabilitySwift
+import Fabric
+import Crashlytics
 
 final class AppCoordinator: Coordinator {
     let serviceProvider = ServiceProvider()
@@ -18,6 +20,8 @@ final class AppCoordinator: Coordinator {
     func start() {
         try? reachability?.startNotifier()
         
+        Fabric.with([Crashlytics.self])
+
         serviceProvider.authService.validateToken()
         
         let coordinator = DashboardCoordinator(navigationController: navigationController, appCoordinator: self, serviceProvider: serviceProvider)

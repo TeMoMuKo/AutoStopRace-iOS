@@ -724,6 +724,7 @@
 				E2D9A2091E5530FC003324F7 /* Resources */,
 				C45D6D55B7319B82D3A6A5EA /* [CP] Embed Pods Frameworks */,
 				5F0B92CF6159D702AD1EE7E3 /* [CP] Copy Pods Resources */,
+				E2C5EE911E98099900BD5838 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -962,6 +963,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Auto Stop Race/Pods-Auto Stop Race-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		E2C5EE911E98099900BD5838 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 72e1e9fa3c05e7ff3346632bf926ed2a56077171 cbbe3bafde6322db14beb8c164febc3124db32e745699be0b940b828f1836854";
 		};
 		E4C5976F567979D0E0E2BADA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

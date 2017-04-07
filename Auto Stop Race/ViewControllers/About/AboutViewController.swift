@@ -49,6 +49,8 @@ class AboutViewController: UIViewControllerWithMenu {
     var rateAppSubtitleLabel: UILabel = {
         let label = UILabel()
         label.text = NSLocalizedString("msg_rate_app", comment: "")
+        label.minimumScaleFactor = 0.5
+        label.adjustsFontSizeToFitWidth = true
         label.font = UIFont.systemFont(ofSize: 25, weight: UIFontWeightLight)
         return label
     }()

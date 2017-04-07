@@ -40,15 +40,17 @@ class PhraseCell: UITableViewCell {
     
     var polishPhraseLabel: UILabel = {
         let label = UILabel()
-        label.sizeToFit()
         label.font = UIFont.systemFont(ofSize: 16)
+        label.minimumScaleFactor = 0.5
+        label.adjustsFontSizeToFitWidth = true
         return label
     }()
     
     var translationPhraseLabel: UILabel = {
         let label = UILabel()
-        label.sizeToFit()
         label.font = UIFont.systemFont(ofSize: 16)
+        label.minimumScaleFactor = 0.5
+        label.adjustsFontSizeToFitWidth = true
         return label
     }()
     
@@ -117,11 +119,13 @@ class PhraseCell: UITableViewCell {
         polishPhraseLabel.snp.makeConstraints { (make) -> Void in
             make.centerY.equalTo(self).multipliedBy(0.75)
             make.left.equalTo(iconImageView.snp.right).offset(15)
+            make.right.equalToSuperview().offset(-10)
         }
         
         translationPhraseLabel.snp.makeConstraints { (make) -> Void in
             make.centerY.equalTo(self).multipliedBy(1.25)
             make.left.equalTo(polishPhraseLabel)
+            make.right.equalToSuperview().offset(-10)
         }
         
         iconImageView.snp.makeConstraints { (make) -> Void in
