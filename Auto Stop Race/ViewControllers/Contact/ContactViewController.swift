@@ -37,7 +37,8 @@ class ContactViewController: UIViewControllerWithMenu,  UICollectionViewDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
+    
         setupNavigationBarTitle()
         setupCollectionView()
         
@@ -49,17 +50,46 @@ class ContactViewController: UIViewControllerWithMenu,  UICollectionViewDelegate
             }
             .addDisposableTo(disposeBag)
         
-        collectionView.rx.itemSelected
-            .bindTo(viewModel.itemSelected).addDisposableTo(disposeBag)
-        
         collectionView.rx.modelSelected(Contact.self)
-            .subscribe(onNext: { menu in
+            .bindTo(viewModel.modelSelected).addDisposableTo(disposeBag)
+        
+        viewModel.modelSelected
+            .subscribe(onNext: { [weak self] clickedContact in
+                guard let `self` = self else { return }
                 
+                self.contactSelected(contact: clickedContact )
             })
             .addDisposableTo(disposeBag)
         
         collectionView.rx.setDelegate(self).addDisposableTo(disposeBag)
         
+    }
+    
+    func contactSelected(contact: Contact) {
+        switch contact.type {
+        case "phone_number":
+            if UIApplication.shared.canOpenURL(URL(string: "tel://\(contact.value)")!){
+                UIApplication.shared.openURL(URL(string: "tel://\(contact.value)")!)
+            }
+        case "sms":
+            if UIApplication.shared.canOpenURL(URL(string: "sms://\(contact.value)")!){
+                UIApplication.shared.openURL(URL(string: "sms://\(contact.value)")!)
+            }
+        case "email":
+            if UIApplication.shared.canOpenURL(URL(string: "mailto://\(contact.value)")!){
+                UIApplication.shared.openURL(URL(string: "mailto://\(contact.value)")!)
+            }
+        case "web_page":
+            if UIApplication.shared.canOpenURL(URL(string: "\(contact.value)")!){
+                UIApplication.shared.openURL(URL(string: "\(contact.value)")!)
+            }
+        case "fan_page":
+            if UIApplication.shared.canOpenURL(URL(string: "fb://profile/\(contact.value)")!){
+                UIApplication.shared.openURL(URL(string: "fb://profile/\(contact.value)")!)
+            }
+        default:
+            break
+        }
     }
 
     func setupNavigationBarTitle() {

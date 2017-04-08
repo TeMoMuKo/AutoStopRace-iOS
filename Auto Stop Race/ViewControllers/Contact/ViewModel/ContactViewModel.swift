@@ -14,26 +14,17 @@ final class ContactViewModel {
     private let disposeBag = DisposeBag()
     private weak var delegate: ContactViewControllerDelegate?
     
-    let itemSelected = PublishSubject<IndexPath>()
+    let modelSelected = PublishSubject<Contact>()
     
     let contacts = Observable.just([
         Contact(type: "phone_number", value: "+48698402117", imageName: "contact_phone", contactDescription: "Numer do organizatorów (alarmowy)"),
         Contact(type: "sms", value: "+48799448409", imageName: "contact_sms", contactDescription: "Numer do relacji SMS"),
         Contact(type: "email", value: "kontakt@autostoprace.pl", imageName: "contact_mail", contactDescription: "Email organizatorów"),
-        Contact(type: "web_page", value: "www.autostoprace.pl", imageName: "contact_webpage", contactDescription: "Strona Internetowa"),
-        Contact(type: "fan_page", value: "AutoStopRace", imageName: "contact_facebook", contactDescription: "Fanpage")
+        Contact(type: "web_page", value: "http://www.autostoprace.pl", optionalDisplayedValue: "www.autostoprace.pl", imageName: "contact_webpage", contactDescription: "Strona Internetowa"),
+        Contact(type: "fan_page", value: "107460812611436", optionalDisplayedValue: "AutoStopRace", imageName: "contact_facebook", contactDescription: "Fanpage")
         ])
     
     init( delegate: ContactViewControllerDelegate) {
         self.delegate = delegate
-    
-        itemSelected
-            .subscribe(onNext: { clickedContact in
-                print(clickedContact)
-                
-                // self.delegate?.contactSelected(contact: clickedContact )
-            })
-            .addDisposableTo(disposeBag)
-        
     }
 }

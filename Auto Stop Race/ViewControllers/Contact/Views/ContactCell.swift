@@ -16,10 +16,12 @@ class ContactCell: BaseUICollectionCell {
     
     var contact: Contact? {
         didSet {
-            if let contactValue = contact?.value {
-                valueLabel.text =  contactValue
+            if contact?.optionalDisplayedValue != "" {
+                valueLabel.text = contact?.optionalDisplayedValue
+            } else {
+                valueLabel.text = contact?.value
             }
-            
+
             if let contactDescription = contact?.contactDescription {
                 contactDescriptionLabel.text = contactDescription
                 contactDescriptionLabel.textColor = UIColor.gray

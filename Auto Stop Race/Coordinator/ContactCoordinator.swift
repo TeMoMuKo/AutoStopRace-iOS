@@ -21,7 +21,7 @@ final class ContactCoordinator: Coordinator {
 
 extension ContactCoordinator: ContactViewControllerDelegate {
     func contactSelected(contact: Contact) {
-        
+
     }
 }
 
