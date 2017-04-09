@@ -20,8 +20,17 @@ class CreateLocationRecordRequest: NSObject  {
         self.longitude = longitude
     }
     
+    
+    
+    
     func toDictionary() -> [String: [String: Any] ] {
-        let dictionary = ["location":["latitude":self.latitude, "longitude":self.longitude]]
+        let dictionary = ["location":
+            [
+            "latitude":self.latitude,
+            "longitude":self.longitude,
+            "message":self.message ?? "",
+            "image":self.image ?? ""
+            ]]
         return dictionary
     }
 }

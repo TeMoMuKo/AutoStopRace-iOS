@@ -46,6 +46,8 @@ class UserLocationCell: BaseUICollectionCell {
     var addressLabel: UILabel = {
         let label = UILabel()
         label.text = ""
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
         label.font = UIFont.systemFont(ofSize: 17, weight: UIFontWeightLight)
         return label
     }()
@@ -53,6 +55,8 @@ class UserLocationCell: BaseUICollectionCell {
     var messageLabel: UILabel = {
         let label = UILabel()
         label.text = ""
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
         label.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightLight)
         label.textColor = UIColor.gray
         return label
@@ -74,6 +78,7 @@ class UserLocationCell: BaseUICollectionCell {
         setupConstraints()
     }
     
+    
     func setupConstraints() {
         countryLabel.snp.makeConstraints { (make) -> Void in
             make.left.equalTo(self).offset(15)
@@ -84,11 +89,13 @@ class UserLocationCell: BaseUICollectionCell {
         addressLabel.snp.makeConstraints { (make) -> Void in
             make.left.equalTo(countryLabel.snp.right).offset(15)
             make.top.equalTo(self.snp.top).offset(14)
+            make.right.equalToSuperview()
         }
         
         messageLabel.snp.makeConstraints { (make) -> Void in
             make.left.equalTo(countryLabel.snp.right).offset(15)
             make.top.equalTo(addressLabel.snp.bottom).offset(5)
+            make.right.equalToSuperview()
         }
         
         separator.snp.makeConstraints { (make) -> Void in

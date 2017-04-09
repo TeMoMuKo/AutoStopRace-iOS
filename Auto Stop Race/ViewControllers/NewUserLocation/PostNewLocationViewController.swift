@@ -15,7 +15,7 @@ import GoogleMaps
 import Eureka
 
 protocol PostNewLocationViewControllerDelegate: class {
-    
+    func locationSuccessfullyAdded()
 }
 
 class PostNewLocationViewController: FormViewControllerWithBackButton, CLLocationManagerDelegate {
@@ -114,7 +114,7 @@ class PostNewLocationViewController: FormViewControllerWithBackButton, CLLocatio
                 }
             
             +++ Section(NSLocalizedString("hint_message", comment: ""))
-                <<< TextAreaRow() {
+                <<< TextAreaRow("message_row") {
                     $0.textAreaHeight = .dynamic(initialTextViewHeight: 110)
                     $0.add(rule: RuleMaxLength(maxLength: 160))
                 }
@@ -125,7 +125,7 @@ class PostNewLocationViewController: FormViewControllerWithBackButton, CLLocatio
                 }
 
             +++ Section()
-                <<< ImageRow(){
+                <<< ImageRow("image_row"){
                     $0.title = NSLocalizedString("add_photo_title", comment: "")
                 }
             
@@ -140,6 +140,19 @@ class PostNewLocationViewController: FormViewControllerWithBackButton, CLLocatio
     
     func postNewLocation() {
         let newLocation = CreateLocationRecordRequest(latitude: latitude!, longitude: longitude!)
-        viewModel.postNewLocation(newLocation: newLocation)  
+        let messageRow: TextAreaRow? = form.rowBy(tag: "message_row")
+        if messageRow?.value != "" {
+            newLocation.message = messageRow?.value
+        }
+        
+        let imageRow: ImageRow? = form.rowBy(tag: "image_row")
+        if let image = imageRow?.value {
+            let imageData:Data = UIImageJPEGRepresentation(image, 0.5)!
+            let base64Image = imageData.base64EncodedString()
+            let imageEncoded = "image/jpeg;base64,\(base64Image)"
+            newLocation.image = imageEncoded
+        }
+        
+        viewModel.postNewLocation(newLocation: newLocation)
     }
 }

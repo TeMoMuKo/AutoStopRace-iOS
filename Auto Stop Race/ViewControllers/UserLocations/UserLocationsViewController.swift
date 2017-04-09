@@ -17,7 +17,7 @@ protocol UserLocationsViewControllerDelegate: class {
 }
 
 class UserLocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegateFlowLayout {
-    let cellHeight: CGFloat = 80
+    let cellHeight: CGFloat = 100
     var viewModel: UserLocationsViewModel!
     
     let disposeBag = DisposeBag()
@@ -29,18 +29,26 @@ class UserLocationsViewController: UIViewControllerWithMenu, UICollectionViewDel
         return collectionView
     }()
     
+    var refreshControl: UIRefreshControl!
+
     convenience init(viewModel: UserLocationsViewModel) {
         self.init()
         
         self.viewModel = viewModel
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.downloadLocations()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setupNavigationBarTitle()
         setupPostNewLocationBarButton()
         setupCollectionView()
+        setupRefreshControl()
         
         collectionView.register(UserLocationCell.self, forCellWithReuseIdentifier: UserLocationCell.Identifier)
         
@@ -74,6 +82,17 @@ class UserLocationsViewController: UIViewControllerWithMenu, UICollectionViewDel
         navigationItem.rightBarButtonItems = [menuBarButtonItem]
     }
     
+    func setupRefreshControl() {
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(self.refresh), for: UIControlEvents.valueChanged)
+        collectionView.addSubview(refreshControl)
+    }
+    
+    func refresh(sender:AnyObject) {
+        viewModel.downloadLocations()
+        refreshControl.endRefreshing()
+    }
+    
     func handlePostNewLocationTap() {
         viewModel.postNewLocationTapped()
     }
@@ -84,7 +103,6 @@ class UserLocationsViewController: UIViewControllerWithMenu, UICollectionViewDel
             make.top.left.bottom.right.equalTo(view)
         }
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize.init(width: collectionView.frame.width, height: cellHeight)

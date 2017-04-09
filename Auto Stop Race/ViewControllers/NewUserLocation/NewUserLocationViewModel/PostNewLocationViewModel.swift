@@ -46,7 +46,8 @@ final class PostNewLocationViewModel {
                     switch status {
                     case .Created:
                         do {
-                            
+                            Toast.showPositiveMessage(message: NSLocalizedString("saved_location", comment: ""))
+                            self.locationSuccessfullyAdded()
                         } catch {
                             
                         }
@@ -72,5 +73,9 @@ final class PostNewLocationViewModel {
                 Toast.showNegativeMessage(message: error.localizedDescription)
             }
         })
+    }
+    
+    func locationSuccessfullyAdded() {
+        delegate?.locationSuccessfullyAdded()
     }
 }

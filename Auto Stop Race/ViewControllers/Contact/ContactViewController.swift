@@ -61,6 +61,7 @@ class ContactViewController: UIViewControllerWithMenu,  UICollectionViewDelegate
             })
             .addDisposableTo(disposeBag)
         
+        
         collectionView.rx.setDelegate(self).addDisposableTo(disposeBag)
         
     }
@@ -88,7 +89,7 @@ class ContactViewController: UIViewControllerWithMenu,  UICollectionViewDelegate
                 UIApplication.shared.openURL(URL(string: "fb://profile/\(contact.value)")!)
             }
         default:
-            break
+            break   
         }
     }
 

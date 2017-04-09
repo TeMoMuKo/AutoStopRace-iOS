@@ -21,7 +21,7 @@ class TeamLocationCell: BaseUICollectionCell {
             }
             
             if let latitude = team?.lastLocation?.latitude, let longitude = team?.lastLocation?.longitude  {
-                addressLabel.text = "\(latitude) \(longitude)"
+                addressLabel.text = NSLocalizedString("last_location_record" , comment: "") + "\(latitude) \(longitude)"
             }
             
             if let teamLastLocationTime = team?.lastLocation?.created_at {

@@ -13,7 +13,7 @@ import GoogleMaps
 import RxSwift
 import RxCocoa
 
-class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegateFlowLayout {
+class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegateFlowLayout, UISearchBarDelegate, GMSMapViewDelegate  {
     let cellHeight: CGFloat = 80
 
     var viewModel: LocationsViewModel!
@@ -33,7 +33,11 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
 
     var heightConstraint: Constraint? = nil
 
-    var mapView: GMSMapView!
+    var mapView: GMSMapView = {
+        let camera = GMSCameraPosition.camera(withLatitude: CLLocationDegrees(GMSConfig.initialLatitude), longitude: CLLocationDegrees(GMSConfig.initialLongitude), zoom: Float(GMSConfig.initialZoom))
+        let map = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+        return map
+    }()
     
     private let disposeBag = DisposeBag()
     
@@ -45,6 +49,9 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        locationsSearchBar.delegate = self
+        mapView.delegate = self
+
         setupGMSServices()
         setupNavigationBarTitle()
         setupSearchBar()
@@ -54,18 +61,8 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
     }
     
     func setupGMSServices() {
-        var keys: NSDictionary?
-        
-        if let path = Bundle.main.path(forResource: "Keys", ofType: "plist") {
-            keys = NSDictionary(contentsOfFile: path)
-        }
-        if let dict = keys {
-            let GMSServicesAPIKey = dict["GMSServicesAPIKey"] as? String
-            GMSServices.provideAPIKey(GMSServicesAPIKey!)
-        }
-        
-        let camera = GMSCameraPosition.camera(withLatitude: CLLocationDegrees(GMSConfig.initialLatitude), longitude: CLLocationDegrees(GMSConfig.initialLongitude), zoom: Float(GMSConfig.initialZoom))
-        mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+
+
         view.addSubview(mapView)
     }
 
@@ -82,20 +79,27 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
         
         textfield.attributedPlaceholder = attributedString
         
+        locationsSearchBar.keyboardType = .numberPad
+
         view.addSubview(locationsSearchBar)
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        self.viewModel.shownTeams.value = self.viewModel.allTeams.value
+        updateConstraints()
     }
     
     
     
     func setupDropDownList() {
         teamsCollectionView.register(TeamLocationCell.self, forCellWithReuseIdentifier: TeamLocationCell.Identifier)
-
+        
         viewModel.shownTeams.asObservable()
             .bindTo(teamsCollectionView.rx.items(cellIdentifier: TeamLocationCell.Identifier, cellType: TeamLocationCell.self)) { (row, team, cell) in
                 cell.team = team
             }
             .disposed(by: disposeBag)
-        
+    
         locationsSearchBar.rx.text.orEmpty
             .subscribe(onNext: { [weak self] query in
                 guard let `self` = self else { return }
@@ -109,8 +113,31 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
             .disposed(by: disposeBag)
         
         teamsCollectionView.rx.setDelegate(self).addDisposableTo(disposeBag)
-
+        
+        teamsCollectionView.rx.modelSelected(Team.self)
+            .bindTo(viewModel.teamSelected).addDisposableTo(disposeBag)
+        
+        viewModel.teamSelected
+            .subscribe(onNext: { [weak self] team in
+                guard let `self` = self else { return }
+                
+                self.teamSelected(team: team )
+            })
+            .addDisposableTo(disposeBag)
+        
         view.addSubview(teamsCollectionView)
+    }
+    
+    func teamSelected(team: Team) {
+        mapView.clear()
+        let position = CLLocationCoordinate2D(latitude: team.lastLocation.latitude, longitude: team.lastLocation.longitude)
+        let marker = GMSMarker(position: position)
+        let markerView = UIImageView(image: #imageLiteral(resourceName: "asr_marker"))
+        marker.iconView = markerView
+        marker.title = team.lastLocation.message
+        marker.map = mapView
+        self.viewModel.shownTeams.value = []
+        updateConstraints()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -132,7 +159,7 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
     }
     
     func updateConstraints() {
-        var cellsCount = self.viewModel.shownTeams.value.count
+        let cellsCount = self.viewModel.shownTeams.value.count
         self.heightConstraint?.update(offset: (cellsCount < 4 ? cellsCount : 4) * 80)
     }
     

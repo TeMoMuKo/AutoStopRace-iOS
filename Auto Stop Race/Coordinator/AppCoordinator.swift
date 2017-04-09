@@ -12,6 +12,7 @@ import RxReachability
 import ReachabilitySwift
 import Fabric
 import Crashlytics
+import GoogleMaps
 
 final class AppCoordinator: Coordinator {
     let serviceProvider = ServiceProvider()
@@ -21,9 +22,11 @@ final class AppCoordinator: Coordinator {
         try? reachability?.startNotifier()
         
         Fabric.with([Crashlytics.self])
-
+        
         serviceProvider.authService.validateToken()
         
+        setupGMSServices()
+
         let coordinator = DashboardCoordinator(navigationController: navigationController, appCoordinator: self, serviceProvider: serviceProvider)
         coordinator.start()
         childCoordinators.append(coordinator)
@@ -37,9 +40,19 @@ final class AppCoordinator: Coordinator {
             childCoordinators.remove(at: index)
         }
     }
+    
+    func setupGMSServices() {
+        var keys: NSDictionary?
+        
+        if let path = Bundle.main.path(forResource: "Keys", ofType: "plist") {
+            keys = NSDictionary(contentsOfFile: path)
+        }
+        if let dict = keys {
+            let GMSServicesAPIKey = dict["GMSServicesAPIKey"] as? String
+            GMSServices.provideAPIKey(GMSServicesAPIKey!)
+        }
+    }
 }
-
-
 
 extension AppCoordinator: SettingsViewControllerDelegate {
     

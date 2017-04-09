@@ -35,8 +35,6 @@ final class UserLocationsViewModel {
                 print(clickedContact)
             })
             .addDisposableTo(disposeBag)
-        
-        downloadLocations()
     }
     
     func downloadLocations() {

@@ -56,6 +56,7 @@ enum AsrApi {
     case postNewLocation(location: CreateLocationRecordRequest)
     case userLocations(String)
     case allTeams()
+    case team(String)
 }
 
 extension AsrApi: TargetType {
@@ -78,12 +79,14 @@ extension AsrApi: TargetType {
             return "teams/\(slug)/locations"
         case .allTeams:
             return "teams"
+        case .team(let slug):
+            return "teams/\(slug)"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .validateToken, .userLocations(_), .allTeams:
+        case .validateToken, .userLocations(_), .allTeams, .team(_):
             return .get
         case .signOut:
             return .delete
@@ -94,7 +97,7 @@ extension AsrApi: TargetType {
         
     var parameters: [String: Any]? {
         switch self {
-        case .signOut, .validateToken, .userLocations(_), .allTeams:
+        case .signOut, .validateToken, .userLocations(_), .allTeams, .team(_):
             return nil
         case .singIn(let email, let password):
             return ["email": email, "password": password]
@@ -110,23 +113,23 @@ extension AsrApi: TargetType {
         switch self {
         case .postNewLocation:
             return JsonDictionaryEncoding.default
-        case .signOut, .validateToken, .allTeams:
+        case .signOut, .validateToken, .allTeams, .team(_):
             return URLEncoding.default
-        case .singIn, .userLocations(_), .resetPassword:
+        case .singIn, .userLocations(_), .resetPassword, .userLocations(_):
             return JSONEncoding.default
         }
     }
     
     var sampleData: Data {
         switch self {
-        case .signOut, .validateToken, .singIn, .postNewLocation, .userLocations(_), .resetPassword, .allTeams:
+        case .signOut, .validateToken, .singIn, .postNewLocation, .userLocations(_), .resetPassword, .allTeams, .team(_):
             return "".utf8Encoded
         }
     }
     
     var task:Task {
         switch self {
-        case .signOut, .singIn, .validateToken, .postNewLocation, .userLocations(_), .resetPassword, .allTeams:
+        case .signOut, .singIn, .validateToken, .postNewLocation, .userLocations(_), .resetPassword, .allTeams, .team(_):
             return .request
         }
     }

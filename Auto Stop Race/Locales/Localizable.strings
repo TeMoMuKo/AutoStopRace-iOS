@@ -82,3 +82,8 @@
 "location_fail" = "Brak sygnału GPS";
 "add_photo_title" = "Dodaj zdjęcie";
 "add_location_button_title" = "Wyślij lokalizację";
+"saved_location" = "Zapisano lokalizację";
+
+
+// Map
+"last_location_record" = "Ostatnie zameldowanie: ";
