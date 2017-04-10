@@ -17,7 +17,7 @@ final class ContactViewModel {
     let modelSelected = PublishSubject<Contact>()
     
     let contacts = Observable.just([
-        Contact(type: "phone_number", value: "+48698402117", imageName: "contact_phone", contactDescription: "Numer do organizatorów (alarmowy)"),
+        Contact(type: "phone_number", value: "+48692157986", imageName: "contact_phone", contactDescription: "Numer do organizatorów (alarmowy)"),
         Contact(type: "sms", value: "+48799448409", imageName: "contact_sms", contactDescription: "Numer do relacji SMS"),
         Contact(type: "email", value: "kontakt@autostoprace.pl", imageName: "contact_mail", contactDescription: "Email organizatorów"),
         Contact(type: "web_page", value: "http://www.autostoprace.pl", optionalDisplayedValue: "www.autostoprace.pl", imageName: "contact_webpage", contactDescription: "Strona Internetowa"),
