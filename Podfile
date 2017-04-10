@@ -6,11 +6,14 @@ target 'Auto Stop Race' do
     pod 'RxSwift', '3.2'
     pod 'RxCocoa', '3.2.0'
     pod 'SnapKit', '~> 3.2.0'
+    
     pod 'CSV.swift'
     pod 'Moya-ObjectMapper'
     pod 'RealmSwift'
     pod 'GoogleMaps'
     pod 'RxReachability'
+    pod 'RxRealm'
+    
     pod 'Eureka'
     
     pod 'Fabric'

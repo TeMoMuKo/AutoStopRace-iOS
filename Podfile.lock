@@ -34,6 +34,9 @@ PODS:
     - ReachabilitySwift (~> 3)
     - RxCocoa (~> 3)
     - RxSwift (~> 3)
+  - RxRealm (0.5.2):
+    - RealmSwift (~> 2.4)
+    - RxSwift (~> 3.1)
   - RxSwift (3.2.0)
   - SnapKit (3.2.0)
 
@@ -47,6 +50,7 @@ DEPENDENCIES:
   - RealmSwift
   - RxCocoa (= 3.2.0)
   - RxReachability
+  - RxRealm
   - RxSwift (= 3.2)
   - SnapKit (~> 3.2.0)
 
@@ -66,9 +70,10 @@ SPEC CHECKSUMS:
   Result: 2453a22e5c5b11c0c3a478736e82cd02f763b781
   RxCocoa: ccdf43101a70407097a29082f648ba1676075b30
   RxReachability: 0e781fc978c3c850dda6cafa2c5956ff806a1fcc
+  RxRealm: df024f04e64c3a9723dab63a6ec8621b3db6473f
   RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
 
-PODFILE CHECKSUM: fd85f5190ec8fa11983ae7220f64045addace167
+PODFILE CHECKSUM: 3d1adaa5550ebf8628c5d22f190515249e2a0dcc
 
 COCOAPODS: 1.2.0

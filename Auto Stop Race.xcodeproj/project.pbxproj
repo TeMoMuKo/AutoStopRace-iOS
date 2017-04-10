@@ -62,6 +62,8 @@
 		E2C239D21E594D33003818FB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C239D11E594D33003818FB /* LoginViewController.swift */; };
 		E2C5EE8E1E971C4900BD5838 /* TeamLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C5EE8D1E971C4900BD5838 /* TeamLocationCell.swift */; };
 		E2C5EE901E971FD000BD5838 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C5EE8F1E971FD000BD5838 /* Date.swift */; };
+		E2C5EE991E9C0C5D00BD5838 /* RealmDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C5EE981E9C0C5D00BD5838 /* RealmDatabaseService.swift */; };
+		E2C5EE9B1E9C1A8D00BD5838 /* LocationSyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C5EE9A1E9C1A8D00BD5838 /* LocationSyncService.swift */; };
 		E2D011401E5BE5920021936A /* PhraseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D0113F1E5BE5920021936A /* PhraseCell.swift */; };
 		E2D011421E5BE6680021936A /* Phrase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D011411E5BE6680021936A /* Phrase.swift */; };
 		E2D0114E1E5D94F00021936A /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D0114D1E5D94F00021936A /* ServiceProvider.swift */; };
@@ -167,6 +169,8 @@
 		E2C239D11E594D33003818FB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Login/LoginViewController.swift; sourceTree = "<group>"; };
 		E2C5EE8D1E971C4900BD5838 /* TeamLocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamLocationCell.swift; path = Locations/Views/TeamLocationCell.swift; sourceTree = "<group>"; };
 		E2C5EE8F1E971FD000BD5838 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Date.swift; path = Extension/Date.swift; sourceTree = "<group>"; };
+		E2C5EE981E9C0C5D00BD5838 /* RealmDatabaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmDatabaseService.swift; path = Services/RealmDatabaseService.swift; sourceTree = "<group>"; };
+		E2C5EE9A1E9C1A8D00BD5838 /* LocationSyncService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationSyncService.swift; path = Services/LocationSyncService.swift; sourceTree = "<group>"; };
 		E2D0113F1E5BE5920021936A /* PhraseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhraseCell.swift; path = Phrasebook/View/PhraseCell.swift; sourceTree = "<group>"; };
 		E2D011411E5BE6680021936A /* Phrase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Phrase.swift; path = Model/Phrase.swift; sourceTree = "<group>"; };
 		E2D0114D1E5D94F00021936A /* ServiceProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceProvider.swift; path = Services/ServiceProvider.swift; sourceTree = "<group>"; };
@@ -466,6 +470,8 @@
 				E2D011511E5D95DD0021936A /* CsvService.swift */,
 				E2645F111E649430004C10F1 /* AuthService.swift */,
 				E2A6AACB1E80E07E00E8118B /* UserDefaultsService.swift */,
+				E2C5EE981E9C0C5D00BD5838 /* RealmDatabaseService.swift */,
+				E2C5EE9A1E9C1A8D00BD5838 /* LocationSyncService.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -1029,6 +1035,7 @@
 				E24FFC451E5B174D00F7686F /* PhrasebookViewModel.swift in Sources */,
 				E2D9A25A1E556FFA003324F7 /* MenuCell.swift in Sources */,
 				E271C2C61E56460D00CD4F15 /* DashboardCoordinator.swift in Sources */,
+				E2C5EE9B1E9C1A8D00BD5838 /* LocationSyncService.swift in Sources */,
 				E24420751E84B99800556FDC /* UserLocationsCoordinator.swift in Sources */,
 				E2645F121E649430004C10F1 /* AuthService.swift in Sources */,
 				E24420731E84B86200556FDC /* UserLocationCell.swift in Sources */,
@@ -1046,6 +1053,7 @@
 				E28873131E9717720005237D /* Team.swift in Sources */,
 				E29F1BD91E8B106F006D8178 /* FormViewControllerWithBackButton.swift in Sources */,
 				E2E0D88E1E57F9FF00844509 /* PartnerCell.swift in Sources */,
+				E2C5EE991E9C0C5D00BD5838 /* RealmDatabaseService.swift in Sources */,
 				E2C0613F1E5A67A90022D6F1 /* MenuCoordinator.swift in Sources */,
 				E2D0114E1E5D94F00021936A /* ServiceProvider.swift in Sources */,
 				E24420711E84B82900556FDC /* UserLocationsViewModel.swift in Sources */,

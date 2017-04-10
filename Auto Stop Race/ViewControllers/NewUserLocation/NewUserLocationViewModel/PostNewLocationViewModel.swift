@@ -21,6 +21,12 @@ final class PostNewLocationViewModel {
         self.serviceProvider = provider
     }
     
+    func saveNewLocationToDatabase(newLocation: CreateLocationRecordRequest) {
+        serviceProvider.realmDatabaseService.addUnsentLocationRecord(locationRecord: newLocation)
+        Toast.showPositiveMessage(message: NSLocalizedString("saved_location", comment: ""))
+        postNewLocation(newLocation: newLocation)
+    }
+    
     func postNewLocation(newLocation: CreateLocationRecordRequest) {
         
         let endpointClosure = {  (target: AsrApi) ->  Endpoint<AsrApi> in
@@ -46,8 +52,8 @@ final class PostNewLocationViewModel {
                     switch status {
                     case .Created:
                         do {
-                            Toast.showPositiveMessage(message: NSLocalizedString("saved_location", comment: ""))
-                            self.locationSuccessfullyAdded()
+                            Toast.showPositiveMessage(message: NSLocalizedString("sended_location", comment: ""))
+                            self.serviceProvider.realmDatabaseService.removeLocationRecord(locationRecord: newLocation)
                         } catch {
                             
                         }
@@ -72,10 +78,12 @@ final class PostNewLocationViewModel {
             case let .failure(error):
                 Toast.showNegativeMessage(message: error.localizedDescription)
             }
+            
+            self.backToLocationsScreen()
         })
     }
     
-    func locationSuccessfullyAdded() {
-        delegate?.locationSuccessfullyAdded()
+    func backToLocationsScreen() {
+        delegate?.backToLocationsScreen()
     }
 }

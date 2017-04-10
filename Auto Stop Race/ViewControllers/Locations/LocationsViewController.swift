@@ -78,9 +78,7 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
         let attributedString = NSAttributedString(string: NSLocalizedString("hint_enter_team_number", comment: ""), attributes: [NSForegroundColorAttributeName : UIColor.lightGray])
         
         textfield.attributedPlaceholder = attributedString
-        
-        locationsSearchBar.keyboardType = .numberPad
-
+    
         view.addSubview(locationsSearchBar)
     }
     
@@ -88,8 +86,6 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
         self.viewModel.shownTeams.value = self.viewModel.allTeams.value
         updateConstraints()
     }
-    
-    
     
     func setupDropDownList() {
         teamsCollectionView.register(TeamLocationCell.self, forCellWithReuseIdentifier: TeamLocationCell.Identifier)
@@ -129,6 +125,7 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
     }
     
     func teamSelected(team: Team) {
+
         mapView.clear()
         let position = CLLocationCoordinate2D(latitude: team.lastLocation.latitude, longitude: team.lastLocation.longitude)
         let marker = GMSMarker(position: position)

@@ -37,7 +37,7 @@ extension PostNewLocationCoordinator: PostNewLocationViewControllerDelegate {
         
     }
     
-    func locationSuccessfullyAdded() {
+    func backToLocationsScreen() {
         _ = navigationController?.popViewController(animated: true)
     }
 }

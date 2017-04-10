@@ -77,13 +77,12 @@
 "title_post_location" = "Wysyłanie lokalizacji";
 "msg_your_location" = "Twoja przybliżona lokalizacja";
 "msg_establishing_approximate_location" = "Trwa ustalanie przybliżonej lokalizacji…";
-"saved_location" = "Zapisano lokalizację";
 "hint_message" = "Opcjonalna relacja (max 160 znaków)";
 "location_fail" = "Brak sygnału GPS";
 "add_photo_title" = "Dodaj zdjęcie";
 "add_location_button_title" = "Wyślij lokalizację";
 "saved_location" = "Zapisano lokalizację";
-
+"sended_location" = "Zapisano lokalizację na serwerze";
 
 // Map
 "last_location_record" = "Ostatnie zameldowanie: ";

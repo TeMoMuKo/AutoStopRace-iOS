@@ -108,6 +108,7 @@ class LoginViewController: UIViewControllerWithBackButton {
         usernameTextField.delegate = self
         passwordTextField.delegate = self
         
+
         viewModel.setUpAuthDetails(email: usernameTextField.rx.text.orEmpty.asDriver(), password: passwordTextField.rx.text.orEmpty.asDriver())
         
         viewModel.inputBackgroundColor
@@ -256,7 +257,6 @@ class LoginViewController: UIViewControllerWithBackButton {
 }
 
 extension LoginViewController: UITextFieldDelegate {
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField === usernameTextField {
             passwordTextField.becomeFirstResponder()

@@ -7,21 +7,13 @@
 //
 
 import Foundation
-import ObjectMapper
+import RealmSwift
 
-class CreateLocationRecordRequest: NSObject  {
-    var latitude: Double!
-    var longitude: Double!
-    var message: String?
-    var image: String?
-    
-    init(latitude: Double, longitude: Double) {
-        self.latitude = latitude
-        self.longitude = longitude
-    }
-    
-    
-    
+class CreateLocationRecordRequest: Object {
+    dynamic var latitude: Double = 0.0
+    dynamic var longitude: Double = 0.0
+    dynamic var message: String = ""
+    dynamic var image: String = ""
     
     func toDictionary() -> [String: [String: Any] ] {
         let dictionary = ["location":

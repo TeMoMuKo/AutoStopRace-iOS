@@ -36,7 +36,7 @@ class PartnersViewController: UIViewControllerWithMenu, UICollectionViewDelegate
     
     func setupNavigationBarTitle() {
         let titleLabel = navigationItem.titleView as! UILabel
-        titleLabel.text = NSLocalizedString("title_contact", comment: "")
+        titleLabel.text = NSLocalizedString("title_partners", comment: "")
     }
     
     func setupCollectionView() {

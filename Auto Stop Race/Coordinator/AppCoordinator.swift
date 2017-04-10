@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import RxSwift
 import RxReachability
 import ReachabilitySwift
 import Fabric
@@ -17,13 +18,23 @@ import GoogleMaps
 final class AppCoordinator: Coordinator {
     let serviceProvider = ServiceProvider()
     let reachability = Reachability()
-
+    let disposeBag = DisposeBag()
+    
     func start() {
         try? reachability?.startNotifier()
         
         Fabric.with([Crashlytics.self])
         
         serviceProvider.authService.validateToken()
+        
+        reachability?.rx.isReachable
+            .subscribe(onNext: { [weak self] isReachable in
+                guard let `self` = self else { return }
+                if isReachable {
+                    self.serviceProvider.locationSyncService.synchronizeLocationsWithServer()
+                }
+            })
+            .addDisposableTo(disposeBag)
         
         setupGMSServices()
 
