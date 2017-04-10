@@ -61,8 +61,6 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
     }
     
     func setupGMSServices() {
-
-
         view.addSubview(mapView)
     }
 

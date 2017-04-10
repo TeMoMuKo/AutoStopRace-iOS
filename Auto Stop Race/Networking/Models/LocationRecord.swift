@@ -29,6 +29,6 @@ struct LocationRecord: Mappable {
         address <- map["address"]
         country <- map["country"]
         country_code <- map["country_code"]
-        created_at <- (map["created_at"], DateTransform())
+        created_at <- (map["created_at"], CustomDateFormatTransform(formatString: "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"))
     }
 }

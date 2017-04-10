@@ -25,7 +25,7 @@ class TeamLocationCell: BaseUICollectionCell {
             }
             
             if let teamLastLocationTime = team?.lastLocation?.created_at {
-                timeLabel.text = teamLastLocationTime.toString()
+                timeLabel.text = teamLastLocationTime.toString(withFormat: "EEEE, MM-dd-yyyy HH:mm")
             }
         }
     }

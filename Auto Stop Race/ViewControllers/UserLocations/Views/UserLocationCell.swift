@@ -18,6 +18,7 @@ class UserLocationCell: BaseUICollectionCell {
         didSet {
             if let locationCountry = locationRecord?.country_code {
                 countryLabel.text =  locationCountry
+                countryLabel.backgroundColor = UIColor.circleColor
             }
             
             if let locationAdress = locationRecord?.address {
@@ -26,6 +27,10 @@ class UserLocationCell: BaseUICollectionCell {
             
             if let locationMessage = locationRecord?.message {
                 messageLabel.text = locationMessage
+            }
+            
+            if let createdAt = locationRecord?.created_at {
+                createdAtLabel.text = createdAt.toString(withFormat: "dd.MM \nHH:mm")
             }
         }
     }
@@ -47,7 +52,7 @@ class UserLocationCell: BaseUICollectionCell {
         let label = UILabel()
         label.text = ""
         label.numberOfLines = 0
-        label.lineBreakMode = .byWordWrapping
+        label.lineBreakMode = .byTruncatingTail
         label.font = UIFont.systemFont(ofSize: 17, weight: UIFontWeightLight)
         return label
     }()
@@ -56,11 +61,22 @@ class UserLocationCell: BaseUICollectionCell {
         let label = UILabel()
         label.text = ""
         label.numberOfLines = 0
-        label.lineBreakMode = .byWordWrapping
+        label.lineBreakMode = .byTruncatingTail
         label.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightLight)
         label.textColor = UIColor.gray
         return label
     }()
+    
+    var createdAtLabel: UILabel = {
+        let label = UILabel()
+        label.text = ""
+        label.numberOfLines = 2
+        label.textColor = UIColor.blueMenu
+        label.font = UIFont.systemFont(ofSize: 17, weight: UIFontWeightLight)
+        label.textColor = UIColor.gray
+        return label
+    }()
+    
     
     var separator: UIView = {
         let separator = UIView(frame: CGRect.init())
@@ -74,12 +90,19 @@ class UserLocationCell: BaseUICollectionCell {
         addSubview(addressLabel)
         addSubview(messageLabel)
         addSubview(separator)
-        
+        addSubview(createdAtLabel)
+
         setupConstraints()
     }
     
     
     func setupConstraints() {
+        createdAtLabel.snp.makeConstraints { (make) -> Void in
+            make.right.equalTo(self).offset(15)
+            make.height.equalTo(countryLabel.snp.height)
+            make.centerY.equalTo(self)
+        }
+        
         countryLabel.snp.makeConstraints { (make) -> Void in
             make.left.equalTo(self).offset(15)
             make.centerY.equalTo(self)
@@ -89,13 +112,13 @@ class UserLocationCell: BaseUICollectionCell {
         addressLabel.snp.makeConstraints { (make) -> Void in
             make.left.equalTo(countryLabel.snp.right).offset(15)
             make.top.equalTo(self.snp.top).offset(14)
-            make.right.equalToSuperview()
+            make.right.equalTo(createdAtLabel.snp.left).offset(-15)
         }
         
         messageLabel.snp.makeConstraints { (make) -> Void in
             make.left.equalTo(countryLabel.snp.right).offset(15)
             make.top.equalTo(addressLabel.snp.bottom).offset(5)
-            make.right.equalToSuperview()
+            make.right.equalTo(createdAtLabel.snp.left).offset(-15)
         }
         
         separator.snp.makeConstraints { (make) -> Void in

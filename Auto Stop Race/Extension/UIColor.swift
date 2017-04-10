@@ -39,4 +39,10 @@ extension UIColor {
             return UIColor.init(netHex: 0x5cb85c)
         }
     }
+    
+    open class var circleColor: UIColor {
+        get {
+            return UIColor.init(netHex: 0xD50000)
+        }
+    }
 }

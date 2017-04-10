@@ -46,7 +46,7 @@ final class UserLocationsViewModel {
             case let .success(response):
                 do {
                     let locationRecords = try response.mapArray(LocationRecord.self)
-                    self.locationRecords.value = locationRecords
+                    self.locationRecords.value = locationRecords.reversed()
                 } catch {
                     self.error.onNext("Parsing error. Try again later.")
                 }
