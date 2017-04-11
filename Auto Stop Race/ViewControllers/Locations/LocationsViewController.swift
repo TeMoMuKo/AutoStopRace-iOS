@@ -147,7 +147,9 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
     
     func showMarker(team: Team) {
         mapView.clear()
+
         let position = CLLocationCoordinate2D(latitude: team.lastLocation.latitude, longitude: team.lastLocation.longitude)
+        mapView.animate(toLocation: position)
         let marker = GMSMarker(position: position)
         let markerView = UIImageView(image: #imageLiteral(resourceName: "asr_marker"))
         marker.iconView = markerView
@@ -165,7 +167,6 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-    
     
     func setupKeyboard() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))

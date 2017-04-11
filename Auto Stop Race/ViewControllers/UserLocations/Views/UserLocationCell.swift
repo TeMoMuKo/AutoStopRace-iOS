@@ -86,6 +86,9 @@ class UserLocationCell: BaseUICollectionCell {
     
     override func setupViews() {
         super.setupViews()
+        
+        self.backgroundColor = UIColor.grayBackgroundColor
+        
         addSubview(countryLabel)
         addSubview(addressLabel)
         addSubview(messageLabel)

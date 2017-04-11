@@ -129,6 +129,6 @@ class ContactViewController: UIViewControllerWithMenu,  UICollectionViewDelegate
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        return CGSize.init(width: collectionView.frame.width, height: 100)
+        return CGSize.init(width: collectionView.frame.width, height: 0)
     }
 }

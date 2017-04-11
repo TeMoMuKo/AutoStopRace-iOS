@@ -69,8 +69,7 @@ class PhrasebookViewController: UIViewControllerWithMenu, UITableViewDelegate {
             languageSegmentedControl.rx.selectedSegmentIndex.asObservable()) { query, selectedIndex in
                 return (query, selectedIndex)
             }
-            .subscribe(onNext: { [weak self] (query, selectedIndex) in
-                guard let `self` = self else { return }
+            .subscribe(onNext: { (query, selectedIndex) in                
                 viewModel.phrases.value = viewModel.allPhrases.value.filter { phrase in
                     phrase.selectedLanguage.value = selectedIndex
                     phrase.currentTranslationPhrase.value = phrase.translationPhrases.value[selectedIndex]

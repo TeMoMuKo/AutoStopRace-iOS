@@ -44,12 +44,8 @@ final class LocationSyncService: BaseService, LocationSyncServiceType {
                         if let status = HttpStatus(rawValue: statusCode) {
                             switch status {
                             case .Created:
-                                do {
                                     Toast.showPositiveMessage(message: NSLocalizedString("sended_location", comment: ""))
                                     self.provider.realmDatabaseService.removeLocationRecord(locationRecord: unsendLocationRecord)
-                                } catch {
-                                    
-                                }
                             case .Unauthorized:
                                 do {
                                     let error = try response.mapObject(ErrorResponse.self) as ErrorResponse

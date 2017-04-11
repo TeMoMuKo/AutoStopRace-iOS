@@ -84,7 +84,7 @@ class MenuViewController: NSObject, UICollectionViewDelegateFlowLayout {
         UIView.animate(withDuration: 0.5, animations: {
             self.blackView.alpha = 0
             
-            if let window = UIApplication.shared.keyWindow {
+            if UIApplication.shared.keyWindow != nil {
                 self.collectionView.frame = CGRect.init(x: -300, y: 0, width: self.collectionView.frame.width, height: self.collectionView.frame.height)
             }
         })
@@ -107,7 +107,7 @@ class MenuViewController: NSObject, UICollectionViewDelegateFlowLayout {
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
             self.blackView.alpha = 0
             
-            if let window = UIApplication.shared.keyWindow {
+            if UIApplication.shared.keyWindow != nil {
                 self.collectionView.frame = CGRect.init(x: -300, y: 0, width: self.collectionView.frame.width, height: self.collectionView.frame.height)
             }
         }, completion: { (completed: Bool) in

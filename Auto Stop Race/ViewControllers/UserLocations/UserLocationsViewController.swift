@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 import RxSwift
 import RxCocoa
+import SnapKit
 
 protocol UserLocationsViewControllerDelegate: class {
     func showMapTapped()
@@ -17,7 +18,10 @@ protocol UserLocationsViewControllerDelegate: class {
 }
 
 class UserLocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegateFlowLayout {
+
     let cellHeight: CGFloat = 100
+    let bigCellHeight: CGFloat = 120
+    
     var viewModel: UserLocationsViewModel!
     
     let disposeBag = DisposeBag()
@@ -31,6 +35,8 @@ class UserLocationsViewController: UIViewControllerWithMenu, UICollectionViewDel
     
     var refreshControl: UIRefreshControl!
 
+    var backgroundImageLogo: UIView!
+    
     convenience init(viewModel: UserLocationsViewModel) {
         self.init()
         
@@ -45,11 +51,12 @@ class UserLocationsViewController: UIViewControllerWithMenu, UICollectionViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupBackgroundImage()
         setupNavigationBarTitle()
         setupPostNewLocationBarButton()
         setupCollectionView()
         setupRefreshControl()
-        
+
         collectionView.register(UserLocationCell.self, forCellWithReuseIdentifier: UserLocationCell.Identifier)
         
         viewModel.locationRecords.asObservable()
@@ -69,6 +76,7 @@ class UserLocationsViewController: UIViewControllerWithMenu, UICollectionViewDel
         
         collectionView.rx.setDelegate(self).addDisposableTo(disposeBag)
         
+        setupConstraints()
     }
     
     func setupNavigationBarTitle() {
@@ -93,15 +101,20 @@ class UserLocationsViewController: UIViewControllerWithMenu, UICollectionViewDel
         refreshControl.endRefreshing()
     }
     
+    func setupBackgroundImage() {
+        backgroundImageLogo = UIImageView.init(image: UIImage(named: "img_asr_empty_state")?.scaled(toWidth: view.bounds.width))
+        backgroundImageLogo.contentMode = .scaleAspectFit
+        
+        collectionView.backgroundColor = UIColor.grayBackgroundColor
+        collectionView.backgroundView = backgroundImageLogo
+    }
+    
     func handlePostNewLocationTap() {
         viewModel.postNewLocationTapped()
     }
     
     func setupCollectionView() {
         view.addSubview(collectionView)
-        collectionView.snp.makeConstraints { (make) -> Void in
-            make.top.left.bottom.right.equalTo(view)
-        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -113,6 +126,16 @@ class UserLocationsViewController: UIViewControllerWithMenu, UICollectionViewDel
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        return CGSize.init(width: collectionView.frame.width, height: 100)
+        return CGSize.init(width: collectionView.frame.width, height: 0)
+    }
+    
+    func setupConstraints() {
+        backgroundImageLogo.snp.makeConstraints { (make) -> Void in
+            make.center.equalToSuperview()
+        }
+        
+        collectionView.snp.makeConstraints { (make) -> Void in
+            make.top.left.bottom.right.equalTo(view)
+        }
     }
 }

@@ -51,12 +51,8 @@ final class PostNewLocationViewModel {
                 if let status = HttpStatus(rawValue: statusCode) {
                     switch status {
                     case .Created:
-                        do {
-                            Toast.showPositiveMessage(message: NSLocalizedString("sended_location", comment: ""))
-                            self.serviceProvider.realmDatabaseService.removeLocationRecord(locationRecord: newLocation)
-                        } catch {
-                            
-                        }
+                        Toast.showPositiveMessage(message: NSLocalizedString("sended_location", comment: ""))
+                        self.serviceProvider.realmDatabaseService.removeLocationRecord(locationRecord: newLocation)
                     case .UnprocessableEntity:
                         do {
                             let error = try response.mapObject(ErrorResponse.self) as ErrorResponse

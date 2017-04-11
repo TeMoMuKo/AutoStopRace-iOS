@@ -63,10 +63,10 @@ class CampusViewController: UIViewController, UIScrollViewDelegate {
     func setupGestureRecognizer() {
         let doubleTap = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap))
         doubleTap.numberOfTapsRequired = 2
-        scrollView.addGestureRecognizer(doubleTap)
+        view.addGestureRecognizer(doubleTap)
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissView))
-        scrollView.addGestureRecognizer(tap)
+        view.addGestureRecognizer(tap)
     }
     
     func dismissView() {

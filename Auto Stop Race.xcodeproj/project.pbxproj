@@ -560,9 +560,10 @@
 		E2D9A23C1E55337A003324F7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E2D9A2451E55365D003324F7 /* Dashboard */,
 				E244207C1E8529D000556FDC /* NewUserLocation */,
-				E27CB7A61E5863A7006B2396 /* Locations */,
 				E244206B1E84B58500556FDC /* UserLocations */,
+				E27CB7A61E5863A7006B2396 /* Locations */,
 				E29293BA1E82229C0083A1DD /* Settings */,
 				E2D90C7B1E596C8C00435A9F /* Phrasebook */,
 				E2C239D01E594D1B003818FB /* Login */,
@@ -572,7 +573,6 @@
 				E25F73D61E56AD7E003DEB3C /* Partners */,
 				E2D9A25B1E557042003324F7 /* BaseViews */,
 				E2D9A2501E554915003324F7 /* Menu */,
-				E2D9A2451E55365D003324F7 /* Dashboard */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
