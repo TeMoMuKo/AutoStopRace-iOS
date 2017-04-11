@@ -123,13 +123,36 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
     }
     
     func teamSelected(team: Team) {
-
+        if viewModel.userTeamNumber != nil && team.teamNumber == viewModel.userTeamNumber{
+            showUserMarkers()
+        } else {
+            showMarker(team: team)
+        }
+    }
+    
+    func showUserMarkers() {
+        mapView.clear()
+        for userLocation in viewModel.locationRecords.value {
+            let position = CLLocationCoordinate2D(latitude: userLocation.latitude, longitude: userLocation.longitude)
+            let marker = GMSMarker(position: position)
+            let markerView = UIImageView(image: #imageLiteral(resourceName: "asr_marker"))
+            marker.iconView = markerView
+            marker.title = userLocation.message
+            marker.snippet = userLocation.created_at.toString(withFormat: DateFormat.fullMap)
+            marker.map = mapView
+        }
+        self.viewModel.shownTeams.value = []
+        updateConstraints()
+    }
+    
+    func showMarker(team: Team) {
         mapView.clear()
         let position = CLLocationCoordinate2D(latitude: team.lastLocation.latitude, longitude: team.lastLocation.longitude)
         let marker = GMSMarker(position: position)
         let markerView = UIImageView(image: #imageLiteral(resourceName: "asr_marker"))
         marker.iconView = markerView
         marker.title = team.lastLocation.message
+        marker.snippet = team.lastLocation.created_at.toString(withFormat: DateFormat.fullMap)
         marker.map = mapView
         self.viewModel.shownTeams.value = []
         updateConstraints()

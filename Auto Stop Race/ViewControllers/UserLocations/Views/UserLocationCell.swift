@@ -51,16 +51,16 @@ class UserLocationCell: BaseUICollectionCell {
     var addressLabel: UILabel = {
         let label = UILabel()
         label.text = ""
-        label.numberOfLines = 0
+        label.numberOfLines = 2
         label.lineBreakMode = .byTruncatingTail
-        label.font = UIFont.systemFont(ofSize: 17, weight: UIFontWeightLight)
+        label.font = UIFont.systemFont(ofSize: 15, weight: UIFontWeightLight)
         return label
     }()
     
     var messageLabel: UILabel = {
         let label = UILabel()
         label.text = ""
-        label.numberOfLines = 0
+        label.numberOfLines = 2
         label.lineBreakMode = .byTruncatingTail
         label.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightLight)
         label.textColor = UIColor.gray
@@ -72,8 +72,8 @@ class UserLocationCell: BaseUICollectionCell {
         label.text = ""
         label.numberOfLines = 2
         label.textColor = UIColor.blueMenu
-        label.font = UIFont.systemFont(ofSize: 17, weight: UIFontWeightLight)
-        label.textColor = UIColor.gray
+        label.font = UIFont.systemFont(ofSize: 15, weight: UIFontWeightBold)
+        label.textColor = UIColor.blueMenu
         return label
     }()
     
@@ -98,8 +98,8 @@ class UserLocationCell: BaseUICollectionCell {
     
     func setupConstraints() {
         createdAtLabel.snp.makeConstraints { (make) -> Void in
-            make.right.equalTo(self).offset(15)
-            make.height.equalTo(countryLabel.snp.height)
+            make.right.equalTo(self).offset(-15)
+            make.height.width.equalTo(50)
             make.centerY.equalTo(self)
         }
         
@@ -112,13 +112,13 @@ class UserLocationCell: BaseUICollectionCell {
         addressLabel.snp.makeConstraints { (make) -> Void in
             make.left.equalTo(countryLabel.snp.right).offset(15)
             make.top.equalTo(self.snp.top).offset(14)
-            make.right.equalTo(createdAtLabel.snp.left).offset(-15)
+            make.right.lessThanOrEqualTo(createdAtLabel.snp.left).offset(-15)
         }
         
         messageLabel.snp.makeConstraints { (make) -> Void in
             make.left.equalTo(countryLabel.snp.right).offset(15)
             make.top.equalTo(addressLabel.snp.bottom).offset(5)
-            make.right.equalTo(createdAtLabel.snp.left).offset(-15)
+            make.right.lessThanOrEqualTo(createdAtLabel.snp.left).offset(-15)
         }
         
         separator.snp.makeConstraints { (make) -> Void in

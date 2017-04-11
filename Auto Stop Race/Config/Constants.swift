@@ -27,6 +27,11 @@ struct DatabaseConfig {
     static let version = 1
 }
 
+struct DateFormat {
+    static let jsonApi = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+    static let fullMap = "HH:mm dd.MM"
+}
+
 struct UIConfig {
     
 }

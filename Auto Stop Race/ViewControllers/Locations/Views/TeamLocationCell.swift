@@ -53,8 +53,8 @@ class TeamLocationCell: BaseUICollectionCell {
     var timeLabel: UILabel = {
         let label = UILabel()
         label.text = ""
-        label.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightLight)
-        label.textColor = UIColor.gray
+        label.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightBold)
+        label.textColor = UIColor.blueMenu
         return label
     }()
     

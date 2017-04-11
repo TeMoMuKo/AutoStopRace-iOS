@@ -22,6 +22,7 @@ struct LocationRecord: Mappable {
     init?(map: Map) { }
     
     mutating func mapping(map: Map) {
+        
         id <- map["id"]
         latitude <- map["latitude"]
         longitude <- map["longitude"]
@@ -29,6 +30,6 @@ struct LocationRecord: Mappable {
         address <- map["address"]
         country <- map["country"]
         country_code <- map["country_code"]
-        created_at <- (map["created_at"], CustomDateFormatTransform(formatString: "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"))
+        created_at <- (map["created_at"], CustomDateFormatTransform(formatString: DateFormat.jsonApi))
     }
 }
