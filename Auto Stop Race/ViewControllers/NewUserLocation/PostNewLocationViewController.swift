@@ -116,10 +116,12 @@ class PostNewLocationViewController: FormViewControllerWithBackButton, CLLocatio
                 <<< TextAreaRow("message_row") {
                     $0.textAreaHeight = .dynamic(initialTextViewHeight: 110)
                     $0.add(rule: RuleMaxLength(maxLength: 160))
+                    $0.validationOptions = .validatesOnChange
                 }
                 .cellUpdate { cell, row in
                     if !row.isValid {
-                        cell.textLabel?.textColor = .red
+                        let message = row.value! as NSString
+                        row.value = message.substring(with: NSRange(location: 0, length: 159))
                     }
                 }
 
@@ -133,6 +135,8 @@ class PostNewLocationViewController: FormViewControllerWithBackButton, CLLocatio
                         $0.title = NSLocalizedString("add_location_button_title", comment: "")
                     }
                     .onCellSelection { [weak self] (cell, row) in
+                        row.hidden = true
+                        row.evaluateHidden()
                         self?.postNewLocation()
                     }
     }

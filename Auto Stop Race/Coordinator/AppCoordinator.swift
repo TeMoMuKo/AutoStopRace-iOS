@@ -27,6 +27,8 @@ final class AppCoordinator: Coordinator {
         
         serviceProvider.authService.validateToken()
         
+        self.serviceProvider.locationSyncService.synchronizeLocationsWithServer()
+
         reachability?.rx.isReachable
             .subscribe(onNext: { [weak self] isReachable in
                 guard let `self` = self else { return }

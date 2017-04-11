@@ -50,13 +50,6 @@ final class LocationSyncService: BaseService, LocationSyncServiceType {
                                 } catch {
                                     
                                 }
-                            case .UnprocessableEntity:
-                                do {
-                                    let error = try response.mapObject(ErrorResponse.self) as ErrorResponse
-                                    Toast.showNegativeMessage(message: error.errors)
-                                } catch {
-                                    
-                                }
                             case .Unauthorized:
                                 do {
                                     let error = try response.mapObject(ErrorResponse.self) as ErrorResponse
