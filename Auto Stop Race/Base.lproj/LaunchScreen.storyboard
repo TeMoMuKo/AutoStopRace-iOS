@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,15 +22,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="img_asr_empty_state" translatesAutoresizingMaskIntoConstraints="NO" id="5Kg-Yg-Rcy">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="img_asr_empty_state" translatesAutoresizingMaskIntoConstraints="NO" id="5Kg-Yg-Rcy">
                                 <rect key="frame" x="37" y="183" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="5Kg-Yg-Rcy" secondAttribute="height" multiplier="1:1" id="TT8-HG-7Z3"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.96881216764450073" green="0.96883469820022583" blue="0.96882253885269165" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="5Kg-Yg-Rcy" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="300:667" id="21a-0U-N6j"/>
                             <constraint firstItem="5Kg-Yg-Rcy" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="HWp-cS-8ES"/>
+                            <constraint firstItem="5Kg-Yg-Rcy" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="21" id="PBj-jc-2Wz"/>
                             <constraint firstItem="5Kg-Yg-Rcy" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="uYZ-Ua-JPj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5Kg-Yg-Rcy" secondAttribute="trailing" constant="22" id="x2x-Jv-eSZ"/>
                         </constraints>
                     </view>
                 </viewController>
