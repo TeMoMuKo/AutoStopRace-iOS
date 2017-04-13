@@ -10,16 +10,18 @@ import Foundation
 import UIKit
 import SnapKit
 
-class ContactCell: BaseCell {
+class ContactCell: BaseUICollectionCell {
     
     static let Identifier = "ContactCell"
     
     var contact: Contact? {
         didSet {
-            if let contactValue = contact?.value {
-                valueLabel.text =  contactValue
+            if contact?.optionalDisplayedValue != "" {
+                valueLabel.text = contact?.optionalDisplayedValue
+            } else {
+                valueLabel.text = contact?.value
             }
-            
+
             if let contactDescription = contact?.contactDescription {
                 contactDescriptionLabel.text = contactDescription
                 contactDescriptionLabel.textColor = UIColor.gray
@@ -40,6 +42,8 @@ class ContactCell: BaseCell {
     var valueLabel: UILabel = {
         let label = UILabel()
         label.text = ""
+        label.minimumScaleFactor = 0.5
+        label.adjustsFontSizeToFitWidth = true
         label.font = UIFont.systemFont(ofSize: 25, weight: UIFontWeightLight)
         return label
     }()
@@ -76,6 +80,7 @@ class ContactCell: BaseCell {
         
         valueLabel.snp.makeConstraints { (make) -> Void in
             make.left.equalTo(imageView.snp.right).offset(15)
+            make.right.equalToSuperview().offset(-10)
             make.top.equalTo(self.snp.top).offset(14)
         }
         

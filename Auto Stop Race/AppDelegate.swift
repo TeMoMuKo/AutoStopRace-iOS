@@ -19,14 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let navigationController = UINavigationController()
 
-        window?.rootViewController = navigationController
         let coordinator = AppCoordinator(navigationController: navigationController)
         
         coordinator.start()
         self.coordinator = coordinator
-        
-        window?.makeKeyAndVisible()
-        
+                
         setUpNavigationBar()
         application.statusBarStyle = .lightContent
 

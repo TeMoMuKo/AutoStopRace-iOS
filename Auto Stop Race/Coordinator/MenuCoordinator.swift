@@ -12,9 +12,17 @@ import UIKit
 
 final class MenuCoordinator: Coordinator {
 
-    let myNotification = Notification.Name(rawValue:"showMenu")
+    var appCoordinator: AppCoordinator?
+    var serviceProvider: ServiceProvider?
+
+    convenience init(navigationController: UINavigationController?, appCoordinator: AppCoordinator?, serviceProvider: ServiceProvider ) {
+        self.init(navigationController: navigationController)
+        
+        self.appCoordinator = appCoordinator
+        self.serviceProvider = serviceProvider
+    }
     
-    let serviceProvider = ServiceProvider()
+    let myNotification = Notification.Name(rawValue:"showMenu")
     
     var menuViewModel: MenuViewModel!
     var menuViewController: MenuViewController!
@@ -22,8 +30,7 @@ final class MenuCoordinator: Coordinator {
     func start() {
         let nc = NotificationCenter.default
         nc.addObserver(forName:myNotification, object:nil, queue:nil, using:showMenu)
-        
-        menuViewModel = MenuViewModel(delegate: self)
+        menuViewModel = MenuViewModel(delegate: self, provider: serviceProvider!)
         menuViewController = MenuViewController(viewModel: menuViewModel)
     }
 }
@@ -45,12 +52,12 @@ extension MenuCoordinator: MenuViewControllerDelegate {
         switch menu {
         
         case .teams:
-            let coordinator = DashboardCoordinator(navigationController: navigationController)
+            let coordinator = DashboardCoordinator(navigationController: navigationController, appCoordinator: appCoordinator, serviceProvider: serviceProvider!)
             coordinator.start()
             break
             
         case .locations:
-            let coordinator = LocationsCoordinator(navigationController: navigationController)
+            let coordinator = LocationsCoordinator(navigationController: navigationController, appCoordinator: appCoordinator, serviceProvider: serviceProvider!)
             coordinator.start()
             break
         
@@ -60,7 +67,7 @@ extension MenuCoordinator: MenuViewControllerDelegate {
             break
         
         case .phrasebook:
-            let prasebookViewModel = PhrasebookViewModel(provider: serviceProvider)
+            let prasebookViewModel = PhrasebookViewModel(provider: serviceProvider!)
             let viewController = PhrasebookViewController(viewModel: prasebookViewModel)
             self.navigationController?.pushViewController(viewController, animated: true)
             break
@@ -76,6 +83,8 @@ extension MenuCoordinator: MenuViewControllerDelegate {
             break
         
         case .settings:
+            let viewController = SettingsViewController(delegate: appCoordinator.self!, provider: serviceProvider!)
+            self.navigationController?.pushViewController(viewController, animated: true)
             break
         
         case .about:
@@ -85,3 +94,4 @@ extension MenuCoordinator: MenuViewControllerDelegate {
         }
     }
 }
+

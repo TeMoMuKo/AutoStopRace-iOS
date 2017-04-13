@@ -7,12 +7,73 @@
 //
 
 import Foundation
+import Moya
 import RxSwift
+import RxCocoa
+import Moya_ObjectMapper
 
 final class LocationsViewModel {
-    private let disposeBag = DisposeBag()
+    private let error = PublishSubject<String>()
+
+    let teamSelected = PublishSubject<Team>()
     
-    init() {
-        
+    private let apiProvider = MoyaProvider<AsrApi>()
+    private let serviceProvider: ServiceProviderType
+    
+    private let disposeBag = DisposeBag()
+
+    let allTeams = Variable<[Team]>([])
+    let shownTeams = Variable<[Team]>([])
+    
+    let locationRecords = Variable<[LocationRecord]>([])
+    
+    var userTeamNumber: Int?
+    
+    init(provider: ServiceProviderType) {
+        self.serviceProvider = provider
+        downloadUserLocation()
+        downloadTeams()
+    }
+    
+    func downloadUserLocation() {
+        if serviceProvider.authService.isUserLoggedIn {
+            if serviceProvider.userDefaultsService.getUserData().teamNumber != nil {
+                userTeamNumber = serviceProvider.userDefaultsService.getUserData().teamNumber
+                let teamSlug = "team-\(userTeamNumber!)"
+                apiProvider.request(.userLocations(teamSlug)) { [weak self] result in
+                    guard let `self` = self else { return }
+                    
+                    switch result {
+                    case let .success(response):
+                        do {
+                            let locationRecords = try response.mapArray(LocationRecord.self)
+                            self.locationRecords.value = locationRecords.reversed()
+                        } catch {
+                            self.error.onNext("Parsing error. Try again later.")
+                        }
+                    case .failure:
+                        self.error.onNext("Request error. Try again later.")
+                    }
+                }
+            }
+        }
+    }
+    
+    func downloadTeams() {
+        apiProvider.request(.allTeams()) { [weak self] result in
+            guard let `self` = self else { return }
+            
+            switch result {
+            case let .success(response):
+                do {
+                    let teams = try response.mapArray(Team.self)
+                    self.allTeams.value = teams
+                } catch {
+                    self.error.onNext("Parsing error. Try again later.")
+                }
+            case .failure:
+                self.error.onNext("Request error. Try again later.")
+            }
+        }
     }
 }

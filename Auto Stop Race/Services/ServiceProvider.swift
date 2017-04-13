@@ -12,10 +12,14 @@ protocol ServiceProviderType: class {
     var csvService: CsvServiceType { get }
     var authService: AuthServiceType { get }
     var userDefaultsService: UserDefaultsServiceType { get }
+    var realmDatabaseService: RealmDatabaseServiceType { get }
+    var locationSyncService: LocationSyncServiceType { get }
 }
 
 final class ServiceProvider: ServiceProviderType {
     lazy var csvService: CsvServiceType = CsvService(provider: self)
     lazy var authService: AuthServiceType = AuthService(provider: self)
     lazy var userDefaultsService: UserDefaultsServiceType = UserDefaultsService(provider: self)
+    lazy var realmDatabaseService: RealmDatabaseServiceType = RealmDatabaseService(provider: self)
+    lazy var locationSyncService: LocationSyncServiceType = LocationSyncService(provider: self)
 }

@@ -1,6 +1,15 @@
 PODS:
   - Alamofire (4.4.0)
+  - Crashlytics (3.8.4):
+    - Fabric (~> 1.6.3)
   - CSV.swift (1.1.2)
+  - Eureka (2.0.1)
+  - Fabric (1.6.11)
+  - GoogleMaps (2.2.0):
+    - GoogleMaps/Maps (= 2.2.0)
+  - GoogleMaps/Base (2.2.0)
+  - GoogleMaps/Maps (2.2.0):
+    - GoogleMaps/Base
   - Moya (8.0.3):
     - Moya/Core (= 8.0.3)
   - Moya-ObjectMapper (2.3.1):
@@ -12,37 +21,59 @@ PODS:
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
   - ObjectMapper (2.2.5)
+  - ReachabilitySwift (3)
   - Realm (2.4.4):
     - Realm/Headers (= 2.4.4)
   - Realm/Headers (2.4.4)
   - RealmSwift (2.4.4):
     - Realm (= 2.4.4)
   - Result (3.2.1)
-  - RxCocoa (3.3.1):
-    - RxSwift (~> 3.3)
-  - RxSwift (3.3.1)
+  - RxCocoa (3.2.0):
+    - RxSwift (~> 3.1)
+  - RxReachability (0.1.3):
+    - ReachabilitySwift (~> 3)
+    - RxCocoa (~> 3)
+    - RxSwift (~> 3)
+  - RxRealm (0.5.2):
+    - RealmSwift (~> 2.4)
+    - RxSwift (~> 3.1)
+  - RxSwift (3.2.0)
   - SnapKit (3.2.0)
 
 DEPENDENCIES:
+  - Crashlytics
   - CSV.swift
+  - Eureka
+  - Fabric
+  - GoogleMaps
   - Moya-ObjectMapper
   - RealmSwift
-  - RxCocoa
+  - RxCocoa (= 3.2.0)
+  - RxReachability
+  - RxRealm
+  - RxSwift (= 3.2)
   - SnapKit (~> 3.2.0)
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  Crashlytics: 79e236942ca1e7fc641df1feb9a275360a78ab6a
   CSV.swift: 0aad3b06980034c8fa296456b708ac9128ebbdf9
+  Eureka: ae837bb1dfae0c07bc1bda7aeef87876eeb537c2
+  Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
+  GoogleMaps: 104c418d61ab8a05dff06ed0784c25ea9d37da45
   Moya: d3721622e3cc0cc2f038d69a258686f0b66e7252
   Moya-ObjectMapper: 952be2b261d38cf8d973b7e429708eb03d256e23
   ObjectMapper: fb30f71e08470d1e5a20b199fafe1246281db898
+  ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
   Realm: 5a280a1f5a9a3c267bebf4f41ee47911137703d7
   RealmSwift: 0c02b9f2d4be4301c497ed10e53a0580584eb1dd
   Result: 2453a22e5c5b11c0c3a478736e82cd02f763b781
-  RxCocoa: 7dcb7a1860fc9cd0e23dae67ab105fc2916670b6
-  RxSwift: 8fc9f2de6275a9101d518444e00bf32f1a42caac
+  RxCocoa: ccdf43101a70407097a29082f648ba1676075b30
+  RxReachability: 0e781fc978c3c850dda6cafa2c5956ff806a1fcc
+  RxRealm: df024f04e64c3a9723dab63a6ec8621b3db6473f
+  RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
 
-PODFILE CHECKSUM: b8ce03b1a2ae8b6e2bd133c1714a8ead59d1252e
+PODFILE CHECKSUM: 3d1adaa5550ebf8628c5d22f190515249e2a0dcc
 
 COCOAPODS: 1.2.0

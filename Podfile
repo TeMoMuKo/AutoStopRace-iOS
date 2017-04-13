@@ -3,12 +3,22 @@ platform :ios, '9.0'
 target 'Auto Stop Race' do
     use_frameworks!
 
-    pod 'RxCocoa'
+    pod 'RxSwift', '3.2'
+    pod 'RxCocoa', '3.2.0'
     pod 'SnapKit', '~> 3.2.0'
+    
     pod 'CSV.swift'
     pod 'Moya-ObjectMapper'
     pod 'RealmSwift'
-
+    pod 'GoogleMaps'
+    pod 'RxReachability'
+    pod 'RxRealm'
+    
+    pod 'Eureka'
+    
+    pod 'Fabric'
+    pod 'Crashlytics'
+    
     post_install do |installer|
         installer.pods_project.targets.each do |target|
             target.build_configurations.each do |config|

@@ -10,10 +10,19 @@ import Foundation
 import UIKit
 
 final class LoginCoordinator: Coordinator {
-    let serviceProvider = ServiceProvider()
+    
+    var appCoordinator: AppCoordinator?
+    var serviceProvider: ServiceProvider?
+    
+    convenience init(navigationController: UINavigationController?, appCoordinator: AppCoordinator?, serviceProvider: ServiceProvider ) {
+        self.init(navigationController: navigationController)
+        
+        self.appCoordinator = appCoordinator
+        self.serviceProvider = serviceProvider
+    }
     
     func start() {
-        let viewModel = LoginViewModel(delegate: self, provider: serviceProvider)
+        let viewModel = LoginViewModel(delegate: self, provider: serviceProvider!)
         let viewController = LoginViewController(viewModel: viewModel)
         self.navigationController?.pushViewController(viewController, animated: false)
     }
@@ -21,6 +30,9 @@ final class LoginCoordinator: Coordinator {
 
 extension LoginCoordinator: LoginViewControllerDelegate {
     func loginButtonTapped() {
-        
+        _ = navigationController?.popViewController(animated: true)
+        let coordinator = UserLocationsCoordinator(navigationController: navigationController, appCoordinator: self.appCoordinator, serviceProvider:serviceProvider!)
+        coordinator.start()
+        childCoordinators.append(coordinator)
     }
 }

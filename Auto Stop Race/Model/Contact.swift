@@ -13,10 +13,12 @@ class Contact: NSObject {
     let value: String
     let imageName: String
     let contactDescription: String
+    let optionalDisplayedValue: String
     
-    init(type: String, value: String, imageName: String, contactDescription: String) {
+    init(type: String, value: String, optionalDisplayedValue: String = "", imageName: String, contactDescription: String) {
         self.type = type
         self.value = value
+        self.optionalDisplayedValue = optionalDisplayedValue
         self.imageName = imageName
         self.contactDescription = contactDescription
     }

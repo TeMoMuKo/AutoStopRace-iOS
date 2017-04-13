@@ -33,4 +33,22 @@ extension UIColor {
             return UIColor.init(netHex: 0xceced2)
         }
     }
+    
+    open class var success: UIColor {
+        get {
+            return UIColor.init(netHex: 0x5cb85c)
+        }
+    }
+    
+    open class var circleColor: UIColor {
+        get {
+            return UIColor.init(netHex: 0xD50000)
+        }
+    }
+    
+    open class var grayBackgroundColor: UIColor {
+        get {
+            return UIColor.init(netHex: 0xf7f7f7)
+        }
+    }
 }

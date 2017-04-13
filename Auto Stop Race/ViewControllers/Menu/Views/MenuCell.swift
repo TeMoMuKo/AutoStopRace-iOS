@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MenuCell: BaseCell {
+class MenuCell: BaseUICollectionCell {
     
     static let Identifier = "MenuCell"
 
