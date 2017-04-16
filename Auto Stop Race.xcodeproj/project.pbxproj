@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A1589B79D3652F9180AB054 /* Pods_Auto_Stop_Race.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B0A3759C56A5662057903A6 /* Pods_Auto_Stop_Race.framework */; };
-		389E1ED3F6D98F24B6C8E9AA /* Pods_Auto_Stop_RaceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44A6CE3DA2C00A93DC757CB8 /* Pods_Auto_Stop_RaceTests.framework */; };
-		57AFFE52EE7A7C9BA0F2D9F4 /* Pods_Auto_Stop_RaceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1A4AB4B5E2EC7E4EEFC5E5 /* Pods_Auto_Stop_RaceUITests.framework */; };
 		E244206D1E84B6A600556FDC /* UserLocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E244206C1E84B6A600556FDC /* UserLocationsViewController.swift */; };
 		E24420711E84B82900556FDC /* UserLocationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24420701E84B82900556FDC /* UserLocationsViewModel.swift */; };
 		E24420731E84B86200556FDC /* UserLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24420721E84B86200556FDC /* UserLocationCell.swift */; };
@@ -26,6 +23,103 @@
 		E271C2C41E56353600CD4F15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E271C2C31E56353600CD4F15 /* Assets.xcassets */; };
 		E271C2C61E56460D00CD4F15 /* DashboardCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E271C2C51E56460C00CD4F15 /* DashboardCoordinator.swift */; };
 		E271C2CE1E5660EC00CD4F15 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E271C2CD1E5660EC00CD4F15 /* DashboardViewModel.swift */; };
+		E271E7921EA2FF710052E382 /* librealm-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E77D1EA2FF710052E382 /* librealm-ios.a */; };
+		E271E7931EA2FF710052E382 /* librealm-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E77D1EA2FF710052E382 /* librealm-ios.a */; };
+		E271E7941EA2FF710052E382 /* librealm-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E77D1EA2FF710052E382 /* librealm-ios.a */; };
+		E271E7981EA2FF710052E382 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E77F1EA2FF710052E382 /* Crashlytics.framework */; };
+		E271E7991EA2FF710052E382 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E77F1EA2FF710052E382 /* Crashlytics.framework */; };
+		E271E79A1EA2FF710052E382 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E77F1EA2FF710052E382 /* Crashlytics.framework */; };
+		E271E79B1EA2FF710052E382 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7801EA2FF710052E382 /* Fabric.framework */; };
+		E271E79C1EA2FF710052E382 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7801EA2FF710052E382 /* Fabric.framework */; };
+		E271E79D1EA2FF710052E382 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7801EA2FF710052E382 /* Fabric.framework */; };
+		E271E7A41EA2FF710052E382 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7831EA2FF710052E382 /* Alamofire.framework */; };
+		E271E7A51EA2FF710052E382 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7831EA2FF710052E382 /* Alamofire.framework */; };
+		E271E7A61EA2FF710052E382 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7831EA2FF710052E382 /* Alamofire.framework */; };
+		E271E7A71EA2FF710052E382 /* CSV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7841EA2FF710052E382 /* CSV.framework */; };
+		E271E7A81EA2FF710052E382 /* CSV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7841EA2FF710052E382 /* CSV.framework */; };
+		E271E7A91EA2FF710052E382 /* CSV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7841EA2FF710052E382 /* CSV.framework */; };
+		E271E7AA1EA2FF710052E382 /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7851EA2FF710052E382 /* Eureka.framework */; };
+		E271E7AB1EA2FF710052E382 /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7851EA2FF710052E382 /* Eureka.framework */; };
+		E271E7AC1EA2FF710052E382 /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7851EA2FF710052E382 /* Eureka.framework */; };
+		E271E7AD1EA2FF710052E382 /* Moya_ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7861EA2FF710052E382 /* Moya_ObjectMapper.framework */; };
+		E271E7AE1EA2FF710052E382 /* Moya_ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7861EA2FF710052E382 /* Moya_ObjectMapper.framework */; };
+		E271E7AF1EA2FF710052E382 /* Moya_ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7861EA2FF710052E382 /* Moya_ObjectMapper.framework */; };
+		E271E7B01EA2FF710052E382 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7871EA2FF710052E382 /* Moya.framework */; };
+		E271E7B11EA2FF710052E382 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7871EA2FF710052E382 /* Moya.framework */; };
+		E271E7B21EA2FF710052E382 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7871EA2FF710052E382 /* Moya.framework */; };
+		E271E7B31EA2FF710052E382 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7881EA2FF710052E382 /* ObjectMapper.framework */; };
+		E271E7B41EA2FF710052E382 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7881EA2FF710052E382 /* ObjectMapper.framework */; };
+		E271E7B51EA2FF710052E382 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7881EA2FF710052E382 /* ObjectMapper.framework */; };
+		E271E7B61EA2FF710052E382 /* ReachabilitySwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7891EA2FF710052E382 /* ReachabilitySwift.framework */; };
+		E271E7B71EA2FF710052E382 /* ReachabilitySwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7891EA2FF710052E382 /* ReachabilitySwift.framework */; };
+		E271E7B81EA2FF710052E382 /* ReachabilitySwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7891EA2FF710052E382 /* ReachabilitySwift.framework */; };
+		E271E7B91EA2FF710052E382 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E78A1EA2FF710052E382 /* Realm.framework */; };
+		E271E7BA1EA2FF710052E382 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E78A1EA2FF710052E382 /* Realm.framework */; };
+		E271E7BB1EA2FF710052E382 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E78A1EA2FF710052E382 /* Realm.framework */; };
+		E271E7BC1EA2FF710052E382 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E78B1EA2FF710052E382 /* RealmSwift.framework */; };
+		E271E7BD1EA2FF710052E382 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E78B1EA2FF710052E382 /* RealmSwift.framework */; };
+		E271E7BE1EA2FF710052E382 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E78B1EA2FF710052E382 /* RealmSwift.framework */; };
+		E271E7BF1EA2FF710052E382 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E78C1EA2FF710052E382 /* Result.framework */; };
+		E271E7C01EA2FF710052E382 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E78C1EA2FF710052E382 /* Result.framework */; };
+		E271E7C11EA2FF710052E382 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E78C1EA2FF710052E382 /* Result.framework */; };
+		E271E7C21EA2FF710052E382 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E78D1EA2FF710052E382 /* RxCocoa.framework */; };
+		E271E7C31EA2FF710052E382 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E78D1EA2FF710052E382 /* RxCocoa.framework */; };
+		E271E7C41EA2FF710052E382 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E78D1EA2FF710052E382 /* RxCocoa.framework */; };
+		E271E7C51EA2FF710052E382 /* RxReachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E78E1EA2FF710052E382 /* RxReachability.framework */; };
+		E271E7C61EA2FF710052E382 /* RxReachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E78E1EA2FF710052E382 /* RxReachability.framework */; };
+		E271E7C71EA2FF710052E382 /* RxReachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E78E1EA2FF710052E382 /* RxReachability.framework */; };
+		E271E7C81EA2FF710052E382 /* RxRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E78F1EA2FF710052E382 /* RxRealm.framework */; };
+		E271E7C91EA2FF710052E382 /* RxRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E78F1EA2FF710052E382 /* RxRealm.framework */; };
+		E271E7CA1EA2FF710052E382 /* RxRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E78F1EA2FF710052E382 /* RxRealm.framework */; };
+		E271E7CB1EA2FF710052E382 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7901EA2FF710052E382 /* RxSwift.framework */; };
+		E271E7CC1EA2FF710052E382 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7901EA2FF710052E382 /* RxSwift.framework */; };
+		E271E7CD1EA2FF710052E382 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7901EA2FF710052E382 /* RxSwift.framework */; };
+		E271E7CE1EA2FF710052E382 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7911EA2FF710052E382 /* SnapKit.framework */; };
+		E271E7CF1EA2FF710052E382 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7911EA2FF710052E382 /* SnapKit.framework */; };
+		E271E7D01EA2FF710052E382 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7911EA2FF710052E382 /* SnapKit.framework */; };
+		E271E7D21EA301150052E382 /* librealm-ios.a in CopyFiles */ = {isa = PBXBuildFile; fileRef = E271E77D1EA2FF710052E382 /* librealm-ios.a */; };
+		E271E7D41EA301150052E382 /* Crashlytics.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E271E77F1EA2FF710052E382 /* Crashlytics.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E271E7D51EA301150052E382 /* Fabric.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E271E7801EA2FF710052E382 /* Fabric.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E271E7D81EA301150052E382 /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E271E7831EA2FF710052E382 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E271E7D91EA301150052E382 /* CSV.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E271E7841EA2FF710052E382 /* CSV.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E271E7DA1EA301150052E382 /* Eureka.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E271E7851EA2FF710052E382 /* Eureka.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E271E7DB1EA301150052E382 /* Moya_ObjectMapper.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E271E7861EA2FF710052E382 /* Moya_ObjectMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E271E7DC1EA301150052E382 /* Moya.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E271E7871EA2FF710052E382 /* Moya.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E271E7DD1EA301150052E382 /* ObjectMapper.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E271E7881EA2FF710052E382 /* ObjectMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E271E7DE1EA301150052E382 /* ReachabilitySwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E271E7891EA2FF710052E382 /* ReachabilitySwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E271E7DF1EA301150052E382 /* Realm.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E271E78A1EA2FF710052E382 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E271E7E01EA301150052E382 /* RealmSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E271E78B1EA2FF710052E382 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E271E7E11EA301150052E382 /* Result.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E271E78C1EA2FF710052E382 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E271E7E21EA301150052E382 /* RxCocoa.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E271E78D1EA2FF710052E382 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E271E7E31EA301150052E382 /* RxReachability.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E271E78E1EA2FF710052E382 /* RxReachability.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E271E7E41EA301150052E382 /* RxRealm.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E271E78F1EA2FF710052E382 /* RxRealm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E271E7E51EA301150052E382 /* RxSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E271E7901EA2FF710052E382 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E271E7E61EA301150052E382 /* SnapKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E271E7911EA2FF710052E382 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E271E7E91EA302B20052E382 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7E81EA302B20052E382 /* Accelerate.framework */; };
+		E271E7EB1EA302B90052E382 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7EA1EA302B90052E382 /* CoreData.framework */; };
+		E271E7ED1EA302C20052E382 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7EC1EA302C20052E382 /* CoreGraphics.framework */; };
+		E271E7EF1EA302C80052E382 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7EE1EA302C80052E382 /* CoreLocation.framework */; };
+		E271E7F11EA302CE0052E382 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7F01EA302CE0052E382 /* CoreText.framework */; };
+		E271E7F31EA302D50052E382 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7F21EA302D50052E382 /* GLKit.framework */; };
+		E271E7F51EA302DB0052E382 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7F41EA302DB0052E382 /* ImageIO.framework */; };
+		E271E7F71EA302E60052E382 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7F61EA302E60052E382 /* libc++.tbd */; };
+		E271E7F91EA302ED0052E382 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7F81EA302ED0052E382 /* libz.tbd */; };
+		E271E7FB1EA302F40052E382 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7FA1EA302F40052E382 /* OpenGLES.framework */; };
+		E271E7FD1EA302FA0052E382 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7FC1EA302FA0052E382 /* QuartzCore.framework */; };
+		E271E7FF1EA303000052E382 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7FE1EA303000052E382 /* SystemConfiguration.framework */; };
+		E271E8011EA303070052E382 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E8001EA303060052E382 /* UIKit.framework */; };
+		E271E8041EA304690052E382 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E271E8031EA304690052E382 /* GoogleMaps.bundle */; };
+		E271E8051EA304690052E382 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E271E8031EA304690052E382 /* GoogleMaps.bundle */; };
+		E271E8061EA304690052E382 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E271E8031EA304690052E382 /* GoogleMaps.bundle */; };
+		E271E80A1EA304E80052E382 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E8071EA304E80052E382 /* GoogleMaps.framework */; };
+		E271E80B1EA304E80052E382 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E8071EA304E80052E382 /* GoogleMaps.framework */; };
+		E271E80C1EA304E80052E382 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E8071EA304E80052E382 /* GoogleMaps.framework */; };
+		E271E80D1EA304E80052E382 /* GoogleMapsBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E8081EA304E80052E382 /* GoogleMapsBase.framework */; };
+		E271E80E1EA304E80052E382 /* GoogleMapsBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E8081EA304E80052E382 /* GoogleMapsBase.framework */; };
+		E271E80F1EA304E80052E382 /* GoogleMapsBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E8081EA304E80052E382 /* GoogleMapsBase.framework */; };
+		E271E8101EA304E80052E382 /* GoogleMapsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E8091EA304E80052E382 /* GoogleMapsCore.framework */; };
+		E271E8111EA304E80052E382 /* GoogleMapsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E8091EA304E80052E382 /* GoogleMapsCore.framework */; };
+		E271E8121EA304E80052E382 /* GoogleMapsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E8091EA304E80052E382 /* GoogleMapsCore.framework */; };
 		E27CB7A51E58187C006B2396 /* CampusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27CB7A41E58187C006B2396 /* CampusViewController.swift */; };
 		E27CB7A81E5867C3006B2396 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27CB7A71E5867C3006B2396 /* LocationsViewController.swift */; };
 		E27CB7AC1E5869AD006B2396 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27CB7AB1E5869AD006B2396 /* ContactViewController.swift */; };
@@ -108,15 +202,37 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E271E7D11EA301010052E382 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E271E7D21EA301150052E382 /* librealm-ios.a in CopyFiles */,
+				E271E7D41EA301150052E382 /* Crashlytics.framework in CopyFiles */,
+				E271E7D51EA301150052E382 /* Fabric.framework in CopyFiles */,
+				E271E7D81EA301150052E382 /* Alamofire.framework in CopyFiles */,
+				E271E7D91EA301150052E382 /* CSV.framework in CopyFiles */,
+				E271E7DA1EA301150052E382 /* Eureka.framework in CopyFiles */,
+				E271E7DB1EA301150052E382 /* Moya_ObjectMapper.framework in CopyFiles */,
+				E271E7DC1EA301150052E382 /* Moya.framework in CopyFiles */,
+				E271E7DD1EA301150052E382 /* ObjectMapper.framework in CopyFiles */,
+				E271E7DE1EA301150052E382 /* ReachabilitySwift.framework in CopyFiles */,
+				E271E7DF1EA301150052E382 /* Realm.framework in CopyFiles */,
+				E271E7E01EA301150052E382 /* RealmSwift.framework in CopyFiles */,
+				E271E7E11EA301150052E382 /* Result.framework in CopyFiles */,
+				E271E7E21EA301150052E382 /* RxCocoa.framework in CopyFiles */,
+				E271E7E31EA301150052E382 /* RxReachability.framework in CopyFiles */,
+				E271E7E41EA301150052E382 /* RxRealm.framework in CopyFiles */,
+				E271E7E51EA301150052E382 /* RxSwift.framework in CopyFiles */,
+				E271E7E61EA301150052E382 /* SnapKit.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		07E7E369D96D589B7A05BA35 /* Pods-Auto Stop Race.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Auto Stop Race.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Auto Stop Race/Pods-Auto Stop Race.debug.xcconfig"; sourceTree = "<group>"; };
-		0C711BDFAC49916758D9D1A4 /* Pods-Auto Stop Race.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Auto Stop Race.release.xcconfig"; path = "Pods/Target Support Files/Pods-Auto Stop Race/Pods-Auto Stop Race.release.xcconfig"; sourceTree = "<group>"; };
-		1ABA8979579DBC2A66D9C763 /* Pods-Auto Stop RaceUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Auto Stop RaceUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Auto Stop RaceUITests/Pods-Auto Stop RaceUITests.release.xcconfig"; sourceTree = "<group>"; };
-		3022B519673FFDA303E0E7A6 /* Pods-Auto Stop RaceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Auto Stop RaceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Auto Stop RaceTests/Pods-Auto Stop RaceTests.debug.xcconfig"; sourceTree = "<group>"; };
-		3B0A3759C56A5662057903A6 /* Pods_Auto_Stop_Race.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Auto_Stop_Race.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		44A6CE3DA2C00A93DC757CB8 /* Pods_Auto_Stop_RaceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Auto_Stop_RaceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D1A4AB4B5E2EC7E4EEFC5E5 /* Pods_Auto_Stop_RaceUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Auto_Stop_RaceUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CC9705EB6663FB9812E5DE33 /* Pods-Auto Stop RaceUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Auto Stop RaceUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Auto Stop RaceUITests/Pods-Auto Stop RaceUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E244206C1E84B6A600556FDC /* UserLocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserLocationsViewController.swift; path = UserLocations/UserLocationsViewController.swift; sourceTree = "<group>"; };
 		E24420701E84B82900556FDC /* UserLocationsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserLocationsViewModel.swift; path = UserLocations/ViewModel/UserLocationsViewModel.swift; sourceTree = "<group>"; };
 		E24420721E84B86200556FDC /* UserLocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserLocationCell.swift; path = UserLocations/Views/UserLocationCell.swift; sourceTree = "<group>"; };
@@ -133,6 +249,41 @@
 		E271C2C31E56353600CD4F15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E271C2C51E56460C00CD4F15 /* DashboardCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardCoordinator.swift; sourceTree = "<group>"; };
 		E271C2CD1E5660EC00CD4F15 /* DashboardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashboardViewModel.swift; path = ViewModels/DashboardViewModel.swift; sourceTree = "<group>"; };
+		E271E77D1EA2FF710052E382 /* librealm-ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "librealm-ios.a"; path = "Rome/librealm-ios.a"; sourceTree = "<group>"; };
+		E271E77F1EA2FF710052E382 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Rome/Crashlytics.framework; sourceTree = "<group>"; };
+		E271E7801EA2FF710052E382 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = Rome/Fabric.framework; sourceTree = "<group>"; };
+		E271E7831EA2FF710052E382 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Rome/Alamofire.framework; sourceTree = "<group>"; };
+		E271E7841EA2FF710052E382 /* CSV.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CSV.framework; path = Rome/CSV.framework; sourceTree = "<group>"; };
+		E271E7851EA2FF710052E382 /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = Rome/Eureka.framework; sourceTree = "<group>"; };
+		E271E7861EA2FF710052E382 /* Moya_ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya_ObjectMapper.framework; path = Rome/Moya_ObjectMapper.framework; sourceTree = "<group>"; };
+		E271E7871EA2FF710052E382 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Rome/Moya.framework; sourceTree = "<group>"; };
+		E271E7881EA2FF710052E382 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Rome/ObjectMapper.framework; sourceTree = "<group>"; };
+		E271E7891EA2FF710052E382 /* ReachabilitySwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReachabilitySwift.framework; path = Rome/ReachabilitySwift.framework; sourceTree = "<group>"; };
+		E271E78A1EA2FF710052E382 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Rome/Realm.framework; sourceTree = "<group>"; };
+		E271E78B1EA2FF710052E382 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Rome/RealmSwift.framework; sourceTree = "<group>"; };
+		E271E78C1EA2FF710052E382 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Rome/Result.framework; sourceTree = "<group>"; };
+		E271E78D1EA2FF710052E382 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Rome/RxCocoa.framework; sourceTree = "<group>"; };
+		E271E78E1EA2FF710052E382 /* RxReachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxReachability.framework; path = Rome/RxReachability.framework; sourceTree = "<group>"; };
+		E271E78F1EA2FF710052E382 /* RxRealm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRealm.framework; path = Rome/RxRealm.framework; sourceTree = "<group>"; };
+		E271E7901EA2FF710052E382 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Rome/RxSwift.framework; sourceTree = "<group>"; };
+		E271E7911EA2FF710052E382 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Rome/SnapKit.framework; sourceTree = "<group>"; };
+		E271E7E81EA302B20052E382 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		E271E7EA1EA302B90052E382 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		E271E7EC1EA302C20052E382 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E271E7EE1EA302C80052E382 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		E271E7F01EA302CE0052E382 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		E271E7F21EA302D50052E382 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		E271E7F41EA302DB0052E382 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		E271E7F61EA302E60052E382 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		E271E7F81EA302ED0052E382 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		E271E7FA1EA302F40052E382 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		E271E7FC1EA302FA0052E382 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E271E7FE1EA303000052E382 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		E271E8001EA303060052E382 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E271E8031EA304690052E382 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Rome/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		E271E8071EA304E80052E382 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Rome/GoogleMaps.framework; sourceTree = "<group>"; };
+		E271E8081EA304E80052E382 /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Rome/GoogleMapsBase.framework; sourceTree = "<group>"; };
+		E271E8091EA304E80052E382 /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsCore.framework; path = Rome/GoogleMapsCore.framework; sourceTree = "<group>"; };
 		E27CB7A41E58187C006B2396 /* CampusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CampusViewController.swift; path = Camping/CampusViewController.swift; sourceTree = "<group>"; };
 		E27CB7A71E5867C3006B2396 /* LocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationsViewController.swift; path = Locations/LocationsViewController.swift; sourceTree = "<group>"; };
 		E27CB7AB1E5869AD006B2396 /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactViewController.swift; path = Contact/ContactViewController.swift; sourceTree = "<group>"; };
@@ -202,7 +353,6 @@
 		E2D9A25E1E55744E003324F7 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIView.swift; path = Extension/UIView.swift; sourceTree = "<group>"; };
 		E2E0D8871E57EFB100844509 /* Partners.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Partners.xcassets; sourceTree = "<group>"; };
 		E2E0D88D1E57F9FF00844509 /* PartnerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PartnerCell.swift; path = Partners/Views/PartnerCell.swift; sourceTree = "<group>"; };
-		E3292D18E80580C460180A06 /* Pods-Auto Stop RaceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Auto Stop RaceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Auto Stop RaceTests/Pods-Auto Stop RaceTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,7 +360,40 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A1589B79D3652F9180AB054 /* Pods_Auto_Stop_Race.framework in Frameworks */,
+				E271E80D1EA304E80052E382 /* GoogleMapsBase.framework in Frameworks */,
+				E271E8011EA303070052E382 /* UIKit.framework in Frameworks */,
+				E271E7FF1EA303000052E382 /* SystemConfiguration.framework in Frameworks */,
+				E271E7FD1EA302FA0052E382 /* QuartzCore.framework in Frameworks */,
+				E271E7FB1EA302F40052E382 /* OpenGLES.framework in Frameworks */,
+				E271E7F91EA302ED0052E382 /* libz.tbd in Frameworks */,
+				E271E7F71EA302E60052E382 /* libc++.tbd in Frameworks */,
+				E271E7F51EA302DB0052E382 /* ImageIO.framework in Frameworks */,
+				E271E7F31EA302D50052E382 /* GLKit.framework in Frameworks */,
+				E271E7F11EA302CE0052E382 /* CoreText.framework in Frameworks */,
+				E271E7EF1EA302C80052E382 /* CoreLocation.framework in Frameworks */,
+				E271E7ED1EA302C20052E382 /* CoreGraphics.framework in Frameworks */,
+				E271E7EB1EA302B90052E382 /* CoreData.framework in Frameworks */,
+				E271E7E91EA302B20052E382 /* Accelerate.framework in Frameworks */,
+				E271E7CB1EA2FF710052E382 /* RxSwift.framework in Frameworks */,
+				E271E7AA1EA2FF710052E382 /* Eureka.framework in Frameworks */,
+				E271E7921EA2FF710052E382 /* librealm-ios.a in Frameworks */,
+				E271E7CE1EA2FF710052E382 /* SnapKit.framework in Frameworks */,
+				E271E7B61EA2FF710052E382 /* ReachabilitySwift.framework in Frameworks */,
+				E271E8101EA304E80052E382 /* GoogleMapsCore.framework in Frameworks */,
+				E271E7981EA2FF710052E382 /* Crashlytics.framework in Frameworks */,
+				E271E7B91EA2FF710052E382 /* Realm.framework in Frameworks */,
+				E271E7B01EA2FF710052E382 /* Moya.framework in Frameworks */,
+				E271E7C21EA2FF710052E382 /* RxCocoa.framework in Frameworks */,
+				E271E7B31EA2FF710052E382 /* ObjectMapper.framework in Frameworks */,
+				E271E7A41EA2FF710052E382 /* Alamofire.framework in Frameworks */,
+				E271E7AD1EA2FF710052E382 /* Moya_ObjectMapper.framework in Frameworks */,
+				E271E7BF1EA2FF710052E382 /* Result.framework in Frameworks */,
+				E271E7C51EA2FF710052E382 /* RxReachability.framework in Frameworks */,
+				E271E7BC1EA2FF710052E382 /* RealmSwift.framework in Frameworks */,
+				E271E7A71EA2FF710052E382 /* CSV.framework in Frameworks */,
+				E271E79B1EA2FF710052E382 /* Fabric.framework in Frameworks */,
+				E271E80A1EA304E80052E382 /* GoogleMaps.framework in Frameworks */,
+				E271E7C81EA2FF710052E382 /* RxRealm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,7 +401,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				389E1ED3F6D98F24B6C8E9AA /* Pods_Auto_Stop_RaceTests.framework in Frameworks */,
+				E271E80B1EA304E80052E382 /* GoogleMaps.framework in Frameworks */,
+				E271E7CC1EA2FF710052E382 /* RxSwift.framework in Frameworks */,
+				E271E7AB1EA2FF710052E382 /* Eureka.framework in Frameworks */,
+				E271E7931EA2FF710052E382 /* librealm-ios.a in Frameworks */,
+				E271E7CF1EA2FF710052E382 /* SnapKit.framework in Frameworks */,
+				E271E80E1EA304E80052E382 /* GoogleMapsBase.framework in Frameworks */,
+				E271E7B71EA2FF710052E382 /* ReachabilitySwift.framework in Frameworks */,
+				E271E7991EA2FF710052E382 /* Crashlytics.framework in Frameworks */,
+				E271E7BA1EA2FF710052E382 /* Realm.framework in Frameworks */,
+				E271E7B11EA2FF710052E382 /* Moya.framework in Frameworks */,
+				E271E8111EA304E80052E382 /* GoogleMapsCore.framework in Frameworks */,
+				E271E7C31EA2FF710052E382 /* RxCocoa.framework in Frameworks */,
+				E271E7B41EA2FF710052E382 /* ObjectMapper.framework in Frameworks */,
+				E271E7A51EA2FF710052E382 /* Alamofire.framework in Frameworks */,
+				E271E7AE1EA2FF710052E382 /* Moya_ObjectMapper.framework in Frameworks */,
+				E271E7C01EA2FF710052E382 /* Result.framework in Frameworks */,
+				E271E7C61EA2FF710052E382 /* RxReachability.framework in Frameworks */,
+				E271E7BD1EA2FF710052E382 /* RealmSwift.framework in Frameworks */,
+				E271E7A81EA2FF710052E382 /* CSV.framework in Frameworks */,
+				E271E79C1EA2FF710052E382 /* Fabric.framework in Frameworks */,
+				E271E7C91EA2FF710052E382 /* RxRealm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,26 +429,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57AFFE52EE7A7C9BA0F2D9F4 /* Pods_Auto_Stop_RaceUITests.framework in Frameworks */,
+				E271E80C1EA304E80052E382 /* GoogleMaps.framework in Frameworks */,
+				E271E7CD1EA2FF710052E382 /* RxSwift.framework in Frameworks */,
+				E271E7AC1EA2FF710052E382 /* Eureka.framework in Frameworks */,
+				E271E7941EA2FF710052E382 /* librealm-ios.a in Frameworks */,
+				E271E7D01EA2FF710052E382 /* SnapKit.framework in Frameworks */,
+				E271E80F1EA304E80052E382 /* GoogleMapsBase.framework in Frameworks */,
+				E271E7B81EA2FF710052E382 /* ReachabilitySwift.framework in Frameworks */,
+				E271E79A1EA2FF710052E382 /* Crashlytics.framework in Frameworks */,
+				E271E7BB1EA2FF710052E382 /* Realm.framework in Frameworks */,
+				E271E7B21EA2FF710052E382 /* Moya.framework in Frameworks */,
+				E271E8121EA304E80052E382 /* GoogleMapsCore.framework in Frameworks */,
+				E271E7C41EA2FF710052E382 /* RxCocoa.framework in Frameworks */,
+				E271E7B51EA2FF710052E382 /* ObjectMapper.framework in Frameworks */,
+				E271E7A61EA2FF710052E382 /* Alamofire.framework in Frameworks */,
+				E271E7AF1EA2FF710052E382 /* Moya_ObjectMapper.framework in Frameworks */,
+				E271E7C11EA2FF710052E382 /* Result.framework in Frameworks */,
+				E271E7C71EA2FF710052E382 /* RxReachability.framework in Frameworks */,
+				E271E7BE1EA2FF710052E382 /* RealmSwift.framework in Frameworks */,
+				E271E7A91EA2FF710052E382 /* CSV.framework in Frameworks */,
+				E271E79D1EA2FF710052E382 /* Fabric.framework in Frameworks */,
+				E271E7CA1EA2FF710052E382 /* RxRealm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C2AC04DE61EDB79159F7449B /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				07E7E369D96D589B7A05BA35 /* Pods-Auto Stop Race.debug.xcconfig */,
-				0C711BDFAC49916758D9D1A4 /* Pods-Auto Stop Race.release.xcconfig */,
-				3022B519673FFDA303E0E7A6 /* Pods-Auto Stop RaceTests.debug.xcconfig */,
-				E3292D18E80580C460180A06 /* Pods-Auto Stop RaceTests.release.xcconfig */,
-				CC9705EB6663FB9812E5DE33 /* Pods-Auto Stop RaceUITests.debug.xcconfig */,
-				1ABA8979579DBC2A66D9C763 /* Pods-Auto Stop RaceUITests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		E244206B1E84B58500556FDC /* UserLocations */ = {
 			isa = PBXGroup;
 			children = (
@@ -314,6 +524,63 @@
 				E271C2CD1E5660EC00CD4F15 /* DashboardViewModel.swift */,
 			);
 			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		E271E77C1EA2FF660052E382 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				E271E8021EA3045A0052E382 /* Resources */,
+				E271E77D1EA2FF710052E382 /* librealm-ios.a */,
+				E271E8071EA304E80052E382 /* GoogleMaps.framework */,
+				E271E8081EA304E80052E382 /* GoogleMapsBase.framework */,
+				E271E8091EA304E80052E382 /* GoogleMapsCore.framework */,
+				E271E77F1EA2FF710052E382 /* Crashlytics.framework */,
+				E271E7801EA2FF710052E382 /* Fabric.framework */,
+				E271E7831EA2FF710052E382 /* Alamofire.framework */,
+				E271E7841EA2FF710052E382 /* CSV.framework */,
+				E271E7851EA2FF710052E382 /* Eureka.framework */,
+				E271E7861EA2FF710052E382 /* Moya_ObjectMapper.framework */,
+				E271E7871EA2FF710052E382 /* Moya.framework */,
+				E271E7881EA2FF710052E382 /* ObjectMapper.framework */,
+				E271E7891EA2FF710052E382 /* ReachabilitySwift.framework */,
+				E271E78A1EA2FF710052E382 /* Realm.framework */,
+				E271E78B1EA2FF710052E382 /* RealmSwift.framework */,
+				E271E78C1EA2FF710052E382 /* Result.framework */,
+				E271E78D1EA2FF710052E382 /* RxCocoa.framework */,
+				E271E78E1EA2FF710052E382 /* RxReachability.framework */,
+				E271E78F1EA2FF710052E382 /* RxRealm.framework */,
+				E271E7901EA2FF710052E382 /* RxSwift.framework */,
+				E271E7911EA2FF710052E382 /* SnapKit.framework */,
+			);
+			name = Libs;
+			sourceTree = "<group>";
+		};
+		E271E7E71EA302B20052E382 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E271E8001EA303060052E382 /* UIKit.framework */,
+				E271E7FE1EA303000052E382 /* SystemConfiguration.framework */,
+				E271E7FC1EA302FA0052E382 /* QuartzCore.framework */,
+				E271E7FA1EA302F40052E382 /* OpenGLES.framework */,
+				E271E7F81EA302ED0052E382 /* libz.tbd */,
+				E271E7F61EA302E60052E382 /* libc++.tbd */,
+				E271E7F41EA302DB0052E382 /* ImageIO.framework */,
+				E271E7F21EA302D50052E382 /* GLKit.framework */,
+				E271E7F01EA302CE0052E382 /* CoreText.framework */,
+				E271E7EE1EA302C80052E382 /* CoreLocation.framework */,
+				E271E7EC1EA302C20052E382 /* CoreGraphics.framework */,
+				E271E7EA1EA302B90052E382 /* CoreData.framework */,
+				E271E7E81EA302B20052E382 /* Accelerate.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E271E8021EA3045A0052E382 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E271E8031EA304690052E382 /* GoogleMaps.bundle */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		E27CB7A31E581796006B2396 /* Campus */ = {
@@ -503,8 +770,8 @@
 				E2D9A2221E5530FC003324F7 /* Auto Stop RaceTests */,
 				E2D9A22D1E5530FC003324F7 /* Auto Stop RaceUITests */,
 				E2D9A20C1E5530FC003324F7 /* Products */,
-				C2AC04DE61EDB79159F7449B /* Pods */,
-				FD59719867C068106BA6A540 /* Frameworks */,
+				E271E77C1EA2FF660052E382 /* Libs */,
+				E271E7E71EA302B20052E382 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -707,16 +974,6 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
-		FD59719867C068106BA6A540 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				3B0A3759C56A5662057903A6 /* Pods_Auto_Stop_Race.framework */,
-				44A6CE3DA2C00A93DC757CB8 /* Pods_Auto_Stop_RaceTests.framework */,
-				5D1A4AB4B5E2EC7E4EEFC5E5 /* Pods_Auto_Stop_RaceUITests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -724,12 +981,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E2D9A2331E5530FC003324F7 /* Build configuration list for PBXNativeTarget "Auto Stop Race" */;
 			buildPhases = (
-				E4C5976F567979D0E0E2BADA /* [CP] Check Pods Manifest.lock */,
 				E2D9A2071E5530FC003324F7 /* Sources */,
 				E2D9A2081E5530FC003324F7 /* Frameworks */,
 				E2D9A2091E5530FC003324F7 /* Resources */,
-				C45D6D55B7319B82D3A6A5EA /* [CP] Embed Pods Frameworks */,
-				5F0B92CF6159D702AD1EE7E3 /* [CP] Copy Pods Resources */,
+				E271E7D11EA301010052E382 /* CopyFiles */,
 				E2C5EE911E98099900BD5838 /* ShellScript */,
 			);
 			buildRules = (
@@ -745,12 +1000,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E2D9A2361E5530FC003324F7 /* Build configuration list for PBXNativeTarget "Auto Stop RaceTests" */;
 			buildPhases = (
-				1F4BC0A40D6004DC8CE2BB9F /* [CP] Check Pods Manifest.lock */,
 				E2D9A21B1E5530FC003324F7 /* Sources */,
 				E2D9A21C1E5530FC003324F7 /* Frameworks */,
 				E2D9A21D1E5530FC003324F7 /* Resources */,
-				B4D9B175B1698BAF83042565 /* [CP] Embed Pods Frameworks */,
-				F966EA2B8A51424309861795 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -766,12 +1018,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E2D9A2391E5530FC003324F7 /* Build configuration list for PBXNativeTarget "Auto Stop RaceUITests" */;
 			buildPhases = (
-				AE7DE1D964C7BF618240F38D /* [CP] Check Pods Manifest.lock */,
 				E2D9A2261E5530FC003324F7 /* Sources */,
 				E2D9A2271E5530FC003324F7 /* Frameworks */,
 				E2D9A2281E5530FC003324F7 /* Resources */,
-				9E65573606B0F34323464C09 /* [CP] Embed Pods Frameworks */,
-				0DEF5612825EC64A6DE7A41D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -795,7 +1044,7 @@
 				TargetAttributes = {
 					E2D9A20A1E5530FC003324F7 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = EV97ENC66J;
+						DevelopmentTeam = PS6RWDDX97;
 						ProvisioningStyle = Automatic;
 					};
 					E2D9A21E1E5530FC003324F7 = {
@@ -837,6 +1086,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E271E8041EA304690052E382 /* GoogleMaps.bundle in Resources */,
 				E244207B1E8518A600556FDC /* Keys.plist in Resources */,
 				E2C0614A1E5AB0BE0022D6F1 /* licenses.html in Resources */,
 				E2E0D8881E57EFB100844509 /* Partners.xcassets in Resources */,
@@ -852,6 +1102,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E271E8051EA304690052E382 /* GoogleMaps.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -859,117 +1110,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E271E8061EA304690052E382 /* GoogleMaps.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0DEF5612825EC64A6DE7A41D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Auto Stop RaceUITests/Pods-Auto Stop RaceUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1F4BC0A40D6004DC8CE2BB9F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		5F0B92CF6159D702AD1EE7E3 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Auto Stop Race/Pods-Auto Stop Race-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9E65573606B0F34323464C09 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Auto Stop RaceUITests/Pods-Auto Stop RaceUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AE7DE1D964C7BF618240F38D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		B4D9B175B1698BAF83042565 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Auto Stop RaceTests/Pods-Auto Stop RaceTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C45D6D55B7319B82D3A6A5EA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Auto Stop Race/Pods-Auto Stop Race-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		E2C5EE911E98099900BD5838 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -981,37 +1128,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 72e1e9fa3c05e7ff3346632bf926ed2a56077171 cbbe3bafde6322db14beb8c164febc3124db32e745699be0b940b828f1836854";
-		};
-		E4C5976F567979D0E0E2BADA /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		F966EA2B8A51424309861795 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Auto Stop RaceTests/Pods-Auto Stop RaceTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "\"Pods/Fabric/run\" 72e1e9fa3c05e7ff3346632bf926ed2a56077171 cbbe3bafde6322db14beb8c164febc3124db32e745699be0b940b828f1836854";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1228,19 +1345,25 @@
 		};
 		E2D9A2341E5530FC003324F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 07E7E369D96D589B7A05BA35 /* Pods-Auto Stop Race.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = EV97ENC66J;
+				DEVELOPMENT_TEAM = PS6RWDDX97;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Rome",
 				);
 				INFOPLIST_FILE = "Auto Stop Race/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "piotrholub.Auto-Stop-Race";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Rome",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies\n";
+				PRODUCT_BUNDLE_IDENTIFIER = "Torianin.Auto-Stop-Race";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1248,19 +1371,25 @@
 		};
 		E2D9A2351E5530FC003324F7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0C711BDFAC49916758D9D1A4 /* Pods-Auto Stop Race.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = EV97ENC66J;
+				DEVELOPMENT_TEAM = PS6RWDDX97;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Rome",
 				);
 				INFOPLIST_FILE = "Auto Stop Race/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "piotrholub.Auto-Stop-Race";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Rome",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies\n";
+				PRODUCT_BUNDLE_IDENTIFIER = "Torianin.Auto-Stop-Race";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1268,13 +1397,20 @@
 		};
 		E2D9A2371E5530FC003324F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3022B519673FFDA303E0E7A6 /* Pods-Auto Stop RaceTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = PS6RWDDX97;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Rome",
+				);
 				INFOPLIST_FILE = "Auto Stop RaceTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Rome",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Torianin.Auto-Stop-RaceTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -1284,13 +1420,20 @@
 		};
 		E2D9A2381E5530FC003324F7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E3292D18E80580C460180A06 /* Pods-Auto Stop RaceTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = PS6RWDDX97;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Rome",
+				);
 				INFOPLIST_FILE = "Auto Stop RaceTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Rome",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Torianin.Auto-Stop-RaceTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -1300,12 +1443,19 @@
 		};
 		E2D9A23A1E5530FC003324F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CC9705EB6663FB9812E5DE33 /* Pods-Auto Stop RaceUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = PS6RWDDX97;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Rome",
+				);
 				INFOPLIST_FILE = "Auto Stop RaceUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Rome",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Torianin.Auto-Stop-RaceUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -1315,12 +1465,19 @@
 		};
 		E2D9A23B1E5530FC003324F7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1ABA8979579DBC2A66D9C763 /* Pods-Auto Stop RaceUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = PS6RWDDX97;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Rome",
+				);
 				INFOPLIST_FILE = "Auto Stop RaceUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Rome",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Torianin.Auto-Stop-RaceUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;

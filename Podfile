@@ -1,11 +1,15 @@
 platform :ios, '9.0'
 
+    plugin 'cocoapods-rome'
+
 target 'Auto Stop Race' do
     use_frameworks!
 
     pod 'RxSwift', '3.2'
     pod 'RxCocoa', '3.2.0'
     pod 'SnapKit', '~> 3.2.0'
+    
+    pod 'Moya'
     
     pod 'CSV.swift'
     pod 'Moya-ObjectMapper'
