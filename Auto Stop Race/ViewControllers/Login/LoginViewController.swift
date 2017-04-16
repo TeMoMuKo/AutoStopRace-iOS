@@ -203,8 +203,8 @@ class LoginViewController: UIViewControllerWithBackButton {
         
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
             let textField = alert.textFields![0] as UITextField
-            let tempStyle = textField.text!
-            self.viewModel.resetPassword(email: textField.text!)
+            let email = textField.text!
+            self.viewModel.resetPassword(email: email)
         }))
         
         self.present(alert, animated: true, completion: nil)

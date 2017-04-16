@@ -22,6 +22,22 @@ extension UIColor {
         self.init(red:(netHex >> 16) & 0xff, green:(netHex >> 8) & 0xff, blue:netHex & 0xff)
     }
     
+    convenience init(string: String?) {
+        let colors = [0xD50000, 0xC51162, 0x0091EA, 0x2979FF, 0xAA00FF, 0x6200EA, 0x0097A7, 0x64DD17, 0xFF6D00, 0xDD2C00, 0x33691E, 0x3D5AFE, 0x3D5AFE, 0x5D4037]
+        
+        guard let unwrappedString = string, !unwrappedString.isEmpty, let firstChar = unwrappedString.uppercased().characters.first else {
+            self.init(netHex: colors[0])
+            return
+        }
+        
+        if firstChar < "A" || firstChar > "Z" {
+            self.init(netHex: colors[colors.count-1])
+        } else {
+            let colorIndex = Int( ( Double(colors.count - 1) * ( Double((String(firstChar).utf8.first)!) - Double("A".utf8.first!)) / ( Double("Z".utf8.first!) -  Double("A".utf8.first!))  ).rounded() )
+            self.init(netHex: colors[colorIndex])
+        }
+    }
+    
     open class var blueMenu: UIColor {
         get {
             return UIColor.init(netHex: 0x1976d2)

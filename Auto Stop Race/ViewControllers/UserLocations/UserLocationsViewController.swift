@@ -102,7 +102,7 @@ class UserLocationsViewController: UIViewControllerWithMenu, UICollectionViewDel
     }
     
     func setupBackgroundImage() {
-        backgroundImageLogo = UIImageView.init(image: UIImage(named: "img_asr_empty_state")?.scaled(toWidth: view.bounds.width))
+        backgroundImageLogo = UIImageView.init(image: UIImage(named: "img_asr_empty_state"))
         backgroundImageLogo.contentMode = .scaleAspectFit
         
         collectionView.backgroundColor = UIColor.grayBackgroundColor

@@ -20,8 +20,8 @@ class CreateLocationRecordRequest: Object {
             [
             "latitude":self.latitude,
             "longitude":self.longitude,
-            "message":self.message ?? "",
-            "image":self.image ?? ""
+            "message":self.message,
+            "image":self.image
             ]]
         return dictionary
     }

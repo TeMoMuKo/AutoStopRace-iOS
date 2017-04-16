@@ -18,7 +18,7 @@ class UserLocationCell: BaseUICollectionCell {
         didSet {
             if let locationCountry = locationRecord?.country_code {
                 countryLabel.text =  locationCountry
-                countryLabel.backgroundColor = UIColor.circleColor
+                countryLabel.backgroundColor = UIColor.init(string: locationCountry)
             }
             
             if let locationAdress = locationRecord?.address {
