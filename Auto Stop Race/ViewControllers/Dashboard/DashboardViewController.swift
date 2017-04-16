@@ -76,7 +76,7 @@ class DashboardViewController: UIViewControllerWithMenu {
         backgroundView = UIView(frame: CGRect.init(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height - 174 ))
         view.addSubview(backgroundView)
         
-        backgroundImageLogo = UIImageView.init(image: UIImage(named: "logo_asr")?.scaled(toWidth: view.bounds.width))
+        backgroundImageLogo = UIImageView.init(image: UIImage(named: "logo_asr_fazana"))
         backgroundImageLogo.contentMode = .scaleAspectFit
         
         view.addSubview(backgroundImage)
@@ -101,6 +101,8 @@ class DashboardViewController: UIViewControllerWithMenu {
         
         backgroundImageLogo.snp.makeConstraints { (make) -> Void in
             make.center.equalTo(backgroundView.center)
+            make.left.equalToSuperview().offset(50)
+            make.right.equalToSuperview().offset(-50)
         }
     }
     

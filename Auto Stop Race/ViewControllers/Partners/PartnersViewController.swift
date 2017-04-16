@@ -9,9 +9,33 @@
 import UIKit
 
 class PartnersViewController: UIViewControllerWithMenu, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    let partnersImagesNames = ["logo_beactive", "logo_cafe_borowka", "logo_express", "logo_cafe_borowka", "logo_grzeski", "logo_kf", "logo_kravmaga", "logo_lerni"]
     
-    let cellHeight: CGFloat = 250
+    let partners = [
+        Partner(cellType:.text, value:NSLocalizedString("strategic_partners", comment: "")),
+        Partner(cellType:.image, value:"strategic_partner_wro"),
+        Partner(cellType:.image, value:"strategic_partner_kaufland"),
+        Partner(cellType:.text, value:NSLocalizedString("gold_partners", comment: "")),
+        Partner(cellType:.image, value:"gold_partner_tarczynski"),
+        Partner(cellType:.image, value:"gold_partner_grzeski"),
+        Partner(cellType:.image, value:"gold_partner_profi_lingua"),
+        Partner(cellType:.image, value:"gold_partner_akvo_active"),
+        Partner(cellType:.image, value:"gold_partner_capoeira"),
+        Partner(cellType:.image, value:"gold_partner_wachtigall"),
+        Partner(cellType:.image, value:"gold_partner_cafe_borowka"),
+        Partner(cellType:.text, value:NSLocalizedString("silver_partners", comment: "")),
+        Partner(cellType:.image, value:"silver_partner_profi"),
+        Partner(cellType:.image, value:"silver_partner_71zona"),
+        Partner(cellType:.image, value:"silver_partner_meray"),
+        Partner(cellType:.image, value:"silver_partner_hydropolis"),
+        Partner(cellType:.image, value:"silver_partner_krav_maga"),
+        Partner(cellType:.image, value:"silver_partner_lirene"),
+        Partner(cellType:.image, value:"silver_partner_motyla_noga"),
+        Partner(cellType:.image, value:"silver_partner_beactive"),
+        Partner(cellType:.image, value:"silver_partner_el_sueno")
+    ]
+    
+    let textCellHeight: CGFloat = 100
+    let imageCellHeight: CGFloat = 200
     
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -23,7 +47,9 @@ class PartnersViewController: UIViewControllerWithMenu, UICollectionViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView.register(PartnerCell.self, forCellWithReuseIdentifier: PartnerCell.Identifier)
+        collectionView.register(PartnerImageCell.self, forCellWithReuseIdentifier: PartnerImageCell.Identifier)
+        collectionView.register(PartnerTextCell.self, forCellWithReuseIdentifier: PartnerTextCell.Identifier)
+
         collectionView.delegate = self
         collectionView.dataSource = self
         
@@ -47,22 +73,34 @@ class PartnersViewController: UIViewControllerWithMenu, UICollectionViewDelegate
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return partnersImagesNames.count
+        return partners.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PartnerCell.Identifier, for: indexPath) as! PartnerCell
-        cell.imageView.image = UIImage(named: partnersImagesNames[indexPath.row])
-        return cell
+        if partners[indexPath.row].cellType == .image {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PartnerImageCell.Identifier, for: indexPath) as! PartnerImageCell
+            cell.imageView.image = UIImage(named: partners[indexPath.row].value)
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PartnerTextCell.Identifier, for: indexPath) as! PartnerTextCell
+            cell.textLabel.text = partners[indexPath.row].value
+            return cell
+        }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize.init(width: collectionView.frame.width, height: cellHeight)
+        if partners[indexPath.row].cellType == .image {
+            return CGSize.init(width: collectionView.frame.width, height: imageCellHeight)
+        } else {
+            return CGSize.init(width: collectionView.frame.width, height: textCellHeight)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize.init(width: collectionView.frame.width, height: 50)
+    }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         return CGSize.init(width: collectionView.frame.width, height: 100)
     }
