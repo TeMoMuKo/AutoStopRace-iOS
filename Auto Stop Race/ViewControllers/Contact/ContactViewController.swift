@@ -29,6 +29,11 @@ class ContactViewController: UIViewControllerWithMenu,  UICollectionViewDelegate
         return collectionView
     }()
     
+    let teamImage: UIImageView = {
+        let imageView = UIImageView(image: UIImage(named: "asr_team"))
+        return imageView
+    }()
+
     convenience init(viewModel: ContactViewModel) {
         self.init()
         
@@ -38,8 +43,8 @@ class ContactViewController: UIViewControllerWithMenu,  UICollectionViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
     
-    
         setupNavigationBarTitle()
+        setupTeamImage()
         setupCollectionView()
         
         collectionView.register(ContactCell.self, forCellWithReuseIdentifier: ContactCell.Identifier)
@@ -64,6 +69,7 @@ class ContactViewController: UIViewControllerWithMenu,  UICollectionViewDelegate
         
         collectionView.rx.setDelegate(self).addDisposableTo(disposeBag)
         
+        setupConstraints()
     }
     
     func contactSelected(contact: Contact) {
@@ -98,27 +104,27 @@ class ContactViewController: UIViewControllerWithMenu,  UICollectionViewDelegate
         titleLabel.text = NSLocalizedString("title_contact", comment: "")
     }
 
+    func setupTeamImage() {
+        view.addSubview(teamImage)
+    }
+    
     func setupCollectionView() {
-        let image = UIImage(named: "img_team_asr")?.scaled(toWidth: view.bounds.width)
-        
-        let backgroundImage = UIImageView(frame: CGRect.init(origin: .zero, size: image!.size))
-        backgroundImage.image = image
-        
         collectionView.backgroundColor = UIColor.white
-
-        view.addSubview(backgroundImage)
         view.addSubview(collectionView)
-        
-        backgroundImage.snp.makeConstraints { (make) -> Void in
+    }
+    
+    func setupConstraints() {
+        teamImage.snp.makeConstraints { (make) -> Void in
             make.left.top.right.equalTo(view)
+            make.width.equalToSuperview()
+            make.height.equalTo(teamImage.snp.width).multipliedBy( 426.0 / 827.0 )
         }
         
         collectionView.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(backgroundImage.snp.bottom)
+            make.top.equalTo(teamImage.snp.bottom)
             make.left.bottom.right.equalTo(view)
         }
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize.init(width: collectionView.frame.width, height: cellHeight)

@@ -159,7 +159,6 @@
 		E29767311EA3188F002C4AA1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E8001EA303060052E382 /* UIKit.framework */; };
 		E29767321EA31976002C4AA1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2D9A2301E5530FC003324F7 /* Info.plist */; };
 		E29767331EA3197A002C4AA1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2D9A2251E5530FC003324F7 /* Info.plist */; };
-		E29767461EA31EAE002C4AA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E29767451EA31EAE002C4AA1 /* Assets.xcassets */; };
 		E29CDC911E56876F00F59B4C /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29CDC901E56876F00F59B4C /* MenuViewModel.swift */; };
 		E29F1BD91E8B106F006D8178 /* FormViewControllerWithBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F1BD81E8B106F006D8178 /* FormViewControllerWithBackButton.swift */; };
 		E29F1BDF1E8B1D76006D8178 /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F1BDE1E8B1D76006D8178 /* ImagePickerController.swift */; };
@@ -215,6 +214,7 @@
 		E2F1E3F21EA333C0005BDFC9 /* SilverPartners.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2F1E3F11EA333C0005BDFC9 /* SilverPartners.xcassets */; };
 		E2F1E3F41EA337C9005BDFC9 /* PartnerTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F1E3F31EA337C9005BDFC9 /* PartnerTextCell.swift */; };
 		E2F1E3F61EA33892005BDFC9 /* Partner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F1E3F51EA33892005BDFC9 /* Partner.swift */; };
+		E2F1E3F81EA34BDF005BDFC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2F1E3F71EA34BDF005BDFC9 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -327,7 +327,6 @@
 		E28C83571E93F52000878BEB /* LocationRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationRecord.swift; sourceTree = "<group>"; };
 		E29293B81E8108D80083A1DD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E29293BB1E8223350083A1DD /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Settings/SettingsViewController.swift; sourceTree = "<group>"; };
-		E29767451EA31EAE002C4AA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E29CDC901E56876F00F59B4C /* MenuViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewModel.swift; path = Menu/ViewModel/MenuViewModel.swift; sourceTree = "<group>"; };
 		E29F1BD81E8B106F006D8178 /* FormViewControllerWithBackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FormViewControllerWithBackButton.swift; path = "Auto Stop Race/Views/FormViewControllerWithBackButton.swift"; sourceTree = SOURCE_ROOT; };
 		E29F1BDE1E8B1D76006D8178 /* ImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImagePickerController.swift; path = NewUserLocation/Views/ImageRow/ImagePickerController.swift; sourceTree = "<group>"; };
@@ -389,6 +388,7 @@
 		E2F1E3F11EA333C0005BDFC9 /* SilverPartners.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = SilverPartners.xcassets; path = Resources/SilverPartners.xcassets; sourceTree = "<group>"; };
 		E2F1E3F31EA337C9005BDFC9 /* PartnerTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PartnerTextCell.swift; path = Partners/Views/PartnerTextCell.swift; sourceTree = "<group>"; };
 		E2F1E3F51EA33892005BDFC9 /* Partner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Partner.swift; path = Model/Partner.swift; sourceTree = "<group>"; };
+		E2F1E3F71EA34BDF005BDFC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -861,8 +861,8 @@
 				E2D9A2401E553389003324F7 /* Coordinator */,
 				E2D9A23D1E553381003324F7 /* Networking */,
 				E2D9A23C1E55337A003324F7 /* ViewControllers */,
+				E2F1E3F71EA34BDF005BDFC9 /* Assets.xcassets */,
 				E2D9A20E1E5530FC003324F7 /* AppDelegate.swift */,
-				E29767451EA31EAE002C4AA1 /* Assets.xcassets */,
 				E2D9A2171E5530FC003324F7 /* LaunchScreen.storyboard */,
 				E2D9A21A1E5530FC003324F7 /* Info.plist */,
 			);
@@ -1162,11 +1162,11 @@
 			files = (
 				E271E8041EA304690052E382 /* GoogleMaps.bundle in Resources */,
 				E244207B1E8518A600556FDC /* Keys.plist in Resources */,
+				E2F1E3F81EA34BDF005BDFC9 /* Assets.xcassets in Resources */,
 				E2C0614A1E5AB0BE0022D6F1 /* licenses.html in Resources */,
 				E2C061491E5AB0BE0022D6F1 /* contact_data.csv in Resources */,
 				E2D9A2191E5530FC003324F7 /* LaunchScreen.storyboard in Resources */,
 				E2A6AAC91E80DC8E00E8118B /* Localizable.strings in Resources */,
-				E29767461EA31EAE002C4AA1 /* Assets.xcassets in Resources */,
 				E2C0614B1E5AB0BE0022D6F1 /* phrasebook.csv in Resources */,
 				E2F1E3F21EA333C0005BDFC9 /* SilverPartners.xcassets in Resources */,
 				E2F1E3F01EA33340005BDFC9 /* GoldPartners.xcassets in Resources */,

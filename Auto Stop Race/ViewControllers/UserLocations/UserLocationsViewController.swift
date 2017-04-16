@@ -85,7 +85,7 @@ class UserLocationsViewController: UIViewControllerWithMenu, UICollectionViewDel
     }
     
     func setupPostNewLocationBarButton() {
-        let menuImage = UIImage(named: "ic_add_white")?.withRenderingMode(.alwaysOriginal)
+        let menuImage = UIImage(named: "ic_add_location_white")?.withRenderingMode(.alwaysOriginal)
         let menuBarButtonItem = UIBarButtonItem(image: menuImage, style: .plain, target: self, action: #selector(handlePostNewLocationTap))
         navigationItem.rightBarButtonItems = [menuBarButtonItem]
     }
