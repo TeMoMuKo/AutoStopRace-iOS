@@ -1128,7 +1128,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"Pods/Fabric/run\" 72e1e9fa3c05e7ff3346632bf926ed2a56077171 cbbe3bafde6322db14beb8c164febc3124db32e745699be0b940b828f1836854";
+			shellScript = "\"Rome/Fabric.framework/run\" 72e1e9fa3c05e7ff3346632bf926ed2a56077171 cbbe3bafde6322db14beb8c164febc3124db32e745699be0b940b828f1836854";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1362,7 +1362,7 @@
 					"$(PROJECT_DIR)/Rome",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies\n";
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "Torianin.Auto-Stop-Race";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -1388,7 +1388,7 @@
 					"$(PROJECT_DIR)/Rome",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies\n";
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "Torianin.Auto-Stop-Race";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
