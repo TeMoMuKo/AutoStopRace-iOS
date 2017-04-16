@@ -132,6 +132,34 @@
 		E28C83581E93F52000878BEB /* LocationRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28C83571E93F52000878BEB /* LocationRecord.swift */; };
 		E29293B91E8108D80083A1DD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29293B81E8108D80083A1DD /* User.swift */; };
 		E29293BC1E8223350083A1DD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29293BB1E8223350083A1DD /* SettingsViewController.swift */; };
+		E29767181EA317BF002C4AA1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E8001EA303060052E382 /* UIKit.framework */; };
+		E29767191EA31849002C4AA1 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7E81EA302B20052E382 /* Accelerate.framework */; };
+		E297671A1EA31849002C4AA1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7EA1EA302B90052E382 /* CoreData.framework */; };
+		E297671B1EA31849002C4AA1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7EC1EA302C20052E382 /* CoreGraphics.framework */; };
+		E297671C1EA31849002C4AA1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7EE1EA302C80052E382 /* CoreLocation.framework */; };
+		E297671D1EA31849002C4AA1 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7F01EA302CE0052E382 /* CoreText.framework */; };
+		E297671E1EA31849002C4AA1 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7F21EA302D50052E382 /* GLKit.framework */; };
+		E297671F1EA31849002C4AA1 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7F41EA302DB0052E382 /* ImageIO.framework */; };
+		E29767201EA31849002C4AA1 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7F61EA302E60052E382 /* libc++.tbd */; };
+		E29767211EA31849002C4AA1 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7F81EA302ED0052E382 /* libz.tbd */; };
+		E29767221EA31849002C4AA1 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7FA1EA302F40052E382 /* OpenGLES.framework */; };
+		E29767231EA31849002C4AA1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7FC1EA302FA0052E382 /* QuartzCore.framework */; };
+		E29767241EA31849002C4AA1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7FE1EA303000052E382 /* SystemConfiguration.framework */; };
+		E29767251EA3188F002C4AA1 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7E81EA302B20052E382 /* Accelerate.framework */; };
+		E29767261EA3188F002C4AA1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7EA1EA302B90052E382 /* CoreData.framework */; };
+		E29767271EA3188F002C4AA1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7EC1EA302C20052E382 /* CoreGraphics.framework */; };
+		E29767281EA3188F002C4AA1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7EE1EA302C80052E382 /* CoreLocation.framework */; };
+		E29767291EA3188F002C4AA1 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7F01EA302CE0052E382 /* CoreText.framework */; };
+		E297672A1EA3188F002C4AA1 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7F21EA302D50052E382 /* GLKit.framework */; };
+		E297672B1EA3188F002C4AA1 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7F41EA302DB0052E382 /* ImageIO.framework */; };
+		E297672C1EA3188F002C4AA1 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7F61EA302E60052E382 /* libc++.tbd */; };
+		E297672D1EA3188F002C4AA1 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7F81EA302ED0052E382 /* libz.tbd */; };
+		E297672E1EA3188F002C4AA1 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7FA1EA302F40052E382 /* OpenGLES.framework */; };
+		E297672F1EA3188F002C4AA1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7FC1EA302FA0052E382 /* QuartzCore.framework */; };
+		E29767301EA3188F002C4AA1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E7FE1EA303000052E382 /* SystemConfiguration.framework */; };
+		E29767311EA3188F002C4AA1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E8001EA303060052E382 /* UIKit.framework */; };
+		E29767321EA31976002C4AA1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2D9A2301E5530FC003324F7 /* Info.plist */; };
+		E29767331EA3197A002C4AA1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2D9A2251E5530FC003324F7 /* Info.plist */; };
 		E29CDC911E56876F00F59B4C /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29CDC901E56876F00F59B4C /* MenuViewModel.swift */; };
 		E29F1BD91E8B106F006D8178 /* FormViewControllerWithBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F1BD81E8B106F006D8178 /* FormViewControllerWithBackButton.swift */; };
 		E29F1BDF1E8B1D76006D8178 /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F1BDE1E8B1D76006D8178 /* ImagePickerController.swift */; };
@@ -401,6 +429,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E29767191EA31849002C4AA1 /* Accelerate.framework in Frameworks */,
+				E297671A1EA31849002C4AA1 /* CoreData.framework in Frameworks */,
+				E297671B1EA31849002C4AA1 /* CoreGraphics.framework in Frameworks */,
+				E297671C1EA31849002C4AA1 /* CoreLocation.framework in Frameworks */,
+				E297671D1EA31849002C4AA1 /* CoreText.framework in Frameworks */,
+				E297671E1EA31849002C4AA1 /* GLKit.framework in Frameworks */,
+				E297671F1EA31849002C4AA1 /* ImageIO.framework in Frameworks */,
+				E29767201EA31849002C4AA1 /* libc++.tbd in Frameworks */,
+				E29767211EA31849002C4AA1 /* libz.tbd in Frameworks */,
+				E29767221EA31849002C4AA1 /* OpenGLES.framework in Frameworks */,
+				E29767231EA31849002C4AA1 /* QuartzCore.framework in Frameworks */,
+				E29767241EA31849002C4AA1 /* SystemConfiguration.framework in Frameworks */,
+				E29767181EA317BF002C4AA1 /* UIKit.framework in Frameworks */,
 				E271E80B1EA304E80052E382 /* GoogleMaps.framework in Frameworks */,
 				E271E7CC1EA2FF710052E382 /* RxSwift.framework in Frameworks */,
 				E271E7AB1EA2FF710052E382 /* Eureka.framework in Frameworks */,
@@ -429,6 +470,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E29767251EA3188F002C4AA1 /* Accelerate.framework in Frameworks */,
+				E29767261EA3188F002C4AA1 /* CoreData.framework in Frameworks */,
+				E29767271EA3188F002C4AA1 /* CoreGraphics.framework in Frameworks */,
+				E29767281EA3188F002C4AA1 /* CoreLocation.framework in Frameworks */,
+				E29767291EA3188F002C4AA1 /* CoreText.framework in Frameworks */,
+				E297672A1EA3188F002C4AA1 /* GLKit.framework in Frameworks */,
+				E297672B1EA3188F002C4AA1 /* ImageIO.framework in Frameworks */,
+				E297672C1EA3188F002C4AA1 /* libc++.tbd in Frameworks */,
+				E297672D1EA3188F002C4AA1 /* libz.tbd in Frameworks */,
+				E297672E1EA3188F002C4AA1 /* OpenGLES.framework in Frameworks */,
+				E297672F1EA3188F002C4AA1 /* QuartzCore.framework in Frameworks */,
+				E29767301EA3188F002C4AA1 /* SystemConfiguration.framework in Frameworks */,
+				E29767311EA3188F002C4AA1 /* UIKit.framework in Frameworks */,
 				E271E80C1EA304E80052E382 /* GoogleMaps.framework in Frameworks */,
 				E271E7CD1EA2FF710052E382 /* RxSwift.framework in Frameworks */,
 				E271E7AC1EA2FF710052E382 /* Eureka.framework in Frameworks */,
@@ -1102,6 +1156,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E29767331EA3197A002C4AA1 /* Info.plist in Resources */,
 				E271E8051EA304690052E382 /* GoogleMaps.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1110,6 +1165,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E29767321EA31976002C4AA1 /* Info.plist in Resources */,
 				E271E8061EA304690052E382 /* GoogleMaps.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
