@@ -89,6 +89,10 @@ class PostNewLocationViewController: FormViewControllerWithBackButton, CLLocatio
                 self.form.rowBy(tag: "location_row")?.title = "\(coordinate.dms.latitude), \(coordinate.dms.longitude)"
                 self.form.rowBy(tag: "location_row")?.reload()
             }
+            
+            let sendSection: Section? = self.form.sectionBy(tag: "send_location_section")
+            sendSection?.hidden = false
+            sendSection?.evaluateHidden()
         })
         manager.stopUpdatingLocation()
     }
@@ -130,7 +134,10 @@ class PostNewLocationViewController: FormViewControllerWithBackButton, CLLocatio
                     $0.title = NSLocalizedString("add_photo_title", comment: "")
                 }
             
-            +++ Section()
+            +++ Section() {
+                $0.hidden = true
+                $0.tag = "send_location_section"
+            }
                 <<< ButtonRow("add_location_button_row") {
                         $0.title = NSLocalizedString("add_location_button_title", comment: "")
                     }
