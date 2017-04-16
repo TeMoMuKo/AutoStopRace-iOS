@@ -19,12 +19,12 @@ extension CLLocationCoordinate2D {
     
     var dms:(latitude: String, longitude: String) {
         
-        return (String(format:"%d° %d' %d\" %@",
+        return (String(format:"%d° %d′ %d″ %@",
                        Int(abs(latitude)),
                        Int(abs(latitudeMinutes)),
                        Int(abs(latitudeSeconds)),
                        latitude >= 0 ? "N" : "S"),
-                String(format:"%d° %d' %d\" %@",
+                String(format:"%d° %d′ %d″ %@",
                        Int(abs(longitude)),
                        Int(abs(longitudeMinutes)),
                        Int(abs(longitudeSeconds)),

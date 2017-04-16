@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import SnapKit
+import CoreLocation
 
 class UserLocationCell: BaseUICollectionCell {
     
@@ -19,10 +20,20 @@ class UserLocationCell: BaseUICollectionCell {
             if let locationCountry = locationRecord?.country_code {
                 countryLabel.text =  locationCountry
                 countryLabel.backgroundColor = UIColor.init(string: locationCountry)
+            } else {
+                countryLabel.text = ""
+                countryLabel.backgroundColor = UIColor.gray
+                imageView.image = UIImage(named: "ic_location_on_black")?.withRenderingMode(.alwaysTemplate)
+                imageView.tintColor = UIColor.white
             }
             
             if let locationAdress = locationRecord?.address {
                 addressLabel.text = locationAdress
+            } else {
+                if let locationLongitude = locationRecord?.longitude, let locationLatitude = locationRecord?.latitude {
+                    let location = CLLocationCoordinate2D.init(latitude:locationLatitude, longitude:locationLongitude)
+                    addressLabel.text = "\(location.dms.latitude), \(location.dms.longitude)"
+                }
             }
             
             if let locationMessage = locationRecord?.message {
@@ -34,6 +45,12 @@ class UserLocationCell: BaseUICollectionCell {
             }
         }
     }
+    
+    lazy var imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
     
     var countryLabel:UILabel = {
         let label = UILabel()
@@ -90,6 +107,7 @@ class UserLocationCell: BaseUICollectionCell {
         self.backgroundColor = UIColor.grayBackgroundColor
         
         addSubview(countryLabel)
+        addSubview(imageView)
         addSubview(addressLabel)
         addSubview(messageLabel)
         addSubview(separator)
@@ -104,6 +122,11 @@ class UserLocationCell: BaseUICollectionCell {
             make.right.equalTo(self).offset(-15)
             make.height.width.equalTo(50)
             make.centerY.equalTo(self)
+        }
+        
+        imageView.snp.makeConstraints { (make) -> Void in
+            make.center.equalTo(countryLabel)
+            make.height.width.equalTo(30)
         }
         
         countryLabel.snp.makeConstraints { (make) -> Void in
