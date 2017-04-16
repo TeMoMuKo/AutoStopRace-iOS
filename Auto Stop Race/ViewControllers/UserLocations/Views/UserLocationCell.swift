@@ -20,6 +20,7 @@ class UserLocationCell: BaseUICollectionCell {
             if let locationCountry = locationRecord?.country_code {
                 countryLabel.text =  locationCountry
                 countryLabel.backgroundColor = UIColor.init(string: locationCountry)
+                imageView.image = nil
             } else {
                 countryLabel.text = ""
                 countryLabel.backgroundColor = UIColor.gray
