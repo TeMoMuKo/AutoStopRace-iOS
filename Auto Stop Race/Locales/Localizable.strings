@@ -86,7 +86,7 @@
 
 // Map
 "last_location_record" = "Ostatnie zameldowanie: ";
-
+"missing_location" = "Brak";
 // Image Row
 "image_source_type_camera" = "Zrób zdjęcie";
 "image_source_photo_library" = "Biblioteka zdjęć";

@@ -147,7 +147,7 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
     
     func showMarker(team: Team) {
         mapView.clear()
-
+        
         let position = CLLocationCoordinate2D(latitude: team.lastLocation.latitude, longitude: team.lastLocation.longitude)
         mapView.animate(toLocation: position)
         let marker = GMSMarker(position: position)

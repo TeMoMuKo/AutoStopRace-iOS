@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import SnapKit
+import CoreLocation
 
 class TeamLocationCell: BaseUICollectionCell {
     
@@ -20,12 +21,19 @@ class TeamLocationCell: BaseUICollectionCell {
                 teamNumberLabel.text = "\(teamNumber)"
             }
             
-            if let latitude = team?.lastLocation?.latitude, let longitude = team?.lastLocation?.longitude  {
-                addressLabel.text = NSLocalizedString("last_location_record" , comment: "") + "\(latitude) \(longitude)"
+            if let country = team?.lastLocation?.country {
+                addressLabel.text = NSLocalizedString("last_location_record" , comment: "") + "\(country)"
+            } else if let latitude = team?.lastLocation?.latitude, let longitude = team?.lastLocation?.longitude  {
+                let location = CLLocationCoordinate2D.init(latitude:latitude, longitude:longitude)
+                addressLabel.text = NSLocalizedString("last_location_record" , comment: "") + "\(location.dms.latitude), \(location.dms.longitude)"
+            } else {
+                addressLabel.text = NSLocalizedString("last_location_record" , comment: "") + NSLocalizedString("missing_location", comment: "")
             }
             
             if let teamLastLocationTime = team?.lastLocation?.created_at {
                 timeLabel.text = teamLastLocationTime.toString(withFormat: "EEEE, MM-dd-yyyy HH:mm")
+            } else {
+                timeLabel.text = ""
             }
         }
     }
