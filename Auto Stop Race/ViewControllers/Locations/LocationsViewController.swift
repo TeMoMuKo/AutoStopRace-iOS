@@ -17,7 +17,9 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
     let cellHeight: CGFloat = 80
 
     var viewModel: LocationsViewModel!
-
+    
+    var shareUrlSufix: String?
+    
     let locationsSearchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.barTintColor = UIColor.blueMenu
@@ -54,6 +56,7 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
 
         setupGMSServices()
         setupNavigationBarTitle()
+        setupShareBarButton()
         setupSearchBar()
         setupDropDownList()
         setupKeyboard()
@@ -69,6 +72,23 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
         let titleLabel = navigationItem.titleView as! UILabel
         titleLabel.text = NSLocalizedString("title_teams", comment: "")
     }
+    
+    func setupShareBarButton() {
+        let menuImage = UIImage(named: "ic_share_white")?.withRenderingMode(.alwaysOriginal)
+        let menuBarButtonItem = UIBarButtonItem(image: menuImage, style: .plain, target: self, action: #selector(handleShareTap))
+        navigationItem.rightBarButtonItems = [menuBarButtonItem]
+    }
+    
+    
+    func handleShareTap() {
+        let urlTeam = shareUrlSufix ?? ""
+        if let mapUrl = NSURL(string:ApiConfig.shareMapUrl + urlTeam) {
+            let objectsToShare = [mapUrl]
+            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            self.present(activityVC, animated: true, completion: nil)
+        }
+    }
+    
     
     func setupSearchBar() {
         let textfield:UITextField = locationsSearchBar.value(forKey:"searchField") as! UITextField
@@ -116,6 +136,7 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
                 guard let `self` = self else { return }
                 
                 self.teamSelected(team: team )
+                self.shareUrlSufix = "?team=\(team.teamNumber!)"
             })
             .addDisposableTo(disposeBag)
         
@@ -135,7 +156,14 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
         for userLocation in viewModel.locationRecords.value {
             let position = CLLocationCoordinate2D(latitude: userLocation.latitude, longitude: userLocation.longitude)
             let marker = GMSMarker(position: position)
-            let markerView = UIImageView(image: #imageLiteral(resourceName: "asr_marker"))
+            
+            let markerView: UIImageView
+            if userLocation.image != nil {
+                markerView = UIImageView(image: #imageLiteral(resourceName: "asr_foto_marker"))
+            } else {
+                markerView = UIImageView(image: #imageLiteral(resourceName: "asr_marker"))
+            }
+            
             marker.iconView = markerView
             marker.title = userLocation.message
             marker.snippet = userLocation.created_at.toString(withFormat: DateFormat.fullMap)
@@ -147,15 +175,23 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
     
     func showMarker(team: Team) {
         mapView.clear()
-        
-        let position = CLLocationCoordinate2D(latitude: team.lastLocation.latitude, longitude: team.lastLocation.longitude)
-        mapView.animate(toLocation: position)
-        let marker = GMSMarker(position: position)
-        let markerView = UIImageView(image: #imageLiteral(resourceName: "asr_marker"))
-        marker.iconView = markerView
-        marker.title = team.lastLocation.message
-        marker.snippet = team.lastLocation.created_at.toString(withFormat: DateFormat.fullMap)
-        marker.map = mapView
+        if let lastLostion = team.lastLocation {
+            let position = CLLocationCoordinate2D(latitude: lastLostion.latitude, longitude: lastLostion.longitude)
+            mapView.animate(toLocation: position)
+            let marker = GMSMarker(position: position)
+            
+            let markerView: UIImageView
+            if lastLostion.image != nil {
+                markerView = UIImageView(image: #imageLiteral(resourceName: "asr_foto_marker"))
+            } else {
+                markerView = UIImageView(image: #imageLiteral(resourceName: "asr_marker"))
+            }
+            
+            marker.iconView = markerView
+            marker.title = team.lastLocation.message
+            marker.snippet = team.lastLocation.created_at.toString(withFormat: DateFormat.fullMap)
+            marker.map = mapView
+        }
         self.viewModel.shownTeams.value = []
         updateConstraints()
     }

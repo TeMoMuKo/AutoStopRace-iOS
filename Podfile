@@ -20,6 +20,8 @@ target 'Auto Stop Race' do
     
     pod 'Eureka'
     
+    pod 'SKPhotoBrowser'
+
     pod 'Fabric'
     pod 'Crashlytics'
     

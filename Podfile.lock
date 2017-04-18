@@ -38,6 +38,7 @@ PODS:
     - RealmSwift (~> 2.4)
     - RxSwift (~> 3.1)
   - RxSwift (3.2.0)
+  - SKPhotoBrowser (4.0.1)
   - SnapKit (3.2.0)
 
 DEPENDENCIES:
@@ -46,12 +47,14 @@ DEPENDENCIES:
   - Eureka
   - Fabric
   - GoogleMaps
+  - Moya
   - Moya-ObjectMapper
   - RealmSwift
   - RxCocoa (= 3.2.0)
   - RxReachability
   - RxRealm
   - RxSwift (= 3.2)
+  - SKPhotoBrowser
   - SnapKit (~> 3.2.0)
 
 SPEC CHECKSUMS:
@@ -72,8 +75,9 @@ SPEC CHECKSUMS:
   RxReachability: 0e781fc978c3c850dda6cafa2c5956ff806a1fcc
   RxRealm: df024f04e64c3a9723dab63a6ec8621b3db6473f
   RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
+  SKPhotoBrowser: 3a7c6fc02aa1620ab17253a47a49fafda46536e8
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
 
-PODFILE CHECKSUM: b46ec632565882509c9b8f8567f179a607342b12
+PODFILE CHECKSUM: fe802dfacf0fa0a3ade7bf4c6230335ac12469fe
 
 COCOAPODS: 1.2.0

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E23A1C941EA618F900AC6782 /* SKPhotoBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E23A1C931EA618F900AC6782 /* SKPhotoBrowser.framework */; };
+		E23A1C951EA61A6800AC6782 /* SKPhotoBrowser.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E23A1C931EA618F900AC6782 /* SKPhotoBrowser.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E244206D1E84B6A600556FDC /* UserLocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E244206C1E84B6A600556FDC /* UserLocationsViewController.swift */; };
 		E24420711E84B82900556FDC /* UserLocationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24420701E84B82900556FDC /* UserLocationsViewModel.swift */; };
 		E24420731E84B86200556FDC /* UserLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24420721E84B86200556FDC /* UserLocationCell.swift */; };
@@ -173,7 +175,6 @@
 		E2C0613F1E5A67A90022D6F1 /* MenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C0613E1E5A67A90022D6F1 /* MenuCoordinator.swift */; };
 		E2C061441E5A99F50022D6F1 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C061431E5A99F50022D6F1 /* Menu.swift */; };
 		E2C061491E5AB0BE0022D6F1 /* contact_data.csv in Resources */ = {isa = PBXBuildFile; fileRef = E2C061461E5AB0BE0022D6F1 /* contact_data.csv */; };
-		E2C0614A1E5AB0BE0022D6F1 /* licenses.html in Resources */ = {isa = PBXBuildFile; fileRef = E2C061471E5AB0BE0022D6F1 /* licenses.html */; };
 		E2C0614B1E5AB0BE0022D6F1 /* phrasebook.csv in Resources */ = {isa = PBXBuildFile; fileRef = E2C061481E5AB0BE0022D6F1 /* phrasebook.csv */; };
 		E2C0614D1E5AB2920022D6F1 /* ContactCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C0614C1E5AB2920022D6F1 /* ContactCoordinator.swift */; };
 		E2C0E2051E8CD53A002511F5 /* CreateLocationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C0E2041E8CD53A002511F5 /* CreateLocationRequest.swift */; };
@@ -241,6 +242,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				E23A1C951EA61A6800AC6782 /* SKPhotoBrowser.framework in CopyFiles */,
 				E271E7D21EA301150052E382 /* librealm-ios.a in CopyFiles */,
 				E271E7D41EA301150052E382 /* Crashlytics.framework in CopyFiles */,
 				E271E7D51EA301150052E382 /* Fabric.framework in CopyFiles */,
@@ -265,6 +267,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E23A1C931EA618F900AC6782 /* SKPhotoBrowser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SKPhotoBrowser.framework; path = Rome/SKPhotoBrowser.framework; sourceTree = "<group>"; };
 		E244206C1E84B6A600556FDC /* UserLocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserLocationsViewController.swift; path = UserLocations/UserLocationsViewController.swift; sourceTree = "<group>"; };
 		E24420701E84B82900556FDC /* UserLocationsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserLocationsViewModel.swift; path = UserLocations/ViewModel/UserLocationsViewModel.swift; sourceTree = "<group>"; };
 		E24420721E84B86200556FDC /* UserLocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserLocationCell.swift; path = UserLocations/Views/UserLocationCell.swift; sourceTree = "<group>"; };
@@ -341,7 +344,6 @@
 		E2C0613E1E5A67A90022D6F1 /* MenuCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCoordinator.swift; sourceTree = "<group>"; };
 		E2C061431E5A99F50022D6F1 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Menu.swift; path = Model/Menu.swift; sourceTree = "<group>"; };
 		E2C061461E5AB0BE0022D6F1 /* contact_data.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = contact_data.csv; path = Assets/contact_data.csv; sourceTree = "<group>"; };
-		E2C061471E5AB0BE0022D6F1 /* licenses.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = licenses.html; path = Assets/licenses.html; sourceTree = "<group>"; };
 		E2C061481E5AB0BE0022D6F1 /* phrasebook.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = phrasebook.csv; path = Assets/phrasebook.csv; sourceTree = "<group>"; };
 		E2C0614C1E5AB2920022D6F1 /* ContactCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCoordinator.swift; sourceTree = "<group>"; };
 		E2C0E2041E8CD53A002511F5 /* CreateLocationRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateLocationRequest.swift; sourceTree = "<group>"; };
@@ -408,6 +410,7 @@
 				E271E7F11EA302CE0052E382 /* CoreText.framework in Frameworks */,
 				E271E7EF1EA302C80052E382 /* CoreLocation.framework in Frameworks */,
 				E271E7ED1EA302C20052E382 /* CoreGraphics.framework in Frameworks */,
+				E23A1C941EA618F900AC6782 /* SKPhotoBrowser.framework in Frameworks */,
 				E271E7EB1EA302B90052E382 /* CoreData.framework in Frameworks */,
 				E271E7E91EA302B20052E382 /* Accelerate.framework in Frameworks */,
 				E271E7CB1EA2FF710052E382 /* RxSwift.framework in Frameworks */,
@@ -611,6 +614,7 @@
 				E271E78D1EA2FF710052E382 /* RxCocoa.framework */,
 				E271E78E1EA2FF710052E382 /* RxReachability.framework */,
 				E271E78F1EA2FF710052E382 /* RxRealm.framework */,
+				E23A1C931EA618F900AC6782 /* SKPhotoBrowser.framework */,
 				E271E7901EA2FF710052E382 /* RxSwift.framework */,
 				E271E7911EA2FF710052E382 /* SnapKit.framework */,
 			);
@@ -753,7 +757,6 @@
 			isa = PBXGroup;
 			children = (
 				E2C061461E5AB0BE0022D6F1 /* contact_data.csv */,
-				E2C061471E5AB0BE0022D6F1 /* licenses.html */,
 				E2C061481E5AB0BE0022D6F1 /* phrasebook.csv */,
 			);
 			name = Assets;
@@ -1163,7 +1166,6 @@
 				E271E8041EA304690052E382 /* GoogleMaps.bundle in Resources */,
 				E244207B1E8518A600556FDC /* Keys.plist in Resources */,
 				E2F1E3F81EA34BDF005BDFC9 /* Assets.xcassets in Resources */,
-				E2C0614A1E5AB0BE0022D6F1 /* licenses.html in Resources */,
 				E2C061491E5AB0BE0022D6F1 /* contact_data.csv in Resources */,
 				E2D9A2191E5530FC003324F7 /* LaunchScreen.storyboard in Resources */,
 				E2A6AAC91E80DC8E00E8118B /* Localizable.strings in Resources */,

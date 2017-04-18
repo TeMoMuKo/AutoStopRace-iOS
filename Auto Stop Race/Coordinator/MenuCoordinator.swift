@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+import SKPhotoBrowser
 
 final class MenuCoordinator: Coordinator {
 
@@ -62,8 +62,13 @@ extension MenuCoordinator: MenuViewControllerDelegate {
             break
         
         case .campus:
-            let viewController = CampusViewController()
-            self.navigationController?.present(viewController, animated: true, completion: nil)
+            var images = [SKPhoto]()
+            let photo = SKPhoto.photoWithImage(#imageLiteral(resourceName: "campus_map"))
+            images.append(photo)
+            
+            let browser = SKPhotoBrowser(photos: images)
+            browser.initializePageIndex(0)
+            self.navigationController?.present(browser, animated: true, completion: nil)
             break
         
         case .phrasebook:

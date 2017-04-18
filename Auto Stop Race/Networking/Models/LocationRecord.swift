@@ -18,6 +18,7 @@ struct LocationRecord: Mappable {
     var country: String!
     var country_code: String!
     var created_at: Date!
+    var image: String!
     
     init?(map: Map) { }
     
@@ -31,5 +32,6 @@ struct LocationRecord: Mappable {
         country <- map["country"]
         country_code <- map["country_code"]
         created_at <- (map["created_at"], CustomDateFormatTransform(formatString: DateFormat.jsonApi))
+        image <- map["image"]
     }
 }
