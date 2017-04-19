@@ -160,7 +160,7 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
             let marker = GMSMarker(position: position)
             
             let markerView: UIImageView
-            if userLocation.image != nil {
+            if userLocation.image != nil && userLocation.image != "" {
                 markerView = UIImageView(image: #imageLiteral(resourceName: "asr_foto_marker"))
                 marker.userData = ApiConfig.imageUrl + "\(userLocation.id!)/" + userLocation.image
             } else {
@@ -183,7 +183,7 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
             let marker = GMSMarker(position: position)
             
             let markerView: UIImageView
-            if lastLocation.image != nil {
+            if lastLocation.image != nil && lastLocation.image != ""  {
                 markerView = UIImageView(image: #imageLiteral(resourceName: "asr_foto_marker"))
                 marker.userData = ApiConfig.imageUrl + "\(lastLocation.id!)/" + team.lastLocation.image
             } else {
@@ -199,21 +199,21 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
         updateConstraints()
     }
     
-    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        if let imageUrl = marker.userData {
-            var images = [SKPhoto]()
-            let photo = SKPhoto.photoWithImageURL(imageUrl as! String)
-            photo.caption = marker.title
-
-            photo.shouldCachePhotoURLImage = true
-            images.append(photo)
-            
-            let browser = SKPhotoBrowser(photos: images)
-            browser.initializePageIndex(0)
-            self.navigationController?.present(browser, animated: true, completion: {})
+    func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
+         if let imageUrl: String = marker.userData as! String? {
+             if imageUrl != "" {
+                 var images = [SKPhoto]()
+                 let photo = SKPhoto.photoWithImageURL(imageUrl)
+                 photo.caption = marker.title
+                 
+                 photo.shouldCachePhotoURLImage = true
+                 images.append(photo)
+                 
+                 let browser = SKPhotoBrowser(photos: images)
+                 browser.initializePageIndex(0)
+                 self.navigationController?.present(browser, animated: true, completion: {})
+             }
         }
-        
-        return true
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
