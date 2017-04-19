@@ -31,8 +31,14 @@ final class LocationsViewModel {
     
     init(provider: ServiceProviderType) {
         self.serviceProvider = provider
+        
         downloadUserLocation()
         downloadTeams()
+    }
+    
+    init(provider: ServiceProviderType, locationRecords: Variable<[LocationRecord]>) {
+        self.serviceProvider = provider
+        self.locationRecords.value = locationRecords.value
     }
     
     func downloadUserLocation() {

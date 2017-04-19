@@ -12,6 +12,7 @@ import SnapKit
 import GoogleMaps
 import RxSwift
 import RxCocoa
+import SKPhotoBrowser
 
 class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegateFlowLayout, UISearchBarDelegate, GMSMapViewDelegate  {
     let cellHeight: CGFloat = 80
@@ -101,6 +102,7 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        self.viewModel.downloadTeams()
         self.viewModel.shownTeams.value = self.viewModel.allTeams.value
         updateConstraints()
     }
@@ -160,10 +162,10 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
             let markerView: UIImageView
             if userLocation.image != nil {
                 markerView = UIImageView(image: #imageLiteral(resourceName: "asr_foto_marker"))
+                marker.userData = ApiConfig.imageUrl + "\(userLocation.id!)/" + userLocation.image
             } else {
                 markerView = UIImageView(image: #imageLiteral(resourceName: "asr_marker"))
             }
-            
             marker.iconView = markerView
             marker.title = userLocation.message
             marker.snippet = userLocation.created_at.toString(withFormat: DateFormat.fullMap)
@@ -175,25 +177,43 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
     
     func showMarker(team: Team) {
         mapView.clear()
-        if let lastLostion = team.lastLocation {
-            let position = CLLocationCoordinate2D(latitude: lastLostion.latitude, longitude: lastLostion.longitude)
+        if let lastLocation = team.lastLocation {
+            let position = CLLocationCoordinate2D(latitude: lastLocation.latitude, longitude: lastLocation.longitude)
             mapView.animate(toLocation: position)
             let marker = GMSMarker(position: position)
             
             let markerView: UIImageView
-            if lastLostion.image != nil {
+            if lastLocation.image != nil {
                 markerView = UIImageView(image: #imageLiteral(resourceName: "asr_foto_marker"))
+                marker.userData = ApiConfig.imageUrl + "\(lastLocation.id!)/" + team.lastLocation.image
             } else {
                 markerView = UIImageView(image: #imageLiteral(resourceName: "asr_marker"))
             }
-            
             marker.iconView = markerView
             marker.title = team.lastLocation.message
             marker.snippet = team.lastLocation.created_at.toString(withFormat: DateFormat.fullMap)
+            
             marker.map = mapView
         }
         self.viewModel.shownTeams.value = []
         updateConstraints()
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        if let imageUrl = marker.userData {
+            var images = [SKPhoto]()
+            let photo = SKPhoto.photoWithImageURL(imageUrl as! String)
+            photo.caption = marker.title
+
+            photo.shouldCachePhotoURLImage = true
+            images.append(photo)
+            
+            let browser = SKPhotoBrowser(photos: images)
+            browser.initializePageIndex(0)
+            self.navigationController?.present(browser, animated: true, completion: {})
+        }
+        
+        return true
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

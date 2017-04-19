@@ -11,9 +11,10 @@ import SnapKit
 import RxSwift
 import RxCocoa
 import SnapKit
+import SKPhotoBrowser
 
 protocol UserLocationsViewControllerDelegate: class {
-    func showMapTapped()
+    func showMapTapped( locationRecords: Variable<[LocationRecord]> )
     func postNewLocationTapped()
 }
 
@@ -65,12 +66,21 @@ class UserLocationsViewController: UIViewControllerWithMenu, UICollectionViewDel
             }
             .addDisposableTo(disposeBag)
  
-        collectionView.rx.itemSelected
-            .bindTo(viewModel.itemSelected).addDisposableTo(disposeBag)
-        
         collectionView.rx.modelSelected(LocationRecord.self)
-            .subscribe(onNext: { menu in
-                
+            .subscribe(onNext: { locationRecord in
+                if let image = locationRecord.image {
+                    var images = [SKPhoto]()
+                    let imageUrl = ApiConfig.imageUrl + "\(locationRecord.id!)/" + image
+                    let photo = SKPhoto.photoWithImageURL(imageUrl)
+                    photo.caption = locationRecord.message
+                    
+                    photo.shouldCachePhotoURLImage = true
+                    images.append(photo)
+                    
+                    let browser = SKPhotoBrowser(photos: images)
+                    browser.initializePageIndex(0)
+                    self.navigationController?.present(browser, animated: true, completion: {})
+                }
             })
             .addDisposableTo(disposeBag)
         
@@ -85,9 +95,16 @@ class UserLocationsViewController: UIViewControllerWithMenu, UICollectionViewDel
     }
     
     func setupPostNewLocationBarButton() {
+        let mapImage = UIImage(named: "ic_map_white")?.withRenderingMode(.alwaysOriginal)
+        let mapImageBarButtonItem = UIBarButtonItem(image: mapImage, style: .plain, target: self, action: #selector(handleMapShow))
+        
         let menuImage = UIImage(named: "ic_add_location_white")?.withRenderingMode(.alwaysOriginal)
         let menuBarButtonItem = UIBarButtonItem(image: menuImage, style: .plain, target: self, action: #selector(handlePostNewLocationTap))
-        navigationItem.rightBarButtonItems = [menuBarButtonItem]
+        navigationItem.rightBarButtonItems = [menuBarButtonItem, mapImageBarButtonItem]
+    }
+    
+    func handleMapShow() {
+        viewModel.showMapTapped()
     }
     
     func setupRefreshControl() {

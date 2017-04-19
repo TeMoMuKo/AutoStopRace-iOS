@@ -121,7 +121,6 @@
 		E271E8101EA304E80052E382 /* GoogleMapsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E8091EA304E80052E382 /* GoogleMapsCore.framework */; };
 		E271E8111EA304E80052E382 /* GoogleMapsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E8091EA304E80052E382 /* GoogleMapsCore.framework */; };
 		E271E8121EA304E80052E382 /* GoogleMapsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E271E8091EA304E80052E382 /* GoogleMapsCore.framework */; };
-		E27CB7A51E58187C006B2396 /* CampusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27CB7A41E58187C006B2396 /* CampusViewController.swift */; };
 		E27CB7A81E5867C3006B2396 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27CB7A71E5867C3006B2396 /* LocationsViewController.swift */; };
 		E27CB7AC1E5869AD006B2396 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27CB7AB1E5869AD006B2396 /* ContactViewController.swift */; };
 		E27CB7AF1E586AAB006B2396 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27CB7AE1E586AAB006B2396 /* ContactCell.swift */; };
@@ -318,7 +317,6 @@
 		E271E8071EA304E80052E382 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Rome/GoogleMaps.framework; sourceTree = "<group>"; };
 		E271E8081EA304E80052E382 /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Rome/GoogleMapsBase.framework; sourceTree = "<group>"; };
 		E271E8091EA304E80052E382 /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsCore.framework; path = Rome/GoogleMapsCore.framework; sourceTree = "<group>"; };
-		E27CB7A41E58187C006B2396 /* CampusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CampusViewController.swift; path = Camping/CampusViewController.swift; sourceTree = "<group>"; };
 		E27CB7A71E5867C3006B2396 /* LocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationsViewController.swift; path = Locations/LocationsViewController.swift; sourceTree = "<group>"; };
 		E27CB7AB1E5869AD006B2396 /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactViewController.swift; path = Contact/ContactViewController.swift; sourceTree = "<group>"; };
 		E27CB7AE1E586AAB006B2396 /* ContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactCell.swift; path = Contact/Views/ContactCell.swift; sourceTree = "<group>"; };
@@ -649,14 +647,6 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		E27CB7A31E581796006B2396 /* Campus */ = {
-			isa = PBXGroup;
-			children = (
-				E27CB7A41E58187C006B2396 /* CampusViewController.swift */,
-			);
-			name = Campus;
-			sourceTree = "<group>";
-		};
 		E27CB7A61E5863A7006B2396 /* Locations */ = {
 			isa = PBXGroup;
 			children = (
@@ -902,7 +892,6 @@
 				E2C239D01E594D1B003818FB /* Login */,
 				E2C239CD1E594B18003818FB /* About */,
 				E27CB7AA1E586993006B2396 /* Contact */,
-				E27CB7A31E581796006B2396 /* Campus */,
 				E25F73D61E56AD7E003DEB3C /* Partners */,
 				E2D9A25B1E557042003324F7 /* BaseViews */,
 				E2D9A2501E554915003324F7 /* Menu */,
@@ -1281,7 +1270,6 @@
 				E28622901E5AECAA008938FC /* LoginViewModel.swift in Sources */,
 				E2D2EB3F1E5AF6B000C56A61 /* UIViewControllerWithBackButton.swift in Sources */,
 				E29293B91E8108D80083A1DD /* User.swift in Sources */,
-				E27CB7A51E58187C006B2396 /* CampusViewController.swift in Sources */,
 				E2A6AACC1E80E07E00E8118B /* UserDefaultsService.swift in Sources */,
 				E2D9A20F1E5530FC003324F7 /* AppDelegate.swift in Sources */,
 				E29CDC911E56876F00F59B4C /* MenuViewModel.swift in Sources */,

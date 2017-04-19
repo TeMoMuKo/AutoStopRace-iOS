@@ -32,7 +32,6 @@ final class UserLocationsViewModel {
         
         itemSelected
             .subscribe(onNext: { clickedContact in
-                print(clickedContact)
             })
             .addDisposableTo(disposeBag)
     }
@@ -58,5 +57,9 @@ final class UserLocationsViewModel {
     
     func postNewLocationTapped() {
         self.delegate?.postNewLocationTapped()
+    }
+    
+    func showMapTapped() {
+        self.delegate?.showMapTapped(locationRecords: locationRecords)
     }
 }

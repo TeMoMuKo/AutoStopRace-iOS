@@ -17,7 +17,13 @@ class UserLocationCell: BaseUICollectionCell {
     
     var locationRecord: LocationRecord? {
         didSet {
-            if let locationCountry = locationRecord?.country_code {
+            if let _ = locationRecord?.image {
+                countryLabel.text = ""
+                countryLabel.backgroundColor = UIColor.blueMenu
+                imageView.image = UIImage(named: "ic_photo_camera_white")?.withRenderingMode(.alwaysTemplate)
+                imageView.tintColor = UIColor.white
+            }
+            else if let locationCountry = locationRecord?.country_code {
                 countryLabel.text =  locationCountry
                 countryLabel.backgroundColor = UIColor.init(string: locationCountry)
                 imageView.image = nil

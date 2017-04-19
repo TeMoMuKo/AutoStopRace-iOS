@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import RxSwift
 
 final class UserLocationsCoordinator: Coordinator {
     
@@ -36,8 +37,11 @@ final class UserLocationsCoordinator: Coordinator {
 
 
 extension UserLocationsCoordinator: UserLocationsViewControllerDelegate {
-    func showMapTapped() {
-        
+    
+    func showMapTapped( locationRecords: Variable<[LocationRecord]> ) {
+        _ = self.navigationController?.popViewController(animated: false)
+        let coordinator = LocationsCoordinator(navigationController: navigationController, appCoordinator: appCoordinator, serviceProvider: serviceProvider!)
+        coordinator.startWithUserLocations( locationRecords: locationRecords )
     }
     
     func postNewLocationTapped() {

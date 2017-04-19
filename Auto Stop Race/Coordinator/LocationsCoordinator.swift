@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import RxSwift
 
 final class LocationsCoordinator: Coordinator {
     
@@ -24,6 +25,13 @@ final class LocationsCoordinator: Coordinator {
     func start() {
         let locationViewModel = LocationsViewModel(provider: serviceProvider!)
         let viewController = LocationsViewController(viewModel: locationViewModel)
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    func startWithUserLocations( locationRecords: Variable<[LocationRecord]> ) {
+        let locationViewModel = LocationsViewModel(provider: serviceProvider!, locationRecords: locationRecords)
+        let viewController = LocationsViewController(viewModel: locationViewModel)
+        viewController.showUserMarkers()
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
