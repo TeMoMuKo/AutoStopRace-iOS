@@ -146,7 +146,9 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
     }
     
     func teamSelected(team: Team) {
-        if viewModel.userTeamNumber != nil && team.teamNumber == viewModel.userTeamNumber{
+        if  let viewModelTeam = viewModel.userTeamNumber,
+            let teamTeamNumber = team.teamNumber,
+            viewModelTeam == teamTeamNumber {
             showUserMarkers()
         } else {
             showMarker(team: team)

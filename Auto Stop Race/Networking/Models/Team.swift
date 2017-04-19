@@ -21,6 +21,6 @@ struct Team: Mappable {
         id <- map["id"]
         slug <- map["slug"]
         lastLocation <- map["last_location"]
-        teamNumber = Int(String(slug.characters.last!))
+        teamNumber = slug.getNumber()
     }
 }
