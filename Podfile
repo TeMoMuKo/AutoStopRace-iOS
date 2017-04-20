@@ -1,7 +1,5 @@
 platform :ios, '9.0'
 
-    plugin 'cocoapods-rome'
-
 target 'Auto Stop Race' do
     use_frameworks!
 
