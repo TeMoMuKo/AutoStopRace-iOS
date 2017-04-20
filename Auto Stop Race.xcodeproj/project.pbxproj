@@ -10,6 +10,7 @@
 		111ED988E54B3CE0FC35922B /* Pods_Auto_Stop_Race.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A56B20F1205FFFFD65D923F /* Pods_Auto_Stop_Race.framework */; };
 		A70F31394243B1FE8EC8CF9C /* Pods_Auto_Stop_RaceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12DA71DF16DEB8B3241A29E9 /* Pods_Auto_Stop_RaceUITests.framework */; };
 		E2044EE81EA7C98A007B1C86 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2044EE71EA7C98A007B1C86 /* String.swift */; };
+		E21BBB5F1EA8B27B005D54FC /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21BBB5E1EA8B27B005D54FC /* UIImage.swift */; };
 		E244206D1E84B6A600556FDC /* UserLocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E244206C1E84B6A600556FDC /* UserLocationsViewController.swift */; };
 		E24420711E84B82900556FDC /* UserLocationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24420701E84B82900556FDC /* UserLocationsViewModel.swift */; };
 		E24420731E84B86200556FDC /* UserLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24420721E84B86200556FDC /* UserLocationCell.swift */; };
@@ -123,6 +124,7 @@
 		84EE36D1BC61F02C97AD3EBF /* Pods-Auto Stop RaceUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Auto Stop RaceUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Auto Stop RaceUITests/Pods-Auto Stop RaceUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BF4779E46EFE8DFB4A1D4FAB /* Pods-Auto Stop RaceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Auto Stop RaceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Auto Stop RaceTests/Pods-Auto Stop RaceTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E2044EE71EA7C98A007B1C86 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = String.swift; path = Extension/String.swift; sourceTree = "<group>"; };
+		E21BBB5E1EA8B27B005D54FC /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIImage.swift; path = Extension/UIImage.swift; sourceTree = "<group>"; };
 		E244206C1E84B6A600556FDC /* UserLocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserLocationsViewController.swift; path = UserLocations/UserLocationsViewController.swift; sourceTree = "<group>"; };
 		E24420701E84B82900556FDC /* UserLocationsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserLocationsViewModel.swift; path = UserLocations/ViewModel/UserLocationsViewModel.swift; sourceTree = "<group>"; };
 		E24420721E84B86200556FDC /* UserLocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserLocationCell.swift; path = UserLocations/Views/UserLocationCell.swift; sourceTree = "<group>"; };
@@ -671,6 +673,7 @@
 				E29F1BE21E8B2F44006D8178 /* CLLocationCoordinate2D.swift */,
 				E2C5EE8F1E971FD000BD5838 /* Date.swift */,
 				E2044EE71EA7C98A007B1C86 /* String.swift */,
+				E21BBB5E1EA8B27B005D54FC /* UIImage.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -1067,6 +1070,7 @@
 				E2D011401E5BE5920021936A /* PhraseCell.swift in Sources */,
 				E2D9A2571E555E6C003324F7 /* UIColor.swift in Sources */,
 				E28873131E9717720005237D /* Team.swift in Sources */,
+				E21BBB5F1EA8B27B005D54FC /* UIImage.swift in Sources */,
 				E29F1BD91E8B106F006D8178 /* FormViewControllerWithBackButton.swift in Sources */,
 				E2E0D88E1E57F9FF00844509 /* PartnerImageCell.swift in Sources */,
 				E2C5EE991E9C0C5D00BD5838 /* RealmDatabaseService.swift in Sources */,
