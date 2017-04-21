@@ -12,8 +12,8 @@ class PartnersViewController: UIViewControllerWithMenu, UICollectionViewDelegate
     
     let partners = [
         Partner(cellType:.text, value:NSLocalizedString("strategic_partners", comment: "")),
-        Partner(cellType:.image, value:"strategic_partner_wro"),
         Partner(cellType:.image, value:"strategic_partner_kaufland"),
+        Partner(cellType:.image, value:"strategic_partner_wro"),
         Partner(cellType:.text, value:NSLocalizedString("gold_partners", comment: "")),
         Partner(cellType:.image, value:"gold_partner_tarczynski"),
         Partner(cellType:.image, value:"gold_partner_grzeski"),
