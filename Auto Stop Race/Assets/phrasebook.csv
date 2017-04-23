@@ -1,76 +1,76 @@
-polski,angielski,niemiecki,włoski
-Cześć / dzień dobry / dobry wieczór / dobranoc,Hi / good morning / good evening / good night,hallo / guten Tag / guten Abend / gute Nacht,Ciao / buongiorno / buonasera / buonanotte
-Proszę / dziękuję / przepraszam,Please / thank you /I'm Sorry,bitte / danke / Entschuldigung,Per favore - per piacere / grazie / mi dispiace
-Tak / nie / może,Yes / no / maybe,ja / nein / vielleicht,Si / no / forse
-zero / jeden / dwa / trzy / cztery / pięć,zero / one / two / three / four / five,null / eins / zwei / drei / vier / fünf,Zero / uno / due / tre / quattro / cinque
-sześć / siedem / osiem / dziewięć / dziesięć,six / seven / eight / nine / ten,sechs / sieben / acht / neun / zehn,Sei / sette / otto / nove / dieci
-Wschód / zachód / północ / południe,East / west / north / south,[r] Osten / Westen / Norden / Süden,Est / ovest / nord / sud
-Wczoraj / dzisiaj / jutro,Yesterday / today / tomorrow,gestern / heute / morgen,Ieri / oggi / domani
-Godzina / dzień / tydzień / miesiąc / kilometr,Hour / day / week / month / kilometer,[e] Uhr / [r] Tag / [e] Woche / [r] Monat / [r] Kilometer,Ora / giorno / settimana / mese / chilometro
-Prawo / lewo / za / przed,RIght / left / behind / in front,rechts / links / hinter / vor,Destra / sinistra / dietro / davanti
-Ten / poprzedni / następny,This / previous / next,diese[s/r] / vorig / nächste[s/r],Questo / precedente / prossimo
-Często / rzadko / nigdy,Often / rare / never,oft/ selten / nie,Spesso / raro / mai
-Przed / po,Before / after,bevor / nach,Prima / dopo
-Góra / dół / nad / pod,Up / down / above / under,oben / unten / über / unter,Su/ giù / sopra / sotto
-Co? / Gdzie? / Kiedy? / Jak?,What? / Where? / When? / How?,Was ? Wo ? Wann ? Wie ?,Cosa? / dove? / quando? / come?
-Dlaczego? / Kto? / Który?,Why? / Who? / Which?,Warum ? Wer ? Welche[s/r] ?,Perché? / chi? / quale?
+polski,🇬🇧,🇩🇪 ,🇮🇹,🇭🇷,🇨🇿,🇭🇺
+Cześć / dzień dobry / dobry wieczór / dobranoc,Hi / good morning / good evening / good night,hallo / guten Tag / guten Abend / gute Nacht,Ciao / buongiorno / buonasera / buonanotte,Bok / Dobro jutro / Dobra večer / laku noć,ahoj / dobrý den / Dobrý večer / dobrou noc,Szia / jó reggelt / jó estét / jó éjszakát
+Proszę / dziękuję / przepraszam,Please / thank you /I'm Sorry,bitte / danke / Entschuldigung,Per favore - per piacere / grazie / mi dispiace,Zdravo / hvala / oprostite,Prosím / Děkuji / líto,kérem / köszönöm / Bocsánat
+Tak / nie / może,Yes / no / maybe,ja / nein / vielleicht,Si / no / forse,Da / Ne / može biti,Ano / ne / možná,Igen / nem / talán
+zero / jeden / dwa / trzy / cztery / pięć,zero / one / two / three / four / five,null / eins / zwei / drei / vier / fünf,Zero / uno / due / tre / quattro / cinque,jedan / dva / tri / četiri / pet,Nula / jeden / dva / tři / čtyři / pět,Zero / egy / két / három / négy / öt
+sześć / siedem / osiem / dziewięć / dziesięć,six / seven / eight / nine / ten,sechs / sieben / acht / neun / zehn,Sei / sette / otto / nove / dieci,šest / razrezati / osam / devet / deset,šest / sedm / osmi / devíti / deseti,hat / hét / nyolc / kilenc / tíz
+Wschód / zachód / północ / południe,East / west / north / south,[r] Osten / Westen / Norden / Süden,Est / ovest / nord / sud,istok / zapad / sjever / jug,Východ / západ / sever / jih,kelet / nyugatra / északi / déli
+Wczoraj / dzisiaj / jutro,Yesterday / today / tomorrow,gestern / heute / morgen,Ieri / oggi / domani,jučer / danas / sutra,Včera / dnes / zítra,Tegnap / ma / holnap
+Godzina / dzień / tydzień / miesiąc / kilometr,Hour / day / week / month / kilometer,[e] Uhr / [r] Tag / [e] Woche / [r] Monat / [r] Kilometer,Ora / giorno / settimana / mese / chilometro,"sat, dan, tjedan, mjesec, kilometar",Hodina / den / týden / měsíc / kilometr,Óra / nap / hét / hónap / kilométer
+Prawo / lewo / za / przed,RIght / left / behind / in front,rechts / links / hinter / vor,Destra / sinistra / dietro / davanti,"desno, lijevo, iza, naprijed",Vlevo / vpravo / vzadu / vpředu,Bal / jobb / mögött / előtt
+Ten / poprzedni / następny,This / previous / next,diese[s/r] / vorig / nächste[s/r],Questo / precedente / prossimo,"To, prethodni, sljedeći",Tato / předchozí / další,Ezt / előző / következő
+Często / rzadko / nigdy,Often / rare / never,oft/ selten / nie,Spesso / raro / mai,"često, rijetko, nikada",Často / zřídka / nikdy,Gyakran / ritkán / soha
+Przed / po,Before / after,bevor / nach,Prima / dopo,"prije, poslije",Před / po,Előtte / eljön
+Góra / dół / nad / pod,Up / down / above / under,oben / unten / über / unter,Su/ gi? / sopra / sotto,"gore, dolje, iznad, ispod",nahoru / dolů / na / pod,tetején / le / több mint / alatt
+Co? / Gdzie? / Kiedy? / Jak?,What? / Where? / When? / How?,Was ? Wo ? Wann ? Wie ?,Cosa? / dove? / quando? / come?,Što je?  /  Gdje?  /  Kada?  /  Kako?,Co? / Kde? / když? / Jak na to?,Mi? / Hol? / Mikor? / Hogyan?
+Dlaczego? / Kto? / Który?,Why? / Who? / Which?,Warum ? Wer ? Welche[s/r] ?,Perché? / chi? / quale?,Zašto?  /  Tko?  /  Koji?,Proč? / Kdo? / Které?,Miért? / Ki? / Melyik?
 Jak dużo? / Jak daleko?,"How much? (policzalny) How many (niepoliczalny)
-/ How far?",Wie viel ? Wie weit ?,Quanto / quanti - quante
-Nazywam się... / Jak Ci na imię?,My name is... / What's your name?,Ich heiße…/ Wie heißt du ?,Il mio nome è… - Mi chiamo… / come ti chiami?
-Jestem z... / Skąd jesteś?,I'm from... / Where are you from?,Ich komme aus…/ Woher kommst du ?,Io vengo da… / di dove sei?
-Czy mówisz po ...?,Do you speak...?,Sprichst du…?,Parli…?
-"...angielsku? / ...niemiecku? / 
+/ How far?",Wie viel ? Wie weit ?,Quanto / quanti - quante,koliko?  /  koliko daleko?,Kolik? / Jak daleko?,mennyit? / Milyen messze?
+Nazywam się... / Jak Ci na imię?,My name is... / What's your name?,Ich heiße…/ Wie heißt du ?,Il mio nome ?… - Mi chiamo… / come ti chiami?,moje ime je  /  što je vaše ime,Jmenuji se ... / Jak se jmenuje?,A nevem ... / Mi a neved?
+Jestem z... / Skąd jesteś?,I'm from... / Where are you from?,Ich komme aus…/ Woher kommst du ?,Io vengo da… / di dove sei?,Ja sam iz ...  /  Gdje si?,Jsem z ... / odkud jsi,... érkeztem / honnan jöttél?
+Czy mówisz po ...?,Do you speak...?,Sprichst du…?,Parli…?,Govorite li ...?,Mluvíte ...?,Beszélsz
+"...angielsku? / ...niemiecku? /
 ...hiszpańsku? / ...francusku?","..english? / ...german? /
-... spanish? / french?","...englisch? / 
-…spanisch? / …französich ?",..Inglese? / ..tedesco? / ..spagnolo? / ..francese?
-"Mógłbyś mówić wolniej, proszę?","Could you speak slower, please?",Könntest du bitte langsamer sprechen ?,"Potresti parlare più lentamente, per favore?"
-Nie rozumiem / Nie wiem,I don't understand / I don't know,Ich verstehe nicht / ich weiß nicht,(Io) non capisco / (io) non so
-Mam ... lat / Ile masz lat?,I'm... [lub: I'm ...years old] / How old are you?,Ich bin…[Jahre alt] / Wie alt bist du ?,Io ho … anni / quanti anni hai?
-Jestem autostopowiczem/ką z Polski,I'm a hitchkiker from Poland,Ich bin Tramper/in aus Polen,Io sono un autostoppista dalla Polonia
-Jadę do... / Dokąd jedziesz?,I'm going to... / Where are you going to? [lub: Which dicrection are you heading] ,Ich fahre nach…/ Wohin fährst du ?,Io sto andando… / dove stai andando? [in quale direzione (stai andando) - (vai)?]
-Czy jedziesz w stronę...?,Are you going to...?,Fährst du in Richtung…?,Stai andando a…?
-Czy podwieziesz mnie do... ?,Would you take me to... /Would you give me a lift to...?,Fährst du mich nach…?,Mi porteresti a… / Mi daresti un passaggio a…?
-Czy mogę jechać z Panem/Panią?,Can I go with you?,Könnte ich mit Ihnen fahren ?,Posso venire con te?
-Czy możesz mi pomóc?,Can you help me?,Kannst du mir helfen ?,Mi puoi aiutare?
-To dobrze / źle / idealnie,That's good / bad / perfect,Das ist gut / schlecht / ideal,Va bene / non va bene/ è perfetto
-Nie ma problemu,No problem,Das ist kein Problem,Nessun problema
-Czy podwieziesz mnie za darmo?,Will you take me for free?,Fährst du mich kostenlos?,Mi porteresti portare gratuitamente?
-Podróżuję autostopem,I am hitchhiking / I travel by hitchhiking.,Ich trampe,Sto facendo l'auto stop / io viaggio tramite auto stop
-Nie mam pieniędzy,I don't have any money / I have no money,Ich habe kein Geld,Io non ho soldi
-Możesz mnie tutaj wysadzić?,Can you leave me here?,Kannst du mich hier aussteigen lassen ?,Puoi lasciarmi qui?
-Chciał(a)bym wysiąść na/w...,I'd like to get off at/in...,Ich möchte [an/auf]/in…aussteigen,Potresti lasciarmi - farmi scendere al / alla
+... spanish? / french?","...englisch? /
+…spanisch? / …französich ?",..Inglese? / ..tedesco? / ..spagnolo? / ..francese?,... engleski?  /  ... njemački? / ... španjolski?  /  ... Francuski?,anglicky / německy / španělsky / francouzsky,... angol? / ...német? / ... spanyol? / ... francia?
+"Mógłbyś mówić wolniej, proszę?","Could you speak slower, please?",Könntest du bitte langsamer sprechen ?,"Potresti parlare pi? lentamente, per favore?",možete govoriti sporije?,"Mohl byste mluvit pomaleji, prosím?","Tudna beszéljen lassabban, kérem?"
+Nie rozumiem / Nie wiem,I don't understand / I don't know,Ich verstehe nicht / ich weiß nicht,(Io) non capisco / (io) non so,Ne razumijem  /  ne znam,Nerozumím / nevím,Nem értem / nem tudom
+Mam ... lat / Ile masz lat?,I'm... [lub: I'm ...years old] / How old are you?,Ich bin…[Jahre alt] / Wie alt bist du ?,Io ho … anni / quanti anni hai?,Ja sam ... godina  /  Koliko imate godina?,Jsem 18 let / Kolik je vám let?,Én ... éves vagyok / Hány éves Ön?
+Jestem autostopowiczem/ką z Polski,I'm a hitchkiker from Poland,Ich bin Tramper/in aus Polen,Io sono un autostoppista dalla Polonia,Ja sam autostoper iz Poljske,Jsem stopař z Polský,én stoppos a lengyel
+Jadę do... / Dokąd jedziesz?,I'm going to... / Where are you going to? [lub: Which dicrection are you heading],Ich fahre nach…/ Wohin fährst du ?,Io sto andando… / dove stai andando? [in quale direzione (stai andando) - (vai)?],Idem ...  /  Kamo ideš?,Jdu do ... / Kam jdeš?,Megyek ... / Hová mész?
+Czy jedziesz w stronę...?,Are you going to...?,Fährst du in Richtung…?,Stai andando a…?,Ideš u smjeru ...?,Jdeš ve směru ...?,Mész az irányba ...ágban?
+Czy podwieziesz mnie do... ?,Would you take me to... /Would you give me a lift to...?,Fährst du mich nach…?,Mi porteresti a… / Mi daresti un passaggio a…?,Učini mi vožnja na ...?,Udělej mi jízda na ...?,Tegyél meg egy kört ?
+Czy mogę jechać z Panem/Panią?,Can I go with you?,Könnte ich mit Ihnen fahren ?,Posso venire con te?,Mogu li ići s tobom?,Můžu jít s tebou,Mehetek veletek?
+Czy możesz mi pomóc?,Can you help me?,Kannst du mir helfen ?,Mi puoi aiutare?,Možete li mi pomoći?,Můžete mi pomoci?,Tud nekem segíteni?
+To dobrze / źle / idealnie,That's good / bad / perfect,Das ist gut / schlecht / ideal,Va bene / non va bene/ ? perfetto,To dobro  /  loše  /  savršena,Tato dobrá / špatná / perfektní,Ez jól / beteg / tökéletesen
+Nie ma problemu,No problem,Das ist kein Problem,Nessun problema,nema problema,žádný problém,nincs probléma
+Czy podwieziesz mnie za darmo?,Will you take me for free?,Fährst du mich kostenlos?,Mi porteresti portare gratuitamente?,Učini mi vožnja za besplatno?,Udělej mi jízda zdarma?,Tegyél meg egy kört mert díjmentesen?
+Podróżuję autostopem,I am hitchhiking / I travel by hitchhiking.,Ich trampe,Sto facendo l'auto stop / io viaggio tramite auto stop,putuje stopira,cestování stopování,utazás autóstoppal
+Nie mam pieniędzy,I don't have any money / I have no money,Ich habe kein Geld,Io non ho soldi,Nemam novca,Nemám peníze,Nincs pénzem
+Możesz mnie tutaj wysadzić?,Can you leave me here?,Kannst du mich hier aussteigen lassen ?,Puoi lasciarmi qui?,Možete me puhati ovdje?,Můžete mě vyhodit tady?,hagyhatom itt
+Chciał(a)bym wysiąść na/w...,I'd like to get off at/in...,Ich möchte [an/auf]/in…aussteigen,Potresti lasciarmi - farmi scendere al / alla,Želio bih sići na  /  u …,Chci vystoupit na / ve ...,Szeretnék leszállni ...
 ... stacji benzynowej / ...parkingu / ... przy autostradzie,... gas/petrol station / ... parking lot / ...near the highway,"…an einer Tankstelle/…auf einem Parktplatz/
-…bei der Autobahn",...Distributore - area di servizio / ...parcheggio / ...vicino all'autostrada
-Zostaw (wysadź) mnie na stacji benzynowej przy autostradzie.,Leave me on the gas station near the highway.,Lass mich an der Tankstelle bei der Autobahn aussteigen. ,Lasciami (al ditributore) - (all'area di servizio) vicino all'autostrada.
-Gdzie jesteśmy?,Where are we?,Wo sind wir ?,Dove siamo?
-Jak daleko jest...?,How far is...?,Wie weit ist…?,Quanto è lontano..? / quanto dista..?
-Która godzina?,What time is it? / What's the time?,Wie viel Uhr ist es ?,Che ora è?
-Dziękuję! / Miłego dnia!,Thank you! / Have a nice day!,Danke schön!/ Schönen Tag noch!,Grazie - ti ringrazio / ti auguro una buona giornata
-Szerokiej drogi!,Farewell!,Gute Fahrt!,Addio - arrivederci
-Nie dotykaj mnie! / Wypuść mnie!,Don't touch me! / Let me out!,Fass mich nicht an!/ Lass mich raus!,Non mi toccare! Lasciami solo - sola
-Przestań! / Pomocy!,Stop it! / Help!,Hör auf! / Hilfe!,Smettila! Aiuto!
-Gdzie mogę kupić bilet?,Where can I buy a ticket?,"Wo kann ich eine Fahrkarte (kolejowy)/ einen Fahrschein (tramwajowy, autobusowy) / ein Ticket (lotniczy) kaufen ?",Dove posso comprare un biglietto?
-Gdzie mogę spać?,Where can I sleep?,Wo kann ich schlafen ?,Dove posso dormire?
-Gdzie mogę rozłożyć namiot?,Where can I put up my tent?/ Where can I pitch my tent?,Wo kann ich das Zelt aufschlagen?,Dove posso mettere la mia tenda? / dove posso piantare la mia tenda?
-Gdzie znajduje się pole namiotowe?,Where can I find a campsite?,Wo befindet sich der Zeltplatz ?,Dove posso trovare un campeggio?
-Co warto tutaj zobaczyć?,What's worth seeing in here?,Was ist hier sehenswert?,Cosa c'è da vedere di importante qui?
-Czy możemy się zatrzymać?,Can we stop?,Können wir anhalten ?,Possiamo fermarci?
-Muszę skorzystać z toalety,I need to use a restroom.,Ich muss die Toilette benutzen.,Ho bisogno di usare la toilette. - Ho bisogno di andare in bagno.
-Chciałbym coś zjeść,I'd like to eat something.,Ich möchte etwas essen,Vorrei mangiare qualcosa.
-Studiuję / pracuję,I study / I work,Ich studiere/ arbeite,(Io) studio / (io) lavoro
-Mam chłopaka/dziewczynę/żonę/męża,I have a boyfriend/girlfriend/wife/husband,Ich habe einen [fester] Freund / eine[feste] Freundin / eine Frau/einen Mann,Io ho un fidanzato / fidanzata / moglie / marito
-Jestem głodny/spragniony/chory,I'm hungry/thirsty/sick,Ich bin hungrig / durstig / krank,Ho fame / ho sete / sono ammalato (sto male)
-Jest mi zimno//gorąco,I'm  feel cold/hot,Mir ist kalt/ mir ist heiß,Ho freddo / caldo
-Szukam miejsca do spania,I'm looking for a place to sleep,Ich bin auf der Suche nach dem Schlafplatz,Sto cercando un posto per dormire
-Ile to kosztuje?,How much is it?,Wie viel kostet das ?,Quanto costa?
-Na zdrowie! / Smacznego!,Cheers! / Enjoy your meal!,Gesundheit! / guten Appetit!,Salute - cin cin / buon appetito
-Gdzie znajdę... ?,Where can I find...?,Wo finde ich…?,Dove posso trovare…?
-- centrum miasta / mapę,- a city center / map,- das Stadtzentrum / eine Landkarte,Il centro città / una mappa
-- toaletę / supermarket / aptekę / kemping,- a toilet / market / pharmacy / camping,- eine Toilette / einen Supermarkt / eine Apotheke / ein Camping,Un - il bagno (toilette) / un - il market / una - la farmacia / un - il campeggio
-- kafejkę internetową / bankomat / bank,- internet cafe / ATM / bank,- ein Internetcafé / einen Bankautomat/ eine Bank,Internet point / bancomat / banca
-- metro / przystanek autobusowy / stację kolejową,- subway / bus stop / railway station,die U-Bahn / eine Bushaltestelle / den Bahnhof,Metropolitana / fernata del pullman (bus) / stazione ferroviaria
-- tania restauracja / bar / sklep,- afordable restaurant / bar / shop,ein billiges Retaurant / eine billige Bar / ein billiges Geschäft,economici - a buon prezzo ristorante / bar / negozio
-- autostradę do ... / dobre miejsce do autostopu,- highway to... / good spot for hitchhiking,die Autobahn nach…/ ein guter Platz zum Trampen,Autostrada per… / buon posto per l'auto stop
-Woda / herbata / kawa,water / tea / cofee,[s] Wasser / [r] Tee / [r] Kaffee,Acqua / tè / caffè
-Piwo / wino / sok,beer / wine / juice,[s] Bier / [r] Wein/ [r] Saft,Birra / vino / succo
-Śniadanie / obiad / kolacja,breakfast / dinner / supper,[r] Frühstück / [s] Mittagessen / [s] Abendessen,Colazione / pranzo - cena / cena
+…bei der Autobahn",...Distributore - area di servizio / ...parcheggio / ...vicino all'autostrada,... benzinska  /  parkiralište  /  ... na autocesti,... čerpací stanice / parkování ... / ... na dálnici,benzinkút / parkolás / országút
+Zostaw (wysadź) mnie na stacji benzynowej przy autostradzie.,Leave me on the gas station near the highway.,Lass mich an der Tankstelle bei der Autobahn aussteigen.,Lasciami (al ditributore) - (all'area di servizio) vicino all'autostrada.,Ostavi me na benzinskoj postaji na autocesti.,vyhodit mě na čerpací stanici na dálnici.,Hagyj én benzinkútnál az autópályán.
+Gdzie jesteśmy?,Where are we?,Wo sind wir ?,Dove siamo?,Gdje smo?,Kde to jsme?,Hol vagyunk?
+Jak daleko jest...?,How far is...?,Wie weit ist…?,Quanto ? lontano..? / quanto dista..?,Koliko je daleko ...?,Jak daleko je ...?,Milyen messze van ...?
+Która godzina?,What time is it? / What's the time?,Wie viel Uhr ist es ?,Che ora ??,Koliko je sati?,Kolik je hodin?,Mennyi az idő?
+Dziękuję! / Miłego dnia!,Thank you! / Have a nice day!,Danke schön!/ Schönen Tag noch!,Grazie - ti ringrazio / ti auguro una buona giornata,Hvala!  /  Želim vam ugodan dan!,Děkuji! / Hezký den!,Köszönjük! / További szép napot!
+Szerokiej drogi!,Farewell!,Gute Fahrt!,Addio - arrivederci,sve najbolje,hodně štěstí,sok szerencsét
+Nie dotykaj mnie! / Wypuść mnie!,Don't touch me! / Let me out!,Fass mich nicht an!/ Lass mich raus!,Non mi toccare! Lasciami solo - sola,Ne dirajte me!  /  Pusti me van!,Nesahejte na mě! / Pusť mě ven!,Ne érj hozzám! / engedj el
+Przestań! / Pomocy!,Stop it! / Help!,Hör auf! / Hilfe!,Smettila! Aiuto!,Stop!  /  pomoći!,Stop! / Pomoc!,Stop! / Segítség!
+Gdzie mogę kupić bilet?,Where can I buy a ticket?,"Wo kann ich eine Fahrkarte (kolejowy)/ einen Fahrschein (tramwajowy, autobusowy) / ein Ticket (lotniczy) kaufen ?",Dove posso comprare un biglietto?,Gdje mogu kupiti kartu?,Kde mohu koupit jízdenku?,Hol lehet jegyet venni?
+Gdzie mogę spać?,Where can I sleep?,Wo kann ich schlafen ?,Dove posso dormire?,Gdje mogu spavati?,Kde mohu spát?,Hol lehet aludni?
+Gdzie mogę rozłożyć namiot?,Where can I put up my tent?/ Where can I pitch my tent?,Wo kann ich das Zelt aufschlagen?,Dove posso mettere la mia tenda? / dove posso piantare la mia tenda?,Gdje mogu širiti šator?,Kde mohu šířit stan?,Hol lehet terjeszteni a sátor?
+Gdzie znajduje się pole namiotowe?,Where can I find a campsite?,Wo befindet sich der Zeltplatz ?,Dove posso trovare un campeggio?,Gdje je kamp?,Kde je ten kemp?,Hol van a kempingben?
+Co warto tutaj zobaczyć?,What's worth seeing in here?,Was ist hier sehenswert?,Cosa c'? da vedere di importante qui?,Ono što vidite ovdje?,Co stojí za vidění tady?,mit lehet itt látni
+Czy możemy się zatrzymać?,Can we stop?,Können wir anhalten ?,Possiamo fermarci?,Možemo li zaustaviti?,Můžeme zastavit?,lehet megállítani itt?
+Muszę skorzystać z toalety,I need to use a restroom.,Ich muss die Toilette benutzen.,Ho bisogno di usare la toilette. - Ho bisogno di andare in bagno.,Moram koristiti toalet,Musím na toaletu,Azt kell használni a WC
+Chciałbym coś zjeść,I'd like to eat something.,Ich möchte etwas essen,Vorrei mangiare qualcosa.,Htio bih nešto pojesti,Rád bych něco k jídlu,Szeretnék valamit enni
+Studiuję / pracuję,I study / I work,Ich studiere/ arbeite,(Io) studio / (io) lavoro,Studiram  /  radim,Studuji / práce,Tanulok / munka
+Mam chłopaka/dziewczynę/żonę/męża,I have a boyfriend/girlfriend/wife/husband,Ich habe einen [fester] Freund / eine[feste] Freundin / eine Frau/einen Mann,Io ho un fidanzato / fidanzata / moglie / marito,Imam dečka  /  djevojka  /  žena  /  muž,Mám přítele / přítelkyni / manželku / manžela,Van egy fiú barát / barátnő / feleség / férj
+Jestem głodny/spragniony/chory,I'm hungry/thirsty/sick,Ich bin hungrig / durstig / krank,Ho fame / ho sete / sono ammalato (sto male),Gladan sam  /  žedna  /  bolesna,Mám hlad / žízeň / nemocný,Éhes vagyok / szomjas / beteg
+Jest mi zimno//gorąco,I'm feel cold/hot,Mir ist kalt/ mir ist heiß,Ho freddo / caldo,Ja sam hladno  /  toplo,Je mi zima / horko,itt van hideg / forró
+Szukam miejsca do spania,I'm looking for a place to sleep,Ich bin auf der Suche nach dem Schlafplatz,Sto cercando un posto per dormire,Ja sam u potrazi za mjesto za spavanje,Já jsem hledal místo na spaní,"keresek egy helyet, ahol aludni"
+Ile to kosztuje?,How much is it?,Wie viel kostet das ?,Quanto costa?,Koliko to košta?,Kolik to bude stát?,Mennyibe kerül?
+Na zdrowie! / Smacznego!,Cheers! / Enjoy your meal!,Gesundheit! / guten Appetit!,Salute - cin cin / buon appetito,Živjeli!  /  Uživajte!,Na zdraví! / Užijte si to!,Egészségére! / Jó szórakozást!
+Gdzie znajdę... ?,Where can I find...?,Wo finde ich…?,Dove posso trovare…?,Gdje mogu naći ...?,Kde najdu ...?,Hol találom ...?
+- centrum miasta / mapę,- a city center / map,- das Stadtzentrum / eine Landkarte,Il centro citt? / una mappa,središte grada  /  karta,centrum / mapa,város / térkép
+- toaletę / supermarket / aptekę / kemping,- a toilet / market / pharmacy / camping,- eine Toilette / einen Supermarkt / eine Apotheke / ein camping,Un - il bagno (toilette) / un - il market / una - la farmacia / un - il campeggio,WC  /  supermarket  /  ljekarne  /  kamp,WC / supermarket / lékárna / camping,WC / szupermarket / gyógyszertár / kemping
+- kafejkę internetową / bankomat / bank,- internet cafe / ATM / bank,- ein Internetcafé / einen Bankautomat/ eine bank,Internet point / bancomat / banca,CyberCafe  /  Bankomati  /  banka ,cybercafé / ATM / bank,Internet kávézó / ATM / bank
+- metro / przystanek autobusowy / stację kolejową,- subway / bus stop / railway station,die U-Bahn / eine Bushaltestelle / den Bahnhof,Metropolitana / fernata del pullman (bus) / stazione ferroviaria,metro  /  autobusna stanica  /  željezničke stanice ,metro / Autobusová zastávka / nádraží,metró / buszmegálló / vasútállomás
+- tania restauracja / bar / sklep,- afordable restaurant / bar / shop,ein billiges Retaurant / eine billige Bar / ein billiges Geschäft,economici - a buon prezzo ristorante / bar / negozio,jeftino restoran  /  bar  /  dućan,strávník / bar / obchod,olcsó étterem / bár / üzlet
+- autostradę do ... / dobre miejsce do autostopu,- highway to... / good spot for hitchhiking,die Autobahn nach…/ ein guter Platz zum Trampen,Autostrada per… / buon posto per l'auto stop,autocesta do  /  dobro mjesto za stopiranje,dálnice na / dobrém místě na stopovat,autópálya / egy jó hely a stoppolás
+Woda / herbata / kawa,water / tea / cofee,[s] Wasser / [r] Tee / [r] Kaffee,Acqua / t? / caff?,Voda  /  čaj  /  kava,Voda / čaj / káva,víz / tea / kávé
+Piwo / wino / sok,beer / wine / juice,[s] Bier / [r] Wein/ [r] Saft,Birra / vino / succo,Pivo  /  vino  /  sok ,Pivo / víno / džus,sör / bor / lé
+Śniadanie / obiad / kolacja,breakfast / dinner / supper,[r] Frühstück / [s] Mittagessen / [s] Abendessen,Colazione / pranzo - cena / cena,Doručak  /  ručak  /  večera ,Snídaně / oběd / večeře,reggeli / vacsora / vacsora

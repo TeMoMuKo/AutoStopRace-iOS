@@ -34,6 +34,7 @@ class PhrasebookViewController: UIViewControllerWithMenu, UITableViewDelegate {
         segmentedControl.tintColor = UIColor.blueMenu
         segmentedControl.layer.borderColor = UIColor.white.cgColor
         segmentedControl.selectedSegmentIndex = 0
+        segmentedControl.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.white], for:.selected)
         return segmentedControl
     }()
     

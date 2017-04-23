@@ -85,7 +85,6 @@ class PhraseCell: UITableViewCell {
         whiteRoundedView.layer.backgroundColor = CGColor.init(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [1.0, 1.0, 1.0, 1.0])
         
         whiteRoundedView.layer.masksToBounds = false
-        whiteRoundedView.layer.cornerRadius = 3.0
         whiteRoundedView.layer.shadowOffset = CGSize.init(width: -1, height: 1)
         whiteRoundedView.layer.shadowOpacity = 0.5
         
