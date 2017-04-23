@@ -8,12 +8,15 @@
 
 import Foundation
 import RealmSwift
+import RxRealm
 
 protocol RealmDatabaseServiceType {
     func clearDatabase()
     func addUnsentLocationRecord(locationRecord: CreateLocationRecordRequest)
     func getUnsentLocationRecords() -> [CreateLocationRecordRequest]
     func removeLocationRecord(locationRecord: CreateLocationRecordRequest)
+    func saveRemoteLocationsToLocalDatabase(locationRecord: LocationRecord)
+    func getLocationRecords() -> [LocationRecord]
 }
 
 final class RealmDatabaseService: BaseService, RealmDatabaseServiceType {
@@ -39,5 +42,19 @@ final class RealmDatabaseService: BaseService, RealmDatabaseServiceType {
         try! realm.write {
             realm.delete(locationRecord)
         }
+    }
+    
+    func saveRemoteLocationsToLocalDatabase(locationRecord: LocationRecord) {
+        try! realm.write {
+            let locationThatExists = realm.objects(LocationRecord.self).filter("id == %@", locationRecord.id).first
+            if locationThatExists == nil {
+                let localLocationRecord = LocationRecord(value: locationRecord)
+                realm.add(localLocationRecord)
+            }
+        }
+    }
+    
+    func getLocationRecords() -> [LocationRecord] {
+        return Array(realm.objects(LocationRecord.self))
     }
 }

@@ -74,6 +74,7 @@
 		E2D011591E5DA03E0021936A /* PhrasebookViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D011581E5DA03E0021936A /* PhrasebookViewModelType.swift */; };
 		E2D2EB3D1E5AEDF000C56A61 /* LoginViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2EB3C1E5AEDF000C56A61 /* LoginViewCoordinator.swift */; };
 		E2D2EB3F1E5AF6B000C56A61 /* UIViewControllerWithBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2EB3E1E5AF6B000C56A61 /* UIViewControllerWithBackButton.swift */; };
+		E2D5FCF31EAD62F200D515B3 /* RMLocationRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D5FCF21EAD62F200D515B3 /* RMLocationRecord.swift */; };
 		E2D90C7D1E596CAA00435A9F /* PhrasebookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D90C7C1E596CAA00435A9F /* PhrasebookViewController.swift */; };
 		E2D9A20F1E5530FC003324F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D9A20E1E5530FC003324F7 /* AppDelegate.swift */; };
 		E2D9A2191E5530FC003324F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2D9A2171E5530FC003324F7 /* LaunchScreen.storyboard */; };
@@ -186,6 +187,7 @@
 		E2D011581E5DA03E0021936A /* PhrasebookViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhrasebookViewModelType.swift; path = Phrasebook/Protocols/PhrasebookViewModelType.swift; sourceTree = "<group>"; };
 		E2D2EB3C1E5AEDF000C56A61 /* LoginViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewCoordinator.swift; sourceTree = "<group>"; };
 		E2D2EB3E1E5AF6B000C56A61 /* UIViewControllerWithBackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewControllerWithBackButton.swift; path = "Auto Stop Race/Views/UIViewControllerWithBackButton.swift"; sourceTree = SOURCE_ROOT; };
+		E2D5FCF21EAD62F200D515B3 /* RMLocationRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RMLocationRecord.swift; path = Realm/Models/RMLocationRecord.swift; sourceTree = "<group>"; };
 		E2D90C7C1E596CAA00435A9F /* PhrasebookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhrasebookViewController.swift; path = Phrasebook/PhrasebookViewController.swift; sourceTree = "<group>"; };
 		E2D9A20B1E5530FC003324F7 /* Auto Stop Race.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Auto Stop Race.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2D9A20E1E5530FC003324F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -484,6 +486,22 @@
 			name = Protocols;
 			sourceTree = "<group>";
 		};
+		E2D5FCF01EAD62C200D515B3 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				E2D5FCF11EAD62D500D515B3 /* Models */,
+			);
+			name = Realm;
+			sourceTree = "<group>";
+		};
+		E2D5FCF11EAD62D500D515B3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E2D5FCF21EAD62F200D515B3 /* RMLocationRecord.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		E2D90C7B1E596C8C00435A9F /* Phrasebook */ = {
 			isa = PBXGroup;
 			children = (
@@ -520,6 +538,7 @@
 		E2D9A20D1E5530FC003324F7 /* Auto Stop Race */ = {
 			isa = PBXGroup;
 			children = (
+				E2D5FCF01EAD62C200D515B3 /* Realm */,
 				E2F1E3EC1EA332D0005BDFC9 /* Resources */,
 				E2D011491E5D80CF0021936A /* Service */,
 				E2C061451E5AB08F0022D6F1 /* Assets */,
@@ -1098,6 +1117,7 @@
 				E2C0614D1E5AB2920022D6F1 /* ContactCoordinator.swift in Sources */,
 				E29F889C1E5F01A1008F1F46 /* LocationsViewModel.swift in Sources */,
 				E2C5EE8E1E971C4900BD5838 /* TeamLocationCell.swift in Sources */,
+				E2D5FCF31EAD62F200D515B3 /* RMLocationRecord.swift in Sources */,
 				E2D9A2421E5533EE003324F7 /* Coordinator.swift in Sources */,
 				E24420771E84CE2700556FDC /* Toast.swift in Sources */,
 				E28622901E5AECAA008938FC /* LoginViewModel.swift in Sources */,

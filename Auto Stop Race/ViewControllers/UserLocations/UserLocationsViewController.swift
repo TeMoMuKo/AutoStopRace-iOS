@@ -70,7 +70,7 @@ class UserLocationsViewController: UIViewControllerWithMenu, UICollectionViewDel
             .subscribe(onNext: { locationRecord in
                 if let image = locationRecord.image {
                     var images = [SKPhoto]()
-                    let imageUrl = ApiConfig.imageUrl + "\(locationRecord.id!)/" + image
+                    let imageUrl = ApiConfig.imageUrl + "\(locationRecord.id)/" + image
                     let photo = SKPhoto.photoWithImageURL(imageUrl)
                     photo.caption = locationRecord.message
                     

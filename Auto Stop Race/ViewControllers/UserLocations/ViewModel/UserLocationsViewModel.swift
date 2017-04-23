@@ -46,12 +46,24 @@ final class UserLocationsViewModel {
                 do {
                     let locationRecords = try response.mapArray(LocationRecord.self)
                     self.locationRecords.value = locationRecords.reversed()
+                    self.saveRemoteLocationsToLocalDatabase()
                 } catch {
                     self.error.onNext("Parsing error. Try again later.")
                 }
             case .failure:
                 self.error.onNext("Request error. Try again later.")
+                self.loadLocationsFromDatase()
             }
+        }
+    }
+    
+    func loadLocationsFromDatase() {
+        self.locationRecords.value = self.serviceProvider.realmDatabaseService.getLocationRecords()
+    }
+    
+    func saveRemoteLocationsToLocalDatabase() {
+        for locationRecord in self.locationRecords.value {
+            self.serviceProvider.realmDatabaseService.saveRemoteLocationsToLocalDatabase(locationRecord: locationRecord)
         }
     }
     

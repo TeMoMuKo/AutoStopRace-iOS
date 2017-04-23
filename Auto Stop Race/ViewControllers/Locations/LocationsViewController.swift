@@ -164,13 +164,11 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
             let markerView: UIImageView
             if userLocation.image != nil && userLocation.image != "" {
                 markerView = UIImageView(image: #imageLiteral(resourceName: "asr_foto_marker"))
-                marker.userData = ApiConfig.imageUrl + "\(userLocation.id!)/" + userLocation.image
-                marker.snippet = userLocation.created_at.toString(withFormat: DateFormat.fullMap) + "\n" + NSLocalizedString("marker_show_image_text", comment: "")
-
+                marker.userData = ApiConfig.imageUrl + "\(userLocation.id)/" + userLocation.image!
+                marker.snippet = (userLocation.created_at?.toString(withFormat: DateFormat.fullMap))! + "\n" + NSLocalizedString("marker_show_image_text", comment: "")
             } else {
                 markerView = UIImageView(image: #imageLiteral(resourceName: "asr_marker"))
-                marker.snippet = userLocation.created_at.toString(withFormat: DateFormat.fullMap)
-
+                marker.snippet = userLocation.created_at?.toString(withFormat: DateFormat.fullMap)
             }
             marker.iconView = markerView
             marker.title = userLocation.message
@@ -190,16 +188,14 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
             let markerView: UIImageView
             if lastLocation.image != nil && lastLocation.image != ""  {
                 markerView = UIImageView(image: #imageLiteral(resourceName: "asr_foto_marker"))
-                marker.userData = ApiConfig.imageUrl + "\(lastLocation.id!)/" + team.lastLocation.image
-                marker.snippet = team.lastLocation.created_at.toString(withFormat: DateFormat.fullMap) + "\n" + NSLocalizedString("marker_show_image_text", comment: "")
-
+                marker.userData = ApiConfig.imageUrl + "\(lastLocation.id)/" + team.lastLocation.image!
+                marker.snippet = (team.lastLocation.created_at?.toString(withFormat: DateFormat.fullMap))! + "\n" + NSLocalizedString("marker_show_image_text", comment: "")
             } else {
                 markerView = UIImageView(image: #imageLiteral(resourceName: "asr_marker"))
-                marker.snippet = team.lastLocation.created_at.toString(withFormat: DateFormat.fullMap)
+                marker.snippet = team.lastLocation.created_at?.toString(withFormat: DateFormat.fullMap)
             }
             marker.iconView = markerView
             marker.title = team.lastLocation.message
-            
             marker.map = mapView
         }
         self.viewModel.shownTeams.value = []
@@ -263,8 +259,8 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
             make.left.bottom.right.equalTo(view)
         }
     }
+    
     func dismissKeyboard() {
         locationsSearchBar.resignFirstResponder()
     }
-
 }

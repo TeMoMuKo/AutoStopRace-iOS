@@ -21,6 +21,9 @@ PODS:
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
   - ObjectMapper (2.2.5)
+  - ObjectMapper+Realm (0.2):
+    - ObjectMapper
+    - RealmSwift
   - ReachabilitySwift (3)
   - Realm (2.4.4):
     - Realm/Headers (= 2.4.4)
@@ -49,6 +52,7 @@ DEPENDENCIES:
   - GoogleMaps
   - Moya
   - Moya-ObjectMapper
+  - ObjectMapper+Realm
   - RealmSwift
   - RxCocoa (= 3.2.0)
   - RxReachability
@@ -67,6 +71,7 @@ SPEC CHECKSUMS:
   Moya: d3721622e3cc0cc2f038d69a258686f0b66e7252
   Moya-ObjectMapper: 952be2b261d38cf8d973b7e429708eb03d256e23
   ObjectMapper: fb30f71e08470d1e5a20b199fafe1246281db898
+  ObjectMapper+Realm: 8b45dbfa1be145e311a6f93a306c183d630b40a9
   ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
   Realm: 5a280a1f5a9a3c267bebf4f41ee47911137703d7
   RealmSwift: 0c02b9f2d4be4301c497ed10e53a0580584eb1dd
@@ -78,6 +83,6 @@ SPEC CHECKSUMS:
   SKPhotoBrowser: 3a7c6fc02aa1620ab17253a47a49fafda46536e8
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
 
-PODFILE CHECKSUM: b029f6d10e1c42e811178549139146e03927a59c
+PODFILE CHECKSUM: 04a4a6d155e33e49363f2766c1fedf7f12800326
 
 COCOAPODS: 1.2.0

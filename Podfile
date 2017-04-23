@@ -11,6 +11,9 @@ target 'Auto Stop Race' do
     
     pod 'CSV.swift'
     pod 'Moya-ObjectMapper'
+
+    pod 'ObjectMapper+Realm'
+
     pod 'RealmSwift'
     pod 'GoogleMaps'
     pod 'RxReachability'

@@ -8,22 +8,28 @@
 
 import Foundation
 import ObjectMapper
+import RealmSwift
 
-struct LocationRecord: Mappable {
-    var id: Int!
-    var latitude: Double!
-    var longitude: Double!
-    var message: String!
-    var address: String!
-    var country: String!
-    var country_code: String!
-    var created_at: Date!
-    var image: String!
+class LocationRecord: Object, Mappable {
+    dynamic var id = 0
+    dynamic var latitude: Double = 0.0
+    dynamic var longitude: Double = 0.0
+    dynamic var message = ""
+    dynamic var address = ""
+    dynamic var country = ""
+    dynamic var country_code = ""
+    dynamic var created_at: Date? = nil
+    dynamic var image: String? = nil
     
-    init?(map: Map) { }
+    override static func primaryKey() -> String? {
+        return "id"
+    }
     
-    mutating func mapping(map: Map) {
-        
+    required convenience init?(map: Map) {
+        self.init()
+    }
+    
+    func mapping(map: Map) {
         id <- map["id"]
         latitude <- map["latitude"]
         longitude <- map["longitude"]

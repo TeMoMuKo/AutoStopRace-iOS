@@ -23,6 +23,7 @@ class UserLocationCell: BaseUICollectionCell {
                 imageView.image = UIImage(named: "ic_photo_camera_white")?.withRenderingMode(.alwaysTemplate)
                 imageView.tintColor = UIColor.white
             }
+                
             else if let locationCountry = locationRecord?.country_code {
                 countryLabel.text =  locationCountry
                 countryLabel.backgroundColor = UIColor.init(string: locationCountry)
@@ -48,8 +49,12 @@ class UserLocationCell: BaseUICollectionCell {
             }
             
             if let createdAt = locationRecord?.created_at {
-                createdAtLabel.text = createdAt.toString(withFormat: "dd.MM \nHH:mm")
+                createdAtDateLabel.text = createdAt.toString(withFormat: "dd.MM")
+                createdAtTimeLabel.text = createdAt.toString(withFormat: "HH:mm")
             }
+            
+            syncView.image = UIImage(named: "ic_cloud_done")?.withRenderingMode(.alwaysTemplate)
+            syncView.tintColor = UIColor.blueMenu
         }
     }
     
@@ -91,21 +96,43 @@ class UserLocationCell: BaseUICollectionCell {
         return label
     }()
     
-    var createdAtLabel: UILabel = {
+    var createdAtDateLabel: UILabel = {
         let label = UILabel()
         label.text = ""
-        label.numberOfLines = 2
         label.textColor = UIColor.blueMenu
-        label.font = UIFont.systemFont(ofSize: 15, weight: UIFontWeightBold)
+        label.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightBold)
         label.textColor = UIColor.blueMenu
         return label
     }()
     
+    lazy var syncView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
+    var createdAtTimeLabel: UILabel = {
+        let label = UILabel()
+        label.text = ""
+        label.textColor = UIColor.blueMenu
+        label.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightBold)
+        label.textColor = UIColor.blueMenu
+        return label
+    }()
     
     var separator: UIView = {
         let separator = UIView(frame: CGRect.init())
         separator.backgroundColor = UIColor.gray
         return separator
+    }()
+    
+    let stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.alignment = .center
+        stackView.distribution = .equalSpacing
+        stackView.spacing = 2
+        return stackView
     }()
     
     override func setupViews() {
@@ -118,16 +145,18 @@ class UserLocationCell: BaseUICollectionCell {
         addSubview(addressLabel)
         addSubview(messageLabel)
         addSubview(separator)
-        addSubview(createdAtLabel)
-
+        addSubview(stackView)
+        stackView.addArrangedSubview(createdAtDateLabel)
+        stackView.addArrangedSubview(syncView)
+        stackView.addArrangedSubview(createdAtTimeLabel)
         setupConstraints()
     }
     
     
     func setupConstraints() {
-        createdAtLabel.snp.makeConstraints { (make) -> Void in
+        stackView.snp.makeConstraints { (make) -> Void in
             make.right.equalTo(self).offset(-15)
-            make.height.width.equalTo(50)
+            make.height.width.equalTo(80)
             make.centerY.equalTo(self)
         }
         
@@ -145,13 +174,13 @@ class UserLocationCell: BaseUICollectionCell {
         addressLabel.snp.makeConstraints { (make) -> Void in
             make.left.equalTo(countryLabel.snp.right).offset(15)
             make.top.equalTo(self.snp.top).offset(14)
-            make.right.lessThanOrEqualTo(createdAtLabel.snp.left).offset(-15)
+            make.right.lessThanOrEqualTo(stackView.snp.left).offset(-15)
         }
         
         messageLabel.snp.makeConstraints { (make) -> Void in
             make.left.equalTo(countryLabel.snp.right).offset(15)
             make.top.equalTo(addressLabel.snp.bottom).offset(5)
-            make.right.lessThanOrEqualTo(createdAtLabel.snp.left).offset(-15)
+            make.right.lessThanOrEqualTo(stackView.snp.left).offset(-15)
         }
         
         separator.snp.makeConstraints { (make) -> Void in
