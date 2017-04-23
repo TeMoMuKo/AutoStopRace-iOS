@@ -39,6 +39,10 @@ class UIViewControllerWithMenu: UIViewController {
         let menuBarButtonItem = UIBarButtonItem(image: menuImage, style: .plain, target: self, action: #selector(handleMenu))
         navigationItem.leftBarButtonItems = [menuBarButtonItem]
         
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        let swipeBackGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(handleMenu))
+        swipeBackGestureRecognizer.direction = UISwipeGestureRecognizerDirection.right
+        view.addGestureRecognizer(swipeBackGestureRecognizer)
     }
 
     func handleMenu() {

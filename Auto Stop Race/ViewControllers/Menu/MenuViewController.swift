@@ -54,6 +54,12 @@ class MenuViewController: NSObject, UICollectionViewDelegateFlowLayout {
         
         collectionView.rx.setDelegate(self).addDisposableTo(disposeBag)
 
+        if let window = UIApplication.shared.keyWindow {
+            let swipeBackGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(handleDismiss))
+            swipeBackGestureRecognizer.direction = UISwipeGestureRecognizerDirection.left
+            window.addGestureRecognizer(swipeBackGestureRecognizer)
+        }
+        
     }
 
     func showMenu() {
