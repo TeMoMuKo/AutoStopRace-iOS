@@ -77,8 +77,9 @@ class PhrasebookViewController: UIViewControllerWithMenu, UITableViewDelegate {
                     if query.isEmpty {
                         return true
                     } else {
-                        let isInPolishPhrase = phrase.polishPhrase.value.lowercased().contains(query.lowercased())
-                        let isInTranslationPhrase = phrase.currentTranslationPhrase.value.lowercased().contains(query.lowercased())
+                        let queryPhrase = query.lowercased().folding(options: .diacriticInsensitive, locale: .current)
+                        let isInPolishPhrase = phrase.polishPhrase.value.lowercased().folding(options: .diacriticInsensitive, locale: .current).contains(queryPhrase)
+                        let isInTranslationPhrase = phrase.currentTranslationPhrase.value.lowercased().folding(options: .diacriticInsensitive, locale: .current).contains(queryPhrase)
                         return isInPolishPhrase || isInTranslationPhrase
                     }
                     }.map { $0 }
