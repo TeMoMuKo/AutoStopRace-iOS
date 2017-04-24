@@ -1,8 +1,9 @@
+![ASR Logo](Auto%20Stop%20Race/Assets.xcassets/logo_asr.imageset/logo_asr-1.png)
 # AutoStopRace
 
 iOS app which allows participants of hitchhiking race to share their location. <br>
 Project website: http://www.autostoprace.pl/ <br>
-App Store: 
+App Store: https://itunes.apple.com/pl/app/auto-stop-race/id1226129375?l=pl&mt=8
 
 # Used libraries
 * [RxSwift](https://github.com/ReactiveX/RxSwift)
