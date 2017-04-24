@@ -5,6 +5,9 @@ iOS app which allows participants of hitchhiking race to share their location. <
 Project website: http://www.autostoprace.pl/ <br>
 App Store: https://itunes.apple.com/pl/app/auto-stop-race/id1226129375?l=pl&mt=8
 
+
+![Screenshots](Art/Screenshot.png)
+
 # Used libraries
 * [RxSwift](https://github.com/ReactiveX/RxSwift)
 * [Moya](https://github.com/Moya/Moya)
