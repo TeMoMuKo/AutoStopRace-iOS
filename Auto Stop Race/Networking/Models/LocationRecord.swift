@@ -15,9 +15,9 @@ class LocationRecord: Object, Mappable {
     dynamic var latitude: Double = 0.0
     dynamic var longitude: Double = 0.0
     dynamic var message = ""
-    dynamic var address = ""
-    dynamic var country = ""
-    dynamic var country_code = ""
+    dynamic var address: String? = nil
+    dynamic var country: String? = nil
+    dynamic var country_code: String? = nil
     dynamic var created_at: Date? = nil
     dynamic var image: String? = nil
     

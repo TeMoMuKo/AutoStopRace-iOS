@@ -55,6 +55,18 @@ final class RealmDatabaseService: BaseService, RealmDatabaseServiceType {
     }
     
     func getLocationRecords() -> [LocationRecord] {
-        return Array(realm.objects(LocationRecord.self))
+        var remoteLocations = Array(realm.objects(LocationRecord.self).sorted(byKeyPath: "created_at", ascending: false))
+        let unsendLocations = Array(realm.objects(CreateLocationRecordRequest.self))
+        for unsendLocation in unsendLocations {
+            let locationRecord = LocationRecord()
+            locationRecord.latitude = unsendLocation.latitude
+            locationRecord.longitude = unsendLocation.longitude
+            locationRecord.message = unsendLocation.message
+            if unsendLocation.image != "" {
+                locationRecord.image = unsendLocation.image
+            }
+            remoteLocations.insert(locationRecord, at: remoteLocations.startIndex)
+        }
+        return remoteLocations
     }
 }

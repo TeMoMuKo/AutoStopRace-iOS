@@ -51,10 +51,14 @@ class UserLocationCell: BaseUICollectionCell {
             if let createdAt = locationRecord?.created_at {
                 createdAtDateLabel.text = createdAt.toString(withFormat: "dd.MM")
                 createdAtTimeLabel.text = createdAt.toString(withFormat: "HH:mm")
+                syncView.image = UIImage(named: "ic_cloud_done")?.withRenderingMode(.alwaysTemplate)
+                syncView.tintColor = UIColor.blueMenu
+            } else {
+                createdAtDateLabel.text = ""
+                createdAtTimeLabel.text = ""
+                syncView.image = UIImage(named: "ic_cloud_off")?.withRenderingMode(.alwaysTemplate)
+                syncView.tintColor = UIColor.blueMenu
             }
-            
-            syncView.image = UIImage(named: "ic_cloud_done")?.withRenderingMode(.alwaysTemplate)
-            syncView.tintColor = UIColor.blueMenu
         }
     }
     
