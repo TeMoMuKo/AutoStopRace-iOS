@@ -51,10 +51,8 @@ struct PhrasebookConfig {
 struct ContactConfig {
     static let csvAssetName = "contact_data"
 }
-
-// TODO Change YOUR_APP_ID_HERE
  
 struct AboutConfig {
-    static let appStoreRateUrl = "itms-apps://itunes.apple.com/gb/app/idYOUR_APP_ID_HERE?action=write-review&mt=8"
-    static let appStoreShareUrl = "https://itunes.apple.com/us/app/myapp/idYOUR_APP_ID_HERE?ls=1&mt=8"
+    static let appStoreRateUrl = "itms-apps://itunes.apple.com/gb/app/id1226129375?action=write-review&mt=8"
+    static let appStoreShareUrl = "https://itunes.apple.com/us/app/myapp/id1226129375?ls=1&mt=8"
 }
