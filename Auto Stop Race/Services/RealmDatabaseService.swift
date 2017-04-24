@@ -62,9 +62,6 @@ final class RealmDatabaseService: BaseService, RealmDatabaseServiceType {
             locationRecord.latitude = unsendLocation.latitude
             locationRecord.longitude = unsendLocation.longitude
             locationRecord.message = unsendLocation.message
-            if unsendLocation.image != "" {
-                locationRecord.image = unsendLocation.image
-            }
             remoteLocations.insert(locationRecord, at: remoteLocations.startIndex)
         }
         return remoteLocations
