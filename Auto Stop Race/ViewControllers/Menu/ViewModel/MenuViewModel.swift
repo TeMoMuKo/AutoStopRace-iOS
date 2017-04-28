@@ -29,6 +29,7 @@ final class MenuViewModel {
         Menu(name: "title_my_team_locations", imageName: "ic_location_on_black"),
         Menu(name: "title_teams", imageName: "ic_map_black"),
         Menu(name: "title_campus", imageName: "ic_tent_black"),
+        Menu(name: "title_schedule", imageName: "ic_schedule"),
         Menu(name: "title_phrasebook", imageName: "ic_message_black"),
         Menu(name: "title_contact", imageName: "ic_email_black"),
         Menu(name: "title_partners", imageName: "ic_favorite_black"),

@@ -70,7 +70,17 @@ extension MenuCoordinator: MenuViewControllerDelegate {
             browser.initializePageIndex(0)
             self.navigationController?.present(browser, animated: true, completion: nil)
             break
-        
+            
+        case .schedule:
+            var images = [SKPhoto]()
+            let photo = SKPhoto.photoWithImage(#imageLiteral(resourceName: "harmonogram"))
+            images.append(photo)
+            
+            let browser = SKPhotoBrowser(photos: images)
+            browser.initializePageIndex(0)
+            self.navigationController?.present(browser, animated: true, completion: nil)
+            break
+            
         case .phrasebook:
             let prasebookViewModel = PhrasebookViewModel(provider: serviceProvider!)
             let viewController = PhrasebookViewController(viewModel: prasebookViewModel)
