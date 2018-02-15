@@ -63,7 +63,7 @@ final class LoginViewModel {
                     switch status {
                     case .OK :
                         do {
-                            if let httpResponse = response.response as? HTTPURLResponse {
+                            if let httpResponse = response.response {
                                 self.serviceProvider.userDefaultsService.setAuthorizationHeaders(httpResponse: httpResponse)
                             }
                             let user = try response.mapObject(User.self) as User
@@ -93,9 +93,7 @@ final class LoginViewModel {
     }
     
     func resetPassword(email: String) {
-        apiProvider.request(.resetPassword(email: email, redirectUrl: ApiConfig.apiResetPassRedirectUrl), completion: { [weak self] result in
-            guard let `self` = self else { return }
-            
+        apiProvider.request(.resetPassword(email: email, redirectUrl: ApiConfig.apiResetPassRedirectUrl), completion: { result in            
             switch result {
             case let .success(response):
                 let statusCode = response.statusCode

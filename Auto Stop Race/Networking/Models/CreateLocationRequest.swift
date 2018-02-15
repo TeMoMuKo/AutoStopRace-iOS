@@ -10,10 +10,10 @@ import Foundation
 import RealmSwift
 
 class CreateLocationRecordRequest: Object {
-    dynamic var latitude: Double = 0.0
-    dynamic var longitude: Double = 0.0
-    dynamic var message: String = ""
-    dynamic var image: String = ""
+    @objc dynamic var latitude: Double = 0.0
+    @objc dynamic var longitude: Double = 0.0
+    @objc dynamic var message: String = ""
+    @objc dynamic var image: String = ""
     
     func toDictionary() -> [String: [String: Any] ] {
         let dictionary = ["location":

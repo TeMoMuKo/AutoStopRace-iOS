@@ -3,9 +3,9 @@ platform :ios, '9.0'
 target 'Auto Stop Race' do
     use_frameworks!
 
-    pod 'RxSwift', '3.2'
-    pod 'RxCocoa', '3.2.0'
-    pod 'SnapKit', '~> 3.2.0'
+    pod 'RxSwift', '~> 4.1.1'
+    pod 'RxCocoa', '~> 4.1.1'
+    pod 'SnapKit'
     
     pod 'Moya'
     
@@ -16,23 +16,15 @@ target 'Auto Stop Race' do
 
     pod 'RealmSwift'
     pod 'GoogleMaps'
-    pod 'RxReachability'
-    pod 'RxRealm'
-    
+    pod 'RxReachability', :git => 'https://github.com/ivanbruel/RxReachability.git'
+    pod 'ReachabilitySwift'
+
     pod 'Eureka'
     
     pod 'SKPhotoBrowser'
 
     pod 'Fabric'
     pod 'Crashlytics'
-    
-    post_install do |installer|
-        installer.pods_project.targets.each do |target|
-            target.build_configurations.each do |config|
-                config.build_settings['SWIFT_VERSION'] = '3.0'
-            end
-        end
-    end
 
     target 'Auto Stop RaceTests' do
     inherit! :search_paths

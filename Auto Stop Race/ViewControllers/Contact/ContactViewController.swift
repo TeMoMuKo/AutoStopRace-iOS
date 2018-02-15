@@ -50,13 +50,13 @@ class ContactViewController: UIViewControllerWithMenu,  UICollectionViewDelegate
         collectionView.register(ContactCell.self, forCellWithReuseIdentifier: ContactCell.Identifier)
 
         viewModel.contacts
-            .bindTo(collectionView.rx.items(cellIdentifier: ContactCell.Identifier, cellType:ContactCell.self)) { row, contact, cell in
+            .bind(to: collectionView.rx.items(cellIdentifier: ContactCell.Identifier, cellType:ContactCell.self)) { row, contact, cell in
                 cell.contact = contact
             }
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
         
         collectionView.rx.modelSelected(Contact.self)
-            .bindTo(viewModel.modelSelected).addDisposableTo(disposeBag)
+            .bind(to: viewModel.modelSelected).disposed(by: disposeBag)
         
         viewModel.modelSelected
             .subscribe(onNext: { [weak self] clickedContact in
@@ -64,10 +64,10 @@ class ContactViewController: UIViewControllerWithMenu,  UICollectionViewDelegate
                 
                 self.contactSelected(contact: clickedContact )
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
         
         
-        collectionView.rx.setDelegate(self).addDisposableTo(disposeBag)
+        collectionView.rx.setDelegate(self).disposed(by: disposeBag)
         
         setupConstraints()
     }

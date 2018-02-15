@@ -60,7 +60,6 @@ enum AsrApi {
 }
 
 extension AsrApi: TargetType {
-    
     var baseURL: URL { return URL(string: ApiConfig.baseURL)! }
     
     var path: String {
@@ -94,31 +93,6 @@ extension AsrApi: TargetType {
             return .post
         }
     }
-        
-    var parameters: [String: Any]? {
-        switch self {
-        case .signOut, .validateToken, .userLocations(_), .allTeams, .team(_):
-            return nil
-        case .singIn(let email, let password):
-            return ["email": email, "password": password]
-        case .resetPassword(let email, let redirectUrl):
-            return ["email": email, "redirect_url": redirectUrl]
-        case .postNewLocation(let location):
-            return location.toDictionary()
-        }
-    }
-    
-
-    var parameterEncoding: ParameterEncoding {
-        switch self {
-        case .postNewLocation:
-            return JsonDictionaryEncoding.default
-        case .signOut, .validateToken, .allTeams, .team(_):
-            return URLEncoding.default
-        case .singIn, .userLocations(_), .resetPassword, .userLocations(_):
-            return JSONEncoding.default
-        }
-    }
     
     var sampleData: Data {
         switch self {
@@ -127,11 +101,21 @@ extension AsrApi: TargetType {
         }
     }
     
-    var task:Task {
+    var task: Task {
         switch self {
-        case .signOut, .singIn, .validateToken, .postNewLocation, .userLocations(_), .resetPassword, .allTeams, .team(_):
-            return .request
+        case .signOut, .validateToken, .allTeams, .team(_), .userLocations(_):
+            return .requestPlain
+        case .singIn(let email, let password):
+            return .requestParameters(parameters: ["email": email, "password": password], encoding:  JSONEncoding.default)
+        case .resetPassword(let email, let redirectUrl):
+            return .requestParameters(parameters: ["email": email, "redirect_url": redirectUrl], encoding: JSONEncoding.default)
+        case .postNewLocation(let location):
+            return .requestParameters(parameters: location.toDictionary(), encoding: JsonDictionaryEncoding.default)
         }
+    }
+
+    var headers: [String : String]? {
+        return ["Content-Type": "application/json"]
     }
 }
 

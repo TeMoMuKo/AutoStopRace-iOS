@@ -33,7 +33,7 @@ final class UserLocationsViewModel {
         itemSelected
             .subscribe(onNext: { clickedContact in
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
     }
     
     func downloadLocations() {

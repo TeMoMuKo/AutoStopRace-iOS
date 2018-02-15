@@ -35,7 +35,7 @@ class MenuCell: BaseUICollectionCell {
     
     let nameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 15, weight: UIFontWeightLight)
+        label.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.light)
         return label
     }()
     

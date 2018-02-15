@@ -38,21 +38,21 @@ class MenuViewController: NSObject, UICollectionViewDelegateFlowLayout {
         collectionView.register(MenuCell.self, forCellWithReuseIdentifier: MenuCell.Identifier)
 
         viewModel.menu.asObservable()
-            .bindTo(collectionView.rx.items(cellIdentifier: MenuCell.Identifier, cellType:MenuCell.self)) { row, menu, cell in
+            .bind(to: collectionView.rx.items(cellIdentifier: MenuCell.Identifier, cellType:MenuCell.self)) { row, menu, cell in
                 cell.menu = menu
         }
-        .addDisposableTo(disposeBag)
+        .disposed(by: disposeBag)
         
         collectionView.rx.itemSelected
-            .bindTo(viewModel.itemSelected).addDisposableTo(disposeBag)
+            .bind(to: viewModel.itemSelected).disposed(by: disposeBag)
         
         collectionView.rx.modelSelected(Menu.self)
             .subscribe(onNext: { menu in
                 
             })
-        .addDisposableTo(disposeBag)
+        .disposed(by: disposeBag)
         
-        collectionView.rx.setDelegate(self).addDisposableTo(disposeBag)
+        collectionView.rx.setDelegate(self).disposed(by: disposeBag)
 
         if let window = UIApplication.shared.keyWindow {
             let swipeBackGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(handleDismiss))
@@ -86,7 +86,7 @@ class MenuViewController: NSObject, UICollectionViewDelegateFlowLayout {
         }
     }
     
-    func handleDismiss() {
+    @objc func handleDismiss() {
         UIView.animate(withDuration: 0.5, animations: {
             self.blackView.alpha = 0
             

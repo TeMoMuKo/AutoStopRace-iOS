@@ -61,10 +61,10 @@ class UserLocationsViewController: UIViewControllerWithMenu, UICollectionViewDel
         collectionView.register(UserLocationCell.self, forCellWithReuseIdentifier: UserLocationCell.Identifier)
         
         viewModel.locationRecords.asObservable()
-            .bindTo(collectionView.rx.items(cellIdentifier: UserLocationCell.Identifier, cellType:UserLocationCell.self)) { row, location, cell in
+            .bind(to: collectionView.rx.items(cellIdentifier: UserLocationCell.Identifier, cellType:UserLocationCell.self)) { row, location, cell in
                 cell.locationRecord = location
             }
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
  
         collectionView.rx.modelSelected(LocationRecord.self)
             .subscribe(onNext: { locationRecord in
@@ -82,9 +82,9 @@ class UserLocationsViewController: UIViewControllerWithMenu, UICollectionViewDel
                     self.navigationController?.present(browser, animated: true, completion: {})
                 }
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
         
-        collectionView.rx.setDelegate(self).addDisposableTo(disposeBag)
+        collectionView.rx.setDelegate(self).disposed(by: disposeBag)
         
         setupConstraints()
     }
@@ -103,7 +103,7 @@ class UserLocationsViewController: UIViewControllerWithMenu, UICollectionViewDel
         navigationItem.rightBarButtonItems = [menuBarButtonItem, mapImageBarButtonItem]
     }
     
-    func handleMapShow() {
+    @objc func handleMapShow() {
         viewModel.showMapTapped()
     }
     
@@ -113,7 +113,7 @@ class UserLocationsViewController: UIViewControllerWithMenu, UICollectionViewDel
         collectionView.addSubview(refreshControl)
     }
     
-    func refresh(sender:AnyObject) {
+    @objc func refresh(sender:AnyObject) {
         viewModel.downloadLocations()
         refreshControl.endRefreshing()
     }
@@ -126,7 +126,7 @@ class UserLocationsViewController: UIViewControllerWithMenu, UICollectionViewDel
         collectionView.backgroundView = backgroundImageLogo
     }
     
-    func handlePostNewLocationTap() {
+    @objc func handlePostNewLocationTap() {
         viewModel.postNewLocationTapped()
     }
     

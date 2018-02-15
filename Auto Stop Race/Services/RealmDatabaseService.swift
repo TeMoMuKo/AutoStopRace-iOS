@@ -8,7 +8,6 @@
 
 import Foundation
 import RealmSwift
-import RxRealm
 
 protocol RealmDatabaseServiceType {
     func clearDatabase()

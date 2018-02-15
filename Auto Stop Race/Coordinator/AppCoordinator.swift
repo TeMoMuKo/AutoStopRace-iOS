@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 import RxSwift
+import Reachability
 import RxReachability
-import ReachabilitySwift
 import Fabric
 import Crashlytics
 import GoogleMaps
@@ -36,7 +36,7 @@ final class AppCoordinator: Coordinator {
                     self.serviceProvider.locationSyncService.synchronizeLocationsWithServer()
                 }
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
         
         setupGMSServices()
 

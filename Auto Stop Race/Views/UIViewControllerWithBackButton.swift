@@ -30,7 +30,7 @@ class UIViewControllerWithBackButton: UIViewController, UIGestureRecognizerDeleg
         titleLabel.clipsToBounds = true
         navigationItem.titleView = titleLabel
         titleLabel.textColor = UIColor.white
-        titleLabel.font = UIFont.systemFont(ofSize: 20, weight: UIFontWeightLight)
+        titleLabel.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.light)
     }
     
     func setupNavigationMenuButton() {
@@ -48,7 +48,7 @@ class UIViewControllerWithBackButton: UIViewController, UIGestureRecognizerDeleg
         let _ = navigationController?.popViewController(animated: false)
     }
     
-    func popBack() {
+    @objc func popBack() {
         let _ = navigationController?.popViewController(animated: false)
     }
     

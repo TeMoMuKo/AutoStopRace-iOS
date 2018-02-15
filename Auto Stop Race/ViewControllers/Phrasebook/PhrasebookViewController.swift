@@ -34,7 +34,7 @@ class PhrasebookViewController: UIViewControllerWithMenu, UITableViewDelegate {
         segmentedControl.tintColor = UIColor.blueMenu
         segmentedControl.layer.borderColor = UIColor.white.cgColor
         segmentedControl.selectedSegmentIndex = 0
-        segmentedControl.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.white], for:.selected)
+        segmentedControl.setTitleTextAttributes([NSAttributedStringKey.foregroundColor:UIColor.white], for:.selected)
         return segmentedControl
     }()
     
@@ -62,7 +62,7 @@ class PhrasebookViewController: UIViewControllerWithMenu, UITableViewDelegate {
                     }
                 }
                 self.languageSegmentedControl.selectedSegmentIndex = 0
-            }).addDisposableTo(disposeBag)
+            }).disposed(by: disposeBag)
         
         
         _ = Observable.combineLatest(
@@ -87,16 +87,16 @@ class PhrasebookViewController: UIViewControllerWithMenu, UITableViewDelegate {
             .disposed(by: disposeBag)
         
         viewModel.phrases.asObservable()
-            .bindTo(phrasesTableView.rx.items) { tableView, i, item in
+            .bind(to: phrasesTableView.rx.items) { tableView, i, item in
                 let indexPath = IndexPath(row: i, section: 0)
                 let cell = tableView.dequeueReusableCell(withIdentifier: PhraseCell.Identifier, for: indexPath) as! PhraseCell
                 cell.viewModel = item
                 return cell
-            }.addDisposableTo(disposeBag)
+            }.disposed(by: disposeBag)
         
         phrasesTableView.separatorStyle = .none
 
-        phrasesTableView.rx.setDelegate(self).addDisposableTo(disposeBag)
+        phrasesTableView.rx.setDelegate(self).disposed(by: disposeBag)
     }
  
     override func viewDidLoad() {
@@ -146,7 +146,7 @@ class PhrasebookViewController: UIViewControllerWithMenu, UITableViewDelegate {
     func setupSearchBar() {
         let textfield:UITextField = phraseSearchBar.value(forKey:"searchField") as! UITextField
 
-        let attributedString = NSAttributedString(string: NSLocalizedString("search_hint", comment: ""), attributes: [NSForegroundColorAttributeName : UIColor.lightGray])
+        let attributedString = NSAttributedString(string: NSLocalizedString("search_hint", comment: ""), attributes: [NSAttributedStringKey.foregroundColor : UIColor.lightGray])
         
         textfield.attributedPlaceholder = attributedString
         }
@@ -160,7 +160,7 @@ class PhrasebookViewController: UIViewControllerWithMenu, UITableViewDelegate {
         }
     }
     
-    func dismissKeyboard() {
+    @objc func dismissKeyboard() {
         phraseSearchBar.resignFirstResponder()
     }
     

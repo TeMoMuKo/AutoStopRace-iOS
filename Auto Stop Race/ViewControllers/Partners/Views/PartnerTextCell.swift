@@ -17,7 +17,7 @@ class PartnerTextCell: BaseUICollectionCell {
     var textLabel: UILabel = {
         let label = UILabel()
         label.text = ""
-        label.font = UIFont.systemFont(ofSize: 25, weight: UIFontWeightBold)
+        label.font = UIFont.systemFont(ofSize: 25, weight: UIFont.Weight.bold)
         return label
     }()
     

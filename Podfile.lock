@@ -1,48 +1,45 @@
 PODS:
-  - Alamofire (4.4.0)
-  - Crashlytics (3.8.4):
-    - Fabric (~> 1.6.3)
-  - CSV.swift (1.1.2)
-  - Eureka (2.0.1)
-  - Fabric (1.6.11)
-  - GoogleMaps (2.2.0):
-    - GoogleMaps/Maps (= 2.2.0)
-  - GoogleMaps/Base (2.2.0)
-  - GoogleMaps/Maps (2.2.0):
+  - Alamofire (4.6.0)
+  - Crashlytics (3.10.0):
+    - Fabric (~> 1.7.3)
+  - CSV.swift (2.1.0)
+  - Eureka (4.0.1)
+  - Fabric (1.7.3)
+  - GoogleMaps (2.6.0):
+    - GoogleMaps/Maps (= 2.6.0)
+  - GoogleMaps/Base (2.6.0)
+  - GoogleMaps/Maps (2.6.0):
     - GoogleMaps/Base
-  - Moya (8.0.3):
-    - Moya/Core (= 8.0.3)
-  - Moya-ObjectMapper (2.3.1):
-    - Moya-ObjectMapper/Core (= 2.3.1)
-  - Moya-ObjectMapper/Core (2.3.1):
-    - Moya (~> 8.0)
-    - ObjectMapper (~> 2.2)
-  - Moya/Core (8.0.3):
+  - Moya (10.0.2):
+    - Moya/Core (= 10.0.2)
+  - Moya-ObjectMapper (2.5):
+    - Moya-ObjectMapper/Core (= 2.5)
+  - Moya-ObjectMapper/Core (2.5):
+    - Moya (~> 10.0.0)
+    - ObjectMapper (~> 3.0.0)
+  - Moya/Core (10.0.2):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
-  - ObjectMapper (2.2.5)
-  - ObjectMapper+Realm (0.2):
+  - ObjectMapper (3.0.0)
+  - ObjectMapper+Realm (0.5):
     - ObjectMapper
     - RealmSwift
-  - ReachabilitySwift (3)
-  - Realm (2.4.4):
-    - Realm/Headers (= 2.4.4)
-  - Realm/Headers (2.4.4)
-  - RealmSwift (2.4.4):
-    - Realm (= 2.4.4)
-  - Result (3.2.1)
-  - RxCocoa (3.2.0):
-    - RxSwift (~> 3.1)
-  - RxReachability (0.1.3):
-    - ReachabilitySwift (~> 3)
-    - RxCocoa (~> 3)
-    - RxSwift (~> 3)
-  - RxRealm (0.5.2):
-    - RealmSwift (~> 2.4)
-    - RxSwift (~> 3.1)
-  - RxSwift (3.2.0)
-  - SKPhotoBrowser (4.0.1)
-  - SnapKit (3.2.0)
+  - ReachabilitySwift (4.1.0)
+  - Realm (2.10.2):
+    - Realm/Headers (= 2.10.2)
+  - Realm/Headers (2.10.2)
+  - RealmSwift (2.10.2):
+    - Realm (= 2.10.2)
+  - Result (3.2.4)
+  - RxCocoa (4.1.2):
+    - RxSwift (~> 4.0)
+  - RxReachability (0.1.4):
+    - ReachabilitySwift (~> 4)
+    - RxCocoa (~> 4)
+    - RxSwift (~> 4)
+  - RxSwift (4.1.2)
+  - SKPhotoBrowser (5.0.5)
+  - SnapKit (4.0.0)
 
 DEPENDENCIES:
   - Crashlytics
@@ -53,36 +50,44 @@ DEPENDENCIES:
   - Moya
   - Moya-ObjectMapper
   - ObjectMapper+Realm
+  - ReachabilitySwift
   - RealmSwift
-  - RxCocoa (= 3.2.0)
-  - RxReachability
-  - RxRealm
-  - RxSwift (= 3.2)
+  - RxCocoa (~> 4.1.1)
+  - RxReachability (from `https://github.com/ivanbruel/RxReachability.git`)
+  - RxSwift (~> 4.1.1)
   - SKPhotoBrowser
-  - SnapKit (~> 3.2.0)
+  - SnapKit
+
+EXTERNAL SOURCES:
+  RxReachability:
+    :git: https://github.com/ivanbruel/RxReachability.git
+
+CHECKOUT OPTIONS:
+  RxReachability:
+    :commit: c44437ec43b62d435931608472430bbe0e5a2c92
+    :git: https://github.com/ivanbruel/RxReachability.git
 
 SPEC CHECKSUMS:
-  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
-  Crashlytics: 79e236942ca1e7fc641df1feb9a275360a78ab6a
-  CSV.swift: 0aad3b06980034c8fa296456b708ac9128ebbdf9
-  Eureka: ae837bb1dfae0c07bc1bda7aeef87876eeb537c2
-  Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
-  GoogleMaps: 104c418d61ab8a05dff06ed0784c25ea9d37da45
-  Moya: d3721622e3cc0cc2f038d69a258686f0b66e7252
-  Moya-ObjectMapper: 952be2b261d38cf8d973b7e429708eb03d256e23
-  ObjectMapper: fb30f71e08470d1e5a20b199fafe1246281db898
-  ObjectMapper+Realm: 8b45dbfa1be145e311a6f93a306c183d630b40a9
-  ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
-  Realm: 5a280a1f5a9a3c267bebf4f41ee47911137703d7
-  RealmSwift: 0c02b9f2d4be4301c497ed10e53a0580584eb1dd
-  Result: 2453a22e5c5b11c0c3a478736e82cd02f763b781
-  RxCocoa: ccdf43101a70407097a29082f648ba1676075b30
-  RxReachability: 0e781fc978c3c850dda6cafa2c5956ff806a1fcc
-  RxRealm: df024f04e64c3a9723dab63a6ec8621b3db6473f
-  RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
-  SKPhotoBrowser: 3a7c6fc02aa1620ab17253a47a49fafda46536e8
-  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  Crashlytics: a989ef242b66605577a425733797f810bd2725eb
+  CSV.swift: a24fb11c17875523783fe963592762ff163ef8ea
+  Eureka: c8bd5cc07143b6f66268c208d28a246c99b41955
+  Fabric: bb495bb9a7a7677c6d03a1f8b83d95bc49b47e41
+  GoogleMaps: 42f91c68b7fa2f84d5c86597b18ceb99f5414c7f
+  Moya: 2b0531a9fef318e0bc484030c3db1e6f279ccb66
+  Moya-ObjectMapper: 167adf69db0298bf3a19ea05cb9a16ee117c8ef5
+  ObjectMapper: 92230db59bf8f341a5c3a3cf0b9fbdde3cf0d87f
+  ObjectMapper+Realm: 3188789fb77c189c7a83cb625333a607eb61a08f
+  ReachabilitySwift: 6849231cd4e06559f3b9ef4a97a0a0f96d41e09f
+  Realm: 0ef72b837fb67e9f4b098bac771ddd72c7fdbb69
+  RealmSwift: 07a9ae0505091eda6b2ee7c190c3786d6e90a7b0
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
+  RxReachability: 6e16525bd709156e3af76f12fd0d60ff887bbfc2
+  RxSwift: e49536837d9901277638493ea537394d4b55f570
+  SKPhotoBrowser: 5969c3813727f11fe37bea74a40425cafcb32f61
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
-PODFILE CHECKSUM: 04a4a6d155e33e49363f2766c1fedf7f12800326
+PODFILE CHECKSUM: f5bd628131bb1a09f2c9e4432b42aefec42469cd
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.4.0

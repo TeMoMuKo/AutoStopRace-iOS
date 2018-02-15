@@ -57,13 +57,13 @@ final class MenuViewModel {
                     self.menu.value = self.unauthenticatedMenus
                 }
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
         
         itemSelected
             .subscribe(onNext: { clickedIndex in
                 self.delegate?.menuSelected(menu: MenuDestination(rawValue: clickedIndex.row)!)
             })
-        .addDisposableTo(disposeBag)
+        .disposed(by: disposeBag)
     }
     
     

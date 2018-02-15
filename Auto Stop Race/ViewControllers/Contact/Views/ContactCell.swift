@@ -44,14 +44,14 @@ class ContactCell: BaseUICollectionCell {
         label.text = ""
         label.minimumScaleFactor = 0.5
         label.adjustsFontSizeToFitWidth = true
-        label.font = UIFont.systemFont(ofSize: 25, weight: UIFontWeightLight)
+        label.font = UIFont.systemFont(ofSize: 25, weight: UIFont.Weight.light)
         return label
     }()
     
     var contactDescriptionLabel: UILabel = {
         let label = UILabel()
         label.text = ""
-        label.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightLight)
+        label.font = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight.light)
         return label
     }()
     

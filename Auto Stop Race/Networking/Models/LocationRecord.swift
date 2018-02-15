@@ -11,15 +11,15 @@ import ObjectMapper
 import RealmSwift
 
 class LocationRecord: Object, Mappable {
-    dynamic var id = 0
-    dynamic var latitude: Double = 0.0
-    dynamic var longitude: Double = 0.0
-    dynamic var message = ""
-    dynamic var address: String? = nil
-    dynamic var country: String? = nil
-    dynamic var country_code: String? = nil
-    dynamic var created_at: Date? = nil
-    dynamic var image: String? = nil
+    @objc dynamic var id = 0
+    @objc dynamic var latitude: Double = 0.0
+    @objc dynamic var longitude: Double = 0.0
+    @objc dynamic var message = ""
+    @objc dynamic var address: String? = nil
+    @objc dynamic var country: String? = nil
+    @objc dynamic var country_code: String? = nil
+    @objc dynamic var created_at: Date? = nil
+    @objc dynamic var image: String? = nil
     
     override static func primaryKey() -> String? {
         return "id"

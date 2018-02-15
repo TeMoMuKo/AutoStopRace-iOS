@@ -25,7 +25,7 @@ extension UIColor {
     convenience init(string: String?) {
         let colors = [0xD50000, 0xC51162, 0x0091EA, 0x2979FF, 0xAA00FF, 0x6200EA, 0x0097A7, 0x64DD17, 0xFF6D00, 0xDD2C00, 0x33691E, 0x3D5AFE, 0x3D5AFE, 0x5D4037]
         
-        guard let unwrappedString = string, !unwrappedString.isEmpty, let firstChar = unwrappedString.uppercased().characters.first else {
+        guard let unwrappedString = string, !unwrappedString.isEmpty, let firstChar = unwrappedString.uppercased().first else {
             self.init(netHex: colors[0])
             return
         }

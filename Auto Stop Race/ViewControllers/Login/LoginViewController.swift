@@ -45,7 +45,7 @@ class LoginViewController: UIViewControllerWithBackButton {
         button.setTitle(NSLocalizedString("action_login", comment: "").uppercased(), for: .normal)
         button.backgroundColor = UIColor.blueMenu
         button.setTitleColor(UIColor.white, for: .normal)
-        button.titleLabel!.font = UIFont.systemFont(ofSize: 15, weight: UIFontWeightUltraLight)
+        button.titleLabel!.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.ultraLight)
         button.addTarget(self, action: #selector(handleLoginTap), for: .touchUpInside)
         return button
     }()
@@ -55,7 +55,7 @@ class LoginViewController: UIViewControllerWithBackButton {
         button.layer.cornerRadius = 5
         button.setTitle(NSLocalizedString("action_reset_pass", comment: "").uppercased(), for: .normal)
         button.setTitleColor(UIColor.blueMenu, for: .normal)
-        button.titleLabel!.font = UIFont.systemFont(ofSize: 15, weight: UIFontWeightUltraLight)
+        button.titleLabel!.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.ultraLight)
         button.backgroundColor = UIColor.white
         button.addTarget(self, action: #selector(handleResetPasswordTap), for: .touchUpInside)
         return button
@@ -118,7 +118,7 @@ class LoginViewController: UIViewControllerWithBackButton {
                     self.inputContainerView.layer.borderColor = color.cgColor
                 }
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
         
         viewModel.credentialsValid
             .drive(onNext: { [weak self] valid in
@@ -132,7 +132,7 @@ class LoginViewController: UIViewControllerWithBackButton {
                     self.loginButton.alpha = 0.5
                 }
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
         
         viewModel.activityIndicator
             .asObservable()
@@ -144,7 +144,7 @@ class LoginViewController: UIViewControllerWithBackButton {
                     self.progressHUD.hide()
                 }
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
         
         inputContainerView.addSubview(usernameTextField)
         inputContainerView.addSubview(passwordTextField)
@@ -184,17 +184,17 @@ class LoginViewController: UIViewControllerWithBackButton {
         navigationItem.rightBarButtonItems = [menuBarButtonItem]
     }
     
-    func handleHelpTap() {
+    @objc func handleHelpTap() {
         let alert = UIAlertController(title: NSLocalizedString("menu_help", comment: ""), message:NSLocalizedString("msg_login_info", comment: "") , preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("ok", comment: ""), style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     
-    func handleLoginTap() {
+    @objc func handleLoginTap() {
         viewModel.signIn(email: usernameTextField.text!, password: passwordTextField.text!)
     }
     
-    func handleResetPasswordTap() {
+    @objc func handleResetPasswordTap() {
         let alert = UIAlertController(title: NSLocalizedString("title_activity_reset_pass", comment: ""), message: NSLocalizedString("input_email_for_reset_message", comment: ""), preferredStyle: .alert)
         
         alert.addTextField(configurationHandler: { (textField) -> Void in

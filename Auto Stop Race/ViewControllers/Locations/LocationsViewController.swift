@@ -81,7 +81,7 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
     }
     
     
-    func handleShareTap() {
+    @objc func handleShareTap() {
         let urlTeam = shareUrlSufix ?? ""
         if let mapUrl = NSURL(string:ApiConfig.shareMapUrl + urlTeam) {
             let objectsToShare = [mapUrl]
@@ -94,7 +94,7 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
     func setupSearchBar() {
         let textfield:UITextField = locationsSearchBar.value(forKey:"searchField") as! UITextField
         
-        let attributedString = NSAttributedString(string: NSLocalizedString("hint_enter_team_number", comment: ""), attributes: [NSForegroundColorAttributeName : UIColor.lightGray])
+        let attributedString = NSAttributedString(string: NSLocalizedString("hint_enter_team_number", comment: ""), attributes: [NSAttributedStringKey.foregroundColor : UIColor.lightGray])
         
         textfield.attributedPlaceholder = attributedString
     
@@ -111,7 +111,7 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
         teamsCollectionView.register(TeamLocationCell.self, forCellWithReuseIdentifier: TeamLocationCell.Identifier)
         
         viewModel.shownTeams.asObservable()
-            .bindTo(teamsCollectionView.rx.items(cellIdentifier: TeamLocationCell.Identifier, cellType: TeamLocationCell.self)) { (row, team, cell) in
+            .bind(to: teamsCollectionView.rx.items(cellIdentifier: TeamLocationCell.Identifier, cellType: TeamLocationCell.self)) { (row, team, cell) in
                 cell.team = team
             }
             .disposed(by: disposeBag)
@@ -128,10 +128,10 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
             })
             .disposed(by: disposeBag)
         
-        teamsCollectionView.rx.setDelegate(self).addDisposableTo(disposeBag)
+        teamsCollectionView.rx.setDelegate(self).disposed(by: disposeBag)
         
         teamsCollectionView.rx.modelSelected(Team.self)
-            .bindTo(viewModel.teamSelected).addDisposableTo(disposeBag)
+            .bind(to: viewModel.teamSelected).disposed(by: disposeBag)
         
         viewModel.teamSelected
             .subscribe(onNext: { [weak self] team in
@@ -140,7 +140,7 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
                 self.teamSelected(team: team )
                 self.shareUrlSufix = "?team=\(team.teamNumber!)"
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
         
         view.addSubview(teamsCollectionView)
     }
@@ -260,7 +260,7 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
         }
     }
     
-    func dismissKeyboard() {
+    @objc func dismissKeyboard() {
         locationsSearchBar.resignFirstResponder()
     }
 }

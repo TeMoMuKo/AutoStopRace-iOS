@@ -38,7 +38,7 @@ final class DashboardCoordinator: Coordinator {
                     self.showDashboard()
                 }
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
     }
     
     func showDashboard() {

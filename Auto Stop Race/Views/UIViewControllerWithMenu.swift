@@ -31,7 +31,7 @@ class UIViewControllerWithMenu: UIViewController {
         titleLabel.clipsToBounds = true
         navigationItem.titleView = titleLabel
         titleLabel.textColor = UIColor.white
-        titleLabel.font = UIFont.systemFont(ofSize: 20, weight: UIFontWeightLight)
+        titleLabel.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.light)
     }
     
     func setupNavigationMenuButton() {
@@ -45,7 +45,7 @@ class UIViewControllerWithMenu: UIViewController {
         view.addGestureRecognizer(swipeBackGestureRecognizer)
     }
 
-    func handleMenu() {
+    @objc func handleMenu() {
         let nc = NotificationCenter.default
         nc.post(name:Notification.Name(rawValue: "showMenu"),
                 object: nil,

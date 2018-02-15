@@ -28,8 +28,8 @@ class PhraseCell: UITableViewCell {
     }
     
     func setupBindings() {
-        viewModel?.polishPhrase.asObservable().bindTo(polishPhraseLabel.rx.text).addDisposableTo(disposeBag)
-        viewModel?.currentTranslationPhrase.asObservable().bindTo(translationPhraseLabel.rx.text).addDisposableTo(disposeBag)
+        viewModel?.polishPhrase.asObservable().bind(to: polishPhraseLabel.rx.text).disposed(by: disposeBag)
+        viewModel?.currentTranslationPhrase.asObservable().bind(to: translationPhraseLabel.rx.text).disposed(by: disposeBag)
     }
     
     let iconImageView: UIImageView = {

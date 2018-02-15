@@ -41,7 +41,7 @@ class TeamLocationCell: BaseUICollectionCell {
     var teamNumberLabel:UILabel = {
         let label = UILabel()
         label.text = ""
-        label.font = UIFont.systemFont(ofSize: 17, weight: UIFontWeightBold)
+        label.font = UIFont.systemFont(ofSize: 17, weight: UIFont.Weight.bold)
         label.textAlignment = .center
         label.textColor = UIColor.white
         label.backgroundColor = UIColor.blueMenu
@@ -54,14 +54,14 @@ class TeamLocationCell: BaseUICollectionCell {
     var addressLabel: UILabel = {
         let label = UILabel()
         label.text = ""
-        label.font = UIFont.systemFont(ofSize: 17, weight: UIFontWeightLight)
+        label.font = UIFont.systemFont(ofSize: 17, weight: UIFont.Weight.light)
         return label
     }()
     
     var timeLabel: UILabel = {
         let label = UILabel()
         label.text = ""
-        label.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightBold)
+        label.font = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight.bold)
         label.textColor = UIColor.blueMenu
         return label
     }()

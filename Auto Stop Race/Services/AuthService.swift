@@ -52,7 +52,7 @@ final class AuthService: BaseService, AuthServiceType {
                     self.isUserLoggedIn = false
                 }
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
     }
     
     func loginStatus() -> Variable<AutenticationStatus> {
@@ -87,7 +87,7 @@ final class AuthService: BaseService, AuthServiceType {
                     switch status {
                     case .OK :
                         do {
-                            if let httpResponse = response.response as? HTTPURLResponse {
+                            if let httpResponse = response.response {
                                 self.provider.userDefaultsService.setAuthorizationHeaders(httpResponse: httpResponse)
                             }
                             let user = try response.mapObject(User.self) as User

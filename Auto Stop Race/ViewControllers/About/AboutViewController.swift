@@ -15,14 +15,14 @@ class AboutViewController: UIViewControllerWithMenu {
     var appNameLabel: UILabel = {
         let label = UILabel()
         label.text = NSLocalizedString("app_name", comment: "")
-        label.font = UIFont.systemFont(ofSize: 25, weight: UIFontWeightBold)
+        label.font = UIFont.systemFont(ofSize: 25, weight: UIFont.Weight.bold)
         return label
     }()
     
     var appVersionLabel: UILabel = {
         let label = UILabel()
         label.text = NSLocalizedString("app_version", comment: "")
-        label.font = UIFont.systemFont(ofSize: 17, weight: UIFontWeightLight)
+        label.font = UIFont.systemFont(ofSize: 17, weight: UIFont.Weight.light)
         return label
     }()
     
@@ -33,7 +33,7 @@ class AboutViewController: UIViewControllerWithMenu {
         label.lineBreakMode = .byWordWrapping
         label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true
-        label.font = UIFont.systemFont(ofSize: 17, weight: UIFontWeightLight)
+        label.font = UIFont.systemFont(ofSize: 17, weight: UIFont.Weight.light)
         return label
     }()
     
@@ -41,7 +41,7 @@ class AboutViewController: UIViewControllerWithMenu {
     var rateAppTitleLabel: UILabel = {
         let label = UILabel()
         label.text = NSLocalizedString("msg_rate_app_question", comment: "")
-        label.font = UIFont.systemFont(ofSize: 17, weight: UIFontWeightLight)
+        label.font = UIFont.systemFont(ofSize: 17, weight: UIFont.Weight.light)
         return label
     }()
     
@@ -51,7 +51,7 @@ class AboutViewController: UIViewControllerWithMenu {
         label.text = NSLocalizedString("msg_rate_app", comment: "")
         label.minimumScaleFactor = 0.5
         label.adjustsFontSizeToFitWidth = true
-        label.font = UIFont.systemFont(ofSize: 25, weight: UIFontWeightLight)
+        label.font = UIFont.systemFont(ofSize: 25, weight: UIFont.Weight.light)
         return label
     }()
     
@@ -61,7 +61,7 @@ class AboutViewController: UIViewControllerWithMenu {
         button.setTitle(NSLocalizedString("action_rate", comment: ""), for: .normal)
         button.backgroundColor = UIColor.blueMenu
         button.setTitleColor(UIColor.white, for: .normal)
-        button.titleLabel!.font = UIFont.systemFont(ofSize: 15, weight: UIFontWeightUltraLight)
+        button.titleLabel!.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.ultraLight)
         button.addTarget(self, action: #selector(rateAppButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -121,7 +121,7 @@ class AboutViewController: UIViewControllerWithMenu {
     }
     
 
-    func handleShareTap() {
+    @objc func handleShareTap() {
         if let name = NSURL(string: AboutConfig.appStoreShareUrl) {
             let objectsToShare = [name]
             let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
@@ -159,7 +159,7 @@ class AboutViewController: UIViewControllerWithMenu {
         }
     }
     
-    func rateAppButtonTapped() {
+    @objc func rateAppButtonTapped() {
         if UIApplication.shared.canOpenURL(URL(string: AboutConfig.appStoreRateUrl)!) {
             UIApplication.shared.openURL(URL(string: AboutConfig.appStoreRateUrl)!)
         } else {
