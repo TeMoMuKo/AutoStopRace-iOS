@@ -25,11 +25,11 @@ PODS:
     - ObjectMapper
     - RealmSwift
   - ReachabilitySwift (4.1.0)
-  - Realm (2.10.2):
-    - Realm/Headers (= 2.10.2)
-  - Realm/Headers (2.10.2)
-  - RealmSwift (2.10.2):
-    - Realm (= 2.10.2)
+  - Realm (3.1.1):
+    - Realm/Headers (= 3.1.1)
+  - Realm/Headers (3.1.1)
+  - RealmSwift (3.1.1):
+    - Realm (= 3.1.1)
   - Result (3.2.4)
   - RxCocoa (4.1.2):
     - RxSwift (~> 4.0)
@@ -40,6 +40,7 @@ PODS:
   - RxSwift (4.1.2)
   - SKPhotoBrowser (5.0.5)
   - SnapKit (4.0.0)
+  - SwiftLint (0.25.0)
 
 DEPENDENCIES:
   - Crashlytics
@@ -57,6 +58,7 @@ DEPENDENCIES:
   - RxSwift (~> 4.1.1)
   - SKPhotoBrowser
   - SnapKit
+  - SwiftLint
 
 EXTERNAL SOURCES:
   RxReachability:
@@ -79,15 +81,16 @@ SPEC CHECKSUMS:
   ObjectMapper: 92230db59bf8f341a5c3a3cf0b9fbdde3cf0d87f
   ObjectMapper+Realm: 3188789fb77c189c7a83cb625333a607eb61a08f
   ReachabilitySwift: 6849231cd4e06559f3b9ef4a97a0a0f96d41e09f
-  Realm: 0ef72b837fb67e9f4b098bac771ddd72c7fdbb69
-  RealmSwift: 07a9ae0505091eda6b2ee7c190c3786d6e90a7b0
+  Realm: 42d1c38a5b1bbcc828b48a7ce702cb86fc68adf4
+  RealmSwift: d31937ca6a6ee54acde64ec839523c0a3c04924b
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
   RxReachability: 6e16525bd709156e3af76f12fd0d60ff887bbfc2
   RxSwift: e49536837d9901277638493ea537394d4b55f570
   SKPhotoBrowser: 5969c3813727f11fe37bea74a40425cafcb32f61
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  SwiftLint: e14651157288e9e01d6e1a71db7014fb5744a8ea
 
-PODFILE CHECKSUM: f5bd628131bb1a09f2c9e4432b42aefec42469cd
+PODFILE CHECKSUM: 3aa55cc1c74c8a977d1b0116fe86c33b7aaa2c6a
 
 COCOAPODS: 1.4.0

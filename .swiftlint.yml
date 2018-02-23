@@ -1,0 +1,13 @@
+disabled_rules:
+  - identifier_name
+  - trailing_whitespace
+  - trailing_newline
+  - line_length
+  - todo
+  - force_cast
+  - type_name
+
+included:
+  - Auto Stop Race
+
+warning_threshold: 2

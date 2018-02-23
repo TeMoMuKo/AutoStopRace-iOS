@@ -26,6 +26,8 @@ target 'Auto Stop Race' do
     pod 'Fabric'
     pod 'Crashlytics'
 
+    pod 'SwiftLint'
+
     target 'Auto Stop RaceTests' do
     inherit! :search_paths
     # Pods for testing
