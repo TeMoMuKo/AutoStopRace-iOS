@@ -33,9 +33,6 @@ final class UserLocationsCoordinator: Coordinator {
     }
 }
 
-
-
-
 extension UserLocationsCoordinator: UserLocationsViewControllerDelegate {
     
     func showMapTapped( locationRecords: Variable<[LocationRecord]> ) {
@@ -45,7 +42,7 @@ extension UserLocationsCoordinator: UserLocationsViewControllerDelegate {
     }
     
     func postNewLocationTapped() {
-        let coordinator = PostNewLocationCoordinator(navigationController: navigationController, appCoordinator: self.appCoordinator, serviceProvider:serviceProvider!)
+        let coordinator = PostNewLocationCoordinator(navigationController: navigationController, appCoordinator: self.appCoordinator, serviceProvider: serviceProvider!)
         coordinator.start()
         childCoordinators.append(coordinator)
     }

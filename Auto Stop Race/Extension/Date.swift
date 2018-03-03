@@ -12,7 +12,7 @@ extension Date {
     
     func toLocalTime() -> Date {
         let timeZone = NSTimeZone.local
-        let seconds : TimeInterval = Double(timeZone.secondsFromGMT(for:self))
+        let seconds: TimeInterval = Double(timeZone.secondsFromGMT(for: self))
         let localDate = Date(timeInterval: seconds, since: self)
         return localDate
     }

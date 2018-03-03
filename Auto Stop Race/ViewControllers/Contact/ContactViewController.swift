@@ -11,11 +11,11 @@ import SnapKit
 import RxSwift
 import RxCocoa
 
-protocol ContactViewControllerDelegate : class {
+protocol ContactViewControllerDelegate: class {
     func contactSelected(contact: Contact)
 }
 
-class ContactViewController: UIViewControllerWithMenu,  UICollectionViewDelegateFlowLayout {
+class ContactViewController: UIViewControllerWithMenu, UICollectionViewDelegateFlowLayout {
     
     let cellHeight: CGFloat = 80
     var viewModel: ContactViewModel!
@@ -36,7 +36,6 @@ class ContactViewController: UIViewControllerWithMenu,  UICollectionViewDelegate
 
     convenience init(viewModel: ContactViewModel) {
         self.init()
-        
         self.viewModel = viewModel
     }
     
@@ -50,7 +49,7 @@ class ContactViewController: UIViewControllerWithMenu,  UICollectionViewDelegate
         collectionView.register(ContactCell.self, forCellWithReuseIdentifier: ContactCell.Identifier)
 
         viewModel.contacts
-            .bind(to: collectionView.rx.items(cellIdentifier: ContactCell.Identifier, cellType:ContactCell.self)) { row, contact, cell in
+            .bind(to: collectionView.rx.items(cellIdentifier: ContactCell.Identifier, cellType: ContactCell.self)) { _, contact, cell in
                 cell.contact = contact
             }
             .disposed(by: disposeBag)
@@ -65,40 +64,33 @@ class ContactViewController: UIViewControllerWithMenu,  UICollectionViewDelegate
                 self.contactSelected(contact: clickedContact )
             })
             .disposed(by: disposeBag)
-        
-        
+                
         collectionView.rx.setDelegate(self).disposed(by: disposeBag)
-        
         setupConstraints()
     }
     
     func contactSelected(contact: Contact) {
         switch contact.type {
         case "phone_number":
-            if UIApplication.shared.canOpenURL(URL(string: "tel://\(contact.value)")!){
-                UIApplication.shared.openURL(URL(string: "tel://\(contact.value)")!)
-            }
+            openUrl(urlString: "tel://\(contact.value)")
         case "sms":
-            if UIApplication.shared.canOpenURL(URL(string: "sms://\(contact.value)")!){
-                UIApplication.shared.openURL(URL(string: "sms://\(contact.value)")!)
-            }
+            openUrl(urlString: "sms://\(contact.value)")
         case "email":
-            if UIApplication.shared.canOpenURL(URL(string: "mailto://\(contact.value)")!){
-                UIApplication.shared.openURL(URL(string: "mailto://\(contact.value)")!)
-            }
+            openUrl(urlString: "mailto://\(contact.value)")
         case "web_page":
-            if UIApplication.shared.canOpenURL(URL(string: "\(contact.value)")!){
-                UIApplication.shared.openURL(URL(string: "\(contact.value)")!)
-            }
+            openUrl(urlString: "\(contact.value)")
         case "fan_page":
-            if UIApplication.shared.canOpenURL(URL(string: "fb://profile/\(contact.value)")!){
-                UIApplication.shared.openURL(URL(string: "fb://profile/\(contact.value)")!)
-            }
+            openUrl(urlString: "fb://profile/\(contact.value)")
         default:
             break   
         }
     }
 
+    func openUrl(urlString: String) {
+        if UIApplication.shared.canOpenURL(URL(string: urlString)!) {
+            UIApplication.shared.openURL(URL(string: urlString)!)
+        }
+    }
     func setupNavigationBarTitle() {
         let titleLabel = navigationItem.titleView as! UILabel
         titleLabel.text = NSLocalizedString("title_contact", comment: "")

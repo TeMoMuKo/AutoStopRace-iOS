@@ -22,14 +22,14 @@ final class MenuCoordinator: Coordinator {
         self.serviceProvider = serviceProvider
     }
     
-    let myNotification = Notification.Name(rawValue:"showMenu")
+    let myNotification = Notification.Name(rawValue: "showMenu")
     
     var menuViewModel: MenuViewModel!
     var menuViewController: MenuViewController!
     
     func start() {
         let nc = NotificationCenter.default
-        nc.addObserver(forName:myNotification, object:nil, queue:nil, using:showMenu)
+        _ = nc.addObserver(forName: myNotification, object: nil, queue: nil, using: showMenu)
         menuViewModel = MenuViewModel(delegate: self, provider: serviceProvider!)
         menuViewController = MenuViewController(viewModel: menuViewModel)
     }
@@ -37,13 +37,13 @@ final class MenuCoordinator: Coordinator {
 
 extension MenuCoordinator: MenuViewControllerDelegate {
     
-    func showMenu(notification:Notification) -> Void  {
+    func showMenu(notification: Notification) {
         menuViewController.showMenu()
     }
     
     func menuSelected(menu: MenuDestination) {
         
-        if menu == .teams &&  self.navigationController?.viewControllers.last is DashboardViewController{
+        if menu == .teams && self.navigationController?.viewControllers.last is DashboardViewController {
             return
         }
         
@@ -54,13 +54,9 @@ extension MenuCoordinator: MenuViewControllerDelegate {
         case .teams:
             let coordinator = DashboardCoordinator(navigationController: navigationController, appCoordinator: appCoordinator, serviceProvider: serviceProvider!)
             coordinator.start()
-            break
-            
         case .locations:
             let coordinator = LocationsCoordinator(navigationController: navigationController, appCoordinator: appCoordinator, serviceProvider: serviceProvider!)
             coordinator.start()
-            break
-        
         case .campus:
             var images = [SKPhoto]()
             let photo = SKPhoto.photoWithImage(#imageLiteral(resourceName: "campus_map"))
@@ -69,8 +65,6 @@ extension MenuCoordinator: MenuViewControllerDelegate {
             let browser = SKPhotoBrowser(photos: images)
             browser.initializePageIndex(0)
             self.navigationController?.present(browser, animated: true, completion: nil)
-            break
-            
         case .schedule:
             var images = [SKPhoto]()
             let photo = SKPhoto.photoWithImage(#imageLiteral(resourceName: "harmonogram"))
@@ -79,33 +73,22 @@ extension MenuCoordinator: MenuViewControllerDelegate {
             let browser = SKPhotoBrowser(photos: images)
             browser.initializePageIndex(0)
             self.navigationController?.present(browser, animated: true, completion: nil)
-            break
-            
         case .phrasebook:
             let prasebookViewModel = PhrasebookViewModel(provider: serviceProvider!)
             let viewController = PhrasebookViewController(viewModel: prasebookViewModel)
             self.navigationController?.pushViewController(viewController, animated: true)
-            break
-        
         case .contact:
             let coordinator = ContactCoordinator(navigationController: navigationController)
             coordinator.start()
-            break
-        
         case .partners:
             let viewController = PartnersViewController()
             self.navigationController?.pushViewController(viewController, animated: true)
-            break
-        
         case .settings:
             let viewController = SettingsViewController(delegate: appCoordinator.self!, provider: serviceProvider!)
             self.navigationController?.pushViewController(viewController, animated: true)
-            break
-        
         case .about:
             let viewController = AboutViewController()
             self.navigationController?.pushViewController(viewController, animated: true)
-            break
         }
     }
 }

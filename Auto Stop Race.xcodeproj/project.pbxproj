@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10A378E1204B2FD800E0C536 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A378E0204B2FD800E0C536 /* Theme.swift */; };
 		111ED988E54B3CE0FC35922B /* Pods_Auto_Stop_Race.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A56B20F1205FFFFD65D923F /* Pods_Auto_Stop_Race.framework */; };
 		A70F31394243B1FE8EC8CF9C /* Pods_Auto_Stop_RaceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12DA71DF16DEB8B3241A29E9 /* Pods_Auto_Stop_RaceUITests.framework */; };
 		E2044EE81EA7C98A007B1C86 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2044EE71EA7C98A007B1C86 /* String.swift */; };
@@ -113,6 +114,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		10A378E0204B2FD800E0C536 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		12DA71DF16DEB8B3241A29E9 /* Pods_Auto_Stop_RaceUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Auto_Stop_RaceUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EB12920D258F3FF2EDA9C4B /* Pods_Auto_Stop_RaceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Auto_Stop_RaceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		359411C22E8D92D7533C5146 /* Pods-Auto Stop RaceUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Auto Stop RaceUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Auto Stop RaceUITests/Pods-Auto Stop RaceUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -241,6 +243,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10A378DF204B2FA900E0C536 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				10A378E0204B2FD800E0C536 /* Theme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
 		6B17EC69FCC18E7DDD958899 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -518,6 +528,7 @@
 		E2D9A20D1E5530FC003324F7 /* Auto Stop Race */ = {
 			isa = PBXGroup;
 			children = (
+				10A378DF204B2FA900E0C536 /* Theme */,
 				E2F1E3EC1EA332D0005BDFC9 /* Resources */,
 				E2D011491E5D80CF0021936A /* Service */,
 				E2C061451E5AB08F0022D6F1 /* Assets */,
@@ -737,6 +748,7 @@
 			buildConfigurationList = E2D9A2331E5530FC003324F7 /* Build configuration list for PBXNativeTarget "Auto Stop Race" */;
 			buildPhases = (
 				330D9740FCCE0B5D3F7B4003 /* [CP] Check Pods Manifest.lock */,
+				10A378DD204B265100E0C536 /* SwiftLint */,
 				E2D9A2071E5530FC003324F7 /* Sources */,
 				E2D9A2081E5530FC003324F7 /* Frameworks */,
 				E2D9A2091E5530FC003324F7 /* Resources */,
@@ -880,6 +892,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		10A378DD204B265100E0C536 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
 		10E3AE3A458B2E9A8D2AA540 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1111,6 +1137,7 @@
 				E29F1BE11E8B1D8C006D8178 /* ImageRow.swift in Sources */,
 				E2D011421E5BE6680021936A /* Phrase.swift in Sources */,
 				E2D011401E5BE5920021936A /* PhraseCell.swift in Sources */,
+				10A378E1204B2FD800E0C536 /* Theme.swift in Sources */,
 				E2D9A2571E555E6C003324F7 /* UIColor.swift in Sources */,
 				E28873131E9717720005237D /* Team.swift in Sources */,
 				E21BBB5F1EA8B27B005D54FC /* UIImage.swift in Sources */,

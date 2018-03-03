@@ -56,7 +56,7 @@ class PhraseCell: UITableViewCell {
     
     var translationBackgroundView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.grayBackground
+        view.backgroundColor = Theme.Color.grayBackground
         return view
     }()
     
@@ -73,17 +73,13 @@ class PhraseCell: UITableViewCell {
     func setupViews() {
         
         let view = UIView()
-        view.backgroundColor = UIColor.blueMenu
+        view.backgroundColor = Theme.Color.blueMenu
         self.selectedBackgroundView = view
-        
         self.contentView.backgroundColor = UIColor.clear
-        
         self.selectionStyle = .none
         
         whiteRoundedView = UIView(frame: CGRect.init(origin: .zero, size: CGSize.init(width: self.layer.frame.size.width, height: 80)))
-        
         whiteRoundedView.layer.backgroundColor = CGColor.init(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [1.0, 1.0, 1.0, 1.0])
-        
         whiteRoundedView.layer.masksToBounds = false
         whiteRoundedView.layer.shadowOffset = CGSize.init(width: -1, height: 1)
         whiteRoundedView.layer.shadowOpacity = 0.5
@@ -101,14 +97,14 @@ class PhraseCell: UITableViewCell {
     
     func setupConstraints() {
         
-        whiteRoundedView.snp.makeConstraints{ (make) -> Void in
+        whiteRoundedView.snp.makeConstraints { (make) -> Void in
             make.left.right.equalToSuperview()
             make.height.equalToSuperview().offset(-20)
             make.top.equalToSuperview().offset(10)
             make.width.equalToSuperview()
         }
         
-        translationBackgroundView.snp.makeConstraints{ (make) -> Void in
+        translationBackgroundView.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(self.contentView.snp.centerY)
             make.left.equalTo(polishPhraseLabel).offset(-10)
             make.right.equalTo(self)
@@ -132,8 +128,5 @@ class PhraseCell: UITableViewCell {
             make.left.equalTo(self).offset(15)
             make.centerY.equalTo(self)
         }
-        
-      
     }
-
 }

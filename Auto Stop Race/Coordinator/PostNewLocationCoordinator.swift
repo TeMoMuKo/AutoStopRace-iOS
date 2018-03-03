@@ -1,4 +1,3 @@
-
 //
 //  NewLocationCoordinator.swift
 //  Auto Stop Race
@@ -28,9 +27,6 @@ final class PostNewLocationCoordinator: Coordinator {
         navigationController?.show(viewController, sender: nil)
     }
 }
-
-
-
 
 extension PostNewLocationCoordinator: PostNewLocationViewControllerDelegate {
     func showMapTapped() {

@@ -17,14 +17,12 @@ class UserLocationCell: BaseUICollectionCell {
     
     var locationRecord: LocationRecord? {
         didSet {
-            if let _ = locationRecord?.image {
+            if locationRecord?.image != nil {
                 countryLabel.text = ""
-                countryLabel.backgroundColor = UIColor.blueMenu
+                countryLabel.backgroundColor = Theme.Color.blueMenu
                 imageView.image = UIImage(named: "ic_photo_camera_white")?.withRenderingMode(.alwaysTemplate)
                 imageView.tintColor = UIColor.white
-            }
-                
-            else if let locationCountry = locationRecord?.country_code {
+            } else if let locationCountry = locationRecord?.country_code {
                 countryLabel.text =  locationCountry
                 countryLabel.backgroundColor = UIColor.init(string: locationCountry)
                 imageView.image = nil
@@ -39,7 +37,7 @@ class UserLocationCell: BaseUICollectionCell {
                 addressLabel.text = locationAdress
             } else {
                 if let locationLongitude = locationRecord?.longitude, let locationLatitude = locationRecord?.latitude {
-                    let location = CLLocationCoordinate2D.init(latitude:locationLatitude, longitude:locationLongitude)
+                    let location = CLLocationCoordinate2D.init(latitude: locationLatitude, longitude: locationLongitude)
                     addressLabel.text = "\(location.dms.latitude), \(location.dms.longitude)"
                 }
             }
@@ -52,12 +50,12 @@ class UserLocationCell: BaseUICollectionCell {
                 createdAtDateLabel.text = createdAt.toString(withFormat: "dd.MM")
                 createdAtTimeLabel.text = createdAt.toString(withFormat: "HH:mm")
                 syncView.image = UIImage(named: "ic_cloud_done")?.withRenderingMode(.alwaysTemplate)
-                syncView.tintColor = UIColor.blueMenu
+                syncView.tintColor = Theme.Color.blueMenu
             } else {
                 createdAtDateLabel.text = ""
                 createdAtTimeLabel.text = ""
                 syncView.image = UIImage(named: "ic_cloud_off")?.withRenderingMode(.alwaysTemplate)
-                syncView.tintColor = UIColor.blueMenu
+                syncView.tintColor = Theme.Color.blueMenu
             }
         }
     }
@@ -68,13 +66,13 @@ class UserLocationCell: BaseUICollectionCell {
         return imageView
     }()
     
-    var countryLabel:UILabel = {
+    var countryLabel: UILabel = {
         let label = UILabel()
         label.text = ""
         label.font = UIFont.systemFont(ofSize: 17, weight: UIFont.Weight.bold)
         label.textAlignment = .center
         label.textColor = UIColor.white
-        label.backgroundColor = UIColor.blueMenu
+        label.backgroundColor = Theme.Color.blueMenu
         label.layer.cornerRadius = 25
         label.frame = CGRect.init(x: 0, y: 0, width: 50, height: 50)
         label.layer.masksToBounds = true
@@ -103,9 +101,9 @@ class UserLocationCell: BaseUICollectionCell {
     var createdAtDateLabel: UILabel = {
         let label = UILabel()
         label.text = ""
-        label.textColor = UIColor.blueMenu
+        label.textColor = Theme.Color.blueMenu
         label.font = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight.bold)
-        label.textColor = UIColor.blueMenu
+        label.textColor = Theme.Color.blueMenu
         return label
     }()
     
@@ -118,9 +116,9 @@ class UserLocationCell: BaseUICollectionCell {
     var createdAtTimeLabel: UILabel = {
         let label = UILabel()
         label.text = ""
-        label.textColor = UIColor.blueMenu
+        label.textColor = Theme.Color.blueMenu
         label.font = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight.bold)
-        label.textColor = UIColor.blueMenu
+        label.textColor = Theme.Color.blueMenu
         return label
     }()
     
@@ -142,8 +140,7 @@ class UserLocationCell: BaseUICollectionCell {
     override func setupViews() {
         super.setupViews()
         
-        self.backgroundColor = UIColor.grayBackgroundColor
-        
+        self.backgroundColor = Theme.Color.grayBackgroundColor
         addSubview(countryLabel)
         addSubview(imageView)
         addSubview(addressLabel)
@@ -155,7 +152,6 @@ class UserLocationCell: BaseUICollectionCell {
         stackView.addArrangedSubview(createdAtTimeLabel)
         setupConstraints()
     }
-    
     
     func setupConstraints() {
         stackView.snp.makeConstraints { (make) -> Void in

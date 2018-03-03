@@ -18,8 +18,8 @@ extension UIColor {
         self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
     }
     
-    convenience init(netHex:Int) {
-        self.init(red:(netHex >> 16) & 0xff, green:(netHex >> 8) & 0xff, blue:netHex & 0xff)
+    convenience init(netHex: Int) {
+        self.init(red: (netHex >> 16) & 0xff, green: (netHex >> 8) & 0xff, blue: netHex & 0xff)
     }
     
     convenience init(string: String?) {
@@ -35,36 +35,6 @@ extension UIColor {
         } else {
             let colorIndex = Int( ( Double(colors.count - 1) * ( Double((String(firstChar).utf8.first)!) - Double("A".utf8.first!)) / ( Double("Z".utf8.first!) -  Double("A".utf8.first!))  ).rounded() )
             self.init(netHex: colors[colorIndex])
-        }
-    }
-    
-    open class var blueMenu: UIColor {
-        get {
-            return UIColor.init(netHex: 0x1976d2)
-        }
-    }
-    
-    open class var grayBackground: UIColor {
-        get {
-            return UIColor.init(netHex: 0xceced2)
-        }
-    }
-    
-    open class var success: UIColor {
-        get {
-            return UIColor.init(netHex: 0x5cb85c)
-        }
-    }
-    
-    open class var circleColor: UIColor {
-        get {
-            return UIColor.init(netHex: 0xD50000)
-        }
-    }
-    
-    open class var grayBackgroundColor: UIColor {
-        get {
-            return UIColor.init(netHex: 0xf7f7f7)
         }
     }
 }

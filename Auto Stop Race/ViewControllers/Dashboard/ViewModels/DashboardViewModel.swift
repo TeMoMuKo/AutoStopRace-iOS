@@ -12,7 +12,7 @@ import RxSwift
 import RxCocoa
 
 final class DashboardViewModel {
-    private var delegate: DashboardViewControllerDelegate?
+    private weak var delegate: DashboardViewControllerDelegate?
 
     init(delegate: DashboardViewControllerDelegate?) {
         self.delegate = delegate

@@ -47,8 +47,8 @@ class UIViewControllerWithMenu: UIViewController {
 
     @objc func handleMenu() {
         let nc = NotificationCenter.default
-        nc.post(name:Notification.Name(rawValue: "showMenu"),
+        nc.post(name: Notification.Name(rawValue: "showMenu"),
                 object: nil,
-                userInfo:nil)
+                userInfo: nil)
     }
 }

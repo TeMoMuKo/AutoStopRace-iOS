@@ -52,7 +52,7 @@ final class DashboardCoordinator: Coordinator {
     }
     
     func showUserLocations() {
-        let coordinator = UserLocationsCoordinator(navigationController: navigationController, appCoordinator: self.appCoordinator, serviceProvider:serviceProvider!)
+        let coordinator = UserLocationsCoordinator(navigationController: navigationController, appCoordinator: self.appCoordinator, serviceProvider: serviceProvider!)
         coordinator.start()
         self.childCoordinators.append(coordinator)
     }
@@ -62,7 +62,6 @@ final class DashboardCoordinator: Coordinator {
         appCoordinator?.dashboardCoordinatorCompleted(coordinator: self)
     }
 }
-
 
 extension DashboardCoordinator: DashboardViewControllerDelegate {
     func loginButtonTapped() {
@@ -75,5 +74,3 @@ extension DashboardCoordinator: DashboardViewControllerDelegate {
         coordinator.start()
     }
 }
-
-

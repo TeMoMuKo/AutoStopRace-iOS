@@ -57,7 +57,7 @@ class PostNewLocationViewController: FormViewControllerWithBackButton, CLLocatio
     }
     
     func isAuthorizedtoGetUserLocation() {
-        if CLLocationManager.authorizationStatus() != .authorizedWhenInUse     {
+        if CLLocationManager.authorizationStatus() != .authorizedWhenInUse {
             locationManager.requestWhenInUseAuthorization()
         }
     }
@@ -69,12 +69,12 @@ class PostNewLocationViewController: FormViewControllerWithBackButton, CLLocatio
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let userLocation:CLLocation = locations[0] as CLLocation
+        let userLocation: CLLocation = locations[0] as CLLocation
         latitude = userLocation.coordinate.latitude
         longitude = userLocation.coordinate.longitude
         let coordinate = CLLocationCoordinate2D(latitude: latitude!, longitude: longitude!)
     
-        geocoder.reverseGeocodeLocation(userLocation, completionHandler: { placemarks, error in
+        geocoder.reverseGeocodeLocation(userLocation, completionHandler: { placemarks, _ in
             if let addressDict = placemarks?[0].addressDictionary {
                 if let formattedAddress = addressDict["FormattedAddressLines"] as? [String] {
                     self.form.rowBy(tag: "location_row")?.title = formattedAddress.joined(separator: ", ")
@@ -112,7 +112,7 @@ class PostNewLocationViewController: FormViewControllerWithBackButton, CLLocatio
             Section(header: NSLocalizedString("msg_your_location", comment: ""), footer: "") {
                 $0.tag = "location_section"
             }
-                <<< LabelRow("location_row"){
+                <<< LabelRow("location_row") {
                     $0.title = NSLocalizedString("msg_establishing_approximate_location", comment: "")
                 }
             
@@ -122,7 +122,7 @@ class PostNewLocationViewController: FormViewControllerWithBackButton, CLLocatio
                     $0.add(rule: RuleMaxLength(maxLength: 160))
                     $0.validationOptions = .validatesOnChange
                 }
-                .cellUpdate { cell, row in
+                .cellUpdate { _, row in
                     if !row.isValid {
                         let message = row.value! as NSString
                         row.value = message.substring(with: NSRange(location: 0, length: 159))
@@ -130,18 +130,18 @@ class PostNewLocationViewController: FormViewControllerWithBackButton, CLLocatio
                 }
 
             +++ Section()
-                <<< ImageRow("image_row"){
+                <<< ImageRow("image_row") {
                     $0.title = NSLocalizedString("add_photo_title", comment: "")
                 }
             
-            +++ Section() {
+            +++ Section({
                 $0.hidden = true
                 $0.tag = "send_location_section"
-            }
+            })
                 <<< ButtonRow("add_location_button_row") {
                         $0.title = NSLocalizedString("add_location_button_title", comment: "")
                     }
-                    .onCellSelection { [weak self] (cell, row) in
+                    .onCellSelection { [weak self] _, row in
                         row.hidden = true
                         row.evaluateHidden()
                         self?.postNewLocation()
@@ -161,7 +161,7 @@ class PostNewLocationViewController: FormViewControllerWithBackButton, CLLocatio
         
         let imageRow: ImageRow? = form.rowBy(tag: "image_row")
         if let image = imageRow?.value {
-            let imageData:Data = UIImageJPEGRepresentation(image.normalizedImage(), 0.25)!
+            let imageData: Data = UIImageJPEGRepresentation(image.normalizedImage(), 0.25)!
             let base64Image = imageData.base64EncodedString()
             let imageEncoded = "data:image/jpeg;base64,\(base64Image)"
             newLocation.image = imageEncoded

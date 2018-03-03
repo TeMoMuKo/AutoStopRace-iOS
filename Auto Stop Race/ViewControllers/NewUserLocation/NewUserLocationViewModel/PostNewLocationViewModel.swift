@@ -14,7 +14,7 @@ final class PostNewLocationViewModel {
     private let disposeBag = DisposeBag()
     
     private let serviceProvider: ServiceProviderType
-    private var delegate: PostNewLocationViewControllerDelegate?
+    private weak var delegate: PostNewLocationViewControllerDelegate?
 
     init( delegate: PostNewLocationViewControllerDelegate, provider: ServiceProviderType) {
         self.delegate = delegate
@@ -34,8 +34,8 @@ final class PostNewLocationViewModel {
             return defaultEndpoint.adding(newHTTPHeaderFields:
                 [
                     "access-token": self.serviceProvider.userDefaultsService.getAuthAccessToken()!,
-                    "client":self.serviceProvider.userDefaultsService.getAuthClient()!,
-                    "uid":self.serviceProvider.userDefaultsService.getAuthUid()!
+                    "client": self.serviceProvider.userDefaultsService.getAuthClient()!,
+                    "uid": self.serviceProvider.userDefaultsService.getAuthUid()!
                 ])
         }
         

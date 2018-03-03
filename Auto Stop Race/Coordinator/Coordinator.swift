@@ -6,7 +6,6 @@
 //  Copyright © 2017 Torianin. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class Coordinator {
@@ -17,5 +16,4 @@ class Coordinator {
     init(navigationController: UINavigationController?) {
         self.navigationController = navigationController
     }
-  
 }

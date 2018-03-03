@@ -7,10 +7,8 @@
 //
 import UIKit
 
-class Toast
-{
-    class private func showAlert(backgroundColor:UIColor, textColor:UIColor, message:String)
-    {
+class Toast {
+    class private func showAlert(backgroundColor: UIColor, textColor: UIColor, message: String) {
         
         let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
         let label = UILabel(frame: CGRect.zero)
@@ -33,18 +31,20 @@ class Toast
         
         appDelegate.window!.addSubview(label)
         
-        var basketTopFrame: CGRect = label.frame;
-        basketTopFrame.origin.x = 0;
+        var basketTopFrame: CGRect = label.frame
+        basketTopFrame.origin.x = 0
         
-        UIView.animate(withDuration
-            :2.0, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.1, options: UIViewAnimationOptions.curveEaseOut, animations: { () -> Void in
+        UIView.animate(withDuration: 2.0,
+                       delay: 0.0,
+                       usingSpringWithDamping: 0.5,
+                       initialSpringVelocity: 0.1,
+                       options: UIViewAnimationOptions.curveEaseOut,
+                       animations: { () -> Void in
                 label.frame = basketTopFrame
-        },  completion: {
-            (value: Bool) in
-            UIView.animate(withDuration:2.0, delay: 2.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.1, options: UIViewAnimationOptions.curveEaseIn, animations: { () -> Void in
+        }, completion: { _ in
+            UIView.animate(withDuration: 2.0, delay: 2.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.1, options: UIViewAnimationOptions.curveEaseIn, animations: { () -> Void in
                 label.alpha = 0
-            },  completion: {
-                (value: Bool) in
+            }, completion: { _ in
                 label.removeFromSuperview()
             })
         })
@@ -69,15 +69,15 @@ class Toast
         }
     }
     
-    class func showMessage(message:String) {
+    class func showMessage(message: String) {
         showAlert(backgroundColor: UIColor.darkGray, textColor: UIColor.white, message: message)
     }
     
-    class func showPositiveMessage(message:String) {
-        showAlert(backgroundColor: UIColor.success, textColor: UIColor.white, message: message)
+    class func showPositiveMessage(message: String) {
+        showAlert(backgroundColor: Theme.Color.success, textColor: UIColor.white, message: message)
     }
     
-    class func showNegativeMessage(message:String) {
+    class func showNegativeMessage(message: String) {
         showAlert(backgroundColor: UIColor.red, textColor: UIColor.white, message: message)
     }
 }

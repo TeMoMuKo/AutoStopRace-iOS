@@ -18,10 +18,10 @@ class CreateLocationRecordRequest: Object {
     func toDictionary() -> [String: [String: Any] ] {
         let dictionary = ["location":
             [
-            "latitude":self.latitude,
-            "longitude":self.longitude,
-            "message":self.message,
-            "image":self.image
+            "latitude": self.latitude,
+            "longitude": self.longitude,
+            "message": self.message,
+            "image": self.image
             ]]
         return dictionary
     }

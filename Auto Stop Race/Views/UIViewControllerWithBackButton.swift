@@ -45,11 +45,10 @@ class UIViewControllerWithBackButton: UIViewController, UIGestureRecognizerDeleg
     }
     
     func swipeBackAction(sender: UISwipeGestureRecognizer) {
-        let _ = navigationController?.popViewController(animated: false)
+        _ = navigationController?.popViewController(animated: false)
     }
     
     @objc func popBack() {
-        let _ = navigationController?.popViewController(animated: false)
+        _ = navigationController?.popViewController(animated: false)
     }
-    
 }

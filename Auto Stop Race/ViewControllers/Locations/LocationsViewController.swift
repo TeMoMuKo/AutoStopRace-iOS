@@ -14,7 +14,7 @@ import RxSwift
 import RxCocoa
 import SKPhotoBrowser
 
-class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegateFlowLayout, UISearchBarDelegate, GMSMapViewDelegate  {
+class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegateFlowLayout, UISearchBarDelegate, GMSMapViewDelegate {
     let cellHeight: CGFloat = 80
 
     var viewModel: LocationsViewModel!
@@ -23,7 +23,7 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
     
     let locationsSearchBar: UISearchBar = {
         let searchBar = UISearchBar()
-        searchBar.barTintColor = UIColor.blueMenu
+        searchBar.barTintColor = Theme.Color.blueMenu
         return searchBar
     }()
     
@@ -34,7 +34,7 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
         return collectionView
     }()
 
-    var heightConstraint: Constraint? = nil
+    var heightConstraint: Constraint?
 
     var mapView: GMSMapView = {
         let camera = GMSCameraPosition.camera(withLatitude: CLLocationDegrees(GMSConfig.initialLatitude), longitude: CLLocationDegrees(GMSConfig.initialLongitude), zoom: Float(GMSConfig.initialZoom))
@@ -68,7 +68,6 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
         view.addSubview(mapView)
     }
 
-    
     func setupNavigationBarTitle() {
         let titleLabel = navigationItem.titleView as! UILabel
         titleLabel.text = NSLocalizedString("title_teams", comment: "")
@@ -79,22 +78,20 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
         let menuBarButtonItem = UIBarButtonItem(image: menuImage, style: .plain, target: self, action: #selector(handleShareTap))
         navigationItem.rightBarButtonItems = [menuBarButtonItem]
     }
-    
-    
+
     @objc func handleShareTap() {
         let urlTeam = shareUrlSufix ?? ""
-        if let mapUrl = NSURL(string:ApiConfig.shareMapUrl + urlTeam) {
+        if let mapUrl = NSURL(string: ApiConfig.shareMapUrl + urlTeam) {
             let objectsToShare = [mapUrl]
             let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
             self.present(activityVC, animated: true, completion: nil)
         }
     }
-    
-    
+
     func setupSearchBar() {
-        let textfield:UITextField = locationsSearchBar.value(forKey:"searchField") as! UITextField
+        let textfield: UITextField = locationsSearchBar.value(forKey: "searchField") as! UITextField
         
-        let attributedString = NSAttributedString(string: NSLocalizedString("hint_enter_team_number", comment: ""), attributes: [NSAttributedStringKey.foregroundColor : UIColor.lightGray])
+        let attributedString = NSAttributedString(string: NSLocalizedString("hint_enter_team_number", comment: ""), attributes: [NSAttributedStringKey.foregroundColor: UIColor.lightGray])
         
         textfield.attributedPlaceholder = attributedString
     
@@ -111,7 +108,7 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
         teamsCollectionView.register(TeamLocationCell.self, forCellWithReuseIdentifier: TeamLocationCell.Identifier)
         
         viewModel.shownTeams.asObservable()
-            .bind(to: teamsCollectionView.rx.items(cellIdentifier: TeamLocationCell.Identifier, cellType: TeamLocationCell.self)) { (row, team, cell) in
+            .bind(to: teamsCollectionView.rx.items(cellIdentifier: TeamLocationCell.Identifier, cellType: TeamLocationCell.self)) { (_, team, cell) in
                 cell.team = team
             }
             .disposed(by: disposeBag)
@@ -186,7 +183,7 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
             let marker = GMSMarker(position: position)
             
             let markerView: UIImageView
-            if lastLocation.image != nil && lastLocation.image != ""  {
+            if lastLocation.image != nil && lastLocation.image != "" {
                 markerView = UIImageView(image: #imageLiteral(resourceName: "asr_foto_marker"))
                 marker.userData = ApiConfig.imageUrl + "\(lastLocation.id)/" + team.lastLocation.image!
                 marker.snippet = (team.lastLocation.created_at?.toString(withFormat: DateFormat.fullMap))! + "\n" + NSLocalizedString("marker_show_image_text", comment: "")

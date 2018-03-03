@@ -61,7 +61,7 @@ class UserLocationsViewController: UIViewControllerWithMenu, UICollectionViewDel
         collectionView.register(UserLocationCell.self, forCellWithReuseIdentifier: UserLocationCell.Identifier)
         
         viewModel.locationRecords.asObservable()
-            .bind(to: collectionView.rx.items(cellIdentifier: UserLocationCell.Identifier, cellType:UserLocationCell.self)) { row, location, cell in
+            .bind(to: collectionView.rx.items(cellIdentifier: UserLocationCell.Identifier, cellType: UserLocationCell.self)) { _, location, cell in
                 cell.locationRecord = location
             }
             .disposed(by: disposeBag)
@@ -113,7 +113,7 @@ class UserLocationsViewController: UIViewControllerWithMenu, UICollectionViewDel
         collectionView.addSubview(refreshControl)
     }
     
-    @objc func refresh(sender:AnyObject) {
+    @objc func refresh(sender: AnyObject) {
         viewModel.downloadLocations()
         refreshControl.endRefreshing()
     }
@@ -122,7 +122,7 @@ class UserLocationsViewController: UIViewControllerWithMenu, UICollectionViewDel
         backgroundImageLogo = UIImageView.init(image: UIImage(named: "img_asr_empty_state"))
         backgroundImageLogo.contentMode = .scaleAspectFit
         
-        collectionView.backgroundColor = UIColor.grayBackgroundColor
+        collectionView.backgroundColor = Theme.Color.grayBackgroundColor
         collectionView.backgroundView = backgroundImageLogo
     }
     

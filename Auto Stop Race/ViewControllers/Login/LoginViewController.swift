@@ -43,7 +43,7 @@ class LoginViewController: UIViewControllerWithBackButton {
         let button = UIButton()
         button.layer.cornerRadius = 5
         button.setTitle(NSLocalizedString("action_login", comment: "").uppercased(), for: .normal)
-        button.backgroundColor = UIColor.blueMenu
+        button.backgroundColor = Theme.Color.blueMenu
         button.setTitleColor(UIColor.white, for: .normal)
         button.titleLabel!.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.ultraLight)
         button.addTarget(self, action: #selector(handleLoginTap), for: .touchUpInside)
@@ -54,7 +54,7 @@ class LoginViewController: UIViewControllerWithBackButton {
         let button = UIButton()
         button.layer.cornerRadius = 5
         button.setTitle(NSLocalizedString("action_reset_pass", comment: "").uppercased(), for: .normal)
-        button.setTitleColor(UIColor.blueMenu, for: .normal)
+        button.setTitleColor(Theme.Color.blueMenu, for: .normal)
         button.titleLabel!.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.ultraLight)
         button.backgroundColor = UIColor.white
         button.addTarget(self, action: #selector(handleResetPasswordTap), for: .touchUpInside)
@@ -107,7 +107,6 @@ class LoginViewController: UIViewControllerWithBackButton {
         
         usernameTextField.delegate = self
         passwordTextField.delegate = self
-        
 
         viewModel.setUpAuthDetails(email: usernameTextField.rx.text.orEmpty.asDriver(), password: passwordTextField.rx.text.orEmpty.asDriver())
         
@@ -117,22 +116,14 @@ class LoginViewController: UIViewControllerWithBackButton {
                 UIView.animate(withDuration: 0.2) {
                     self.inputContainerView.layer.borderColor = color.cgColor
                 }
-            })
-            .disposed(by: disposeBag)
+            }).disposed(by: disposeBag)
         
         viewModel.credentialsValid
             .drive(onNext: { [weak self] valid in
                 guard let `self` = self else { return }
-                
                 self.loginButton.isEnabled = valid
-                
-                if valid {
-                    self.loginButton.alpha = 1
-                } else {
-                    self.loginButton.alpha = 0.5
-                }
-            })
-            .disposed(by: disposeBag)
+                self.loginButton.alpha = valid ? 1 : 0.5
+            }).disposed(by: disposeBag)
         
         viewModel.activityIndicator
             .asObservable()
@@ -143,8 +134,7 @@ class LoginViewController: UIViewControllerWithBackButton {
                 } else {
                     self.progressHUD.hide()
                 }
-            })
-            .disposed(by: disposeBag)
+            }).disposed(by: disposeBag)
         
         inputContainerView.addSubview(usernameTextField)
         inputContainerView.addSubview(passwordTextField)
@@ -185,7 +175,7 @@ class LoginViewController: UIViewControllerWithBackButton {
     }
     
     @objc func handleHelpTap() {
-        let alert = UIAlertController(title: NSLocalizedString("menu_help", comment: ""), message:NSLocalizedString("msg_login_info", comment: "") , preferredStyle: .alert)
+        let alert = UIAlertController(title: NSLocalizedString("menu_help", comment: ""), message: NSLocalizedString("msg_login_info", comment: ""), preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("ok", comment: ""), style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
@@ -201,7 +191,7 @@ class LoginViewController: UIViewControllerWithBackButton {
             textField.placeholder = NSLocalizedString(NSLocalizedString("input_email_for_reset_placeholder", comment: ""), comment: "")
         })
         
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
             let textField = alert.textFields![0] as UITextField
             let email = textField.text!
             self.viewModel.resetPassword(email: email)
@@ -260,8 +250,7 @@ extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField === usernameTextField {
             passwordTextField.becomeFirstResponder()
-        }
-        else {
+        } else {
             textField.resignFirstResponder()
         }
         return false

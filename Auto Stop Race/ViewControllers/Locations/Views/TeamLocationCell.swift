@@ -20,16 +20,14 @@ class TeamLocationCell: BaseUICollectionCell {
             if let teamNumber = team?.teamNumber {
                 teamNumberLabel.text = "\(teamNumber)"
             }
-            
             if let country = team?.lastLocation?.country {
-                addressLabel.text = NSLocalizedString("last_location_record" , comment: "") + "\(country)"
-            } else if let latitude = team?.lastLocation?.latitude, let longitude = team?.lastLocation?.longitude  {
-                let location = CLLocationCoordinate2D.init(latitude:latitude, longitude:longitude)
-                addressLabel.text = NSLocalizedString("last_location_record" , comment: "") + "\(location.dms.latitude), \(location.dms.longitude)"
+                addressLabel.text = NSLocalizedString("last_location_record", comment: "") + "\(country)"
+            } else if let latitude = team?.lastLocation?.latitude, let longitude = team?.lastLocation?.longitude {
+                let location = CLLocationCoordinate2D.init(latitude: latitude, longitude: longitude)
+                addressLabel.text = NSLocalizedString("last_location_record", comment: "") + "\(location.dms.latitude), \(location.dms.longitude)"
             } else {
-                addressLabel.text = NSLocalizedString("last_location_record" , comment: "") + NSLocalizedString("missing_location", comment: "")
+                addressLabel.text = NSLocalizedString("last_location_record", comment: "") + NSLocalizedString("missing_location", comment: "")
             }
-            
             if let teamLastLocationTime = team?.lastLocation?.created_at {
                 timeLabel.text = teamLastLocationTime.toString(withFormat: "EEEE, MM-dd-yyyy HH:mm")
             } else {
@@ -38,13 +36,13 @@ class TeamLocationCell: BaseUICollectionCell {
         }
     }
     
-    var teamNumberLabel:UILabel = {
+    var teamNumberLabel: UILabel = {
         let label = UILabel()
         label.text = ""
         label.font = UIFont.systemFont(ofSize: 17, weight: UIFont.Weight.bold)
         label.textAlignment = .center
         label.textColor = UIColor.white
-        label.backgroundColor = UIColor.blueMenu
+        label.backgroundColor = Theme.Color.blueMenu
         label.layer.cornerRadius = 25
         label.frame = CGRect.init(x: 0, y: 0, width: 50, height: 50)
         label.layer.masksToBounds = true
@@ -62,7 +60,7 @@ class TeamLocationCell: BaseUICollectionCell {
         let label = UILabel()
         label.text = ""
         label.font = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight.bold)
-        label.textColor = UIColor.blueMenu
+        label.textColor = Theme.Color.blueMenu
         return label
     }()
     

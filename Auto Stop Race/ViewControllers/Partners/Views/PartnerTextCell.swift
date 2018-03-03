@@ -21,7 +21,6 @@ class PartnerTextCell: BaseUICollectionCell {
         return label
     }()
     
-    
     override func setupViews() {
         super.setupViews()
         

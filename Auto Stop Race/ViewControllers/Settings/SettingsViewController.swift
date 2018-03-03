@@ -13,7 +13,7 @@ import SnapKit
 enum SettingsIndex: Int {
     case logout
     
-    static let settingsNames = [ logout : "pref_logout" ]
+    static let settingsNames = [ logout: "pref_logout" ]
     
     func settingsName() -> String {
         if let settingsName = SettingsIndex.settingsNames[self] {
@@ -28,7 +28,7 @@ protocol SettingsViewControllerDelegate: class {
     func logoutButtonTapped()
 }
 
-class SettingsViewController: UIViewControllerWithMenu, UITableViewDelegate, UITableViewDataSource  {
+class SettingsViewController: UIViewControllerWithMenu, UITableViewDelegate, UITableViewDataSource {
     
     var tableView: UITableView = UITableView.init(frame: CGRect.zero, style: .grouped)
         
@@ -73,7 +73,7 @@ class SettingsViewController: UIViewControllerWithMenu, UITableViewDelegate, UIT
         let settingsCell: UITableViewCell = UITableViewCell()
         
         if let settingsIndex = SettingsIndex(rawValue: indexPath.row) {
-            settingsCell.textLabel?.text = NSLocalizedString( settingsIndex.settingsName() , comment: "")
+            settingsCell.textLabel?.text = NSLocalizedString( settingsIndex.settingsName(), comment: "")
         }
         
         return settingsCell
@@ -96,12 +96,11 @@ class SettingsViewController: UIViewControllerWithMenu, UITableViewDelegate, UIT
     func handleLogOutTap() {
         let alert = UIAlertController(title: NSLocalizedString("msg_logout_question", comment: ""), message: NSLocalizedString("msg_logout_info", comment: ""), preferredStyle: UIAlertControllerStyle.alert)
 
-        alert.addAction(UIAlertAction(title: NSLocalizedString("msg_logout", comment: ""), style: UIAlertActionStyle.destructive, handler: {[unowned self] action in
+        alert.addAction(UIAlertAction(title: NSLocalizedString("msg_logout", comment: ""), style: UIAlertActionStyle.destructive, handler: {[unowned self] _ in
             self.delegate?.logoutButtonTapped()
         }))
         
         alert.addAction(UIAlertAction(title: NSLocalizedString("msg_cancel", comment: ""), style: UIAlertActionStyle.cancel, handler: nil))
-
 
         self.present(alert, animated: true, completion: nil)
     }

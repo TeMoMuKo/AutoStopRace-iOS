@@ -27,8 +27,8 @@ final class LocationSyncService: BaseService, LocationSyncServiceType {
                     return defaultEndpoint.adding(newHTTPHeaderFields:
                         [
                             "access-token": self.provider.userDefaultsService.getAuthAccessToken()!,
-                            "client":self.provider.userDefaultsService.getAuthClient()!,
-                            "uid":self.provider.userDefaultsService.getAuthUid()!
+                            "client": self.provider.userDefaultsService.getAuthClient()!,
+                            "uid": self.provider.userDefaultsService.getAuthUid()!
                         ])
                 }
                 

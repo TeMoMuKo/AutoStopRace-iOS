@@ -37,15 +37,13 @@ class AboutViewController: UIViewControllerWithMenu {
         return label
     }()
     
-    
     var rateAppTitleLabel: UILabel = {
         let label = UILabel()
         label.text = NSLocalizedString("msg_rate_app_question", comment: "")
         label.font = UIFont.systemFont(ofSize: 17, weight: UIFont.Weight.light)
         return label
     }()
-    
-    
+
     var rateAppSubtitleLabel: UILabel = {
         let label = UILabel()
         label.text = NSLocalizedString("msg_rate_app", comment: "")
@@ -59,7 +57,7 @@ class AboutViewController: UIViewControllerWithMenu {
         let button = UIButton()
         button.layer.cornerRadius = 5
         button.setTitle(NSLocalizedString("action_rate", comment: ""), for: .normal)
-        button.backgroundColor = UIColor.blueMenu
+        button.backgroundColor = Theme.Color.blueMenu
         button.setTitleColor(UIColor.white, for: .normal)
         button.titleLabel!.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.ultraLight)
         button.addTarget(self, action: #selector(rateAppButtonTapped), for: .touchUpInside)
@@ -71,8 +69,7 @@ class AboutViewController: UIViewControllerWithMenu {
         separator.backgroundColor = UIColor.gray
         return separator
     }()
-    
-    
+
     let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -112,14 +109,12 @@ class AboutViewController: UIViewControllerWithMenu {
         self.view.layoutIfNeeded()
 
     }
-    
-    
+
     func setupShareBarButton() {
         let menuImage = UIImage(named: "ic_share_white")?.withRenderingMode(.alwaysOriginal)
         let menuBarButtonItem = UIBarButtonItem(image: menuImage, style: .plain, target: self, action: #selector(handleShareTap))
         navigationItem.rightBarButtonItems = [menuBarButtonItem]
     }
-    
 
     @objc func handleShareTap() {
         if let name = NSURL(string: AboutConfig.appStoreShareUrl) {

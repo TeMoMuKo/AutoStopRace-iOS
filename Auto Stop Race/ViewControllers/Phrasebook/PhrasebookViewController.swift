@@ -18,7 +18,7 @@ class PhrasebookViewController: UIViewControllerWithMenu, UITableViewDelegate {
     
     let phraseSearchBar: UISearchBar = {
         let searchBar = UISearchBar()
-        searchBar.barTintColor = UIColor.blueMenu
+        searchBar.barTintColor = Theme.Color.blueMenu
         return searchBar
     }()
     
@@ -31,10 +31,10 @@ class PhrasebookViewController: UIViewControllerWithMenu, UITableViewDelegate {
     let languageSegmentedControl: UISegmentedControl = {
         let segmentedControl = UISegmentedControl()
         segmentedControl.backgroundColor = UIColor.white
-        segmentedControl.tintColor = UIColor.blueMenu
+        segmentedControl.tintColor = Theme.Color.blueMenu
         segmentedControl.layer.borderColor = UIColor.white.cgColor
         segmentedControl.selectedSegmentIndex = 0
-        segmentedControl.setTitleTextAttributes([NSAttributedStringKey.foregroundColor:UIColor.white], for:.selected)
+        segmentedControl.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.white], for: .selected)
         return segmentedControl
     }()
     
@@ -56,15 +56,12 @@ class PhrasebookViewController: UIViewControllerWithMenu, UITableViewDelegate {
             .subscribe(onNext: {[weak self] titles in
                 guard let `self` = self else { return }
 
-                for title in titles {
-                    if title != "polski" {
-                        self.languageSegmentedControl.insertSegment(withTitle: title, at: self.languageSegmentedControl.numberOfSegments, animated: true)
-                    }
+                for title in titles where title != "polski" {
+                    self.languageSegmentedControl.insertSegment(withTitle: title, at: self.languageSegmentedControl.numberOfSegments, animated: true)
                 }
                 self.languageSegmentedControl.selectedSegmentIndex = 0
             }).disposed(by: disposeBag)
-        
-        
+
         _ = Observable.combineLatest(
             phraseSearchBar.rx.text.orEmpty.asObservable(),
             languageSegmentedControl.rx.selectedSegmentIndex.asObservable()) { query, selectedIndex in
@@ -120,7 +117,7 @@ class PhrasebookViewController: UIViewControllerWithMenu, UITableViewDelegate {
             make.height.equalTo(self.navigationController!.navigationBar.frame.height)
         }
         
-        segmentedControlView.snp.makeConstraints{ (make) -> Void in
+        segmentedControlView.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(phraseSearchBar.snp.bottom)
             make.left.right.equalTo(view)
             make.height.equalTo(self.navigationController!.navigationBar.frame.height)
@@ -144,12 +141,12 @@ class PhrasebookViewController: UIViewControllerWithMenu, UITableViewDelegate {
     }
     
     func setupSearchBar() {
-        let textfield:UITextField = phraseSearchBar.value(forKey:"searchField") as! UITextField
+        let textfield: UITextField = phraseSearchBar.value(forKey: "searchField") as! UITextField
 
-        let attributedString = NSAttributedString(string: NSLocalizedString("search_hint", comment: ""), attributes: [NSAttributedStringKey.foregroundColor : UIColor.lightGray])
+        let attributedString = NSAttributedString(string: NSLocalizedString("search_hint", comment: ""), attributes: [NSAttributedStringKey.foregroundColor: UIColor.lightGray])
         
         textfield.attributedPlaceholder = attributedString
-        }
+    }
     
     func setupKeyboard() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -168,5 +165,3 @@ class PhrasebookViewController: UIViewControllerWithMenu, UITableViewDelegate {
         return 100
     }
 }
-
-

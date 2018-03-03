@@ -14,7 +14,7 @@ class Phrase: NSObject {
     var currentTranslationPhrase: String
     let translationPhrases: [String]
     
-    init(polishPhrase: String, selectedLanguage:Int, currentTranslationPhrase:String, translationPhrases: [String]) {
+    init(polishPhrase: String, selectedLanguage: Int, currentTranslationPhrase: String, translationPhrases: [String]) {
         self.polishPhrase = polishPhrase
         self.selectedLanguage = selectedLanguage
         self.currentTranslationPhrase = currentTranslationPhrase

@@ -23,18 +23,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         coordinator.start()
         self.coordinator = coordinator
-                
-        setUpNavigationBar()
-        application.statusBarStyle = .lightContent
 
+        setupView(application)
         return true
     }
-    
-    func setUpNavigationBar() {
-        UINavigationBar.appearance().isTranslucent = false
-        UINavigationBar.appearance().barTintColor = UIColor.blueMenu
-        UINavigationBar.appearance().tintColor = UIColor.white
+
+    private func setupView(_ application: UIApplication) {
+        setUpNavigationBar()
+        application.statusBarStyle = .lightContent
     }
     
+    private func setUpNavigationBar() {
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().barTintColor = Theme.Color.blueMenu
+        UINavigationBar.appearance().tintColor = UIColor.white
+    }
 }
 

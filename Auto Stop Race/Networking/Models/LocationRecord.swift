@@ -15,11 +15,11 @@ class LocationRecord: Object, Mappable {
     @objc dynamic var latitude: Double = 0.0
     @objc dynamic var longitude: Double = 0.0
     @objc dynamic var message = ""
-    @objc dynamic var address: String? = nil
-    @objc dynamic var country: String? = nil
-    @objc dynamic var country_code: String? = nil
-    @objc dynamic var created_at: Date? = nil
-    @objc dynamic var image: String? = nil
+    @objc dynamic var address: String?
+    @objc dynamic var country: String?
+    @objc dynamic var country_code: String?
+    @objc dynamic var created_at: Date?
+    @objc dynamic var image: String?
     
     override static func primaryKey() -> String? {
         return "id"

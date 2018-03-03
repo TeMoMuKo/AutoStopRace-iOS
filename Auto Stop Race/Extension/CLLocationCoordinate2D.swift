@@ -11,20 +11,20 @@ import MapKit
 
 extension CLLocationCoordinate2D {
     
-    var latitudeMinutes:  Double { return (latitude * 3600).truncatingRemainder(dividingBy: 3600) / 60 }
-    var latitudeSeconds:  Double { return ((latitude * 3600).truncatingRemainder(dividingBy: 3600)).truncatingRemainder(dividingBy: 60) }
+    var latitudeMinutes: Double { return (latitude * 3600).truncatingRemainder(dividingBy: 3600) / 60 }
+    var latitudeSeconds: Double { return ((latitude * 3600).truncatingRemainder(dividingBy: 3600)).truncatingRemainder(dividingBy: 60) }
     
     var longitudeMinutes: Double { return (longitude * 3600).truncatingRemainder(dividingBy: 3600) / 60 }
     var longitudeSeconds: Double { return ((longitude * 3600).truncatingRemainder(dividingBy: 3600)).truncatingRemainder(dividingBy: 60) }
     
     var dms:(latitude: String, longitude: String) {
         
-        return (String(format:"%d° %d′ %d″ %@",
+        return (String(format: "%d° %d′ %d″ %@",
                        Int(abs(latitude)),
                        Int(abs(latitudeMinutes)),
                        Int(abs(latitudeSeconds)),
                        latitude >= 0 ? "N" : "S"),
-                String(format:"%d° %d′ %d″ %@",
+                String(format: "%d° %d′ %d″ %@",
                        Int(abs(longitude)),
                        Int(abs(longitudeMinutes)),
                        Int(abs(longitudeSeconds)),

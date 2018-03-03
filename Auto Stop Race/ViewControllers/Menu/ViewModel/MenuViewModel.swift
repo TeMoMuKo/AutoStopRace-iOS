@@ -65,6 +65,4 @@ final class MenuViewModel {
             })
         .disposed(by: disposeBag)
     }
-    
-    
 }

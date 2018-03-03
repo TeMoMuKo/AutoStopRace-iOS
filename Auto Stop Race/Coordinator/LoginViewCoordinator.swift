@@ -31,7 +31,7 @@ final class LoginCoordinator: Coordinator {
 extension LoginCoordinator: LoginViewControllerDelegate {
     func loginButtonTapped() {
         _ = navigationController?.popViewController(animated: true)
-        let coordinator = UserLocationsCoordinator(navigationController: navigationController, appCoordinator: self.appCoordinator, serviceProvider:serviceProvider!)
+        let coordinator = UserLocationsCoordinator(navigationController: navigationController, appCoordinator: self.appCoordinator, serviceProvider: serviceProvider!)
         coordinator.start()
         childCoordinators.append(coordinator)
     }

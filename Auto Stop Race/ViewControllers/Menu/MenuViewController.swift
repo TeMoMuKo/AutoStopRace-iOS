@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-protocol MenuViewControllerDelegate : class {
+protocol MenuViewControllerDelegate: class {
     func menuSelected(menu: MenuDestination)
 }
 
@@ -38,20 +38,14 @@ class MenuViewController: NSObject, UICollectionViewDelegateFlowLayout {
         collectionView.register(MenuCell.self, forCellWithReuseIdentifier: MenuCell.Identifier)
 
         viewModel.menu.asObservable()
-            .bind(to: collectionView.rx.items(cellIdentifier: MenuCell.Identifier, cellType:MenuCell.self)) { row, menu, cell in
+            .bind(to: collectionView.rx.items(cellIdentifier: MenuCell.Identifier, cellType: MenuCell.self)) { _, menu, cell in
                 cell.menu = menu
         }
         .disposed(by: disposeBag)
         
         collectionView.rx.itemSelected
             .bind(to: viewModel.itemSelected).disposed(by: disposeBag)
-        
-        collectionView.rx.modelSelected(Menu.self)
-            .subscribe(onNext: { menu in
-                
-            })
-        .disposed(by: disposeBag)
-        
+
         collectionView.rx.setDelegate(self).disposed(by: disposeBag)
 
         if let window = UIApplication.shared.keyWindow {
@@ -65,7 +59,7 @@ class MenuViewController: NSObject, UICollectionViewDelegateFlowLayout {
     func showMenu() {
         
         if let window = UIApplication.shared.keyWindow {
-            blackView.backgroundColor = UIColor.init(white:0, alpha:0.5)
+            blackView.backgroundColor = UIColor.init(white: 0, alpha: 0.5)
             
             blackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleDismiss)))
             
@@ -73,7 +67,7 @@ class MenuViewController: NSObject, UICollectionViewDelegateFlowLayout {
             window.addSubview(collectionView)
             
             collectionView.frame = CGRect.init(x: -300, y: 0, width: 300, height: window.frame.height)
-            collectionView.backgroundColor = UIColor.blueMenu
+            collectionView.backgroundColor = Theme.Color.blueMenu
             
             blackView.frame = window.frame
             blackView.alpha = 0
@@ -95,8 +89,7 @@ class MenuViewController: NSObject, UICollectionViewDelegateFlowLayout {
             }
         })
     }
-    
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize.init(width: collectionView.frame.width, height: cellHeight)
     }
@@ -116,9 +109,6 @@ class MenuViewController: NSObject, UICollectionViewDelegateFlowLayout {
             if UIApplication.shared.keyWindow != nil {
                 self.collectionView.frame = CGRect.init(x: -300, y: 0, width: self.collectionView.frame.width, height: self.collectionView.frame.height)
             }
-        }, completion: { (completed: Bool) in
-            
         })
-  
     }
 }

@@ -20,7 +20,7 @@ final class UserLocationsViewModel {
     
     private let disposeBag = DisposeBag()
 
-    private var delegate: UserLocationsViewControllerDelegate?
+    private weak var delegate: UserLocationsViewControllerDelegate?
 
     let itemSelected = PublishSubject<IndexPath>()
     
@@ -29,11 +29,6 @@ final class UserLocationsViewModel {
     init( delegate: UserLocationsViewControllerDelegate, provider: ServiceProviderType) {
         self.delegate = delegate
         self.serviceProvider = provider
-        
-        itemSelected
-            .subscribe(onNext: { clickedContact in
-            })
-            .disposed(by: disposeBag)
     }
     
     func downloadLocations() {

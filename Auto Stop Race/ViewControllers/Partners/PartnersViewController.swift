@@ -11,27 +11,27 @@ import UIKit
 class PartnersViewController: UIViewControllerWithMenu, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     let partners = [
-        Partner(cellType:.text, value:NSLocalizedString("strategic_partners", comment: "")),
-        Partner(cellType:.image, value:"strategic_partner_kaufland"),
-        Partner(cellType:.image, value:"strategic_partner_wro"),
-        Partner(cellType:.text, value:NSLocalizedString("gold_partners", comment: "")),
-        Partner(cellType:.image, value:"gold_partner_tarczynski"),
-        Partner(cellType:.image, value:"gold_partner_grzeski"),
-        Partner(cellType:.image, value:"gold_partner_profi_lingua"),
-        Partner(cellType:.image, value:"gold_partner_akvo_active"),
-        Partner(cellType:.image, value:"gold_partner_capoeira"),
-        Partner(cellType:.image, value:"gold_partner_wachtigall"),
-        Partner(cellType:.image, value:"gold_partner_cafe_borowka"),
-        Partner(cellType:.text, value:NSLocalizedString("silver_partners", comment: "")),
-        Partner(cellType:.image, value:"silver_partner_profi"),
-        Partner(cellType:.image, value:"silver_partner_71zona"),
-        Partner(cellType:.image, value:"silver_partner_meray"),
-        Partner(cellType:.image, value:"silver_partner_hydropolis"),
-        Partner(cellType:.image, value:"silver_partner_krav_maga"),
-        Partner(cellType:.image, value:"silver_partner_lirene"),
-        Partner(cellType:.image, value:"silver_partner_motyla_noga"),
-        Partner(cellType:.image, value:"silver_partner_beactive"),
-        Partner(cellType:.image, value:"silver_partner_el_sueno")
+        Partner(cellType: .text, value: NSLocalizedString("strategic_partners", comment: "")),
+        Partner(cellType: .image, value: "strategic_partner_kaufland"),
+        Partner(cellType: .image, value: "strategic_partner_wro"),
+        Partner(cellType: .text, value: NSLocalizedString("gold_partners", comment: "")),
+        Partner(cellType: .image, value: "gold_partner_tarczynski"),
+        Partner(cellType: .image, value: "gold_partner_grzeski"),
+        Partner(cellType: .image, value: "gold_partner_profi_lingua"),
+        Partner(cellType: .image, value: "gold_partner_akvo_active"),
+        Partner(cellType: .image, value: "gold_partner_capoeira"),
+        Partner(cellType: .image, value: "gold_partner_wachtigall"),
+        Partner(cellType: .image, value: "gold_partner_cafe_borowka"),
+        Partner(cellType: .text, value: NSLocalizedString("silver_partners", comment: "")),
+        Partner(cellType: .image, value: "silver_partner_profi"),
+        Partner(cellType: .image, value: "silver_partner_71zona"),
+        Partner(cellType: .image, value: "silver_partner_meray"),
+        Partner(cellType: .image, value: "silver_partner_hydropolis"),
+        Partner(cellType: .image, value: "silver_partner_krav_maga"),
+        Partner(cellType: .image, value: "silver_partner_lirene"),
+        Partner(cellType: .image, value: "silver_partner_motyla_noga"),
+        Partner(cellType: .image, value: "silver_partner_beactive"),
+        Partner(cellType: .image, value: "silver_partner_el_sueno")
     ]
     
     let textCellHeight: CGFloat = 100

@@ -22,7 +22,7 @@ class DashboardViewController: UIViewControllerWithMenu {
         let button = UIButton()
         button.layer.cornerRadius = 5
         button.setTitle(NSLocalizedString("dashboard_login_button", comment: ""), for: .normal)
-        button.backgroundColor = UIColor.blueMenu
+        button.backgroundColor = Theme.Color.blueMenu
         button.setTitleColor(UIColor.white, for: .normal)
         button.titleLabel!.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.ultraLight)
         button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
@@ -33,7 +33,7 @@ class DashboardViewController: UIViewControllerWithMenu {
         let button = UIButton()
         button.layer.cornerRadius = 5
         button.setTitle(NSLocalizedString("dashboard_contact_button", comment: ""), for: .normal)
-        button.setTitleColor(UIColor.blueMenu, for: .normal)
+        button.setTitleColor(Theme.Color.blueMenu, for: .normal)
         button.titleLabel!.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.ultraLight)
         button.backgroundColor = UIColor.white
         button.addTarget(self, action: #selector(contactButtonTapped), for: .touchUpInside)

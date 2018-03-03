@@ -19,7 +19,7 @@ final class LoginViewModel {
     
     private let disposeBag = DisposeBag()
     
-    private var delegate: LoginViewControllerDelegate?
+    private weak var delegate: LoginViewControllerDelegate?
     
     var inputBackgroundColor: Driver<UIColor>!
     var credentialsValid: Driver<Bool>!
@@ -32,7 +32,7 @@ final class LoginViewModel {
         self.serviceProvider = provider
     }
     
-    func setUpAuthDetails( email: Driver<String>, password:Driver<String>) {
+    func setUpAuthDetails( email: Driver<String>, password: Driver<String>) {
         let usernameValid = email
             .distinctUntilChanged()
             .throttle(0.3)

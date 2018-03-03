@@ -7,10 +7,9 @@
 //
 
 import Foundation
-extension String
-{
-    func getNumber() -> Int
-    {
+
+extension String {
+    func getNumber() -> Int {
         return Int(self.components(separatedBy: CharacterSet.decimalDigits.inverted).joined(separator: ""))!
     }
 }

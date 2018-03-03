@@ -71,7 +71,7 @@ final class AuthService: BaseService, AuthServiceType {
         
         let endpointClosure = {  (target: AsrApi) ->  Endpoint<AsrApi> in
             let defaultEndpoint = MoyaProvider.defaultEndpointMapping(for: target)
-            return defaultEndpoint.adding(newHTTPHeaderFields: ["access-token": self.provider.userDefaultsService.getAuthAccessToken()!, "client":self.provider.userDefaultsService.getAuthClient()!, "uid":self.provider.userDefaultsService.getAuthUid()!])
+            return defaultEndpoint.adding(newHTTPHeaderFields: ["access-token": self.provider.userDefaultsService.getAuthAccessToken()!, "client": self.provider.userDefaultsService.getAuthClient()!, "uid": self.provider.userDefaultsService.getAuthUid()!])
         }
         
         let apiProvider = MoyaProvider<AsrApi>(endpointClosure: endpointClosure)
