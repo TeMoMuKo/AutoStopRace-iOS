@@ -6,7 +6,6 @@
 //  Copyright © 2017 Torianin. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class PartnerImageCell: BaseUICollectionCell {
@@ -26,7 +25,5 @@ class PartnerImageCell: BaseUICollectionCell {
         
         addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: imageView)
         addConstraintsWithFormat(format: "V:|[v0]|", views: imageView)
-        
     }
-    
 }

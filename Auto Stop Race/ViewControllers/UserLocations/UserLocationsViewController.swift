@@ -119,7 +119,7 @@ class UserLocationsViewController: UIViewControllerWithMenu, UICollectionViewDel
     }
     
     func setupBackgroundImage() {
-        backgroundImageLogo = UIImageView.init(image: UIImage(named: "img_asr_empty_state"))
+        backgroundImageLogo = UIImageView(image: UIImage(named: "img_asr_empty_state"))
         backgroundImageLogo.contentMode = .scaleAspectFit
         
         collectionView.backgroundColor = Theme.Color.grayBackgroundColor
@@ -135,7 +135,7 @@ class UserLocationsViewController: UIViewControllerWithMenu, UICollectionViewDel
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize.init(width: collectionView.frame.width, height: cellHeight)
+        return CGSize(width: collectionView.frame.width, height: cellHeight)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -143,10 +143,10 @@ class UserLocationsViewController: UIViewControllerWithMenu, UICollectionViewDel
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        return CGSize.init(width: collectionView.frame.width, height: 0)
+        return CGSize(width: collectionView.frame.width, height: 0)
     }
     
-    func setupConstraints() {
+    private func setupConstraints() {
         backgroundImageLogo.snp.makeConstraints { (make) -> Void in
             make.center.equalToSuperview()
         }

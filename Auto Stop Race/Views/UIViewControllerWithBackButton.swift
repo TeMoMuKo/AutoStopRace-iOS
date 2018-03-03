@@ -6,27 +6,23 @@
 //  Copyright © 2017 Torianin. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class UIViewControllerWithBackButton: UIViewController, UIGestureRecognizerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.backgroundColor = UIColor.white
-        
         setupViews()
     }
     
     func setupViews() {
-
         setupNavigationBar()
         setupNavigationMenuButton()
     }
     
     func setupNavigationBar() {
-        let titleLabel = UILabel(frame: CGRect.init(x: 0, y: 0, width: view.frame.width, height: self.navigationController!.view.frame.height))
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: self.navigationController!.view.frame.height))
         titleLabel.clipsToBounds = true
         navigationItem.titleView = titleLabel
         titleLabel.textColor = UIColor.white

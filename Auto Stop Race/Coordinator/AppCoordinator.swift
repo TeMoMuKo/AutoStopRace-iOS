@@ -25,17 +25,14 @@ final class AppCoordinator: Coordinator {
         Fabric.with([Crashlytics.self])
         
         serviceProvider.authService.validateToken()
-        
-        self.serviceProvider.locationSyncService.synchronizeLocationsWithServer()
+        serviceProvider.locationSyncService.synchronizeLocationsWithServer()
 
-        reachability?.rx.isReachable
-            .subscribe(onNext: { [weak self] isReachable in
+        reachability?.rx.isReachable.subscribe(onNext: { [weak self] isReachable in
                 guard let `self` = self else { return }
                 if isReachable {
                     self.serviceProvider.locationSyncService.synchronizeLocationsWithServer()
                 }
-            })
-            .disposed(by: disposeBag)
+        }).disposed(by: disposeBag)
         
         setupGMSServices()
 
@@ -54,15 +51,10 @@ final class AppCoordinator: Coordinator {
     }
     
     func setupGMSServices() {
-        var keys: NSDictionary?
-        
-        if let path = Bundle.main.path(forResource: "Keys", ofType: "plist") {
-            keys = NSDictionary(contentsOfFile: path)
-        }
-        if let dict = keys {
-            let GMSServicesAPIKey = dict["GMSServicesAPIKey"] as? String
-            GMSServices.provideAPIKey(GMSServicesAPIKey!)
-        }
+        guard let path = Bundle.main.path(forResource: "Keys", ofType: "plist") else { return }
+        guard let dict = NSDictionary(contentsOfFile: path) else { return }
+        let GMSServicesAPIKey = dict["GMSServicesAPIKey"] as? String
+        GMSServices.provideAPIKey(GMSServicesAPIKey!)
     }
 }
 
@@ -75,6 +67,5 @@ extension AppCoordinator: SettingsViewControllerDelegate {
         let coordinator = DashboardCoordinator(navigationController: navigationController, appCoordinator: self, serviceProvider: serviceProvider)
         coordinator.start()
     }
-    
 }
 

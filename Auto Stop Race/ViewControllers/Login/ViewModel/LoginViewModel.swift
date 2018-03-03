@@ -19,7 +19,7 @@ final class LoginViewModel {
     
     private let disposeBag = DisposeBag()
     
-    private weak var delegate: LoginViewControllerDelegate?
+    private var delegate: LoginViewControllerDelegate?
     
     var inputBackgroundColor: Driver<UIColor>!
     var credentialsValid: Driver<Bool>!
@@ -47,43 +47,39 @@ final class LoginViewModel {
         
         inputBackgroundColor = credentialsValid
             .map { $0 ? UIColor.white : UIColor.red }
-        
     }
     
     func signIn(email: String, password: String) {
         activityIndicator.value = true
         apiProvider.request(.singIn(email: email, password: password), completion: { [weak self] result in
             guard let `self` = self else { return }
-            
             switch result {
             case let .success(response):
                 let statusCode = response.statusCode
-                
-                if let status = HttpStatus(rawValue: statusCode) {
-                    switch status {
-                    case .OK :
-                        do {
-                            if let httpResponse = response.response {
-                                self.serviceProvider.userDefaultsService.setAuthorizationHeaders(httpResponse: httpResponse)
-                            }
-                            let user = try response.mapObject(User.self) as User
-                            self.serviceProvider.userDefaultsService.setUserData(user: user)
-                            self.serviceProvider.authService.loginStatus().value = .logged
-                            self.handleLogin()
-                            Toast.showPositiveMessage(message: NSLocalizedString("msg_after_login", comment: "") + "\(user.firstName!) \(user.lastName!)")
-                        } catch {
-                            
+                guard let status = HttpStatus(rawValue: statusCode) else { return }
+                switch status {
+                case .OK :
+                    do {
+                        if let httpResponse = response.response {
+                            self.serviceProvider.userDefaultsService.setAuthorizationHeaders(httpResponse: httpResponse)
                         }
-                    case .Unauthorized:
-                        do {
-                            let error = try response.mapObject(ErrorResponse.self) as ErrorResponse
-                            Toast.showNegativeMessage(message: error.errors)
-                        } catch {
-                            
-                        }
-                    default:
-                        Toast.showHttpStatusError(status: status)
+                        let user = try response.mapObject(User.self) as User
+                        self.serviceProvider.userDefaultsService.setUserData(user: user)
+                        self.serviceProvider.authService.loginStatus().value = .logged
+                        self.handleLogin()
+                        Toast.showPositiveMessage(message: NSLocalizedString("msg_after_login", comment: "") + "\(user.firstName!) \(user.lastName!)")
+                    } catch {
+
                     }
+                case .Unauthorized:
+                    do {
+                        let error = try response.mapObject(ErrorResponse.self) as ErrorResponse
+                        Toast.showNegativeMessage(message: error.errors)
+                    } catch {
+
+                    }
+                default:
+                    Toast.showHttpStatusError(status: status)
                 }
             case let .failure(error):
                 Toast.showNegativeMessage(message: error.localizedDescription)
@@ -91,41 +87,33 @@ final class LoginViewModel {
             self.activityIndicator.value = false
         })
     }
-    
+
+    // TODO: Not working in Api
     func resetPassword(email: String) {
         apiProvider.request(.resetPassword(email: email, redirectUrl: ApiConfig.apiResetPassRedirectUrl), completion: { result in            
             switch result {
             case let .success(response):
                 let statusCode = response.statusCode
-                
-                if let status = HttpStatus(rawValue: statusCode) {
-                    switch status {
-                        
-                    // TODO NOT WORKING IN API
-                    
-                    case .OK:
-                        do {
-                            
-                        } catch {
-                            
-                        }
-                    case .NotFound:
-                        do {
-                            let error = try response.mapObject(ErrorResponse.self) as ErrorResponse
-                            Toast.showNegativeMessage(message: error.errors)
-                        } catch {
-                            
-                        }
-                    case .Unauthorized:
-                        do {
-                            let error = try response.mapObject(ErrorResponse.self) as ErrorResponse
-                            Toast.showNegativeMessage(message: error.errors)
-                        } catch {
-                            
-                        }
-                    default:
-                        Toast.showHttpStatusError(status: status)
+                guard let status = HttpStatus(rawValue: statusCode) else { return }
+                switch status {
+                case .OK:
+                    break
+                case .NotFound:
+                    do {
+                        let error = try response.mapObject(ErrorResponse.self) as ErrorResponse
+                        Toast.showNegativeMessage(message: error.errors)
+                    } catch {
+
                     }
+                case .Unauthorized:
+                    do {
+                        let error = try response.mapObject(ErrorResponse.self) as ErrorResponse
+                        Toast.showNegativeMessage(message: error.errors)
+                    } catch {
+
+                    }
+                default:
+                    Toast.showHttpStatusError(status: status)
                 }
             case let .failure(error):
                 Toast.showNegativeMessage(message: error.localizedDescription)
@@ -134,6 +122,7 @@ final class LoginViewModel {
     }
     
     func handleLogin() {
-        self.delegate!.loginButtonTapped()
+        guard let delegate = delegate else { return }
+        delegate.loginButtonTapped()
     }
 }

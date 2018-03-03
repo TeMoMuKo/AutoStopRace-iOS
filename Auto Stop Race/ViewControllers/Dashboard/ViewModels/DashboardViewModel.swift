@@ -6,13 +6,12 @@
 //  Copyright © 2017 Torianin. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import RxSwift
 import RxCocoa
 
 final class DashboardViewModel {
-    private weak var delegate: DashboardViewControllerDelegate?
+    private var delegate: DashboardViewControllerDelegate?
 
     init(delegate: DashboardViewControllerDelegate?) {
         self.delegate = delegate

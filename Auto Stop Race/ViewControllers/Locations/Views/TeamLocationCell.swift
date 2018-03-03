@@ -6,7 +6,6 @@
 //  Copyright © 2017 Torianin. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import SnapKit
 import CoreLocation
@@ -44,7 +43,7 @@ class TeamLocationCell: BaseUICollectionCell {
         label.textColor = UIColor.white
         label.backgroundColor = Theme.Color.blueMenu
         label.layer.cornerRadius = 25
-        label.frame = CGRect.init(x: 0, y: 0, width: 50, height: 50)
+        label.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
         label.layer.masksToBounds = true
         return label
     }()
@@ -65,7 +64,7 @@ class TeamLocationCell: BaseUICollectionCell {
     }()
     
     var separator: UIView = {
-        let separator = UIView(frame: CGRect.init())
+        let separator = UIView(frame: CGRect())
         separator.backgroundColor = UIColor.gray
         return separator
     }()
@@ -80,7 +79,7 @@ class TeamLocationCell: BaseUICollectionCell {
         setupConstraints()
     }
     
-    func setupConstraints() {
+    private func setupConstraints() {
         teamNumberLabel.snp.makeConstraints { (make) -> Void in
             make.left.equalTo(self).offset(15)
             make.centerY.equalTo(self)

@@ -17,7 +17,7 @@ enum LoginState {
 final class MenuViewModel {
     
     private let disposeBag = DisposeBag()
-    private weak var delegate: MenuViewControllerDelegate?
+    private var delegate: MenuViewControllerDelegate?
 
     var loginStatus: Observable<AutenticationStatus>!
     

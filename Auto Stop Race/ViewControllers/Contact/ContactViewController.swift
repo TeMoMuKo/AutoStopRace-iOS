@@ -91,6 +91,7 @@ class ContactViewController: UIViewControllerWithMenu, UICollectionViewDelegateF
             UIApplication.shared.openURL(URL(string: urlString)!)
         }
     }
+    
     func setupNavigationBarTitle() {
         let titleLabel = navigationItem.titleView as! UILabel
         titleLabel.text = NSLocalizedString("title_contact", comment: "")
@@ -105,7 +106,7 @@ class ContactViewController: UIViewControllerWithMenu, UICollectionViewDelegateF
         view.addSubview(collectionView)
     }
     
-    func setupConstraints() {
+    private func setupConstraints() {
         teamImage.snp.makeConstraints { (make) -> Void in
             make.left.top.right.equalTo(view)
             make.width.equalToSuperview()
@@ -119,7 +120,7 @@ class ContactViewController: UIViewControllerWithMenu, UICollectionViewDelegateF
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize.init(width: collectionView.frame.width, height: cellHeight)
+        return CGSize(width: collectionView.frame.width, height: cellHeight)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -127,6 +128,6 @@ class ContactViewController: UIViewControllerWithMenu, UICollectionViewDelegateF
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        return CGSize.init(width: collectionView.frame.width, height: 0)
+        return CGSize(width: collectionView.frame.width, height: 0)
     }
 }

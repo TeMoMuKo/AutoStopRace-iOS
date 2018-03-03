@@ -6,7 +6,6 @@
 //  Copyright © 2017 Torianin. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import RxSwift
 
@@ -28,7 +27,6 @@ final class DashboardCoordinator: Coordinator {
             .asObservable()
             .subscribe(onNext: { [weak self] status in
                 guard let `self` = self else { return }
-
                 switch status {
                 case .none:
                     self.showDashboard()
@@ -37,8 +35,7 @@ final class DashboardCoordinator: Coordinator {
                 default:
                     self.showDashboard()
                 }
-            })
-            .disposed(by: disposeBag)
+            }).disposed(by: disposeBag)
     }
     
     func showDashboard() {

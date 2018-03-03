@@ -6,7 +6,6 @@
 //  Copyright © 2017 Torianin. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 final class LoginCoordinator: Coordinator {
@@ -24,7 +23,7 @@ final class LoginCoordinator: Coordinator {
     func start() {
         let viewModel = LoginViewModel(delegate: self, provider: serviceProvider!)
         let viewController = LoginViewController(viewModel: viewModel)
-        self.navigationController?.pushViewController(viewController, animated: false)
+        navigationController?.pushViewController(viewController, animated: false)
     }
 }
 

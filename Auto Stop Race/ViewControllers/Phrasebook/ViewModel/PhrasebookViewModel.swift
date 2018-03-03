@@ -14,16 +14,12 @@ final class PhrasebookViewModel {
     private let disposeBag = DisposeBag()
     
     let languages: Observable<[String]>
-        
     var allPhrases = Variable<[PhraseViewModelType]>([])
-    
     var phrases = Variable<[PhraseViewModelType]>([])
     
     init (provider: ServiceProviderType) {
-        
         languages = provider.csvService.loadLanguages()
         allPhrases = provider.csvService.loadPhrases()
         phrases.value = allPhrases.value
-        
     }
 }

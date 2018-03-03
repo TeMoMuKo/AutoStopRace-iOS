@@ -6,19 +6,15 @@
 //  Copyright © 2017 Torianin. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 extension UIImage {
     func normalizedImage() -> UIImage {
+        guard imageOrientation != .up else { return self}
         
-        if imageOrientation == .up {
-            return self
-        }
-        
-        UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
-        let rect = CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height)
-        self.draw(in: rect)
+        UIGraphicsBeginImageContextWithOptions(size, false, scale)
+        let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+        draw(in: rect)
         
         let normalizedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()

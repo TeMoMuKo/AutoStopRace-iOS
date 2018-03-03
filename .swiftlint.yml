@@ -6,6 +6,7 @@ disabled_rules:
   - todo
   - force_cast
   - type_name
+  - weak_delegate
 
 included:
   - Auto Stop Race

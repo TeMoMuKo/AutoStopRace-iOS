@@ -6,7 +6,6 @@
 //  Copyright © 2017 Torianin. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import SnapKit
 import RxSwift
@@ -62,26 +61,20 @@ class PhrasebookViewController: UIViewControllerWithMenu, UITableViewDelegate {
                 self.languageSegmentedControl.selectedSegmentIndex = 0
             }).disposed(by: disposeBag)
 
-        _ = Observable.combineLatest(
+        Observable.combineLatest(
             phraseSearchBar.rx.text.orEmpty.asObservable(),
-            languageSegmentedControl.rx.selectedSegmentIndex.asObservable()) { query, selectedIndex in
-                return (query, selectedIndex)
-            }
+            languageSegmentedControl.rx.selectedSegmentIndex.asObservable()) { ($0, $1) }
             .subscribe(onNext: { (query, selectedIndex) in                
                 viewModel.phrases.value = viewModel.allPhrases.value.filter { phrase in
                     phrase.selectedLanguage.value = selectedIndex
                     phrase.currentTranslationPhrase.value = phrase.translationPhrases.value[selectedIndex]
-                    if query.isEmpty {
-                        return true
-                    } else {
-                        let queryPhrase = query.lowercased().folding(options: .diacriticInsensitive, locale: .current)
-                        let isInPolishPhrase = phrase.polishPhrase.value.lowercased().folding(options: .diacriticInsensitive, locale: .current).contains(queryPhrase)
-                        let isInTranslationPhrase = phrase.currentTranslationPhrase.value.lowercased().folding(options: .diacriticInsensitive, locale: .current).contains(queryPhrase)
-                        return isInPolishPhrase || isInTranslationPhrase
-                    }
-                    }.map { $0 }
-                 })
-            .disposed(by: disposeBag)
+                    guard !query.isEmpty else { return true }
+                    let queryPhrase = query.lowercased().folding(options: .diacriticInsensitive, locale: .current)
+                    let isInPolishPhrase = phrase.polishPhrase.value.lowercased().folding(options: .diacriticInsensitive, locale: .current).contains(queryPhrase)
+                    let isInTranslationPhrase = phrase.currentTranslationPhrase.value.lowercased().folding(options: .diacriticInsensitive, locale: .current).contains(queryPhrase)
+                    return isInPolishPhrase || isInTranslationPhrase
+                }.map { $0 }
+         }).disposed(by: disposeBag)
         
         viewModel.phrases.asObservable()
             .bind(to: phrasesTableView.rx.items) { tableView, i, item in
@@ -90,9 +83,7 @@ class PhrasebookViewController: UIViewControllerWithMenu, UITableViewDelegate {
                 cell.viewModel = item
                 return cell
             }.disposed(by: disposeBag)
-        
         phrasesTableView.separatorStyle = .none
-
         phrasesTableView.rx.setDelegate(self).disposed(by: disposeBag)
     }
  
@@ -101,7 +92,7 @@ class PhrasebookViewController: UIViewControllerWithMenu, UITableViewDelegate {
         
         setupNavigationBarTitle()
         setupSearchBar()
-        
+
         view.addSubview(phrasesTableView)
         view.addSubview(segmentedControlView)
         view.addSubview(languageSegmentedControl)
@@ -111,7 +102,7 @@ class PhrasebookViewController: UIViewControllerWithMenu, UITableViewDelegate {
         setupKeyboard()
     }
 
-    func setupConstraints() {
+    private func setupConstraints() {
         phraseSearchBar.snp.makeConstraints { (make) -> Void in
             make.left.top.right.equalTo(view)
             make.height.equalTo(self.navigationController!.navigationBar.frame.height)
@@ -135,26 +126,22 @@ class PhrasebookViewController: UIViewControllerWithMenu, UITableViewDelegate {
         }
     }
 
-    func setupNavigationBarTitle() {
+    private func setupNavigationBarTitle() {
         let titleLabel = navigationItem.titleView as! UILabel
         titleLabel.text = NSLocalizedString("title_phrasebook", comment: "")
     }
     
     func setupSearchBar() {
         let textfield: UITextField = phraseSearchBar.value(forKey: "searchField") as! UITextField
-
-        let attributedString = NSAttributedString(string: NSLocalizedString("search_hint", comment: ""), attributes: [NSAttributedStringKey.foregroundColor: UIColor.lightGray])
-        
-        textfield.attributedPlaceholder = attributedString
+        textfield.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("search_hint", comment: ""),
+                                                             attributes: [NSAttributedStringKey.foregroundColor: UIColor.lightGray])
     }
     
     func setupKeyboard() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tap.cancelsTouchesInView = false
-        
-        if let window = UIApplication.shared.keyWindow {
-            window.addGestureRecognizer(tap)
-        }
+        guard let window = UIApplication.shared.keyWindow else { return }
+        window.addGestureRecognizer(tap)
     }
     
     @objc func dismissKeyboard() {

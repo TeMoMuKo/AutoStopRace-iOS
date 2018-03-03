@@ -6,7 +6,6 @@
 //  Copyright © 2017 Torianin. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class UIViewControllerWithMenu: UIViewController {
@@ -14,8 +13,6 @@ class UIViewControllerWithMenu: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor.white
- 
         setupViews()
     }
     
@@ -27,7 +24,7 @@ class UIViewControllerWithMenu: UIViewController {
     func setupNavigationBar() {
         self.navigationController?.navigationBar.topItem?.title = ""
 
-        let titleLabel = UILabel(frame: CGRect.init(x: 0, y: 0, width: view.frame.width, height: self.navigationController!.view.frame.height))
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: self.navigationController!.view.frame.height))
         titleLabel.clipsToBounds = true
         navigationItem.titleView = titleLabel
         titleLabel.textColor = UIColor.white

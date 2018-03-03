@@ -10,6 +10,7 @@ PODS:
   - GoogleMaps/Base (2.6.0)
   - GoogleMaps/Maps (2.6.0):
     - GoogleMaps/Base
+  - InteractiveSideMenu (2.3)
   - Moya (10.0.2):
     - Moya/Core (= 10.0.2)
   - Moya-ObjectMapper (2.5):
@@ -48,6 +49,7 @@ DEPENDENCIES:
   - Eureka
   - Fabric
   - GoogleMaps
+  - InteractiveSideMenu
   - Moya
   - Moya-ObjectMapper
   - ObjectMapper+Realm
@@ -76,6 +78,7 @@ SPEC CHECKSUMS:
   Eureka: c8bd5cc07143b6f66268c208d28a246c99b41955
   Fabric: bb495bb9a7a7677c6d03a1f8b83d95bc49b47e41
   GoogleMaps: 42f91c68b7fa2f84d5c86597b18ceb99f5414c7f
+  InteractiveSideMenu: d503a508c6d62a4d5d4372d9fb9e1795637a8e45
   Moya: 2b0531a9fef318e0bc484030c3db1e6f279ccb66
   Moya-ObjectMapper: 167adf69db0298bf3a19ea05cb9a16ee117c8ef5
   ObjectMapper: 92230db59bf8f341a5c3a3cf0b9fbdde3cf0d87f
@@ -91,6 +94,6 @@ SPEC CHECKSUMS:
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SwiftLint: e14651157288e9e01d6e1a71db7014fb5744a8ea
 
-PODFILE CHECKSUM: 3aa55cc1c74c8a977d1b0116fe86c33b7aaa2c6a
+PODFILE CHECKSUM: d3bec742c6ad83220a7709176bc9a26ee916caef
 
 COCOAPODS: 1.4.0

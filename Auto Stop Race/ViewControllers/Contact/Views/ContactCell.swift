@@ -6,7 +6,6 @@
 //  Copyright © 2017 Torianin. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import SnapKit
 
@@ -16,17 +15,11 @@ class ContactCell: BaseUICollectionCell {
     
     var contact: Contact? {
         didSet {
-            if contact?.optionalDisplayedValue != "" {
-                valueLabel.text = contact?.optionalDisplayedValue
-            } else {
-                valueLabel.text = contact?.value
-            }
-
+            valueLabel.text = contact?.optionalDisplayedValue != "" ? contact?.optionalDisplayedValue : contact?.value
             if let contactDescription = contact?.contactDescription {
                 contactDescriptionLabel.text = contactDescription
                 contactDescriptionLabel.textColor = UIColor.gray
             }
-            
             if let imageName = contact?.imageName {
                 imageView.image = UIImage(named: imageName)
             }
@@ -55,12 +48,8 @@ class ContactCell: BaseUICollectionCell {
         return label
     }()
     
-    var separator: UIView = {
-        let separator = UIView(frame: CGRect.init())
-        separator.backgroundColor = UIColor.gray
-        return separator
-    }()
-    
+    var separator = SeparatorView()
+
     override func setupViews() {
         super.setupViews()
         addSubview(valueLabel)
@@ -71,7 +60,7 @@ class ContactCell: BaseUICollectionCell {
         setupConstraints()
     }
     
-    func setupConstraints() {
+    private func setupConstraints() {
         imageView.snp.makeConstraints { (make) -> Void in
             make.left.equalTo(self).offset(15)
             make.centerY.equalTo(self)

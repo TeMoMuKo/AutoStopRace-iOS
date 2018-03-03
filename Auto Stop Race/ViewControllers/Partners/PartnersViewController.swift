@@ -54,7 +54,6 @@ class PartnersViewController: UIViewControllerWithMenu, UICollectionViewDelegate
         collectionView.dataSource = self
         
         setupNavigationBarTitle()
-
         setupCollectionView()
         
         view.backgroundColor = UIColor.white
@@ -89,9 +88,9 @@ class PartnersViewController: UIViewControllerWithMenu, UICollectionViewDelegate
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if partners[indexPath.row].cellType == .image {
-            return CGSize.init(width: collectionView.frame.width, height: imageCellHeight)
+            return CGSize(width: collectionView.frame.width, height: imageCellHeight)
         } else {
-            return CGSize.init(width: collectionView.frame.width, height: textCellHeight)
+            return CGSize(width: collectionView.frame.width, height: textCellHeight)
         }
     }
     
@@ -99,10 +98,10 @@ class PartnersViewController: UIViewControllerWithMenu, UICollectionViewDelegate
         return 0
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize.init(width: collectionView.frame.width, height: 50)
+        return CGSize(width: collectionView.frame.width, height: 50)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        return CGSize.init(width: collectionView.frame.width, height: 100)
+        return CGSize(width: collectionView.frame.width, height: 100)
     }
 
 }

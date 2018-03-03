@@ -6,7 +6,6 @@
 //  Copyright © 2017 Torianin. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import SnapKit
 import RxSwift
@@ -62,7 +61,6 @@ class PhraseCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
         setupViews()
     }
     
@@ -74,28 +72,28 @@ class PhraseCell: UITableViewCell {
         
         let view = UIView()
         view.backgroundColor = Theme.Color.blueMenu
-        self.selectedBackgroundView = view
-        self.contentView.backgroundColor = UIColor.clear
-        self.selectionStyle = .none
+        selectedBackgroundView = view
+        contentView.backgroundColor = UIColor.clear
+        selectionStyle = .none
         
-        whiteRoundedView = UIView(frame: CGRect.init(origin: .zero, size: CGSize.init(width: self.layer.frame.size.width, height: 80)))
+        whiteRoundedView = UIView(frame: CGRect(origin: .zero, size: CGSize(width: self.layer.frame.size.width, height: 80)))
         whiteRoundedView.layer.backgroundColor = CGColor.init(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [1.0, 1.0, 1.0, 1.0])
         whiteRoundedView.layer.masksToBounds = false
-        whiteRoundedView.layer.shadowOffset = CGSize.init(width: -1, height: 1)
+        whiteRoundedView.layer.shadowOffset = CGSize(width: -1, height: 1)
         whiteRoundedView.layer.shadowOpacity = 0.5
         
-        self.contentView.addSubview(whiteRoundedView)
-        self.contentView.sendSubview(toBack: whiteRoundedView)
+        contentView.addSubview(whiteRoundedView)
+        contentView.sendSubview(toBack: whiteRoundedView)
         
-        self.addSubview(translationBackgroundView)
-        self.addSubview(iconImageView)
-        self.addSubview(polishPhraseLabel)
-        self.addSubview(translationPhraseLabel)
+        addSubview(translationBackgroundView)
+        addSubview(iconImageView)
+        addSubview(polishPhraseLabel)
+        addSubview(translationPhraseLabel)
         
         setupConstraints()
     }
     
-    func setupConstraints() {
+    private func setupConstraints() {
         
         whiteRoundedView.snp.makeConstraints { (make) -> Void in
             make.left.right.equalToSuperview()

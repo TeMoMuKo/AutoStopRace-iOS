@@ -6,7 +6,6 @@
 //  Copyright © 2017 Torianin. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import SnapKit
 
@@ -34,7 +33,7 @@ class SettingsViewController: UIViewControllerWithMenu, UITableViewDelegate, UIT
         
     var settingsCell: UITableViewCell = UITableViewCell()
     
-    private weak var delegate: SettingsViewControllerDelegate?
+    private var delegate: SettingsViewControllerDelegate?
     private let serviceProvider: ServiceProviderType
 
     init( delegate: SettingsViewControllerDelegate, provider: ServiceProviderType) {
@@ -43,11 +42,11 @@ class SettingsViewController: UIViewControllerWithMenu, UITableViewDelegate, UIT
         
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBarTitle()
@@ -56,7 +55,6 @@ class SettingsViewController: UIViewControllerWithMenu, UITableViewDelegate, UIT
         tableView.dataSource = self
         
         self.view.addSubview(tableView)
-
         setupConstraints()
     }
     
@@ -105,7 +103,7 @@ class SettingsViewController: UIViewControllerWithMenu, UITableViewDelegate, UIT
         self.present(alert, animated: true, completion: nil)
     }
     
-    func setupConstraints() {
+    private func setupConstraints() {
         tableView.snp.makeConstraints { (make) -> Void in
             make.size.equalTo(view)
             make.edges.equalTo(view)

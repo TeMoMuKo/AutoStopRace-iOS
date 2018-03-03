@@ -6,7 +6,6 @@
 //  Copyright © 2017 Torianin. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import SnapKit
 
@@ -25,11 +24,10 @@ class PartnerTextCell: BaseUICollectionCell {
         super.setupViews()
         
         addSubview(textLabel)
-        
         setupConstraints()
     }
     
-    func setupConstraints() {
+    private func setupConstraints() {
         textLabel.snp.makeConstraints { (make) -> Void in
             make.center.equalToSuperview()
             make.height.equalToSuperview()

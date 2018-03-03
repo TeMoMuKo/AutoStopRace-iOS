@@ -12,7 +12,7 @@ import RxSwift
 final class ContactViewModel {
     
     private let disposeBag = DisposeBag()
-    private weak var delegate: ContactViewControllerDelegate?
+    private var delegate: ContactViewControllerDelegate?
     
     let modelSelected = PublishSubject<Contact>()
     

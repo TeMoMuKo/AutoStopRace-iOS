@@ -37,7 +37,7 @@ public enum HttpStatus: Int {
 
 struct JsonDictionaryEncoding: Moya.ParameterEncoding {
     public static var `default`: JsonDictionaryEncoding { return JsonDictionaryEncoding() }
-    
+
     public func encode(_ urlRequest: URLRequestConvertible, with parameters: Parameters?) throws -> URLRequest {
         var req = try urlRequest.asURLRequest()
         let json = try JSONSerialization.data(withJSONObject: parameters!, options: [.prettyPrinted])
@@ -121,10 +121,10 @@ extension AsrApi: TargetType {
 
 private extension String {
     var urlEscaped: String {
-        return self.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
+        return addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
     }
     
     var utf8Encoded: Data {
-        return self.data(using: .utf8)!
+        return data(using: .utf8)!
     }
 }

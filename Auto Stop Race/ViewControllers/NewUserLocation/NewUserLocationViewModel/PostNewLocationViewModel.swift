@@ -14,7 +14,7 @@ final class PostNewLocationViewModel {
     private let disposeBag = DisposeBag()
     
     private let serviceProvider: ServiceProviderType
-    private weak var delegate: PostNewLocationViewControllerDelegate?
+    private var delegate: PostNewLocationViewControllerDelegate?
 
     init( delegate: PostNewLocationViewControllerDelegate, provider: ServiceProviderType) {
         self.delegate = delegate

@@ -20,7 +20,7 @@ final class UserLocationsViewModel {
     
     private let disposeBag = DisposeBag()
 
-    private weak var delegate: UserLocationsViewControllerDelegate?
+    private var delegate: UserLocationsViewControllerDelegate?
 
     let itemSelected = PublishSubject<IndexPath>()
     

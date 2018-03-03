@@ -6,7 +6,6 @@
 //  Copyright © 2017 Torianin. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import SnapKit
 import GoogleMaps
@@ -64,16 +63,16 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
         setupConstraints()
     }
     
-    func setupGMSServices() {
+    private func setupGMSServices() {
         view.addSubview(mapView)
     }
 
-    func setupNavigationBarTitle() {
+    private func setupNavigationBarTitle() {
         let titleLabel = navigationItem.titleView as! UILabel
         titleLabel.text = NSLocalizedString("title_teams", comment: "")
     }
     
-    func setupShareBarButton() {
+    private func setupShareBarButton() {
         let menuImage = UIImage(named: "ic_share_white")?.withRenderingMode(.alwaysOriginal)
         let menuBarButtonItem = UIBarButtonItem(image: menuImage, style: .plain, target: self, action: #selector(handleShareTap))
         navigationItem.rightBarButtonItems = [menuBarButtonItem]
@@ -88,13 +87,10 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
         }
     }
 
-    func setupSearchBar() {
+    private func setupSearchBar() {
         let textfield: UITextField = locationsSearchBar.value(forKey: "searchField") as! UITextField
-        
-        let attributedString = NSAttributedString(string: NSLocalizedString("hint_enter_team_number", comment: ""), attributes: [NSAttributedStringKey.foregroundColor: UIColor.lightGray])
-        
-        textfield.attributedPlaceholder = attributedString
-    
+        textfield.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("hint_enter_team_number", comment: ""),
+                                                             attributes: [NSAttributedStringKey.foregroundColor: UIColor.lightGray])
         view.addSubview(locationsSearchBar)
     }
     
@@ -104,7 +100,7 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
         updateConstraints()
     }
     
-    func setupDropDownList() {
+    private func setupDropDownList() {
         teamsCollectionView.register(TeamLocationCell.self, forCellWithReuseIdentifier: TeamLocationCell.Identifier)
         
         viewModel.shownTeams.asObservable()
@@ -116,11 +112,7 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
         locationsSearchBar.rx.text.orEmpty
             .subscribe(onNext: { [weak self] query in
                 guard let `self` = self else { return }
-                if query.isEmpty {
-                    self.viewModel.shownTeams.value = self.viewModel.allTeams.value
-                } else {
-                    self.viewModel.shownTeams.value = self.viewModel.allTeams.value.filter { $0.teamNumber == Int(query) }
-                }
+                self.viewModel.shownTeams.value = query.isEmpty ? self.viewModel.allTeams.value : self.viewModel.allTeams.value.filter { $0.teamNumber == Int(query) }
                 self.updateConstraints()
             })
             .disposed(by: disposeBag)
@@ -133,16 +125,14 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
         viewModel.teamSelected
             .subscribe(onNext: { [weak self] team in
                 guard let `self` = self else { return }
-                
                 self.teamSelected(team: team )
                 self.shareUrlSufix = "?team=\(team.teamNumber!)"
-            })
-            .disposed(by: disposeBag)
+            }).disposed(by: disposeBag)
         
         view.addSubview(teamsCollectionView)
     }
     
-    func teamSelected(team: Team) {
+    private func teamSelected(team: Team) {
         if  let viewModelTeam = viewModel.userTeamNumber,
             let teamTeamNumber = team.teamNumber,
             viewModelTeam == teamTeamNumber {
@@ -171,10 +161,10 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
             marker.title = userLocation.message
             marker.map = mapView
         }
-        self.viewModel.shownTeams.value = []
+        viewModel.shownTeams.value = []
         updateConstraints()
     }
-    
+
     func showMarker(team: Team) {
         mapView.clear()
         if let lastLocation = team.lastLocation {
@@ -195,7 +185,7 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
             marker.title = team.lastLocation.message
             marker.map = mapView
         }
-        self.viewModel.shownTeams.value = []
+        viewModel.shownTeams.value = []
         updateConstraints()
     }
     
@@ -217,7 +207,7 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize.init(width: collectionView.frame.width, height: cellHeight)
+        return CGSize(width: collectionView.frame.width, height: cellHeight)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -238,7 +228,7 @@ class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegat
         self.heightConstraint?.update(offset: (cellsCount < 4 ? cellsCount : 4) * 80)
     }
     
-    func setupConstraints() {
+    private func setupConstraints() {
         teamsCollectionView.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(locationsSearchBar.snp.bottom)
             self.heightConstraint = make.height.equalTo(0).constraint

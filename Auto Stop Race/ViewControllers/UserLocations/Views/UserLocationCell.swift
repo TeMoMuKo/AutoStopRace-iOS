@@ -6,7 +6,6 @@
 //  Copyright © 2017 Torianin. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import SnapKit
 import CoreLocation
@@ -74,7 +73,7 @@ class UserLocationCell: BaseUICollectionCell {
         label.textColor = UIColor.white
         label.backgroundColor = Theme.Color.blueMenu
         label.layer.cornerRadius = 25
-        label.frame = CGRect.init(x: 0, y: 0, width: 50, height: 50)
+        label.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
         label.layer.masksToBounds = true
         return label
     }()
@@ -103,7 +102,6 @@ class UserLocationCell: BaseUICollectionCell {
         label.text = ""
         label.textColor = Theme.Color.blueMenu
         label.font = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight.bold)
-        label.textColor = Theme.Color.blueMenu
         return label
     }()
     
@@ -122,11 +120,7 @@ class UserLocationCell: BaseUICollectionCell {
         return label
     }()
     
-    var separator: UIView = {
-        let separator = UIView(frame: CGRect.init())
-        separator.backgroundColor = UIColor.gray
-        return separator
-    }()
+    var separator = SeparatorView()
     
     let stackView: UIStackView = {
         let stackView = UIStackView()
@@ -139,8 +133,7 @@ class UserLocationCell: BaseUICollectionCell {
     
     override func setupViews() {
         super.setupViews()
-        
-        self.backgroundColor = Theme.Color.grayBackgroundColor
+        backgroundColor = Theme.Color.grayBackgroundColor
         addSubview(countryLabel)
         addSubview(imageView)
         addSubview(addressLabel)
@@ -153,7 +146,7 @@ class UserLocationCell: BaseUICollectionCell {
         setupConstraints()
     }
     
-    func setupConstraints() {
+    private func setupConstraints() {
         stackView.snp.makeConstraints { (make) -> Void in
             make.right.equalTo(self).offset(-15)
             make.height.width.equalTo(80)

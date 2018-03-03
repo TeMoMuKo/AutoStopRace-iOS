@@ -6,7 +6,6 @@
 //  Copyright © 2017 Torianin. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import SKPhotoBrowser
 
@@ -42,15 +41,12 @@ extension MenuCoordinator: MenuViewControllerDelegate {
     }
     
     func menuSelected(menu: MenuDestination) {
-        
         if menu == .teams && self.navigationController?.viewControllers.last is DashboardViewController {
             return
         }
-        
         _ = self.navigationController?.popViewController(animated: false)
-        
+
         switch menu {
-        
         case .teams:
             let coordinator = DashboardCoordinator(navigationController: navigationController, appCoordinator: appCoordinator, serviceProvider: serviceProvider!)
             coordinator.start()

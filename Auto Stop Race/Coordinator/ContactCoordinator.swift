@@ -6,7 +6,6 @@
 //  Copyright © 2017 Torianin. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 final class ContactCoordinator: Coordinator {
@@ -16,7 +15,6 @@ final class ContactCoordinator: Coordinator {
         let viewController = ContactViewController(viewModel: viewModel)
         navigationController?.pushViewController(viewController, animated: true)
     }
-    
 }
 
 extension ContactCoordinator: ContactViewControllerDelegate {

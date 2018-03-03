@@ -6,7 +6,6 @@
 //  Copyright © 2017 Torianin. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import SnapKit
 
@@ -55,19 +54,10 @@ class AboutViewController: UIViewControllerWithMenu {
     
     var rateAppButton: UIButton = {
         let button = UIButton()
-        button.layer.cornerRadius = 5
         button.setTitle(NSLocalizedString("action_rate", comment: ""), for: .normal)
-        button.backgroundColor = Theme.Color.blueMenu
-        button.setTitleColor(UIColor.white, for: .normal)
-        button.titleLabel!.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.ultraLight)
+        button.theme.blueWhiteUltraLight()
         button.addTarget(self, action: #selector(rateAppButtonTapped), for: .touchUpInside)
         return button
-    }()
-    
-    var separator: UIView = {
-        let separator = UIView(frame: CGRect.init())
-        separator.backgroundColor = UIColor.gray
-        return separator
     }()
 
     let stackView: UIStackView = {
@@ -106,8 +96,7 @@ class AboutViewController: UIViewControllerWithMenu {
         stackView.addArrangedSubview(rateAppButton)
         scrollView.addSubview(stackView)
         view.addSubview(scrollView)
-        self.view.layoutIfNeeded()
-
+        view.layoutIfNeeded()
     }
 
     func setupShareBarButton() {
@@ -117,15 +106,13 @@ class AboutViewController: UIViewControllerWithMenu {
     }
 
     @objc func handleShareTap() {
-        if let name = NSURL(string: AboutConfig.appStoreShareUrl) {
-            let objectsToShare = [name]
-            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-            self.present(activityVC, animated: true, completion: nil)
-        }
+        guard let name = NSURL(string: AboutConfig.appStoreShareUrl) else { return }
+        let objectsToShare = [name]
+        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        self.present(activityVC, animated: true, completion: nil)
     }
     
-    func setupConstraints() {
-        
+    private func setupConstraints() {
         scrollView.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(view)
             make.left.equalTo(view)

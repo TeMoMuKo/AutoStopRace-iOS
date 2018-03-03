@@ -33,38 +33,25 @@ class LoginViewController: UIViewControllerWithBackButton {
         return textField
     }()
     
-    let separatorView: UIView = {
-       let view = UIView()
-        view.backgroundColor = UIColor(red: 220, green: 220, blue: 220)
-        return view
-    }()
+    let separatorView = SeparatorView()
     
     let loginButton: UIButton = {
         let button = UIButton()
-        button.layer.cornerRadius = 5
         button.setTitle(NSLocalizedString("action_login", comment: "").uppercased(), for: .normal)
-        button.backgroundColor = Theme.Color.blueMenu
-        button.setTitleColor(UIColor.white, for: .normal)
-        button.titleLabel!.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.ultraLight)
+        button.theme.blueWhiteUltraLight()
         button.addTarget(self, action: #selector(handleLoginTap), for: .touchUpInside)
         return button
     }()
     
     let resetPasswordButton: UIButton = {
         let button = UIButton()
-        button.layer.cornerRadius = 5
         button.setTitle(NSLocalizedString("action_reset_pass", comment: "").uppercased(), for: .normal)
-        button.setTitleColor(Theme.Color.blueMenu, for: .normal)
-        button.titleLabel!.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.ultraLight)
-        button.backgroundColor = UIColor.white
+        button.theme.whiteBlueUltraLight()
         button.addTarget(self, action: #selector(handleResetPasswordTap), for: .touchUpInside)
         return button
     }()
     
-    let activityIndicator: UIActivityIndicatorView = {
-        let activityIndicator = UIActivityIndicatorView()
-        return activityIndicator
-    }()
+    let activityIndicator = UIActivityIndicatorView()
     
     let stackView: UIStackView = {
         let stackView = UIStackView()
@@ -85,21 +72,15 @@ class LoginViewController: UIViewControllerWithBackButton {
     }()
     
     lazy var backgroundImage: UIImageView = {
-        let image = UIImageView.init(image: UIImage(named: "bg"))
+        let image = UIImageView(image: UIImage(named: "bg"))
         image.contentMode = .scaleAspectFill
-        
-        image.frame = self.view.frame
-        
+        image.frame = view.frame
         return image
     }()
 
-    var progressHUD: ProgressHUD = {
-        let progressHUD = ProgressHUD(text: NSLocalizedString("title_activity_login", comment: ""))
-        return progressHUD
-    }()
+    var progressHUD = ProgressHUD(text: NSLocalizedString("title_activity_login", comment: ""))
 
     var viewModel: LoginViewModel!
-    
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -108,7 +89,8 @@ class LoginViewController: UIViewControllerWithBackButton {
         usernameTextField.delegate = self
         passwordTextField.delegate = self
 
-        viewModel.setUpAuthDetails(email: usernameTextField.rx.text.orEmpty.asDriver(), password: passwordTextField.rx.text.orEmpty.asDriver())
+        viewModel.setUpAuthDetails(email: usernameTextField.rx.text.orEmpty.asDriver(),
+                                   password: passwordTextField.rx.text.orEmpty.asDriver())
         
         viewModel.inputBackgroundColor
             .drive(onNext: { [weak self] color in
@@ -129,11 +111,7 @@ class LoginViewController: UIViewControllerWithBackButton {
             .asObservable()
             .subscribe(onNext: { [weak self] active in
                 guard let `self` = self else { return }
-                if active {
-                    self.progressHUD.show()
-                } else {
-                    self.progressHUD.hide()
-                }
+                active ? self.progressHUD.show() : self.progressHUD.hide()
             }).disposed(by: disposeBag)
         
         inputContainerView.addSubview(usernameTextField)
@@ -159,7 +137,6 @@ class LoginViewController: UIViewControllerWithBackButton {
     
     convenience init(viewModel: LoginViewModel) {
         self.init()
-        
         self.viewModel = viewModel
     }
     
@@ -200,7 +177,7 @@ class LoginViewController: UIViewControllerWithBackButton {
         self.present(alert, animated: true, completion: nil)
     }
     
-    func setupConstraints() {
+    private func setupConstraints() {
         inputContainerView.snp.makeConstraints { (make) -> Void in
             make.height.equalTo(128)
             make.width.equalTo(stackView)

@@ -20,5 +20,4 @@ final class PhraseViewModel: PhraseViewModelType {
         selectedLanguage = Variable<Int>( phrase.selectedLanguage )
         currentTranslationPhrase = Variable<String>( phrase.translationPhrases[selectedLanguage.value] )
     }
-    
 }
