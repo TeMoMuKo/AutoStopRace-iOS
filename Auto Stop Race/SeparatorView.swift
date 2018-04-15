@@ -26,7 +26,7 @@ class SeparatorView: UIView {
 
     private func setup() {
         translatesAutoresizingMaskIntoConstraints = false
-        heightAnchor.constraint(equalToConstant: 1.0).isActive = true
+        heightAnchor.constraint(equalToConstant: 1 / UIScreen.main.scale).isActive = true
         backgroundColor = Theme.Color.separatorColor
     }
 }

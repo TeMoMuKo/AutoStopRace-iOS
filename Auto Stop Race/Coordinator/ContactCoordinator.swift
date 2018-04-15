@@ -12,8 +12,8 @@ final class ContactCoordinator: Coordinator {
     
     func start() {
         let viewModel = ContactViewModel(delegate: self)
-        let viewController = ContactViewController(viewModel: viewModel)
-        navigationController?.pushViewController(viewController, animated: true)
+        let contactViewController = ContactViewController(viewModel: viewModel)
+        self.navigationController?.viewControllers = [contactViewController]
     }
 }
 

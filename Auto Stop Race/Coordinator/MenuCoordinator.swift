@@ -57,7 +57,6 @@ extension MenuCoordinator: MenuViewControllerDelegate {
             var images = [SKPhoto]()
             let photo = SKPhoto.photoWithImage(#imageLiteral(resourceName: "campus_map"))
             images.append(photo)
-            
             let browser = SKPhotoBrowser(photos: images)
             browser.initializePageIndex(0)
             self.navigationController?.present(browser, animated: true, completion: nil)
@@ -65,26 +64,25 @@ extension MenuCoordinator: MenuViewControllerDelegate {
             var images = [SKPhoto]()
             let photo = SKPhoto.photoWithImage(#imageLiteral(resourceName: "harmonogram"))
             images.append(photo)
-            
             let browser = SKPhotoBrowser(photos: images)
             browser.initializePageIndex(0)
             self.navigationController?.present(browser, animated: true, completion: nil)
         case .phrasebook:
             let prasebookViewModel = PhrasebookViewModel(provider: serviceProvider!)
-            let viewController = PhrasebookViewController(viewModel: prasebookViewModel)
-            self.navigationController?.pushViewController(viewController, animated: true)
+            let phrasebookViewController = PhrasebookViewController(viewModel: prasebookViewModel)
+            self.navigationController?.viewControllers = [phrasebookViewController]
         case .contact:
             let coordinator = ContactCoordinator(navigationController: navigationController)
             coordinator.start()
         case .partners:
-            let viewController = PartnersViewController()
-            self.navigationController?.pushViewController(viewController, animated: true)
+            let partnersViewController = PartnersViewController()
+            self.navigationController?.viewControllers = [partnersViewController]
         case .settings:
-            let viewController = SettingsViewController(delegate: appCoordinator.self!, provider: serviceProvider!)
-            self.navigationController?.pushViewController(viewController, animated: true)
+            let settingViewController = SettingsViewController(delegate: appCoordinator.self!, provider: serviceProvider!)
+            self.navigationController?.viewControllers = [settingViewController]
         case .about:
-            let viewController = AboutViewController()
-            self.navigationController?.pushViewController(viewController, animated: true)
+            let aboutViewController = AboutViewController()
+            self.navigationController?.viewControllers = [aboutViewController]
         }
     }
 }

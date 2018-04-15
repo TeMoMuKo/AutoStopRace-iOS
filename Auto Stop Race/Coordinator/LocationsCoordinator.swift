@@ -23,14 +23,14 @@ final class LocationsCoordinator: Coordinator {
     
     func start() {
         let locationViewModel = LocationsViewModel(provider: serviceProvider!)
-        let viewController = LocationsViewController(viewModel: locationViewModel)
-        self.navigationController?.pushViewController(viewController, animated: true)
+        let locationsViewController = LocationsViewController(viewModel: locationViewModel)
+        self.navigationController?.viewControllers = [locationsViewController]
     }
     
     func startWithUserLocations( locationRecords: Variable<[LocationRecord]> ) {
         let locationViewModel = LocationsViewModel(provider: serviceProvider!, locationRecords: locationRecords)
-        let viewController = LocationsViewController(viewModel: locationViewModel)
-        viewController.showUserMarkers()
-        self.navigationController?.pushViewController(viewController, animated: true)
+        let locationsViewController = LocationsViewController(viewModel: locationViewModel)
+        locationsViewController.showUserMarkers()
+        self.navigationController?.viewControllers = [locationsViewController]
     }
 }
