@@ -84,5 +84,4 @@ class ContactCell: BaseUICollectionCell {
             make.bottom.equalTo(self.snp.bottom)
         }
     }
-    
 }

@@ -19,7 +19,7 @@ target 'Auto Stop Race' do
     pod 'RxReachability', :git => 'https://github.com/ivanbruel/RxReachability.git'
     pod 'ReachabilitySwift'
 
-    pod 'Eureka'
+    pod 'Eureka', '~> 4.1.1'
     
     pod 'SKPhotoBrowser'
 
@@ -38,4 +38,13 @@ target 'Auto Stop Race' do
     # Pods for testing
     end
 
+    post_install do |installer|
+        installer.pods_project.targets.each do |target|
+            if target.name == 'Eureka'
+                target.build_configurations.each do |config|
+                    config.build_settings['SWIFT_VERSION'] = '4.1'
+                end
+            end
+        end
+    end
 end
