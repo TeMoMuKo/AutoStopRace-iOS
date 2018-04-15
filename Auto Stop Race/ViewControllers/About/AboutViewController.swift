@@ -76,10 +76,15 @@ class AboutViewController: UIViewControllerWithMenu {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupBackground()
         setupNavigationBarTitle()
         setupShareBarButton()
         setupStackView()
         setupConstraints()
+    }
+
+    private func setupBackground() {
+        view.backgroundColor = .white
     }
     
     func setupNavigationBarTitle() {
