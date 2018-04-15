@@ -7,11 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10732CF82084089A0024DE78 /* Partners.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10732CF72084089A0024DE78 /* Partners.xcassets */; };
 		10A378E1204B2FD800E0C536 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A378E0204B2FD800E0C536 /* Theme.swift */; };
 		10A378E5204B4BF000E0C536 /* Theme+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A378E4204B4BF000E0C536 /* Theme+UIButton.swift */; };
-		10A378EB204B540E00E0C536 /* GoldPartners.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10A378E7204B540E00E0C536 /* GoldPartners.xcassets */; };
-		10A378EC204B540E00E0C536 /* SilverPartners.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10A378E8204B540E00E0C536 /* SilverPartners.xcassets */; };
-		10A378ED204B540E00E0C536 /* StrategicPartners.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10A378E9204B540E00E0C536 /* StrategicPartners.xcassets */; };
 		10A378EE204B540E00E0C536 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10A378EA204B540E00E0C536 /* Assets.xcassets */; };
 		10A378F0204B541800E0C536 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 10A378EF204B541800E0C536 /* Localizable.strings */; };
 		10A378F3204B549800E0C536 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A378F2204B549800E0C536 /* SeparatorView.swift */; };
@@ -116,11 +114,9 @@
 
 /* Begin PBXFileReference section */
 		10732CF62083FBDD0024DE78 /* Auto Stop Race.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Auto Stop Race.entitlements"; sourceTree = "<group>"; };
+		10732CF72084089A0024DE78 /* Partners.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Partners.xcassets; path = "Auto Stop Race/Resources/Assets/Partners.xcassets"; sourceTree = "<group>"; };
 		10A378E0204B2FD800E0C536 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		10A378E4204B4BF000E0C536 /* Theme+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme+UIButton.swift"; sourceTree = "<group>"; };
-		10A378E7204B540E00E0C536 /* GoldPartners.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = GoldPartners.xcassets; path = "Auto Stop Race/Resources/Assets/GoldPartners.xcassets"; sourceTree = "<group>"; };
-		10A378E8204B540E00E0C536 /* SilverPartners.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = SilverPartners.xcassets; path = "Auto Stop Race/Resources/Assets/SilverPartners.xcassets"; sourceTree = "<group>"; };
-		10A378E9204B540E00E0C536 /* StrategicPartners.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = StrategicPartners.xcassets; path = "Auto Stop Race/Resources/Assets/StrategicPartners.xcassets"; sourceTree = "<group>"; };
 		10A378EA204B540E00E0C536 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Auto Stop Race/Resources/Assets/Assets.xcassets"; sourceTree = "<group>"; };
 		10A378EF204B541800E0C536 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = Resources/Locales/Localizable.strings; sourceTree = "<group>"; };
 		10A378F2204B549800E0C536 /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
@@ -259,9 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				10A378EA204B540E00E0C536 /* Assets.xcassets */,
-				10A378E7204B540E00E0C536 /* GoldPartners.xcassets */,
-				10A378E8204B540E00E0C536 /* SilverPartners.xcassets */,
-				10A378E9204B540E00E0C536 /* StrategicPartners.xcassets */,
+				10732CF72084089A0024DE78 /* Partners.xcassets */,
 			);
 			name = Assets;
 			path = ..;
@@ -882,11 +876,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10A378EB204B540E00E0C536 /* GoldPartners.xcassets in Resources */,
 				E244207B1E8518A600556FDC /* Keys.plist in Resources */,
-				10A378EC204B540E00E0C536 /* SilverPartners.xcassets in Resources */,
-				10A378ED204B540E00E0C536 /* StrategicPartners.xcassets in Resources */,
 				10A378F0204B541800E0C536 /* Localizable.strings in Resources */,
+				10732CF82084089A0024DE78 /* Partners.xcassets in Resources */,
 				E2C061491E5AB0BE0022D6F1 /* contact_data.csv in Resources */,
 				E2D9A2191E5530FC003324F7 /* LaunchScreen.storyboard in Resources */,
 				10A378EE204B540E00E0C536 /* Assets.xcassets in Resources */,
@@ -1360,6 +1352,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Auto Stop Race/Auto Stop Race.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = VCKS6267S9;
 				INFOPLIST_FILE = "Auto Stop Race/Info.plist";
@@ -1378,6 +1371,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Auto Stop Race/Auto Stop Race.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = VCKS6267S9;
 				INFOPLIST_FILE = "Auto Stop Race/Info.plist";
