@@ -23,8 +23,6 @@ final class AppCoordinator: Coordinator {
     func start() {
         try? reachability?.startNotifier()
 
-        setupFirebase()
-
         Fabric.with([Crashlytics.self])
         
         serviceProvider.authService.validateToken()
@@ -45,10 +43,6 @@ final class AppCoordinator: Coordinator {
     
         let menuCoordinator = MenuCoordinator(navigationController: navigationController, appCoordinator: self, serviceProvider: serviceProvider)
         menuCoordinator.start()
-    }
-
-    private func setupFirebase() {
-        FirebaseApp.configure()
     }
     
     func dashboardCoordinatorCompleted(coordinator: DashboardCoordinator) {
