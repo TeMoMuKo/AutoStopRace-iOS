@@ -28,6 +28,9 @@ target 'Auto Stop Race' do
 
     pod 'SwiftLint'
 
+    pod 'Firebase/Core'
+
+
     target 'Auto Stop RaceTests' do
     inherit! :search_paths
     # Pods for testing

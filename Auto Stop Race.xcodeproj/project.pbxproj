@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		107118DE20841E8400422C61 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 107118DD20841E8300422C61 /* GoogleService-Info.plist */; };
 		10732CF82084089A0024DE78 /* Partners.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10732CF72084089A0024DE78 /* Partners.xcassets */; };
 		10A378E1204B2FD800E0C536 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A378E0204B2FD800E0C536 /* Theme.swift */; };
 		10A378E5204B4BF000E0C536 /* Theme+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A378E4204B4BF000E0C536 /* Theme+UIButton.swift */; };
@@ -113,6 +114,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		107118DD20841E8300422C61 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		10732CF62083FBDD0024DE78 /* Auto Stop Race.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Auto Stop Race.entitlements"; sourceTree = "<group>"; };
 		10732CF72084089A0024DE78 /* Partners.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Partners.xcassets; path = "Auto Stop Race/Resources/Assets/Partners.xcassets"; sourceTree = "<group>"; };
 		10A378E0204B2FD800E0C536 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -659,6 +661,7 @@
 		E2D9A24C1E553B58003324F7 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				107118DD20841E8300422C61 /* GoogleService-Info.plist */,
 				E29F889D1E5F08AF008F1F46 /* Constants.swift */,
 				E244207A1E8518A600556FDC /* Keys.plist */,
 			);
@@ -877,6 +880,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E244207B1E8518A600556FDC /* Keys.plist in Resources */,
+				107118DE20841E8400422C61 /* GoogleService-Info.plist in Resources */,
 				10A378F0204B541800E0C536 /* Localizable.strings in Resources */,
 				10732CF82084089A0024DE78 /* Partners.xcassets in Resources */,
 				E2C061491E5AB0BE0022D6F1 /* contact_data.csv in Resources */,
@@ -1029,6 +1033,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CSV.swift/CSV.framework",
 				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya-ObjectMapper/Moya_ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
@@ -1042,12 +1047,14 @@
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SKPhotoBrowser/SKPhotoBrowser.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CSV.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya_ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
@@ -1061,6 +1068,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKPhotoBrowser.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
