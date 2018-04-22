@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		107118DE20841E8400422C61 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 107118DD20841E8300422C61 /* GoogleService-Info.plist */; };
+		107118E02084288100422C61 /* LocationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107118DF2084288100422C61 /* LocationsListViewController.swift */; };
 		10732CF82084089A0024DE78 /* Partners.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10732CF72084089A0024DE78 /* Partners.xcassets */; };
 		10A378E1204B2FD800E0C536 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A378E0204B2FD800E0C536 /* Theme.swift */; };
 		10A378E5204B4BF000E0C536 /* Theme+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A378E4204B4BF000E0C536 /* Theme+UIButton.swift */; };
@@ -33,7 +34,7 @@
 		E2645F141E649923004C10F1 /* AsrApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2645F131E649923004C10F1 /* AsrApi.swift */; };
 		E271C2C61E56460D00CD4F15 /* DashboardCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E271C2C51E56460C00CD4F15 /* DashboardCoordinator.swift */; };
 		E271C2CE1E5660EC00CD4F15 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E271C2CD1E5660EC00CD4F15 /* DashboardViewModel.swift */; };
-		E27CB7A81E5867C3006B2396 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27CB7A71E5867C3006B2396 /* LocationsViewController.swift */; };
+		E27CB7A81E5867C3006B2396 /* LocationsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27CB7A71E5867C3006B2396 /* LocationsMapViewController.swift */; };
 		E27CB7AC1E5869AD006B2396 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27CB7AB1E5869AD006B2396 /* ContactViewController.swift */; };
 		E27CB7AF1E586AAB006B2396 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27CB7AE1E586AAB006B2396 /* ContactCell.swift */; };
 		E27CB7B21E586B59006B2396 /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27CB7B11E586B59006B2396 /* ContactViewModel.swift */; };
@@ -115,6 +116,7 @@
 
 /* Begin PBXFileReference section */
 		107118DD20841E8300422C61 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		107118DF2084288100422C61 /* LocationsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationsListViewController.swift; path = Locations/LocationsListViewController.swift; sourceTree = "<group>"; };
 		10732CF62083FBDD0024DE78 /* Auto Stop Race.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Auto Stop Race.entitlements"; sourceTree = "<group>"; };
 		10732CF72084089A0024DE78 /* Partners.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Partners.xcassets; path = "Auto Stop Race/Resources/Assets/Partners.xcassets"; sourceTree = "<group>"; };
 		10A378E0204B2FD800E0C536 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -147,7 +149,7 @@
 		E2645F131E649923004C10F1 /* AsrApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsrApi.swift; sourceTree = "<group>"; };
 		E271C2C51E56460C00CD4F15 /* DashboardCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardCoordinator.swift; sourceTree = "<group>"; };
 		E271C2CD1E5660EC00CD4F15 /* DashboardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashboardViewModel.swift; path = ViewModels/DashboardViewModel.swift; sourceTree = "<group>"; };
-		E27CB7A71E5867C3006B2396 /* LocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationsViewController.swift; path = Locations/LocationsViewController.swift; sourceTree = "<group>"; };
+		E27CB7A71E5867C3006B2396 /* LocationsMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationsMapViewController.swift; path = Locations/LocationsMapViewController.swift; sourceTree = "<group>"; };
 		E27CB7AB1E5869AD006B2396 /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactViewController.swift; path = Contact/ContactViewController.swift; sourceTree = "<group>"; };
 		E27CB7AE1E586AAB006B2396 /* ContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactCell.swift; path = Contact/Views/ContactCell.swift; sourceTree = "<group>"; };
 		E27CB7B11E586B59006B2396 /* ContactViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactViewModel.swift; path = Contact/ViewModel/ContactViewModel.swift; sourceTree = "<group>"; };
@@ -356,7 +358,8 @@
 			children = (
 				E2C5EE8C1E971C1100BD5838 /* Views */,
 				E29F889A1E5F0178008F1F46 /* ViewModel */,
-				E27CB7A71E5867C3006B2396 /* LocationsViewController.swift */,
+				E27CB7A71E5867C3006B2396 /* LocationsMapViewController.swift */,
+				107118DF2084288100422C61 /* LocationsListViewController.swift */,
 			);
 			name = Locations;
 			sourceTree = "<group>";
@@ -1153,7 +1156,7 @@
 				E2D9A2441E5534DA003324F7 /* AppCoordinator.swift in Sources */,
 				E288730F1E95DFB20005237D /* ProgressHUD.swift in Sources */,
 				E27CB7AC1E5869AD006B2396 /* ContactViewController.swift in Sources */,
-				E27CB7A81E5867C3006B2396 /* LocationsViewController.swift in Sources */,
+				E27CB7A81E5867C3006B2396 /* LocationsMapViewController.swift in Sources */,
 				E29F1BE11E8B1D8C006D8178 /* ImageRow.swift in Sources */,
 				E2D011421E5BE6680021936A /* Phrase.swift in Sources */,
 				E2D011401E5BE5920021936A /* PhraseCell.swift in Sources */,
@@ -1191,6 +1194,7 @@
 				E2C5EE8E1E971C4900BD5838 /* TeamLocationCell.swift in Sources */,
 				E2D9A2421E5533EE003324F7 /* Coordinator.swift in Sources */,
 				E24420771E84CE2700556FDC /* Toast.swift in Sources */,
+				107118E02084288100422C61 /* LocationsListViewController.swift in Sources */,
 				E28622901E5AECAA008938FC /* LoginViewModel.swift in Sources */,
 				E2D2EB3F1E5AF6B000C56A61 /* UIViewControllerWithBackButton.swift in Sources */,
 				E29293B91E8108D80083A1DD /* User.swift in Sources */,
