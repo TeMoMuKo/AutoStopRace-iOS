@@ -3,8 +3,8 @@ platform :ios, '9.0'
 target 'Auto Stop Race' do
     use_frameworks!
 
-    pod 'RxSwift', '~> 4.1.1'
-    pod 'RxCocoa', '~> 4.1.1'
+    pod 'RxSwift', '~> 4'
+    pod 'RxCocoa', '~> 4'
     pod 'SnapKit'
     
     pod 'Moya'
@@ -19,7 +19,7 @@ target 'Auto Stop Race' do
     pod 'RxReachability', :git => 'https://github.com/ivanbruel/RxReachability.git'
     pod 'ReachabilitySwift'
 
-    pod 'Eureka', '~> 4.1.1'
+    pod 'Eureka', '~> 4'
     
     pod 'SKPhotoBrowser'
 
