@@ -16,9 +16,17 @@ import GoogleMaps
 import Firebase
 
 final class AppCoordinator: Coordinator {
+
+    private var baseViewController: ApplicationViewController
+    var childCoordinators = [Coordinator]()
+
+    init(applicationController: UIViewController) {
+        baseViewController = ApplicationViewController(rootViewController: applicationController)
+    }
+
     let serviceProvider = ServiceProvider()
     let reachability = Reachability()
-    let disposeBag = DisposeBag()
+    let bag = DisposeBag()
     
     func start() {
         try? reachability?.startNotifier()
@@ -33,24 +41,19 @@ final class AppCoordinator: Coordinator {
                 if isReachable {
                     self.serviceProvider.locationSyncService.synchronizeLocationsWithServer()
                 }
-        }).disposed(by: disposeBag)
+        }).disposed(by: bag)
         
         setupGMSServices()
 
-        let coordinator = DashboardCoordinator(navigationController: navigationController, appCoordinator: self, serviceProvider: serviceProvider)
-        coordinator.start()
-        childCoordinators.append(coordinator)
-    
-        let menuCoordinator = MenuCoordinator(navigationController: navigationController, appCoordinator: self, serviceProvider: serviceProvider)
+        let dashboardCoordinator = DashboardCoordinator(baseViewController: baseViewController, serviceProvider: serviceProvider)
+        dashboardCoordinator.start()
+        childCoordinators.append(dashboardCoordinator)
+
+        let menuCoordinator = MenuCoordinator(baseViewController: baseViewController, serviceProvider: serviceProvider)
         menuCoordinator.start()
+        childCoordinators.append(menuCoordinator)
     }
-    
-    func dashboardCoordinatorCompleted(coordinator: DashboardCoordinator) {
-        if let index = childCoordinators.index(where: { $0 === coordinator }) {
-            childCoordinators.remove(at: index)
-        }
-    }
-    
+
     func setupGMSServices() {
         guard let path = Bundle.main.path(forResource: "Keys", ofType: "plist") else { return }
         guard let dict = NSDictionary(contentsOfFile: path) else { return }
@@ -58,15 +61,3 @@ final class AppCoordinator: Coordinator {
         GMSServices.provideAPIKey(GMSServicesAPIKey!)
     }
 }
-
-extension AppCoordinator: SettingsViewControllerDelegate {
-    
-    func logoutButtonTapped() {
-        serviceProvider.userDefaultsService.clearAuth()
-        self.serviceProvider.authService.logout()
-        _ = self.navigationController?.popViewController(animated: false)
-        let coordinator = DashboardCoordinator(navigationController: navigationController, appCoordinator: self, serviceProvider: serviceProvider)
-        coordinator.start()
-    }
-}
-

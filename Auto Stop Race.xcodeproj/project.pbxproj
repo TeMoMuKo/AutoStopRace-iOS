@@ -10,6 +10,8 @@
 		107118DE20841E8400422C61 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 107118DD20841E8300422C61 /* GoogleService-Info.plist */; };
 		107118E02084288100422C61 /* LocationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107118DF2084288100422C61 /* LocationsListViewController.swift */; };
 		10732CF82084089A0024DE78 /* Partners.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10732CF72084089A0024DE78 /* Partners.xcassets */; };
+		1086404A208E1EF600E97BD0 /* ApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10864049208E1EF600E97BD0 /* ApplicationViewController.swift */; };
+		1086404C208E20CD00E97BD0 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1086404B208E20CD00E97BD0 /* Coordinator.swift */; };
 		10A378E1204B2FD800E0C536 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A378E0204B2FD800E0C536 /* Theme.swift */; };
 		10A378E5204B4BF000E0C536 /* Theme+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A378E4204B4BF000E0C536 /* Theme+UIButton.swift */; };
 		10A378EE204B540E00E0C536 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10A378EA204B540E00E0C536 /* Assets.xcassets */; };
@@ -83,7 +85,6 @@
 		E2D9A2191E5530FC003324F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2D9A2171E5530FC003324F7 /* LaunchScreen.storyboard */; };
 		E2D9A2241E5530FC003324F7 /* Auto_Stop_RaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D9A2231E5530FC003324F7 /* Auto_Stop_RaceTests.swift */; };
 		E2D9A22F1E5530FC003324F7 /* Auto_Stop_RaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D9A22E1E5530FC003324F7 /* Auto_Stop_RaceUITests.swift */; };
-		E2D9A2421E5533EE003324F7 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D9A2411E5533EE003324F7 /* Coordinator.swift */; };
 		E2D9A2441E5534DA003324F7 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D9A2431E5534DA003324F7 /* AppCoordinator.swift */; };
 		E2D9A2481E55369E003324F7 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D9A2461E55369E003324F7 /* DashboardViewController.swift */; };
 		E2D9A2531E55492D003324F7 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D9A2511E55492D003324F7 /* MenuViewController.swift */; };
@@ -119,6 +120,8 @@
 		107118DF2084288100422C61 /* LocationsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationsListViewController.swift; path = Locations/LocationsListViewController.swift; sourceTree = "<group>"; };
 		10732CF62083FBDD0024DE78 /* Auto Stop Race.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Auto Stop Race.entitlements"; sourceTree = "<group>"; };
 		10732CF72084089A0024DE78 /* Partners.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Partners.xcassets; path = "Auto Stop Race/Resources/Assets/Partners.xcassets"; sourceTree = "<group>"; };
+		10864049208E1EF600E97BD0 /* ApplicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationViewController.swift; sourceTree = "<group>"; };
+		1086404B208E20CD00E97BD0 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		10A378E0204B2FD800E0C536 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		10A378E4204B4BF000E0C536 /* Theme+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme+UIButton.swift"; sourceTree = "<group>"; };
 		10A378EA204B540E00E0C536 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Auto Stop Race/Resources/Assets/Assets.xcassets"; sourceTree = "<group>"; };
@@ -204,7 +207,6 @@
 		E2D9A22A1E5530FC003324F7 /* Auto Stop RaceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Auto Stop RaceUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2D9A22E1E5530FC003324F7 /* Auto_Stop_RaceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auto_Stop_RaceUITests.swift; sourceTree = "<group>"; };
 		E2D9A2301E5530FC003324F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E2D9A2411E5533EE003324F7 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		E2D9A2431E5534DA003324F7 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		E2D9A2461E55369E003324F7 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		E2D9A2511E55492D003324F7 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = Menu/MenuViewController.swift; sourceTree = "<group>"; };
@@ -639,7 +641,7 @@
 		E2D9A2401E553389003324F7 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				E2D9A2411E5533EE003324F7 /* Coordinator.swift */,
+				1086404B208E20CD00E97BD0 /* Coordinator.swift */,
 				E2D9A2431E5534DA003324F7 /* AppCoordinator.swift */,
 				E271C2C51E56460C00CD4F15 /* DashboardCoordinator.swift */,
 				E2C0613E1E5A67A90022D6F1 /* MenuCoordinator.swift */,
@@ -719,6 +721,7 @@
 				E24420761E84CE2700556FDC /* Toast.swift */,
 				E29F1BD81E8B106F006D8178 /* FormViewControllerWithBackButton.swift */,
 				E288730E1E95DFB20005237D /* ProgressHUD.swift */,
+				10864049208E1EF600E97BD0 /* ApplicationViewController.swift */,
 			);
 			name = BaseViews;
 			sourceTree = "<group>";
@@ -787,8 +790,6 @@
 				E2D9A21B1E5530FC003324F7 /* Sources */,
 				E2D9A21C1E5530FC003324F7 /* Frameworks */,
 				E2D9A21D1E5530FC003324F7 /* Resources */,
-				9093976FCBD368793F3F2B0E /* [CP] Embed Pods Frameworks */,
-				F75F7DA404BEC4BAEF9DC93F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -808,8 +809,6 @@
 				E2D9A2261E5530FC003324F7 /* Sources */,
 				E2D9A2271E5530FC003324F7 /* Frameworks */,
 				E2D9A2281E5530FC003324F7 /* Resources */,
-				D27D1D132B94A8214E576E5F /* [CP] Embed Pods Frameworks */,
-				1C476FEC37A68EF2474808EC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -942,21 +941,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Auto Stop Race/Pods-Auto Stop Race-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		1C476FEC37A68EF2474808EC /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Auto Stop RaceUITests/Pods-Auto Stop RaceUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		330D9740FCCE0B5D3F7B4003 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1009,21 +993,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9093976FCBD368793F3F2B0E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Auto Stop RaceTests/Pods-Auto Stop RaceTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AA4492BBA96F01031189FE90 /* [CP] Embed Pods Frameworks */ = {
@@ -1080,21 +1049,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Auto Stop Race/Pods-Auto Stop Race-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D27D1D132B94A8214E576E5F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Auto Stop RaceUITests/Pods-Auto Stop RaceUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		E2C5EE911E98099900BD5838 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1107,21 +1061,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Fabric/run\" 72e1e9fa3c05e7ff3346632bf926ed2a56077171 cbbe3bafde6322db14beb8c164febc3124db32e745699be0b940b828f1836854";
-		};
-		F75F7DA404BEC4BAEF9DC93F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Auto Stop RaceTests/Pods-Auto Stop RaceTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1159,6 +1098,7 @@
 				E27CB7A81E5867C3006B2396 /* LocationsMapViewController.swift in Sources */,
 				E29F1BE11E8B1D8C006D8178 /* ImageRow.swift in Sources */,
 				E2D011421E5BE6680021936A /* Phrase.swift in Sources */,
+				1086404A208E1EF600E97BD0 /* ApplicationViewController.swift in Sources */,
 				E2D011401E5BE5920021936A /* PhraseCell.swift in Sources */,
 				10A378E1204B2FD800E0C536 /* Theme.swift in Sources */,
 				E2D9A2571E555E6C003324F7 /* UIColor.swift in Sources */,
@@ -1173,6 +1113,7 @@
 				E2D2EB3D1E5AEDF000C56A61 /* LoginViewCoordinator.swift in Sources */,
 				E2044EE81EA7C98A007B1C86 /* String.swift in Sources */,
 				E27CB7B21E586B59006B2396 /* ContactViewModel.swift in Sources */,
+				1086404C208E20CD00E97BD0 /* Coordinator.swift in Sources */,
 				E25F73D81E56ADA7003DEB3C /* PartnersViewController.swift in Sources */,
 				E271C2CE1E5660EC00CD4F15 /* DashboardViewModel.swift in Sources */,
 				E29F1BDF1E8B1D76006D8178 /* ImagePickerController.swift in Sources */,
@@ -1192,7 +1133,6 @@
 				E2C0614D1E5AB2920022D6F1 /* ContactCoordinator.swift in Sources */,
 				E29F889C1E5F01A1008F1F46 /* LocationsViewModel.swift in Sources */,
 				E2C5EE8E1E971C4900BD5838 /* TeamLocationCell.swift in Sources */,
-				E2D9A2421E5533EE003324F7 /* Coordinator.swift in Sources */,
 				E24420771E84CE2700556FDC /* Toast.swift in Sources */,
 				107118E02084288100422C61 /* LocationsListViewController.swift in Sources */,
 				E28622901E5AECAA008938FC /* LoginViewModel.swift in Sources */,

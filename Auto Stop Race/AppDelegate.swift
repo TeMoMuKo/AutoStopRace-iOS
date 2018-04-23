@@ -13,8 +13,8 @@ import UserNotifications
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
-    var coordinator: Coordinator!
+    private var appCoordinator: AppCoordinator!
+    public var window: UIWindow?
 
     static var shared: AppDelegate { return UIApplication.shared.delegate as! AppDelegate }
 
@@ -41,10 +41,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             //TODO: Handle background notification
         }
 
-        let navigationController = UINavigationController()
-        let coordinator = AppCoordinator(navigationController: navigationController)
-        coordinator.start()
-        self.coordinator = coordinator
+        let appWindow = UIWindow(frame: UIScreen.main.bounds)
+        appWindow.backgroundColor = UIColor.white
+
+        let applicationController = UIViewController()
+        appWindow.rootViewController = applicationController
+        self.window = appWindow
+
+        appCoordinator = AppCoordinator(applicationController: applicationController)
+        appCoordinator?.start()
+
+        appWindow.makeKeyAndVisible()
 
         setupView(application)
         return true

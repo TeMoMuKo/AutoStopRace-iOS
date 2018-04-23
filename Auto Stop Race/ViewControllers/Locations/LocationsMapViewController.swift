@@ -13,7 +13,7 @@ import RxSwift
 import RxCocoa
 import SKPhotoBrowser
 
-class LocationsViewController: UIViewControllerWithMenu, UICollectionViewDelegateFlowLayout, UISearchBarDelegate, GMSMapViewDelegate {
+class LocationsMapViewController: UIViewControllerWithMenu, UICollectionViewDelegateFlowLayout, UISearchBarDelegate, GMSMapViewDelegate {
     let cellHeight: CGFloat = 80
 
     var viewModel: LocationsViewModel!

@@ -2,6 +2,7 @@ platform :ios, '9.0'
 
 target 'Auto Stop Race' do
     use_frameworks!
+    inhibit_all_warnings!
 
     pod 'RxSwift', '~> 4.1.1'
     pod 'RxCocoa', '~> 4.1.1'

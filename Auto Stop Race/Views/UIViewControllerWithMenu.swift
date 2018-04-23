@@ -22,7 +22,7 @@ class UIViewControllerWithMenu: UIViewController {
     }
     
     func setupNavigationBar() {
-        self.navigationController?.navigationBar.topItem?.title = ""
+        navigationController?.navigationBar.topItem?.title = ""
 
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: self.navigationController!.view.frame.height))
         titleLabel.clipsToBounds = true

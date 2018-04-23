@@ -10,20 +10,18 @@ import UIKit
 
 final class PostNewLocationCoordinator: Coordinator {
     
-    var appCoordinator: AppCoordinator?
-    var serviceProvider: ServiceProvider?
+    var navigationController: UINavigationController
+    var serviceProvider: ServiceProvider
     
-    convenience init(navigationController: UINavigationController?, appCoordinator: AppCoordinator?, serviceProvider: ServiceProvider ) {
-        self.init(navigationController: navigationController)
-        
-        self.appCoordinator = appCoordinator
+    init(navigationController: UINavigationController, serviceProvider: ServiceProvider ) {
+        self.navigationController = navigationController
         self.serviceProvider = serviceProvider
     }
     
     func start() {
-        let viewModel = PostNewLocationViewModel(delegate: self, provider: serviceProvider!)
+        let viewModel = PostNewLocationViewModel(delegate: self, provider: serviceProvider)
         let viewController = PostNewLocationViewController(viewModel: viewModel)
-        navigationController?.show(viewController, sender: nil)
+        navigationController.viewControllers = [viewController]
     }
 }
 
@@ -33,7 +31,7 @@ extension PostNewLocationCoordinator: PostNewLocationViewControllerDelegate {
     }
     
     func backToLocationsScreen() {
-        _ = navigationController?.popViewController(animated: true)
+//        _ = navigationController?.popViewController(animated: true)
     }
 }
 

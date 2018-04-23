@@ -23,23 +23,16 @@ enum SettingsIndex: Int {
     }
 }
 
-protocol SettingsViewControllerDelegate: class {
-    func logoutButtonTapped()
-}
-
 class SettingsViewController: UIViewControllerWithMenu, UITableViewDelegate, UITableViewDataSource {
     
     var tableView: UITableView = UITableView.init(frame: CGRect.zero, style: .grouped)
         
     var settingsCell: UITableViewCell = UITableViewCell()
     
-    private var delegate: SettingsViewControllerDelegate?
     private let serviceProvider: ServiceProviderType
 
-    init( delegate: SettingsViewControllerDelegate, provider: ServiceProviderType) {
-        self.delegate = delegate
+    init(provider: ServiceProviderType) {
         self.serviceProvider = provider
-        
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -95,7 +88,8 @@ class SettingsViewController: UIViewControllerWithMenu, UITableViewDelegate, UIT
         let alert = UIAlertController(title: NSLocalizedString("msg_logout_question", comment: ""), message: NSLocalizedString("msg_logout_info", comment: ""), preferredStyle: UIAlertControllerStyle.alert)
 
         alert.addAction(UIAlertAction(title: NSLocalizedString("msg_logout", comment: ""), style: UIAlertActionStyle.destructive, handler: {[unowned self] _ in
-            self.delegate?.logoutButtonTapped()
+            self.serviceProvider.userDefaultsService.clearAuth()
+            self.serviceProvider.authService.logout()
         }))
         
         alert.addAction(UIAlertAction(title: NSLocalizedString("msg_cancel", comment: ""), style: UIAlertActionStyle.cancel, handler: nil))

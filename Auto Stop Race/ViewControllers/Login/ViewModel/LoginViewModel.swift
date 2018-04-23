@@ -18,18 +18,15 @@ final class LoginViewModel {
     private let serviceProvider: ServiceProviderType
     
     private let disposeBag = DisposeBag()
-    
-    private var delegate: LoginViewControllerDelegate?
-    
+
     var inputBackgroundColor: Driver<UIColor>!
     var credentialsValid: Driver<Bool>!
     var activityIndicator = Variable<Bool>(false)
     var email: Driver<String>!
     var password: Driver<String>!
     
-    init( delegate: LoginViewControllerDelegate, provider: ServiceProviderType) {
-        self.delegate = delegate
-        self.serviceProvider = provider
+    init(serviceProvider: ServiceProviderType) {
+        self.serviceProvider = serviceProvider
     }
     
     func setUpAuthDetails( email: Driver<String>, password: Driver<String>) {
@@ -66,7 +63,6 @@ final class LoginViewModel {
                         let user = try response.mapObject(User.self) as User
                         self.serviceProvider.userDefaultsService.setUserData(user: user)
                         self.serviceProvider.authService.loginStatus().value = .logged
-                        self.handleLogin()
                         Toast.showPositiveMessage(message: NSLocalizedString("msg_after_login", comment: "") + "\(user.firstName!) \(user.lastName!)")
                     } catch {
 
@@ -119,10 +115,5 @@ final class LoginViewModel {
                 Toast.showNegativeMessage(message: error.localizedDescription)
             }
         })
-    }
-    
-    func handleLogin() {
-        guard let delegate = delegate else { return }
-        delegate.loginButtonTapped()
     }
 }

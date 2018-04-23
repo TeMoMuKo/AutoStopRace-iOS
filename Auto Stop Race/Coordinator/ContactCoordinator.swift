@@ -9,11 +9,17 @@
 import UIKit
 
 final class ContactCoordinator: Coordinator {
-    
+
+    var baseViewController: ApplicationViewController
+
+    init(baseViewController: ApplicationViewController ) {
+        self.baseViewController = baseViewController
+    }
+
     func start() {
         let viewModel = ContactViewModel(delegate: self)
         let contactViewController = ContactViewController(viewModel: viewModel)
-        self.navigationController?.viewControllers = [contactViewController]
+        baseViewController.setMainController(viewController: UINavigationController(rootViewController: contactViewController))
     }
 }
 
