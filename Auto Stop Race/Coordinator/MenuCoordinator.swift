@@ -39,9 +39,6 @@ extension MenuCoordinator: MenuViewControllerDelegate {
     }
     
     func menuSelected(menu: MenuDestination) {
-//        if menu == .teams && baseViewController.navigationController?.viewControllers.last is DashboardViewController {
-//            return
-//        }
         switch menu {
         case .teams:
             let coordinator = DashboardCoordinator(baseViewController: baseViewController, serviceProvider: serviceProvider)
