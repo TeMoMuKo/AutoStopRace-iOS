@@ -21,17 +21,13 @@ final class PostNewLocationCoordinator: Coordinator {
     func start() {
         let viewModel = PostNewLocationViewModel(delegate: self, provider: serviceProvider)
         let viewController = PostNewLocationViewController(viewModel: viewModel)
-        navigationController.viewControllers = [viewController]
+        navigationController.pushViewController(viewController, animated: true)
     }
 }
 
 extension PostNewLocationCoordinator: PostNewLocationViewControllerDelegate {
-    func showMapTapped() {
-        
-    }
-    
     func backToLocationsScreen() {
-//        _ = navigationController?.popViewController(animated: true)
+        navigationController.popViewController(animated: true)
     }
 }
 
