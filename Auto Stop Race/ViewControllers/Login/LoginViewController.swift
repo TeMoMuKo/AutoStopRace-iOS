@@ -18,20 +18,19 @@ protocol LoginViewControllerDelegate: class {
 
 class LoginViewController: UIViewControllerWithBackButton {
     
-    let usernameTextField: UITextField = {
-        let textField = UITextField()
+    let usernameTextField: UITextField = { textField in
         textField.backgroundColor = UIColor.white
         textField.placeholder = NSLocalizedString("hint_email", comment: "")
+        textField.set(traits: .email)
         return textField
-    }()
+    }(UITextField())
     
-    let passwordTextField: UITextField = {
-        let textField = UITextField()
+    let passwordTextField: UITextField = { textField in
         textField.backgroundColor = UIColor.white
         textField.placeholder = NSLocalizedString("hint_password", comment: "")
-        textField.isSecureTextEntry = true
+        textField.set(traits: .password)
         return textField
-    }()
+    }(UITextField())
     
     let separatorView = SeparatorView()
     

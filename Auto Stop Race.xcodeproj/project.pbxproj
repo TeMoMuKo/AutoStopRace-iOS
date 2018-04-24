@@ -12,6 +12,7 @@
 		10732CF82084089A0024DE78 /* Partners.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10732CF72084089A0024DE78 /* Partners.xcassets */; };
 		1086404A208E1EF600E97BD0 /* ApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10864049208E1EF600E97BD0 /* ApplicationViewController.swift */; };
 		1086404C208E20CD00E97BD0 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1086404B208E20CD00E97BD0 /* Coordinator.swift */; };
+		10864051208FCD5D00E97BD0 /* TextFieldTraits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10864050208FCD5D00E97BD0 /* TextFieldTraits.swift */; };
 		10A378E1204B2FD800E0C536 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A378E0204B2FD800E0C536 /* Theme.swift */; };
 		10A378E5204B4BF000E0C536 /* Theme+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A378E4204B4BF000E0C536 /* Theme+UIButton.swift */; };
 		10A378EE204B540E00E0C536 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10A378EA204B540E00E0C536 /* Assets.xcassets */; };
@@ -122,6 +123,7 @@
 		10732CF72084089A0024DE78 /* Partners.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Partners.xcassets; path = "Auto Stop Race/Resources/Assets/Partners.xcassets"; sourceTree = "<group>"; };
 		10864049208E1EF600E97BD0 /* ApplicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationViewController.swift; sourceTree = "<group>"; };
 		1086404B208E20CD00E97BD0 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		10864050208FCD5D00E97BD0 /* TextFieldTraits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTraits.swift; sourceTree = "<group>"; };
 		10A378E0204B2FD800E0C536 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		10A378E4204B4BF000E0C536 /* Theme+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme+UIButton.swift"; sourceTree = "<group>"; };
 		10A378EA204B540E00E0C536 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Auto Stop Race/Resources/Assets/Assets.xcassets"; sourceTree = "<group>"; };
@@ -248,6 +250,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1086404F208FCD3C00E97BD0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				10864050208FCD5D00E97BD0 /* TextFieldTraits.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		10A378DF204B2FA900E0C536 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
@@ -565,6 +575,7 @@
 				E2D9A2401E553389003324F7 /* Coordinator */,
 				E2D9A23D1E553381003324F7 /* Networking */,
 				E2D9A23C1E55337A003324F7 /* ViewControllers */,
+				1086404F208FCD3C00E97BD0 /* Utils */,
 				E2D9A20E1E5530FC003324F7 /* AppDelegate.swift */,
 				E2D9A2171E5530FC003324F7 /* LaunchScreen.storyboard */,
 				E2D9A21A1E5530FC003324F7 /* Info.plist */,
@@ -1093,6 +1104,7 @@
 				E2D011571E5D9DC50021936A /* PhraseViewModelType.swift in Sources */,
 				E2D011501E5D95AB0021936A /* BaseService.swift in Sources */,
 				E2D9A2441E5534DA003324F7 /* AppCoordinator.swift in Sources */,
+				10864051208FCD5D00E97BD0 /* TextFieldTraits.swift in Sources */,
 				E288730F1E95DFB20005237D /* ProgressHUD.swift in Sources */,
 				E27CB7AC1E5869AD006B2396 /* ContactViewController.swift in Sources */,
 				E27CB7A81E5867C3006B2396 /* LocationsMapViewController.swift in Sources */,
