@@ -25,7 +25,7 @@ final class LocationsViewModel {
     let allTeams = Variable<[Team]>([])
     let shownTeams = Variable<[Team]>([])
     
-    let locationRecords = Variable<[LocationRecord]>([])
+    var locationRecords = Variable<[LocationRecord]>([])
     
     var userTeamNumber: Int?
     
