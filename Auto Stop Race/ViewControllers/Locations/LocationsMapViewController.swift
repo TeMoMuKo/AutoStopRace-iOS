@@ -136,6 +136,10 @@ class LocationsMapViewController: UIViewControllerWithMenu, UICollectionViewDele
     private func setupBindings() {
         viewModel.locationRecords.asDriver().drive(onNext: { [weak self] locations in
             guard let `self` = self else { return }
+            let tabBarControllerItems = self.tabBarController?.tabBar.items
+            if let tabArray = tabBarControllerItems {
+                tabArray[1].isEnabled = !locations.isEmpty
+            }
             self.mapView.clear()
             for userLocation in locations {
                 let position = CLLocationCoordinate2D(latitude: userLocation.latitude, longitude: userLocation.longitude)

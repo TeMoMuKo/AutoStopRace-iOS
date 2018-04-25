@@ -1,4 +1,4 @@
-    //
+//
 //  LocationsViewModel.swift
 //  Auto Stop Race
 //
