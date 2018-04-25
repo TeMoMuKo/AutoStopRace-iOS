@@ -18,6 +18,11 @@
 		10A378EE204B540E00E0C536 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10A378EA204B540E00E0C536 /* Assets.xcassets */; };
 		10A378F0204B541800E0C536 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 10A378EF204B541800E0C536 /* Localizable.strings */; };
 		10A378F3204B549800E0C536 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A378F2204B549800E0C536 /* SeparatorView.swift */; };
+		10A8D08720911A1E00BC81CF /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A8D08620911A1E00BC81CF /* UIImageView.swift */; };
+		10A8D0892091252900BC81CF /* ScrollableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A8D0882091252900BC81CF /* ScrollableStackView.swift */; };
+		10A8D08B2091255300BC81CF /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A8D08A2091255300BC81CF /* Tile.swift */; };
+		10A8D0932091260100BC81CF /* UserLocationTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A8D0912091260100BC81CF /* UserLocationTile.swift */; };
+		10A8D0942091260100BC81CF /* UserLocationTile.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10A8D0922091260100BC81CF /* UserLocationTile.xib */; };
 		111ED988E54B3CE0FC35922B /* Pods_Auto_Stop_Race.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A56B20F1205FFFFD65D923F /* Pods_Auto_Stop_Race.framework */; };
 		A70F31394243B1FE8EC8CF9C /* Pods_Auto_Stop_RaceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12DA71DF16DEB8B3241A29E9 /* Pods_Auto_Stop_RaceUITests.framework */; };
 		E2044EE81EA7C98A007B1C86 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2044EE71EA7C98A007B1C86 /* String.swift */; };
@@ -129,6 +134,11 @@
 		10A378EA204B540E00E0C536 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Auto Stop Race/Resources/Assets/Assets.xcassets"; sourceTree = "<group>"; };
 		10A378EF204B541800E0C536 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = Resources/Locales/Localizable.strings; sourceTree = "<group>"; };
 		10A378F2204B549800E0C536 /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
+		10A8D08620911A1E00BC81CF /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIImageView.swift; path = Extension/UIImageView.swift; sourceTree = "<group>"; };
+		10A8D0882091252900BC81CF /* ScrollableStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScrollableStackView.swift; path = "Auto Stop Race/Views/ScrollableStackView.swift"; sourceTree = SOURCE_ROOT; };
+		10A8D08A2091255300BC81CF /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Tile.swift; path = "Auto Stop Race/Views/Tile.swift"; sourceTree = SOURCE_ROOT; };
+		10A8D0912091260100BC81CF /* UserLocationTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserLocationTile.swift; path = Locations/Views/UserLocationTile.swift; sourceTree = "<group>"; };
+		10A8D0922091260100BC81CF /* UserLocationTile.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserLocationTile.xib; path = Locations/Views/UserLocationTile.xib; sourceTree = "<group>"; };
 		12DA71DF16DEB8B3241A29E9 /* Pods_Auto_Stop_RaceUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Auto_Stop_RaceUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EB12920D258F3FF2EDA9C4B /* Pods_Auto_Stop_RaceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Auto_Stop_RaceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		359411C22E8D92D7533C5146 /* Pods-Auto Stop RaceUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Auto Stop RaceUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Auto Stop RaceUITests/Pods-Auto Stop RaceUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -283,6 +293,15 @@
 				10A378F2204B549800E0C536 /* SeparatorView.swift */,
 			);
 			name = SharedUIComponents;
+			sourceTree = "<group>";
+		};
+		10A8D08C2091256900BC81CF /* ScrollableStackView */ = {
+			isa = PBXGroup;
+			children = (
+				10A8D0882091252900BC81CF /* ScrollableStackView.swift */,
+				10A8D08A2091255300BC81CF /* Tile.swift */,
+			);
+			name = ScrollableStackView;
 			sourceTree = "<group>";
 		};
 		6B17EC69FCC18E7DDD958899 /* Frameworks */ = {
@@ -491,6 +510,8 @@
 		E2C5EE8C1E971C1100BD5838 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				10A8D0912091260100BC81CF /* UserLocationTile.swift */,
+				10A8D0922091260100BC81CF /* UserLocationTile.xib */,
 				E2C5EE8D1E971C4900BD5838 /* TeamLocationCell.swift */,
 			);
 			name = Views;
@@ -711,6 +732,7 @@
 				E2C5EE8F1E971FD000BD5838 /* Date.swift */,
 				E2044EE71EA7C98A007B1C86 /* String.swift */,
 				E21BBB5E1EA8B27B005D54FC /* UIImage.swift */,
+				10A8D08620911A1E00BC81CF /* UIImageView.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -726,6 +748,7 @@
 		E2D9A25B1E557042003324F7 /* BaseViews */ = {
 			isa = PBXGroup;
 			children = (
+				10A8D08C2091256900BC81CF /* ScrollableStackView */,
 				E2D9A25C1E557057003324F7 /* BaseUICollectionCell.swift */,
 				E2C239CB1E594732003818FB /* UIViewControllerWithMenu.swift */,
 				E2D2EB3E1E5AF6B000C56A61 /* UIViewControllerWithBackButton.swift */,
@@ -893,6 +916,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E244207B1E8518A600556FDC /* Keys.plist in Resources */,
+				10A8D0942091260100BC81CF /* UserLocationTile.xib in Resources */,
 				107118DE20841E8400422C61 /* GoogleService-Info.plist in Resources */,
 				10A378F0204B541800E0C536 /* Localizable.strings in Resources */,
 				10732CF82084089A0024DE78 /* Partners.xcassets in Resources */,
@@ -1095,6 +1119,7 @@
 				E24FFC451E5B174D00F7686F /* PhrasebookViewModel.swift in Sources */,
 				E2D9A25A1E556FFA003324F7 /* MenuCell.swift in Sources */,
 				E271C2C61E56460D00CD4F15 /* DashboardCoordinator.swift in Sources */,
+				10A8D08720911A1E00BC81CF /* UIImageView.swift in Sources */,
 				E2F1E3F61EA33892005BDFC9 /* Partner.swift in Sources */,
 				E2C5EE9B1E9C1A8D00BD5838 /* LocationSyncService.swift in Sources */,
 				E24420751E84B99800556FDC /* UserLocationsCoordinator.swift in Sources */,
@@ -1134,6 +1159,7 @@
 				E29F1BE31E8B2F44006D8178 /* CLLocationCoordinate2D.swift in Sources */,
 				E2645F141E649923004C10F1 /* AsrApi.swift in Sources */,
 				E29293BC1E8223350083A1DD /* SettingsViewController.swift in Sources */,
+				10A8D0932091260100BC81CF /* UserLocationTile.swift in Sources */,
 				E2C061441E5A99F50022D6F1 /* Menu.swift in Sources */,
 				E24420831E852D5D00556FDC /* PostNewLocationCoordinator.swift in Sources */,
 				E2D9A2531E55492D003324F7 /* MenuViewController.swift in Sources */,
@@ -1147,9 +1173,11 @@
 				E2C5EE8E1E971C4900BD5838 /* TeamLocationCell.swift in Sources */,
 				E24420771E84CE2700556FDC /* Toast.swift in Sources */,
 				107118E02084288100422C61 /* LocationsListViewController.swift in Sources */,
+				10A8D08B2091255300BC81CF /* Tile.swift in Sources */,
 				E28622901E5AECAA008938FC /* LoginViewModel.swift in Sources */,
 				E2D2EB3F1E5AF6B000C56A61 /* UIViewControllerWithBackButton.swift in Sources */,
 				E29293B91E8108D80083A1DD /* User.swift in Sources */,
+				10A8D0892091252900BC81CF /* ScrollableStackView.swift in Sources */,
 				10A378E5204B4BF000E0C536 /* Theme+UIButton.swift in Sources */,
 				E2A6AACC1E80E07E00E8118B /* UserDefaultsService.swift in Sources */,
 				E2D9A20F1E5530FC003324F7 /* AppDelegate.swift in Sources */,

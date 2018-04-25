@@ -12,40 +12,33 @@ import RxSwift
 import RxCocoa
 import SKPhotoBrowser
 
-class LocationsListViewController: UIViewControllerWithMenu, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
+class LocationsListViewController: UIViewControllerWithMenu {
+
+    private lazy var scrollableStackView: ScrollableStackView = { scrollableStackView in
+        scrollableStackView.translatesAutoresizingMaskIntoConstraints = false
+        scrollableStackView.backgroundColor = .white
+        return scrollableStackView
+    }(ScrollableStackView())
 
     var viewModel: LocationsViewModel!
 
-    var shareUrlSufix: String?
+    private let bag = DisposeBag()
 
-    let locationsSearchBar: UISearchBar = {
-        let searchBar = UISearchBar()
-        searchBar.barTintColor = Theme.Color.blueMenu
-        return searchBar
-    }()
-
-    let teamsCollectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = UIColor.white
-        return collectionView
-    }()
-
-    private let disposeBag = DisposeBag()
-
-    convenience init(viewModel: LocationsViewModel) {
-        self.init()
+    init(viewModel: LocationsViewModel) {
         self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        locationsSearchBar.delegate = self
-
         setupNavigationBarTitle()
-        setupShareBarButton()
-        setupSearchBar()
+        setupScrollableStackView()
+        setupConstraints()
     }
 
     private func setupNavigationBarTitle() {
@@ -53,26 +46,36 @@ class LocationsListViewController: UIViewControllerWithMenu, UICollectionViewDel
         titleLabel.text = NSLocalizedString("title_teams", comment: "")
     }
 
-    private func setupShareBarButton() {
-        let menuImage = UIImage(named: "ic_share_white")?.withRenderingMode(.alwaysOriginal)
-        let menuBarButtonItem = UIBarButtonItem(image: menuImage, style: .plain, target: self, action: #selector(handleShareTap))
-        navigationItem.rightBarButtonItems = [menuBarButtonItem]
+    private func setupScrollableStackView() {
+        view.addSubview(scrollableStackView)
+
+        viewModel.locationRecords.asDriver().drive(onNext: { [weak self] locations in
+            guard let `self` = self else { return }
+            self.scrollableStackView.clearTiles()
+            locations.forEach { location in
+                let tile = UserLocationTile()
+                tile.imageTapAction = self.showImagePreview
+                tile.location = location
+                tile.inset = TileInsets(top: 16, left: 16, bottom: 16, right: 16)
+                self.scrollableStackView.addTile(tile: tile)
+            }
+        }).disposed(by: bag)
     }
 
-    @objc func handleShareTap() {
-        let urlTeam = shareUrlSufix ?? ""
-        if let mapUrl = NSURL(string: ApiConfig.shareMapUrl + urlTeam) {
-            let objectsToShare = [mapUrl]
-            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-            self.present(activityVC, animated: true, completion: nil)
-        }
+    func showImagePreview(imageUrl: String, caption: String) {
+        var images = [SKPhoto]()
+        let photo = SKPhoto.photoWithImageURL(imageUrl)
+        photo.caption = caption
+
+        photo.shouldCachePhotoURLImage = true
+        images.append(photo)
+
+        let browser = SKPhotoBrowser(photos: images)
+        browser.initializePageIndex(0)
+        self.navigationController?.present(browser, animated: true, completion: {})
     }
 
-    private func setupSearchBar() {
-        let textfield: UITextField = locationsSearchBar.value(forKey: "searchField") as! UITextField
-        textfield.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("hint_enter_team_number", comment: ""),
-                                                             attributes: [NSAttributedStringKey.foregroundColor: UIColor.lightGray])
-        view.addSubview(locationsSearchBar)
+    private func setupConstraints() {
+        scrollableStackView.strechOnSafeArea()
     }
-
 }
