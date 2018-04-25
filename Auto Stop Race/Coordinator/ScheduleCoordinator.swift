@@ -21,7 +21,7 @@ final class ScheduleCoordinator: Coordinator {
         guard let url = URL(string: ApiConfig.assetsJsonUrl) else { return }
         guard let imageAssets = try? AssetsInfo(fromURL: url) else { return }
         var images = [SKPhoto]()
-        let photo = SKPhoto.photoWithImageURL(imageAssets.scheduleo)
+        let photo = SKPhoto.photoWithImageURL(imageAssets.schedule)
         photo.shouldCachePhotoURLImage = true
         images.append(photo)
         let browser = SKPhotoBrowser(photos: images)
