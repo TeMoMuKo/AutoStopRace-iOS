@@ -89,6 +89,8 @@
 "last_location_record" = "Ostatnie zameldowanie: ";
 "missing_location" = "Brak";
 "marker_show_image_text" = "Dotknij, aby zobaczyć zdjęcie";
+"tabbar_map_title" = "Mapa";
+"tabbar_list_title" = "Tablica";
 
 // Image Row
 "image_source_type_camera" = "Zrób zdjęcie";

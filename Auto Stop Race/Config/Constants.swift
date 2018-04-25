@@ -7,13 +7,15 @@
 //
 
 struct ApiConfig {
-    static let baseURL = "https://api.autostoprace.pl/api/v2/"
+    static let baseURL = "https://api.autostoprace.pl/api/v3/"
     static let headerFieldToken = "access-token"
     static let headerFieldClient = "client"
     static let headerFieldUid = "uid"
     static let apiResetPassRedirectUrl = "http://autostoprace.pl"
     static let shareMapUrl = "https://mapa.autostoprace.pl/"
     static let imageUrl = "https://api.autostoprace.pl/uploads/location/image/"
+    static let assetsJsonUrl = "https://mapa.autostoprace.pl/app/assetsinfo.json"
+
 }
 
 struct UserDefaultsKeys {

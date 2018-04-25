@@ -2,6 +2,7 @@ platform :ios, '9.0'
 
 target 'Auto Stop Race' do
     use_frameworks!
+    inhibit_all_warnings!
 
     pod 'RxSwift', '~> 4'
     pod 'RxCocoa', '~> 4'
@@ -27,6 +28,10 @@ target 'Auto Stop Race' do
     pod 'Crashlytics'
 
     pod 'SwiftLint'
+
+    pod 'Firebase/Core'
+    pod 'Firebase/Messaging'
+    pod 'Firebase/Crash'
 
     target 'Auto Stop RaceTests' do
     inherit! :search_paths

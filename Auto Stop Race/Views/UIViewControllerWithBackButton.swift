@@ -12,7 +12,7 @@ class UIViewControllerWithBackButton: UIViewController, UIGestureRecognizerDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = .white
         setupViews()
     }
     
@@ -22,7 +22,7 @@ class UIViewControllerWithBackButton: UIViewController, UIGestureRecognizerDeleg
     }
     
     func setupNavigationBar() {
-        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: self.navigationController!.view.frame.height))
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: navigationController!.view.frame.height))
         titleLabel.clipsToBounds = true
         navigationItem.titleView = titleLabel
         titleLabel.textColor = UIColor.white
@@ -33,18 +33,17 @@ class UIViewControllerWithBackButton: UIViewController, UIGestureRecognizerDeleg
         let menuImage = UIImage(named: "ic_keyboard_backspace_white")?.withRenderingMode(.alwaysOriginal)
         let menuBarButtonItem = UIBarButtonItem(image: menuImage, style: .plain, target: self, action: #selector(popBack))
         navigationItem.leftBarButtonItem = menuBarButtonItem
-        
-        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-        let swipeBackGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(popBack))
-        swipeBackGestureRecognizer.direction = UISwipeGestureRecognizerDirection.right
-        view.addGestureRecognizer(swipeBackGestureRecognizer)
+
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
-    
-    func swipeBackAction(sender: UISwipeGestureRecognizer) {
-        _ = navigationController?.popViewController(animated: false)
-    }
-    
+
     @objc func popBack() {
-        _ = navigationController?.popViewController(animated: false)
+        navigationController?.popViewController(animated: true)
+    }
+
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 }
+

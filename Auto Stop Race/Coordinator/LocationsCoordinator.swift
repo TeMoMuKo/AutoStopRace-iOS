@@ -11,26 +11,31 @@ import RxSwift
 
 final class LocationsCoordinator: Coordinator {
     
-    var appCoordinator: AppCoordinator?
-    var serviceProvider: ServiceProvider?
-    
-    convenience init(navigationController: UINavigationController?, appCoordinator: AppCoordinator?, serviceProvider: ServiceProvider ) {
-        self.init(navigationController: navigationController)
-        
-        self.appCoordinator = appCoordinator
+    let baseViewController: ApplicationViewController
+    let serviceProvider: ServiceProvider
+    let locationViewModel: LocationsViewModel
+    let locationMapViewController: LocationsMapViewController
+
+    init(baseViewController: ApplicationViewController, serviceProvider: ServiceProvider ) {
+        self.baseViewController = baseViewController
         self.serviceProvider = serviceProvider
+        self.locationViewModel = LocationsViewModel(provider: serviceProvider)
+        self.locationMapViewController = LocationsMapViewController(viewModel: locationViewModel)
     }
     
     func start() {
-        let locationViewModel = LocationsViewModel(provider: serviceProvider!)
-        let locationsViewController = LocationsViewController(viewModel: locationViewModel)
-        self.navigationController?.viewControllers = [locationsViewController]
+        let tabBarController = UITabBarController()
+        let locationsMapViewController =  UINavigationController(rootViewController: locationMapViewController)
+        locationsMapViewController.tabBarItem = UITabBarItem(title: NSLocalizedString("tabbar_map_title", comment: ""), image: UIImage(named: "tabbar/map"), tag: 0)
+        let locationsListViewController = UINavigationController(rootViewController: LocationsListViewController(viewModel: locationViewModel))
+        locationsListViewController.tabBarItem = UITabBarItem(title: NSLocalizedString("tabbar_list_title", comment: ""), image: UIImage(named: "tabbar/list"), tag: 1)
+        let controllers = [locationsMapViewController, locationsListViewController]
+        tabBarController.viewControllers = controllers
+        baseViewController.setMainController(viewController: tabBarController)
     }
     
     func startWithUserLocations( locationRecords: Variable<[LocationRecord]> ) {
-        let locationViewModel = LocationsViewModel(provider: serviceProvider!, locationRecords: locationRecords)
-        let locationsViewController = LocationsViewController(viewModel: locationViewModel)
-        locationsViewController.showUserMarkers()
-        self.navigationController?.viewControllers = [locationsViewController]
+        start()
+        locationViewModel.locationRecords = locationRecords
     }
 }

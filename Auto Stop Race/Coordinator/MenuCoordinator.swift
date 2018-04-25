@@ -7,17 +7,14 @@
 //
 
 import UIKit
-import SKPhotoBrowser
 
 final class MenuCoordinator: Coordinator {
 
-    var appCoordinator: AppCoordinator?
-    var serviceProvider: ServiceProvider?
+    var baseViewController: ApplicationViewController
+    var serviceProvider: ServiceProvider
 
-    convenience init(navigationController: UINavigationController?, appCoordinator: AppCoordinator?, serviceProvider: ServiceProvider ) {
-        self.init(navigationController: navigationController)
-        
-        self.appCoordinator = appCoordinator
+    init(baseViewController: ApplicationViewController, serviceProvider: ServiceProvider ) {
+        self.baseViewController = baseViewController
         self.serviceProvider = serviceProvider
     }
     
@@ -29,7 +26,7 @@ final class MenuCoordinator: Coordinator {
     func start() {
         let nc = NotificationCenter.default
         _ = nc.addObserver(forName: myNotification, object: nil, queue: nil, using: showMenu)
-        menuViewModel = MenuViewModel(delegate: self, provider: serviceProvider!)
+        menuViewModel = MenuViewModel(delegate: self, provider: serviceProvider)
         menuViewController = MenuViewController(viewModel: menuViewModel)
     }
 }
@@ -41,48 +38,35 @@ extension MenuCoordinator: MenuViewControllerDelegate {
     }
     
     func menuSelected(menu: MenuDestination) {
-        if menu == .teams && self.navigationController?.viewControllers.last is DashboardViewController {
-            return
-        }
-        _ = self.navigationController?.popViewController(animated: false)
-
         switch menu {
         case .teams:
-            let coordinator = DashboardCoordinator(navigationController: navigationController, appCoordinator: appCoordinator, serviceProvider: serviceProvider!)
+            let coordinator = DashboardCoordinator(baseViewController: baseViewController, serviceProvider: serviceProvider)
             coordinator.start()
         case .locations:
-            let coordinator = LocationsCoordinator(navigationController: navigationController, appCoordinator: appCoordinator, serviceProvider: serviceProvider!)
+            let coordinator = LocationsCoordinator(baseViewController: baseViewController, serviceProvider: serviceProvider)
             coordinator.start()
         case .campus:
-            var images = [SKPhoto]()
-            let photo = SKPhoto.photoWithImage(#imageLiteral(resourceName: "campus_map"))
-            images.append(photo)
-            let browser = SKPhotoBrowser(photos: images)
-            browser.initializePageIndex(0)
-            self.navigationController?.present(browser, animated: true, completion: nil)
+            let coordinator = CampusCoordinator(baseViewController: baseViewController)
+            coordinator.start()
         case .schedule:
-            var images = [SKPhoto]()
-            let photo = SKPhoto.photoWithImage(#imageLiteral(resourceName: "harmonogram"))
-            images.append(photo)
-            let browser = SKPhotoBrowser(photos: images)
-            browser.initializePageIndex(0)
-            self.navigationController?.present(browser, animated: true, completion: nil)
+            let coordinator = ScheduleCoordinator(baseViewController: baseViewController)
+            coordinator.start()
         case .phrasebook:
-            let prasebookViewModel = PhrasebookViewModel(provider: serviceProvider!)
+            let prasebookViewModel = PhrasebookViewModel(provider: serviceProvider)
             let phrasebookViewController = PhrasebookViewController(viewModel: prasebookViewModel)
-            self.navigationController?.viewControllers = [phrasebookViewController]
+            baseViewController.setMainController(viewController: UINavigationController(rootViewController: phrasebookViewController))
         case .contact:
-            let coordinator = ContactCoordinator(navigationController: navigationController)
+            let coordinator = ContactCoordinator(baseViewController: baseViewController)
             coordinator.start()
         case .partners:
             let partnersViewController = PartnersViewController()
-            self.navigationController?.viewControllers = [partnersViewController]
+            baseViewController.setMainController(viewController: UINavigationController(rootViewController: partnersViewController))
         case .settings:
-            let settingViewController = SettingsViewController(delegate: appCoordinator.self!, provider: serviceProvider!)
-            self.navigationController?.viewControllers = [settingViewController]
+            let settingViewController = SettingsViewController(provider: serviceProvider)
+            baseViewController.setMainController(viewController: UINavigationController(rootViewController: settingViewController))
         case .about:
             let aboutViewController = AboutViewController()
-            self.navigationController?.viewControllers = [aboutViewController]
+            baseViewController.setMainController(viewController: UINavigationController(rootViewController: aboutViewController))
         }
     }
 }

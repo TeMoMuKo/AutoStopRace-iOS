@@ -37,19 +37,16 @@ class FormViewControllerWithBackButton: FormViewController, UIGestureRecognizerD
         let menuImage = UIImage(named: "ic_keyboard_backspace_white")?.withRenderingMode(.alwaysOriginal)
         let menuBarButtonItem = UIBarButtonItem(image: menuImage, style: .plain, target: self, action: #selector(popBack))
         navigationItem.leftBarButtonItem = menuBarButtonItem
-        
-        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-        let swipeBackGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(popBack))
-        swipeBackGestureRecognizer.direction = UISwipeGestureRecognizerDirection.right
-        view.addGestureRecognizer(swipeBackGestureRecognizer)
-    }
-    
-    func swipeBackAction(sender: UISwipeGestureRecognizer) {
-        _ = navigationController?.popViewController(animated: false)
+
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
     
     @objc func popBack() {
-        _ = navigationController?.popViewController(animated: false)
+        navigationController?.popViewController(animated: true)
     }
-    
+
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
 }
