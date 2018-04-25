@@ -74,6 +74,7 @@ class LoginViewController: UIViewControllerWithBackButton {
         let image = UIImageView(image: UIImage(named: "bg"))
         image.contentMode = .scaleAspectFill
         image.frame = view.frame
+        image.clipsToBounds = true
         return image
     }()
 

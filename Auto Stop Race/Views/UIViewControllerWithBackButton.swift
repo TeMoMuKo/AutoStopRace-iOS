@@ -39,7 +39,7 @@ class UIViewControllerWithBackButton: UIViewController, UIGestureRecognizerDeleg
     }
 
     @objc func popBack() {
-        _ = navigationController?.popViewController(animated: false)
+        navigationController?.popViewController(animated: true)
     }
 
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {

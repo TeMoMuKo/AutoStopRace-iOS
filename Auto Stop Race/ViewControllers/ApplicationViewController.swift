@@ -19,6 +19,13 @@ class ApplicationViewController {
     }
 
     func setMainController(viewController: UIViewController) {
+        if self.rootViewController != nil {
+            for controller in controllers {
+                controller.view.removeFromSuperview()
+                controller.removeFromParentViewController()
+            }
+            controllers.removeAll()
+        }
         if let rootViewController = self.rootViewController {
             controllers.append(viewController)
             rootViewController.addChildViewController(viewController)
