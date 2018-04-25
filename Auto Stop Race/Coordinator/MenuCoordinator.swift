@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SKPhotoBrowser
 
 final class MenuCoordinator: Coordinator {
 
@@ -47,19 +46,11 @@ extension MenuCoordinator: MenuViewControllerDelegate {
             let coordinator = LocationsCoordinator(baseViewController: baseViewController, serviceProvider: serviceProvider)
             coordinator.start()
         case .campus:
-            var images = [SKPhoto]()
-            let photo = SKPhoto.photoWithImage(#imageLiteral(resourceName: "campus_map"))
-            images.append(photo)
-            let browser = SKPhotoBrowser(photos: images)
-            browser.initializePageIndex(0)
-            baseViewController.present(browser, animated: true)
+            let coordinator = CampusCoordinator(baseViewController: baseViewController)
+            coordinator.start()
         case .schedule:
-            var images = [SKPhoto]()
-            let photo = SKPhoto.photoWithImage(#imageLiteral(resourceName: "harmonogram"))
-            images.append(photo)
-            let browser = SKPhotoBrowser(photos: images)
-            browser.initializePageIndex(0)
-            baseViewController.present(browser, animated: true)
+            let coordinator = ScheduleCoordinator(baseViewController: baseViewController)
+            coordinator.start()
         case .phrasebook:
             let prasebookViewModel = PhrasebookViewModel(provider: serviceProvider)
             let phrasebookViewController = PhrasebookViewController(viewModel: prasebookViewModel)

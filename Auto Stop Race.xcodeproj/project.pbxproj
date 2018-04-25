@@ -23,6 +23,9 @@
 		10A8D08B2091255300BC81CF /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A8D08A2091255300BC81CF /* Tile.swift */; };
 		10A8D0932091260100BC81CF /* UserLocationTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A8D0912091260100BC81CF /* UserLocationTile.swift */; };
 		10A8D0942091260100BC81CF /* UserLocationTile.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10A8D0922091260100BC81CF /* UserLocationTile.xib */; };
+		10A8D09620913BAA00BC81CF /* AssetsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A8D09520913BAA00BC81CF /* AssetsInfo.swift */; };
+		10A8D09820913E1800BC81CF /* CampusCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A8D09720913E1800BC81CF /* CampusCoordinator.swift */; };
+		10A8D09A20913E6800BC81CF /* ScheduleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A8D09920913E6800BC81CF /* ScheduleCoordinator.swift */; };
 		111ED988E54B3CE0FC35922B /* Pods_Auto_Stop_Race.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A56B20F1205FFFFD65D923F /* Pods_Auto_Stop_Race.framework */; };
 		A70F31394243B1FE8EC8CF9C /* Pods_Auto_Stop_RaceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12DA71DF16DEB8B3241A29E9 /* Pods_Auto_Stop_RaceUITests.framework */; };
 		E2044EE81EA7C98A007B1C86 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2044EE71EA7C98A007B1C86 /* String.swift */; };
@@ -139,6 +142,9 @@
 		10A8D08A2091255300BC81CF /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Tile.swift; path = "Auto Stop Race/Views/Tile.swift"; sourceTree = SOURCE_ROOT; };
 		10A8D0912091260100BC81CF /* UserLocationTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserLocationTile.swift; path = Locations/Views/UserLocationTile.swift; sourceTree = "<group>"; };
 		10A8D0922091260100BC81CF /* UserLocationTile.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserLocationTile.xib; path = Locations/Views/UserLocationTile.xib; sourceTree = "<group>"; };
+		10A8D09520913BAA00BC81CF /* AssetsInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsInfo.swift; sourceTree = "<group>"; };
+		10A8D09720913E1800BC81CF /* CampusCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampusCoordinator.swift; sourceTree = "<group>"; };
+		10A8D09920913E6800BC81CF /* ScheduleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCoordinator.swift; sourceTree = "<group>"; };
 		12DA71DF16DEB8B3241A29E9 /* Pods_Auto_Stop_RaceUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Auto_Stop_RaceUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EB12920D258F3FF2EDA9C4B /* Pods_Auto_Stop_RaceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Auto_Stop_RaceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		359411C22E8D92D7533C5146 /* Pods-Auto Stop RaceUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Auto Stop RaceUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Auto Stop RaceUITests/Pods-Auto Stop RaceUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -666,6 +672,7 @@
 				E28C83571E93F52000878BEB /* LocationRecord.swift */,
 				E28873101E95F9910005237D /* ErrorResponse.swift */,
 				E28873121E9717720005237D /* Team.swift */,
+				10A8D09520913BAA00BC81CF /* AssetsInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -682,6 +689,8 @@
 				E29F88981E5EFFC1008F1F46 /* LocationsCoordinator.swift */,
 				E24420741E84B99800556FDC /* UserLocationsCoordinator.swift */,
 				E24420821E852D5D00556FDC /* PostNewLocationCoordinator.swift */,
+				10A8D09720913E1800BC81CF /* CampusCoordinator.swift */,
+				10A8D09920913E6800BC81CF /* ScheduleCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -1117,6 +1126,7 @@
 				E29F889E1E5F08AF008F1F46 /* Constants.swift in Sources */,
 				E28C83581E93F52000878BEB /* LocationRecord.swift in Sources */,
 				E24FFC451E5B174D00F7686F /* PhrasebookViewModel.swift in Sources */,
+				10A8D09A20913E6800BC81CF /* ScheduleCoordinator.swift in Sources */,
 				E2D9A25A1E556FFA003324F7 /* MenuCell.swift in Sources */,
 				E271C2C61E56460D00CD4F15 /* DashboardCoordinator.swift in Sources */,
 				10A8D08720911A1E00BC81CF /* UIImageView.swift in Sources */,
@@ -1176,12 +1186,14 @@
 				10A8D08B2091255300BC81CF /* Tile.swift in Sources */,
 				E28622901E5AECAA008938FC /* LoginViewModel.swift in Sources */,
 				E2D2EB3F1E5AF6B000C56A61 /* UIViewControllerWithBackButton.swift in Sources */,
+				10A8D09820913E1800BC81CF /* CampusCoordinator.swift in Sources */,
 				E29293B91E8108D80083A1DD /* User.swift in Sources */,
 				10A8D0892091252900BC81CF /* ScrollableStackView.swift in Sources */,
 				10A378E5204B4BF000E0C536 /* Theme+UIButton.swift in Sources */,
 				E2A6AACC1E80E07E00E8118B /* UserDefaultsService.swift in Sources */,
 				E2D9A20F1E5530FC003324F7 /* AppDelegate.swift in Sources */,
 				E29CDC911E56876F00F59B4C /* MenuViewModel.swift in Sources */,
+				10A8D09620913BAA00BC81CF /* AssetsInfo.swift in Sources */,
 				E2D9A25F1E55744E003324F7 /* UIView.swift in Sources */,
 				E2D90C7D1E596CAA00435A9F /* PhrasebookViewController.swift in Sources */,
 				E2D9A2481E55369E003324F7 /* DashboardViewController.swift in Sources */,

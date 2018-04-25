@@ -14,6 +14,8 @@ struct ApiConfig {
     static let apiResetPassRedirectUrl = "http://autostoprace.pl"
     static let shareMapUrl = "https://mapa.autostoprace.pl/"
     static let imageUrl = "https://api.autostoprace.pl/uploads/location/image/"
+    static let assetsJsonUrl = "https://mapa.autostoprace.pl/app/assetsinfo.json"
+
 }
 
 struct UserDefaultsKeys {
