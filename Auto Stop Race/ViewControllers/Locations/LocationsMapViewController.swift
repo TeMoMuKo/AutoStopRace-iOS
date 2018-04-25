@@ -59,6 +59,7 @@ class LocationsMapViewController: UIViewControllerWithMenu, UICollectionViewDele
         setupShareBarButton()
         setupSearchBar()
         setupDropDownList()
+        setupBindings()
         setupKeyboard()
         setupConstraints()
     }
@@ -106,16 +107,14 @@ class LocationsMapViewController: UIViewControllerWithMenu, UICollectionViewDele
         viewModel.shownTeams.asObservable()
             .bind(to: teamsCollectionView.rx.items(cellIdentifier: TeamLocationCell.Identifier, cellType: TeamLocationCell.self)) { (_, team, cell) in
                 cell.team = team
-            }
-            .disposed(by: disposeBag)
+            }.disposed(by: disposeBag)
     
         locationsSearchBar.rx.text.orEmpty
             .subscribe(onNext: { [weak self] query in
                 guard let `self` = self else { return }
                 self.viewModel.shownTeams.value = query.isEmpty ? self.viewModel.allTeams.value : self.viewModel.allTeams.value.filter { $0.teamNumber == Int(query) }
                 self.updateConstraints()
-            })
-            .disposed(by: disposeBag)
+            }).disposed(by: disposeBag)
         
         teamsCollectionView.rx.setDelegate(self).disposed(by: disposeBag)
         
@@ -130,67 +129,40 @@ class LocationsMapViewController: UIViewControllerWithMenu, UICollectionViewDele
                 self.teamSelected(team: team )
                 self.shareUrlSufix = "?team=\(teamNumber)"
             }).disposed(by: disposeBag)
-        
+
         view.addSubview(teamsCollectionView)
     }
-    
-    private func teamSelected(team: Team) {
-        if  let viewModelTeam = viewModel.userTeamNumber,
-            let teamTeamNumber = team.teamNumber,
-            viewModelTeam == teamTeamNumber {
-            showUserMarkers()
-        } else {
-            showMarker(team: team)
-        }
-    }
-    
-    func showUserMarkers() {
-        mapView.clear()
-        for userLocation in viewModel.locationRecords.value {
-            let position = CLLocationCoordinate2D(latitude: userLocation.latitude, longitude: userLocation.longitude)
-            let marker = GMSMarker(position: position)
-            
-            let markerView: UIImageView
-            if userLocation.image != nil && userLocation.image != "" {
-                markerView = UIImageView(image: #imageLiteral(resourceName: "asr_foto_marker"))
-                marker.userData = ApiConfig.imageUrl + "\(userLocation.id)/" + userLocation.image!
-                marker.snippet = (userLocation.created_at?.toString(withFormat: DateFormat.fullMap))! + "\n" + NSLocalizedString("marker_show_image_text", comment: "")
-            } else {
-                markerView = UIImageView(image: #imageLiteral(resourceName: "asr_marker"))
-                marker.snippet = userLocation.created_at?.toString(withFormat: DateFormat.fullMap)
+
+    private func setupBindings() {
+        viewModel.locationRecords.asDriver().drive(onNext: { [weak self] locations in
+            guard let `self` = self else { return }
+            self.mapView.clear()
+            for userLocation in locations {
+                let position = CLLocationCoordinate2D(latitude: userLocation.latitude, longitude: userLocation.longitude)
+                let marker = GMSMarker(position: position)
+
+                let markerView: UIImageView
+                if userLocation.image != nil && userLocation.image != "" {
+                    markerView = UIImageView(image: #imageLiteral(resourceName: "asr_foto_marker"))
+                    marker.userData = ApiConfig.imageUrl + "\(userLocation.id)/" + userLocation.image!
+                    marker.snippet = (userLocation.created_at?.toString(withFormat: DateFormat.fullMap))! + "\n" + NSLocalizedString("marker_show_image_text", comment: "")
+                } else {
+                    markerView = UIImageView(image: #imageLiteral(resourceName: "asr_marker"))
+                    marker.snippet = userLocation.created_at?.toString(withFormat: DateFormat.fullMap)
+                }
+                marker.iconView = markerView
+                marker.title = userLocation.message
+                marker.map = self.mapView
             }
-            marker.iconView = markerView
-            marker.title = userLocation.message
-            marker.map = mapView
-        }
-        viewModel.shownTeams.value = []
-        updateConstraints()
+            self.viewModel.shownTeams.value = []
+            self.updateConstraints()
+        }).disposed(by: disposeBag)
     }
 
-    func showMarker(team: Team) {
-        mapView.clear()
-        if let lastLocation = team.lastLocation {
-            let position = CLLocationCoordinate2D(latitude: lastLocation.latitude, longitude: lastLocation.longitude)
-            mapView.animate(toLocation: position)
-            let marker = GMSMarker(position: position)
-            
-            let markerView: UIImageView
-            if lastLocation.image != nil && lastLocation.image != "" {
-                markerView = UIImageView(image: #imageLiteral(resourceName: "asr_foto_marker"))
-                marker.userData = ApiConfig.imageUrl + "\(lastLocation.id)/" + team.lastLocation.image!
-                marker.snippet = (team.lastLocation.created_at?.toString(withFormat: DateFormat.fullMap))! + "\n" + NSLocalizedString("marker_show_image_text", comment: "")
-            } else {
-                markerView = UIImageView(image: #imageLiteral(resourceName: "asr_marker"))
-                marker.snippet = team.lastLocation.created_at?.toString(withFormat: DateFormat.fullMap)
-            }
-            marker.iconView = markerView
-            marker.title = team.lastLocation.message
-            marker.map = mapView
-        }
-        viewModel.shownTeams.value = []
-        updateConstraints()
+    private func teamSelected(team: Team) {
+        viewModel.downloadTeamLocation(team: team)
     }
-    
+
     func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
          if let imageUrl: String = marker.userData as! String? {
              if imageUrl != "" {

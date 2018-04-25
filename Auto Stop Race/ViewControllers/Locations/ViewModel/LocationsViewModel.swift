@@ -1,4 +1,4 @@
-//
+    //
 //  LocationsViewModel.swift
 //  Auto Stop Race
 //
@@ -31,8 +31,7 @@ final class LocationsViewModel {
     
     init(provider: ServiceProviderType) {
         self.serviceProvider = provider
-        
-        downloadUserLocation()
+
         downloadTeams()
     }
     
@@ -41,24 +40,20 @@ final class LocationsViewModel {
         self.locationRecords.value = locationRecords.value
     }
     
-    func downloadUserLocation() {
-        guard serviceProvider.authService.isUserLoggedIn else { return }
-        if serviceProvider.userDefaultsService.getUserData().teamNumber != nil {
-            userTeamNumber = serviceProvider.userDefaultsService.getUserData().teamNumber
-            let teamSlug = "team-\(userTeamNumber!)"
-            apiProvider.request(.userLocations(teamSlug)) { [weak self] result in
-                guard let `self` = self else { return }
-                switch result {
-                case let .success(response):
-                    do {
-                        let locationRecords = try response.mapArray(LocationRecord.self)
-                        self.locationRecords.value = locationRecords.reversed()
-                    } catch {
-                        self.error.onNext("Parsing error. Try again later.")
-                    }
-                case .failure:
-                    self.error.onNext("Request error. Try again later.")
+    func downloadTeamLocation(team: Team) {
+        let teamSlug = "team-\(team.teamNumber!)"
+        apiProvider.request(.userLocations(teamSlug)) { [weak self] result in
+            guard let `self` = self else { return }
+            switch result {
+            case let .success(response):
+                do {
+                    let locationRecords = try response.mapArray(LocationRecord.self)
+                    self.locationRecords.value = locationRecords.reversed()
+                } catch {
+                    self.error.onNext("Parsing error. Try again later.")
                 }
+            case .failure:
+                self.error.onNext("Request error. Try again later.")
             }
         }
     }

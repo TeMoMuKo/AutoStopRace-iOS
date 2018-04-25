@@ -37,6 +37,5 @@ final class LocationsCoordinator: Coordinator {
     func startWithUserLocations( locationRecords: Variable<[LocationRecord]> ) {
         start()
         locationViewModel.locationRecords = locationRecords
-        locationMapViewController.showUserMarkers()
     }
 }
