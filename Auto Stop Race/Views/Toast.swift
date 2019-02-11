@@ -38,11 +38,11 @@ class Toast {
                        delay: 0.0,
                        usingSpringWithDamping: 0.5,
                        initialSpringVelocity: 0.1,
-                       options: UIViewAnimationOptions.curveEaseOut,
+                       options: UIView.AnimationOptions.curveEaseOut,
                        animations: { () -> Void in
                 label.frame = basketTopFrame
         }, completion: { _ in
-            UIView.animate(withDuration: 2.0, delay: 2.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.1, options: UIViewAnimationOptions.curveEaseIn, animations: { () -> Void in
+            UIView.animate(withDuration: 2.0, delay: 2.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.1, options: UIView.AnimationOptions.curveEaseIn, animations: { () -> Void in
                 label.alpha = 0
             }, completion: { _ in
                 label.removeFromSuperview()

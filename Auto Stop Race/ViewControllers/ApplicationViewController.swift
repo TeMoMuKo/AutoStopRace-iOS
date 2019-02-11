@@ -22,13 +22,13 @@ class ApplicationViewController {
         if self.rootViewController != nil {
             for controller in controllers {
                 controller.view.removeFromSuperview()
-                controller.removeFromParentViewController()
+                controller.removeFromParent()
             }
             controllers.removeAll()
         }
         if let rootViewController = self.rootViewController {
             controllers.append(viewController)
-            rootViewController.addChildViewController(viewController)
+            rootViewController.addChild(viewController)
             rootViewController.view.addSubview(viewController.view)
         }
     }
@@ -37,7 +37,7 @@ class ApplicationViewController {
         if self.rootViewController != nil {
             for controller in controllers {
                 controller.view.removeFromSuperview()
-                controller.removeFromParentViewController()
+                controller.removeFromParent()
             }
             controllers.removeAll()
             self.rootViewController = nil

@@ -38,7 +38,7 @@ class UIViewControllerWithMenu: UIViewController {
         
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         let swipeBackGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(handleMenu))
-        swipeBackGestureRecognizer.direction = UISwipeGestureRecognizerDirection.right
+        swipeBackGestureRecognizer.direction = UISwipeGestureRecognizer.Direction.right
         view.addGestureRecognizer(swipeBackGestureRecognizer)
     }
 

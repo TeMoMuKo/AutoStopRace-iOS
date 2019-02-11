@@ -59,7 +59,7 @@ class PhraseCell: UITableViewCell {
         return view
     }()
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupViews()
     }
@@ -83,7 +83,7 @@ class PhraseCell: UITableViewCell {
         whiteRoundedView.layer.shadowOpacity = 0.5
         
         contentView.addSubview(whiteRoundedView)
-        contentView.sendSubview(toBack: whiteRoundedView)
+        contentView.sendSubviewToBack(whiteRoundedView)
         
         addSubview(translationBackgroundView)
         addSubview(iconImageView)

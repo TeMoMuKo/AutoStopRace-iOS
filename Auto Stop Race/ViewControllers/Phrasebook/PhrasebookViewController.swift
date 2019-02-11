@@ -33,7 +33,7 @@ class PhrasebookViewController: UIViewControllerWithMenu, UITableViewDelegate {
         segmentedControl.tintColor = Theme.Color.blueMenu
         segmentedControl.layer.borderColor = UIColor.white.cgColor
         segmentedControl.selectedSegmentIndex = 0
-        segmentedControl.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.white], for: .selected)
+        segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
         return segmentedControl
     }()
     
@@ -134,7 +134,7 @@ class PhrasebookViewController: UIViewControllerWithMenu, UITableViewDelegate {
     func setupSearchBar() {
         let textfield: UITextField = phraseSearchBar.value(forKey: "searchField") as! UITextField
         textfield.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("search_hint", comment: ""),
-                                                             attributes: [NSAttributedStringKey.foregroundColor: UIColor.lightGray])
+                                                             attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
     }
     
     func setupKeyboard() {

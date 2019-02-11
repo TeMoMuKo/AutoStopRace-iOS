@@ -69,7 +69,7 @@ final class AuthService: BaseService, AuthServiceType {
     
     func checkTokenLifespan() {
         
-        let endpointClosure = {  (target: AsrApi) ->  Endpoint<AsrApi> in
+        let endpointClosure = { (target: AsrApi) -> Endpoint in
             let defaultEndpoint = MoyaProvider.defaultEndpointMapping(for: target)
             return defaultEndpoint.adding(newHTTPHeaderFields: ["access-token": self.provider.userDefaultsService.getAuthAccessToken()!, "client": self.provider.userDefaultsService.getAuthClient()!, "uid": self.provider.userDefaultsService.getAuthUid()!])
         }

@@ -85,14 +85,14 @@ class SettingsViewController: UIViewControllerWithMenu, UITableViewDelegate, UIT
     }
     
     func handleLogOutTap() {
-        let alert = UIAlertController(title: NSLocalizedString("msg_logout_question", comment: ""), message: NSLocalizedString("msg_logout_info", comment: ""), preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: NSLocalizedString("msg_logout_question", comment: ""), message: NSLocalizedString("msg_logout_info", comment: ""), preferredStyle: UIAlertController.Style.alert)
 
-        alert.addAction(UIAlertAction(title: NSLocalizedString("msg_logout", comment: ""), style: UIAlertActionStyle.destructive, handler: {[unowned self] _ in
+        alert.addAction(UIAlertAction(title: NSLocalizedString("msg_logout", comment: ""), style: UIAlertAction.Style.destructive, handler: {[unowned self] _ in
             self.serviceProvider.userDefaultsService.clearAuth()
             self.serviceProvider.authService.logout()
         }))
         
-        alert.addAction(UIAlertAction(title: NSLocalizedString("msg_cancel", comment: ""), style: UIAlertActionStyle.cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("msg_cancel", comment: ""), style: UIAlertAction.Style.cancel, handler: nil))
 
         self.present(alert, animated: true, completion: nil)
     }

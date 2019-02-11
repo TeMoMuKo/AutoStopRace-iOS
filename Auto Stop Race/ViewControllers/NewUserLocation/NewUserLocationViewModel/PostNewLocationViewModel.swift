@@ -29,7 +29,7 @@ final class PostNewLocationViewModel {
     
     func postNewLocation(newLocation: CreateLocationRecordRequest) {
         
-        let endpointClosure = {  (target: AsrApi) ->  Endpoint<AsrApi> in
+        let endpointClosure = { (target: AsrApi) -> Endpoint in
             let defaultEndpoint = MoyaProvider.defaultEndpointMapping(for: target)
             return defaultEndpoint.adding(newHTTPHeaderFields:
                 [

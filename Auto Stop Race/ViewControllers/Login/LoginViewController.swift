@@ -128,7 +128,7 @@ class LoginViewController: UIViewControllerWithBackButton {
         view.addSubview(progressHUD)
 
         view.addSubview(backgroundImage)
-        view.sendSubview(toBack: backgroundImage)
+        view.sendSubviewToBack(backgroundImage)
         
         setupNavigationBarTitle()
         setupHelpBarButton()
@@ -153,7 +153,7 @@ class LoginViewController: UIViewControllerWithBackButton {
     
     @objc func handleHelpTap() {
         let alert = UIAlertController(title: NSLocalizedString("menu_help", comment: ""), message: NSLocalizedString("msg_login_info", comment: ""), preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("ok", comment: ""), style: UIAlertActionStyle.default, handler: nil))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("ok", comment: ""), style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     

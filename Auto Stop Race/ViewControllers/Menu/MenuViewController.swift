@@ -50,7 +50,7 @@ class MenuViewController: NSObject, UICollectionViewDelegateFlowLayout {
 
         if let window = UIApplication.shared.keyWindow {
             let swipeBackGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(handleDismiss))
-            swipeBackGestureRecognizer.direction = UISwipeGestureRecognizerDirection.left
+            swipeBackGestureRecognizer.direction = UISwipeGestureRecognizer.Direction.left
             window.addGestureRecognizer(swipeBackGestureRecognizer)
         }
     }

@@ -160,7 +160,7 @@ class PostNewLocationViewController: FormViewControllerWithBackButton, CLLocatio
         
         let imageRow: ImageRow? = form.rowBy(tag: "image_row")
         if let image = imageRow?.value {
-            let imageData: Data = UIImageJPEGRepresentation(image.normalizedImage(), 0.25)!
+            let imageData: Data = image.normalizedImage().jpegData(compressionQuality: 0.25)!
             let base64Image = imageData.base64EncodedString()
             let imageEncoded = "data:image/jpeg;base64,\(base64Image)"
             newLocation.image = imageEncoded

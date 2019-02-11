@@ -22,7 +22,7 @@ final class LocationSyncService: BaseService, LocationSyncServiceType {
             
             for unsendLocationRecord in unsendLocationRecords {
                 
-                let endpointClosure = {  (target: AsrApi) ->  Endpoint<AsrApi> in
+                let endpointClosure = {  (target: AsrApi) -> Endpoint in
                     let defaultEndpoint = MoyaProvider.defaultEndpointMapping(for: target)
                     return defaultEndpoint.adding(newHTTPHeaderFields:
                         [

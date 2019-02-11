@@ -4,8 +4,8 @@ target 'Auto Stop Race' do
     use_frameworks!
     inhibit_all_warnings!
 
-    pod 'RxSwift', '~> 4'
-    pod 'RxCocoa', '~> 4'
+    pod 'RxSwift'
+    pod 'RxCocoa'
     pod 'SnapKit'
     
     pod 'Moya'
@@ -17,17 +17,15 @@ target 'Auto Stop Race' do
 
     pod 'RealmSwift'
     pod 'GoogleMaps'
-    pod 'RxReachability', :git => 'https://github.com/ivanbruel/RxReachability.git'
+    pod 'RxReachability'
     pod 'ReachabilitySwift'
 
-    pod 'Eureka', '~> 4'
+    pod 'Eureka'
     
     pod 'SKPhotoBrowser'
 
     pod 'Fabric'
     pod 'Crashlytics'
-
-    pod 'SwiftLint'
 
     pod 'Firebase/Core'
     pod 'Firebase/Messaging'
@@ -41,15 +39,5 @@ target 'Auto Stop Race' do
     target 'Auto Stop RaceUITests' do
     inherit! :search_paths
     # Pods for testing
-    end
-
-    post_install do |installer|
-        installer.pods_project.targets.each do |target|
-            if target.name == 'Eureka'
-                target.build_configurations.each do |config|
-                    config.build_settings['SWIFT_VERSION'] = '4.1'
-                end
-            end
-        end
     end
 end

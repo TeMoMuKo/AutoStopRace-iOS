@@ -91,7 +91,7 @@ class LocationsMapViewController: UIViewControllerWithMenu, UICollectionViewDele
     private func setupSearchBar() {
         let textfield: UITextField = locationsSearchBar.value(forKey: "searchField") as! UITextField
         textfield.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("hint_enter_team_number", comment: ""),
-                                                             attributes: [NSAttributedStringKey.foregroundColor: UIColor.lightGray])
+                                                             attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         view.addSubview(locationsSearchBar)
     }
     

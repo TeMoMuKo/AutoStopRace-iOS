@@ -11,4 +11,7 @@ disabled_rules:
 included:
   - Auto Stop Race
 
+excluded:
+  - Auto Stop Race/ViewControllers/NewUserLocation/Views/ImageRow/ImageRow.swift
+
 warning_threshold: 2
