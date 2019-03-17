@@ -59,7 +59,7 @@ final class LocationsViewModel {
     }
     
     func downloadTeams() {
-        apiProvider.request(.allTeams()) { [weak self] result in
+        apiProvider.request(.allTeams) { [weak self] result in
             guard let `self` = self else { return }
             switch result {
             case let .success(response):

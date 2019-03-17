@@ -7,7 +7,6 @@
 //
 
 @testable import Networking
-
 import Quick
 import Nimble
 

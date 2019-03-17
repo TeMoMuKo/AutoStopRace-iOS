@@ -11,6 +11,8 @@ import Foundation
 public class NetworkingDispatcher {
 
     let baseURL: String
+    let config = URLSessionConfiguration.default
+    let session = URLSession(configuration: config)
 
     private enum ConfigKeys {
         static let baseURL = "BaseURL"

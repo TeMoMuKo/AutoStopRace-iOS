@@ -55,7 +55,7 @@ enum AsrApi {
     case resetPassword(email: String, redirectUrl: String)
     case postNewLocation(location: CreateLocationRecordRequest)
     case userLocations(String)
-    case allTeams()
+    case allTeams
     case team(String)
 }
 

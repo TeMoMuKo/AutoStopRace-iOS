@@ -606,7 +606,7 @@
 			isa = PBXGroup;
 			children = (
 				10732CF62083FBDD0024DE78 /* Auto Stop Race.entitlements */,
-				10A378F1204B546B00E0C536 /* SharedUIComponents */,
+				E2D9A23C1E55337A003324F7 /* Scenes */,
 				10A378DF204B2FA900E0C536 /* Theme */,
 				E2F1E3EC1EA332D0005BDFC9 /* Resources */,
 				E2D011491E5D80CF0021936A /* Services */,
@@ -616,8 +616,8 @@
 				E2D9A24C1E553B58003324F7 /* Config */,
 				E2D9A2401E553389003324F7 /* Coordinator */,
 				E2D9A23D1E553381003324F7 /* Networking */,
-				E2D9A23C1E55337A003324F7 /* ViewControllers */,
 				1086404F208FCD3C00E97BD0 /* Utils */,
+				10A378F1204B546B00E0C536 /* SharedUIComponents */,
 				E2D9A20E1E5530FC003324F7 /* AppDelegate.swift */,
 				E2D9A2171E5530FC003324F7 /* LaunchScreen.storyboard */,
 				E2D9A21A1E5530FC003324F7 /* Info.plist */,
@@ -643,7 +643,7 @@
 			path = "Auto Stop RaceUITests";
 			sourceTree = "<group>";
 		};
-		E2D9A23C1E55337A003324F7 /* ViewControllers */ = {
+		E2D9A23C1E55337A003324F7 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
 				E2D9A2451E55365D003324F7 /* Dashboard */,
@@ -659,7 +659,7 @@
 				E2D9A25B1E557042003324F7 /* BaseViews */,
 				E2D9A2501E554915003324F7 /* Menu */,
 			);
-			path = ViewControllers;
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		E2D9A23D1E553381003324F7 /* Networking */ = {
@@ -917,7 +917,7 @@
 			};
 			buildConfigurationList = E2D9A2061E5530FC003324F7 /* Build configuration list for PBXProject "Auto Stop Race" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -1317,7 +1317,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1367,7 +1367,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1387,7 +1387,7 @@
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = RIgnasiak.Torianin.AutoStopRace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1407,7 +1407,7 @@
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = RIgnasiak.Torianin.AutoStopRace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -1429,7 +1429,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Torianin.Auto-Stop-RaceTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Auto Stop Race.app/Auto Stop Race";
 			};
 			name = Debug;
@@ -1451,7 +1451,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Torianin.Auto-Stop-RaceTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Auto Stop Race.app/Auto Stop Race";
 			};
 			name = Release;
@@ -1472,7 +1472,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Torianin.Auto-Stop-RaceUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = "Auto Stop Race";
 			};
 			name = Debug;
@@ -1493,7 +1493,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Torianin.Auto-Stop-RaceUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = "Auto Stop Race";
 			};
 			name = Release;

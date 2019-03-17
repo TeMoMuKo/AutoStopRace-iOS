@@ -16,6 +16,7 @@
 		10A593BA223EE04F00235565 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A593B8223EE04F00235565 /* Bundle+Extension.swift */; };
 		10A593BD223EE0EF00235565 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A593BC223EE0EF00235565 /* Logger.swift */; };
 		10A593BE223EE0EF00235565 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A593BC223EE0EF00235565 /* Logger.swift */; };
+		10A593C6223EEDA500235565 /* NetworkingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A593C5223EEDA500235565 /* NetworkingRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		10A593B4223EDFFB00235565 /* NetworkingDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingDispatcher.swift; sourceTree = "<group>"; };
 		10A593B8223EE04F00235565 /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		10A593BC223EE0EF00235565 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		10A593C5223EEDA500235565 /* NetworkingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,12 +86,14 @@
 		10A59382223EDE3900235565 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				10A593BF223EE4BA00235565 /* Models */,
 				10A593BB223EE0E500235565 /* Utils */,
 				10A593B7223EE01500235565 /* Extensions */,
 				10A593A8223EDE6E00235565 /* Config */,
 				10A59383223EDE3900235565 /* Networking.h */,
 				10A59384223EDE3900235565 /* Info.plist */,
 				10A593B4223EDFFB00235565 /* NetworkingDispatcher.swift */,
+				10A593C5223EEDA500235565 /* NetworkingRequest.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -128,6 +132,13 @@
 				10A593BC223EE0EF00235565 /* Logger.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		10A593BF223EE4BA00235565 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,6 +216,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 10A59376223EDE3900235565;
 			productRefGroup = 10A59381223EDE3900235565 /* Products */;
@@ -242,6 +254,7 @@
 				10A593B5223EDFFB00235565 /* NetworkingDispatcher.swift in Sources */,
 				10A593BD223EE0EF00235565 /* Logger.swift in Sources */,
 				10A593B9223EE04F00235565 /* Bundle+Extension.swift in Sources */,
+				10A593C6223EEDA500235565 /* NetworkingRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +339,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -383,6 +397,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -412,7 +427,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -439,7 +454,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = RIgnasiak.Torianin.AutoStopRace.Networking;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -458,7 +473,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = RIgnasiak.Torianin.AutoStopRace.NetworkingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -477,7 +492,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = RIgnasiak.Torianin.AutoStopRace.NetworkingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -109,6 +109,9 @@ open class _ImageRow<Cell: CellType>: OptionsRow<Cell>, PresenterRowType where C
     /// Extends `didSelect` method
     /// Selecting the Image Row cell will open a popup to choose where to source the photo from,
     /// based on the `sourceTypes` configured and the available sources.
+    
+    // swiftlint:disable function_body_length
+    // swiftlint:disable cyclomatic_complexity
     open override func customDidSelect() {
         guard !isDisabled else {
             super.customDidSelect()

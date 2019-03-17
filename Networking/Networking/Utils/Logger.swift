@@ -10,7 +10,7 @@ import Foundation
 
 final class Logger {
 
-    func log(_ object: Any?) {
+    func log(_ object: Any) {
         print(object)
     }
 }
