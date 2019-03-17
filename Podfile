@@ -41,3 +41,12 @@ target 'Auto Stop Race' do
     # Pods for testing
     end
 end
+
+target 'NetworkingTests' do
+  workspace 'Auto Stop Race.xcworkspace'
+  project 'Networking/Networking.xcodeproj'
+  use_frameworks!
+
+  pod 'Quick'
+  pod 'Nimble'
+end

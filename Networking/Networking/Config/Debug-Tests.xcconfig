@@ -1,0 +1,12 @@
+//
+//  Debug-Tests.xcconfig
+//  Networking
+//
+//  Created by RI on 17/03/2019.
+//  Copyright © 2019 Torianin. All rights reserved.
+//
+
+#include "../Pods/Target Support Files/Pods-NetworkingTests/Pods-NetworkingTests.debug.xcconfig"
+
+BASE_URL = https:/$()/dev.api.autostoprace.pl/
+

@@ -124,6 +124,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		10A593A6223EDE5E00235565 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		107118DF2084288100422C61 /* LocationsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationsListViewController.swift; path = Locations/LocationsListViewController.swift; sourceTree = "<group>"; };
 		10732CF62083FBDD0024DE78 /* Auto Stop Race.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Auto Stop Race.entitlements"; sourceTree = "<group>"; };
@@ -138,6 +151,7 @@
 		10A378EA204B540E00E0C536 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Auto Stop Race/Resources/Assets/Assets.xcassets"; sourceTree = "<group>"; };
 		10A378EF204B541800E0C536 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = Resources/Locales/Localizable.strings; sourceTree = "<group>"; };
 		10A378F2204B549800E0C536 /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
+		10A593A7223EDE6300235565 /* Networking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Networking.framework; path = "../../Library/Developer/Xcode/DerivedData/Auto_Stop_Race-appwdngeadbwdgfqkjqklxztggti/Build/Products/Debug-iphoneos/Networking.framework"; sourceTree = "<group>"; };
 		10A8D08620911A1E00BC81CF /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIImageView.swift; path = Extension/UIImageView.swift; sourceTree = "<group>"; };
 		10A8D0882091252900BC81CF /* ScrollableStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScrollableStackView.swift; path = "Auto Stop Race/Views/ScrollableStackView.swift"; sourceTree = SOURCE_ROOT; };
 		10A8D08A2091255300BC81CF /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Tile.swift; path = "Auto Stop Race/Views/Tile.swift"; sourceTree = SOURCE_ROOT; };
@@ -313,6 +327,7 @@
 		6B17EC69FCC18E7DDD958899 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				10A593A7223EDE6300235565 /* Networking.framework */,
 				3A56B20F1205FFFFD65D923F /* Pods_Auto_Stop_Race.framework */,
 				1EB12920D258F3FF2EDA9C4B /* Pods_Auto_Stop_RaceTests.framework */,
 				12DA71DF16DEB8B3241A29E9 /* Pods_Auto_Stop_RaceUITests.framework */,
@@ -815,6 +830,7 @@
 				E2C5EE911E98099900BD5838 /* ShellScript */,
 				AA4492BBA96F01031189FE90 /* [CP] Embed Pods Frameworks */,
 				10E3AE3A458B2E9A8D2AA540 /* [CP] Copy Pods Resources */,
+				10A593A6223EDE5E00235565 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1367,6 +1383,7 @@
 				DEVELOPMENT_TEAM = VCKS6267S9;
 				INFOPLIST_FILE = "Auto Stop Race/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = RIgnasiak.Torianin.AutoStopRace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1386,6 +1403,7 @@
 				DEVELOPMENT_TEAM = VCKS6267S9;
 				INFOPLIST_FILE = "Auto Stop Race/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = RIgnasiak.Torianin.AutoStopRace;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -95,11 +95,13 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - Nimble (8.0.1)
   - ObjectMapper (3.4.2)
   - "ObjectMapper+Realm (0.6)":
     - ObjectMapper
     - RealmSwift
   - Protobuf (3.7.0)
+  - Quick (2.0.0)
   - ReachabilitySwift (4.3.0)
   - Realm (3.13.1):
     - Realm/Headers (= 3.13.1)
@@ -130,7 +132,9 @@ DEPENDENCIES:
   - GoogleMaps
   - Moya
   - Moya-ObjectMapper
+  - Nimble
   - "ObjectMapper+Realm"
+  - Quick
   - ReachabilitySwift
   - RealmSwift
   - RxCocoa
@@ -160,9 +164,11 @@ SPEC REPOS:
     - Moya
     - Moya-ObjectMapper
     - nanopb
+    - Nimble
     - ObjectMapper
     - "ObjectMapper+Realm"
     - Protobuf
+    - Quick
     - ReachabilitySwift
     - Realm
     - RealmSwift
@@ -194,9 +200,11 @@ SPEC CHECKSUMS:
   Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
   Moya-ObjectMapper: c514b5eafcfd5e260f85f7a5bf66895a217e2b37
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  Nimble: 45f786ae66faa9a709624227fae502db55a8bdd0
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
   "ObjectMapper+Realm": 4cf44ed3202a73f08594e21e13eb3f8aa9b5a664
   Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
+  Quick: ce1276c7c27ba2da3cb2fd0cde053c3648b3b22d
   ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
   Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
   RealmSwift: 8a1e6a02b7a08cd17a31e3115143fb69fe5f3fb9
@@ -208,6 +216,6 @@ SPEC CHECKSUMS:
   SKPhotoBrowser: 76eb862685761707b5745fde7762757966565e07
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: 9c8476e356c04be21d9cfa2de457c626cb3e1314
+PODFILE CHECKSUM: cb677fb9546f579bd80e35855e97b29ed879777b
 
 COCOAPODS: 1.6.0
