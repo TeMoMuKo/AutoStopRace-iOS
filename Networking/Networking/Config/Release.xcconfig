@@ -6,4 +6,4 @@
 //  Copyright © 2019 Torianin. All rights reserved.
 //
 
-BASE_URL = https:/$()/api.autostoprace.pl/
+BASE_URL = https:/$()/api.autostoprace.pl

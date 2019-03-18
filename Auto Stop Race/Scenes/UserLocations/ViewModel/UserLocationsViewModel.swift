@@ -32,7 +32,8 @@ final class UserLocationsViewModel {
     }
     
     func downloadLocations() {
-        let teamSlug = "team-\(serviceProvider.userDefaultsService.getUserData().teamNumber!)"
+        guard let user = serviceProvider.userDefaultsService.getUserData() else { return }
+        let teamSlug = "team-\(user.teamNumber)"
         apiProvider.request(.userLocations(teamSlug)) { [weak self] result in
             guard let `self` = self else { return }
             

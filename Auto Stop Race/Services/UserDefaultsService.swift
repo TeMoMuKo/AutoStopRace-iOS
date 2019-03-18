@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ObjectMapper
+import Networking
 
 protocol UserDefaultsServiceType {
     func setAuthAccessToken(token: String)
@@ -18,7 +18,7 @@ protocol UserDefaultsServiceType {
     func getAuthUid() -> String?
     func clearAuth()
     func setUserData(user: User)
-    func getUserData() -> User
+    func getUserData() -> User?
     func setAuthorizationHeaders(httpResponse: HTTPURLResponse)
     func setLastLocationsSyncTimestamp()
     func getLastLocationSyncTimestamp()
@@ -78,12 +78,17 @@ final class UserDefaultsService: BaseService, UserDefaultsServiceType {
         
     }
     func setUserData(user: User) {
-        self.defaults.set(user.toJSONString(prettyPrint: true), forKey: UserDefaultsKeys.currentUser)
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+        guard let data = try? encoder.encode(user),
+            let userString = String(data: data, encoding: .utf8) else { return }
+        self.defaults.set(userString, forKey: UserDefaultsKeys.currentUser)
     }
     
-    func getUserData() -> User {
-        let userJson = self.defaults.string(forKey: UserDefaultsKeys.currentUser)
-        return User(JSONString: userJson!)!
+    func getUserData() -> User? {
+        guard let userJsonString = defaults.string(forKey: UserDefaultsKeys.currentUser),
+            let jsonData = userJsonString.data(using: .utf8) else { return nil }
+        return try? JSONDecoder().decode(User.self, from: jsonData)
     }
     
     func setLastLocationsSyncTimestamp() {

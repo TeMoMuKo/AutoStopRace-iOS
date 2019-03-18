@@ -8,4 +8,4 @@
 
 #include "../Pods/Target Support Files/Pods-NetworkingTests/Pods-NetworkingTests.release.xcconfig"
 
-BASE_URL = https:/$()/api.autostoprace.pl/
+BASE_URL = https:/$()/api.autostoprace.pl

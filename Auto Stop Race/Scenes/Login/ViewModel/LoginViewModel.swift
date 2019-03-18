@@ -14,7 +14,6 @@ import RxCocoa
 final class LoginViewModel {
     private let error = PublishSubject<String>()
 
-    private let apiProvider = MoyaProvider<AsrApi>()
     private let serviceProvider: ServiceProviderType
     
     private let disposeBag = DisposeBag()
@@ -48,72 +47,60 @@ final class LoginViewModel {
     
     func signIn(email: String, password: String) {
         activityIndicator.value = true
-        apiProvider.request(.singIn(email: email, password: password), completion: { [weak self] result in
-            guard let `self` = self else { return }
+        serviceProvider.apiService.signIn(email: email, password: password) { [weak self] result in
+            guard let self = self else { return }
             switch result {
-            case let .success(response):
-                let statusCode = response.statusCode
-                guard let status = HttpStatus(rawValue: statusCode) else { return }
-                switch status {
-                case .OK :
-                    do {
-                        if let httpResponse = response.response {
-                            self.serviceProvider.userDefaultsService.setAuthorizationHeaders(httpResponse: httpResponse)
-                        }
-                        let user = try response.mapObject(User.self) as User
-                        self.serviceProvider.userDefaultsService.setUserData(user: user)
-                        self.serviceProvider.authService.loginStatus().value = .logged
-                        Toast.showPositiveMessage(message: NSLocalizedString("msg_after_login", comment: "") + "\(user.firstName!) \(user.lastName!)")
-                    } catch {
-
-                    }
-                case .Unauthorized:
-                    do {
-                        let error = try response.mapObject(ErrorResponse.self) as ErrorResponse
-                        Toast.showNegativeMessage(message: error.errors)
-                    } catch {
-
-                    }
-                default:
-                    Toast.showHttpStatusError(status: status)
+            case .success(let user):
+                DispatchQueue.main.async {
+                    self.serviceProvider.userDefaultsService.setUserData(user: user)
+                    self.serviceProvider.authService.loginStatus().value = .logged
+                    Toast.showPositiveMessage(message: NSLocalizedString("msg_after_login", comment: "") + "\(user.firstName) \(user.lastName)")
                 }
-            case let .failure(error):
-                Toast.showNegativeMessage(message: error.localizedDescription)
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    Toast.showNegativeMessage(message: error.localizedDescription)
+                }
             }
-            self.activityIndicator.value = false
-        })
+            DispatchQueue.main.async {
+                self.activityIndicator.value = false
+            }
+        }
+//        apiProvider.request(.singIn(email: email, password: password), completion: { [weak self] result in
+//            guard let `self` = self else { return }
+//            switch result {
+//            case let .success(response):
+//                let statusCode = response.statusCode
+//                guard let status = HttpStatus(rawValue: statusCode) else { return }
+//                switch status {
+//                case .OK :
+//                    do {
+//                        if let httpResponse = response.response {
+//                            self.serviceProvider.userDefaultsService.setAuthorizationHeaders(httpResponse: httpResponse)
+//                        }
+//                        let user = try response.mapObject(User.self) as User
+//                        self.serviceProvider.userDefaultsService.setUserData(user: user)
+//                        self.serviceProvider.authService.loginStatus().value = .logged
+//                        Toast.showPositiveMessage(message: NSLocalizedString("msg_after_login", comment: "") + "\(user.firstName!) \(user.lastName!)")
+//                    } catch {
+//
+//                    }
+//                case .Unauthorized:
+//                    do {
+//                        let error = try response.mapObject(ErrorResponse.self) as ErrorResponse
+//                        Toast.showNegativeMessage(message: error.errors)
+//                    } catch {
+//
+//                    }
+//                default:
+//                    Toast.showHttpStatusError(status: status)
+//                }
+//            case let .failure(error):
+//                Toast.showNegativeMessage(message: error.localizedDescription)
+//            }
+//            self.activityIndicator.value = false
+//        })
     }
 
     // TODO: Not working in Api
-    func resetPassword(email: String) {
-        apiProvider.request(.resetPassword(email: email, redirectUrl: ApiConfig.apiResetPassRedirectUrl), completion: { result in            
-            switch result {
-            case let .success(response):
-                let statusCode = response.statusCode
-                guard let status = HttpStatus(rawValue: statusCode) else { return }
-                switch status {
-                case .OK:
-                    break
-                case .NotFound:
-                    do {
-                        let error = try response.mapObject(ErrorResponse.self) as ErrorResponse
-                        Toast.showNegativeMessage(message: error.errors)
-                    } catch {
-
-                    }
-                case .Unauthorized:
-                    do {
-                        let error = try response.mapObject(ErrorResponse.self) as ErrorResponse
-                        Toast.showNegativeMessage(message: error.errors)
-                    } catch {
-
-                    }
-                default:
-                    Toast.showHttpStatusError(status: status)
-                }
-            case let .failure(error):
-                Toast.showNegativeMessage(message: error.localizedDescription)
-            }
-        })
-    }
+    func resetPassword(email: String) { }
 }

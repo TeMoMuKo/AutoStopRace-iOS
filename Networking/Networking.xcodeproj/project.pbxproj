@@ -3,12 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		106B4BE5223EF45500D80076 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106B4BE4223EF45500D80076 /* ApiService.swift */; };
+		106B4BE8223EF84F00D80076 /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106B4BE7223EF84F00D80076 /* NetworkingError.swift */; };
+		106B4BEB223EF8DB00D80076 /* NetworkingDispatcherProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106B4BEA223EF8DB00D80076 /* NetworkingDispatcherProtocol.swift */; };
+		106B4BED223F07AB00D80076 /* AuthenticationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106B4BEC223F07AB00D80076 /* AuthenticationServiceTests.swift */; };
+		106B4BEE223F08D600D80076 /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106B4BE7223EF84F00D80076 /* NetworkingError.swift */; };
+		106B4BEF223F08DB00D80076 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106B4BE4223EF45500D80076 /* ApiService.swift */; };
+		106B4BF0223F08EE00D80076 /* NetworkingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A593C5223EEDA500235565 /* NetworkingRequest.swift */; };
 		10A5938A223EDE3A00235565 /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10A59380223EDE3900235565 /* Networking.framework */; };
-		10A5938F223EDE3A00235565 /* NetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A5938E223EDE3A00235565 /* NetworkingTests.swift */; };
+		10A5938F223EDE3A00235565 /* NetworkingDispatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A5938E223EDE3A00235565 /* NetworkingDispatcherTests.swift */; };
 		10A59391223EDE3A00235565 /* Networking.h in Headers */ = {isa = PBXBuildFile; fileRef = 10A59383223EDE3900235565 /* Networking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		10A593B5223EDFFB00235565 /* NetworkingDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A593B4223EDFFB00235565 /* NetworkingDispatcher.swift */; };
 		10A593B6223EDFFB00235565 /* NetworkingDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A593B4223EDFFB00235565 /* NetworkingDispatcher.swift */; };
@@ -17,6 +24,17 @@
 		10A593BD223EE0EF00235565 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A593BC223EE0EF00235565 /* Logger.swift */; };
 		10A593BE223EE0EF00235565 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A593BC223EE0EF00235565 /* Logger.swift */; };
 		10A593C6223EEDA500235565 /* NetworkingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A593C5223EEDA500235565 /* NetworkingRequest.swift */; };
+		10B8672822401CF80007E409 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B8672722401CF80007E409 /* User.swift */; };
+		10B8672922401CF80007E409 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B8672722401CF80007E409 /* User.swift */; };
+		10B8672B22401DB70007E409 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B8672A22401DB70007E409 /* Team.swift */; };
+		10B8672C22401DB70007E409 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B8672A22401DB70007E409 /* Team.swift */; };
+		10B8672E22401DCB0007E409 /* LocationRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B8672D22401DCB0007E409 /* LocationRecord.swift */; };
+		10B8672F22401DCB0007E409 /* LocationRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B8672D22401DCB0007E409 /* LocationRecord.swift */; };
+		10B86731224020500007E409 /* HttpStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B86730224020500007E409 /* HttpStatus.swift */; };
+		10B86732224020500007E409 /* HttpStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B86730224020500007E409 /* HttpStatus.swift */; };
+		10B86739224035B40007E409 /* ApiServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B86738224035B40007E409 /* ApiServiceType.swift */; };
+		10B8673A224035B40007E409 /* ApiServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B86738224035B40007E409 /* ApiServiceType.swift */; };
+		7B6D7B32452BDFCA383B9916 /* Pods_NetworkingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 585EE6C7F3B394B4A7D10EE0 /* Pods_NetworkingTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,11 +48,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		106B4BE4223EF45500D80076 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		106B4BE7223EF84F00D80076 /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
+		106B4BEA223EF8DB00D80076 /* NetworkingDispatcherProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingDispatcherProtocol.swift; sourceTree = "<group>"; };
+		106B4BEC223F07AB00D80076 /* AuthenticationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationServiceTests.swift; sourceTree = "<group>"; };
 		10A59380223EDE3900235565 /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		10A59383223EDE3900235565 /* Networking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
 		10A59384223EDE3900235565 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10A59389223EDE3A00235565 /* NetworkingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		10A5938E223EDE3A00235565 /* NetworkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingTests.swift; sourceTree = "<group>"; };
+		10A5938E223EDE3A00235565 /* NetworkingDispatcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingDispatcherTests.swift; sourceTree = "<group>"; };
 		10A59390223EDE3A00235565 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10A593A9223EDE8500235565 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		10A593AA223EDE9900235565 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
@@ -44,6 +66,14 @@
 		10A593B8223EE04F00235565 /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		10A593BC223EE0EF00235565 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		10A593C5223EEDA500235565 /* NetworkingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingRequest.swift; sourceTree = "<group>"; };
+		10B8672722401CF80007E409 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		10B8672A22401DB70007E409 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		10B8672D22401DCB0007E409 /* LocationRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRecord.swift; sourceTree = "<group>"; };
+		10B86730224020500007E409 /* HttpStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpStatus.swift; sourceTree = "<group>"; };
+		10B86738224035B40007E409 /* ApiServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceType.swift; sourceTree = "<group>"; };
+		531121E1A366E596A25D1DEA /* Pods-NetworkingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkingTests.debug.xcconfig"; path = "Target Support Files/Pods-NetworkingTests/Pods-NetworkingTests.debug.xcconfig"; sourceTree = "<group>"; };
+		585EE6C7F3B394B4A7D10EE0 /* Pods_NetworkingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NetworkingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D2F9F81E9229DDF0918C819 /* Pods-NetworkingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkingTests.release.xcconfig"; path = "Target Support Files/Pods-NetworkingTests/Pods-NetworkingTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,18 +89,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				10A5938A223EDE3A00235565 /* Networking.framework in Frameworks */,
+				7B6D7B32452BDFCA383B9916 /* Pods_NetworkingTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		106B4BE3223EF42C00D80076 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				106B4BE4223EF45500D80076 /* ApiService.swift */,
+				10B86738224035B40007E409 /* ApiServiceType.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		106B4BE6223EF83B00D80076 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				106B4BE7223EF84F00D80076 /* NetworkingError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
 		10A59376223EDE3900235565 = {
 			isa = PBXGroup;
 			children = (
 				10A59382223EDE3900235565 /* Networking */,
 				10A5938D223EDE3A00235565 /* NetworkingTests */,
 				10A59381223EDE3900235565 /* Products */,
+				2769CBD9EC68270078D6A831 /* Pods */,
+				A94CE55974F3B5FBE0E127BB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,14 +136,17 @@
 		10A59382223EDE3900235565 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				106B4BE6223EF83B00D80076 /* Errors */,
+				106B4BE3223EF42C00D80076 /* Services */,
 				10A593BF223EE4BA00235565 /* Models */,
 				10A593BB223EE0E500235565 /* Utils */,
 				10A593B7223EE01500235565 /* Extensions */,
 				10A593A8223EDE6E00235565 /* Config */,
 				10A59383223EDE3900235565 /* Networking.h */,
 				10A59384223EDE3900235565 /* Info.plist */,
-				10A593B4223EDFFB00235565 /* NetworkingDispatcher.swift */,
 				10A593C5223EEDA500235565 /* NetworkingRequest.swift */,
+				10A593B4223EDFFB00235565 /* NetworkingDispatcher.swift */,
+				106B4BEA223EF8DB00D80076 /* NetworkingDispatcherProtocol.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -101,7 +154,8 @@
 		10A5938D223EDE3A00235565 /* NetworkingTests */ = {
 			isa = PBXGroup;
 			children = (
-				10A5938E223EDE3A00235565 /* NetworkingTests.swift */,
+				10A5938E223EDE3A00235565 /* NetworkingDispatcherTests.swift */,
+				106B4BEC223F07AB00D80076 /* AuthenticationServiceTests.swift */,
 				10A59390223EDE3A00235565 /* Info.plist */,
 			);
 			path = NetworkingTests;
@@ -130,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				10A593BC223EE0EF00235565 /* Logger.swift */,
+				10B86730224020500007E409 /* HttpStatus.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -137,8 +192,29 @@
 		10A593BF223EE4BA00235565 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				10B8672722401CF80007E409 /* User.swift */,
+				10B8672A22401DB70007E409 /* Team.swift */,
+				10B8672D22401DCB0007E409 /* LocationRecord.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		2769CBD9EC68270078D6A831 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				531121E1A366E596A25D1DEA /* Pods-NetworkingTests.debug.xcconfig */,
+				6D2F9F81E9229DDF0918C819 /* Pods-NetworkingTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
+			sourceTree = "<group>";
+		};
+		A94CE55974F3B5FBE0E127BB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				585EE6C7F3B394B4A7D10EE0 /* Pods_NetworkingTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,9 +253,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 10A59397223EDE3A00235565 /* Build configuration list for PBXNativeTarget "NetworkingTests" */;
 			buildPhases = (
+				0858A49B2B7FE4FBDA053E83 /* [CP] Check Pods Manifest.lock */,
 				10A59385223EDE3A00235565 /* Sources */,
 				10A59386223EDE3A00235565 /* Frameworks */,
 				10A59387223EDE3A00235565 /* Resources */,
+				AD05250DC8972BFF45DE37EE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -246,15 +324,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0858A49B2B7FE4FBDA053E83 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NetworkingTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD05250DC8972BFF45DE37EE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NetworkingTests/Pods-NetworkingTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NetworkingTests/Pods-NetworkingTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NetworkingTests/Pods-NetworkingTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		10A5937C223EDE3900235565 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10B86731224020500007E409 /* HttpStatus.swift in Sources */,
+				10B8672E22401DCB0007E409 /* LocationRecord.swift in Sources */,
+				10B8672B22401DB70007E409 /* Team.swift in Sources */,
 				10A593B5223EDFFB00235565 /* NetworkingDispatcher.swift in Sources */,
 				10A593BD223EE0EF00235565 /* Logger.swift in Sources */,
+				10B86739224035B40007E409 /* ApiServiceType.swift in Sources */,
+				106B4BE8223EF84F00D80076 /* NetworkingError.swift in Sources */,
 				10A593B9223EE04F00235565 /* Bundle+Extension.swift in Sources */,
+				10B8672822401CF80007E409 /* User.swift in Sources */,
+				106B4BE5223EF45500D80076 /* ApiService.swift in Sources */,
 				10A593C6223EEDA500235565 /* NetworkingRequest.swift in Sources */,
+				106B4BEB223EF8DB00D80076 /* NetworkingDispatcherProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,8 +392,17 @@
 			files = (
 				10A593B6223EDFFB00235565 /* NetworkingDispatcher.swift in Sources */,
 				10A593BA223EE04F00235565 /* Bundle+Extension.swift in Sources */,
-				10A5938F223EDE3A00235565 /* NetworkingTests.swift in Sources */,
+				10A5938F223EDE3A00235565 /* NetworkingDispatcherTests.swift in Sources */,
+				10B8673A224035B40007E409 /* ApiServiceType.swift in Sources */,
+				106B4BF0223F08EE00D80076 /* NetworkingRequest.swift in Sources */,
+				106B4BED223F07AB00D80076 /* AuthenticationServiceTests.swift in Sources */,
+				10B8672922401CF80007E409 /* User.swift in Sources */,
+				106B4BEE223F08D600D80076 /* NetworkingError.swift in Sources */,
 				10A593BE223EE0EF00235565 /* Logger.swift in Sources */,
+				10B8672C22401DB70007E409 /* Team.swift in Sources */,
+				10B8672F22401DCB0007E409 /* LocationRecord.swift in Sources */,
+				106B4BEF223F08DB00D80076 /* ApiService.swift in Sources */,
+				10B86732224020500007E409 /* HttpStatus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +560,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = mh_dylib;
 				PRODUCT_BUNDLE_IDENTIFIER = RIgnasiak.Torianin.AutoStopRace.Networking;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -451,6 +589,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = mh_dylib;
 				PRODUCT_BUNDLE_IDENTIFIER = RIgnasiak.Torianin.AutoStopRace.Networking;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

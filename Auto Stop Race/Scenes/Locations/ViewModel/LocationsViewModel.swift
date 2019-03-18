@@ -59,18 +59,16 @@ final class LocationsViewModel {
     }
     
     func downloadTeams() {
-        apiProvider.request(.allTeams) { [weak self] result in
-            guard let `self` = self else { return }
+        serviceProvider.apiService.fetchTeams { [weak self] result in
+            guard let self = self else { return }
             switch result {
-            case let .success(response):
-                do {
-                    let teams = try response.mapArray(Team.self)
-                    self.allTeams.value = teams
-                } catch {
-                    self.error.onNext("Parsing error. Try again later.")
+            case .success(let teams):
+                print(teams)
+                //self.allTeams.value = teams
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    Toast.showNegativeMessage(message: error.localizedDescription)
                 }
-            case .failure:
-                self.error.onNext("Request error. Try again later.")
             }
         }
     }

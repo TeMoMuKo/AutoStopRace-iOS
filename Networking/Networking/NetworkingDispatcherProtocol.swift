@@ -1,9 +1,13 @@
 //
-//  Debug.xcconfig
+//  NetworkingDispatcherProtocol.swift
 //  Networking
 //
 //  Created by RI on 17/03/2019.
 //  Copyright © 2019 Torianin. All rights reserved.
 //
 
-BASE_URL = https:/$()/dev.api.autostoprace.pl
+import Foundation
+
+public protocol NetworkingDispatcherProtocol {
+
+}

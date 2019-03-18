@@ -94,7 +94,7 @@ class LoginViewController: UIViewControllerWithBackButton {
         
         viewModel.inputBackgroundColor
             .drive(onNext: { [weak self] color in
-                guard let `self` = self else { return }
+                guard let self = self else { return }
                 UIView.animate(withDuration: 0.2) {
                     self.inputContainerView.layer.borderColor = color.cgColor
                 }
@@ -102,7 +102,7 @@ class LoginViewController: UIViewControllerWithBackButton {
         
         viewModel.credentialsValid
             .drive(onNext: { [weak self] valid in
-                guard let `self` = self else { return }
+                guard let self = self else { return }
                 self.loginButton.isEnabled = valid
                 self.loginButton.alpha = valid ? 1 : 0.5
             }).disposed(by: disposeBag)
@@ -110,7 +110,7 @@ class LoginViewController: UIViewControllerWithBackButton {
         viewModel.activityIndicator
             .asObservable()
             .subscribe(onNext: { [weak self] active in
-                guard let `self` = self else { return }
+                guard let self = self else { return }
                 active ? self.progressHUD.show() : self.progressHUD.hide()
             }).disposed(by: disposeBag)
         
