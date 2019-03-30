@@ -48,8 +48,8 @@ final class LocationSyncService: BaseService, LocationSyncServiceType {
                                     self.provider.realmDatabaseService.removeLocationRecord(locationRecord: unsendLocationRecord)
                             case .Unauthorized:
                                 do {
-                                    let error = try response.mapObject(ErrorResponse.self) as ErrorResponse
-                                    Toast.showNegativeMessage(message: error.errors)
+//                                    let error = try response.mapObject(ErrorResponse.self) as ErrorResponse
+//                                    Toast.showNegativeMessage(message: error.errors)
                                 } catch {
                                     
                                 }

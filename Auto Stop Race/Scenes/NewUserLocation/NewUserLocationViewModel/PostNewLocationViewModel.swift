@@ -55,15 +55,15 @@ final class PostNewLocationViewModel {
                         self.serviceProvider.realmDatabaseService.removeLocationRecord(locationRecord: newLocation)
                     case .UnprocessableEntity:
                         do {
-                            let error = try response.mapObject(ErrorResponse.self) as ErrorResponse
-                            Toast.showNegativeMessage(message: error.errors)
+//                            let error = try response.mapObject(ErrorResponse.self) as ErrorResponse
+//                            Toast.showNegativeMessage(message: error.errors)
                         } catch {
                             
                         }
                     case .Unauthorized:
                         do {
-                            let error = try response.mapObject(ErrorResponse.self) as ErrorResponse
-                            Toast.showNegativeMessage(message: error.errors)
+//                            let error = try response.mapObject(ErrorResponse.self) as ErrorResponse
+//                            Toast.showNegativeMessage(message: error.errors)
                         } catch {
                             
                         }

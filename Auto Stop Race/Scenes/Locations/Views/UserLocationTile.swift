@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Networking
 
 class UserLocationTile: Tile {
 
@@ -25,16 +26,14 @@ class UserLocationTile: Tile {
                 tileLabelView.isHidden = false
                 tileLabel.text = location.message
             }
-            if let locationImage = location.image, let url = URL(string: ApiConfig.imageUrl + "\(location.id)/" + locationImage) {
+            if let locationImage = location.imageUrl, let url = URL(string: ApiConfig.imageUrl + "\(location.id)/" + locationImage) {
                 locationImageView.isHidden = false
                 locationImageView.setImage(with: url)
                 let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleImageTap))
                 locationImageView.addGestureRecognizer(tapGesture)
             }
-            if let createdAt = location.created_at?.toString(withFormat: "MM-dd-yyyy HH:mm") {
-                timeLabelView.isHidden = false
-                timeLabel.text = createdAt
-            }
+            timeLabelView.isHidden = false
+            timeLabel.text = location.createdAt.toString(withFormat: "MM-dd-yyyy HH:mm")
         }
     }
 
@@ -63,7 +62,7 @@ class UserLocationTile: Tile {
     }
 
     @objc private func handleImageTap() {
-        guard let location = location, let locationImage = location.image else { return }
+        guard let location = location, let locationImage = location.imageUrl else { return }
         let url = ApiConfig.imageUrl + "\(location.id)/" + locationImage
         imageTapAction?(url, location.message)
     }

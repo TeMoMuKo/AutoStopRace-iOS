@@ -12,8 +12,6 @@ target 'Auto Stop Race' do
     pod 'CSV.swift'
     pod 'Moya-ObjectMapper'
 
-    pod 'ObjectMapper+Realm'
-
     pod 'RealmSwift'
     pod 'GoogleMaps'
     pod 'RxReachability'
@@ -30,6 +28,8 @@ target 'Auto Stop Race' do
     pod 'Firebase/Messaging'
     pod 'Firebase/Crash'
 
+    pod 'KeychainAccess'
+
     target 'Auto Stop RaceTests' do
     inherit! :search_paths
     # Pods for testing
@@ -40,6 +40,16 @@ target 'Auto Stop Race' do
     # Pods for testing
     end
 end
+
+target 'Networking' do
+  workspace 'Auto Stop Race.xcworkspace'
+  project 'Networking/Networking.xcodeproj'
+  use_frameworks!
+
+  pod 'RealmSwift'
+  pod 'KeychainAccess'
+end
+
 
 target 'NetworkingTests' do
   workspace 'Auto Stop Race.xcworkspace'

@@ -7,15 +7,20 @@
 //
 
 import Foundation
+import RealmSwift
 
-public struct LocationRecord: Codable {
-    public let id: Int
-    public let latitude: Double
-    public let longitude: Double
-    public let address: String?
-    public let countryName: String?
-    public let countryCode: String?
-    public let imageUrl: String?
-    public let message: String
-    public let createdAt: String
+public class LocationRecord: Object, Codable {
+    @objc public dynamic var id: Int
+    @objc public dynamic var latitude: Double
+    @objc public dynamic var longitude: Double
+    @objc public dynamic var address: String?
+    @objc public dynamic var countryName: String?
+    @objc public dynamic var countryCode: String?
+    @objc public dynamic var imageUrl: String?
+    @objc public dynamic var message: String
+    @objc public dynamic var createdAt: Date
+
+    override public static func primaryKey() -> String? {
+        return "id"
+    }
 }

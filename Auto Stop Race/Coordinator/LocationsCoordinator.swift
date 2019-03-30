@@ -8,6 +8,8 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
+import Networking
 
 final class LocationsCoordinator: Coordinator {
     
@@ -34,7 +36,7 @@ final class LocationsCoordinator: Coordinator {
         baseViewController.setMainController(viewController: tabBarController)
     }
     
-    func startWithUserLocations( locationRecords: Variable<[LocationRecord]> ) {
+    func startWithUserLocations( locationRecords: BehaviorRelay<[LocationRecord]> ) {
         start()
         locationViewModel.locationRecords = locationRecords
     }

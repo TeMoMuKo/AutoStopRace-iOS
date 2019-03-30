@@ -50,7 +50,7 @@ class LocationsListViewController: UIViewControllerWithMenu {
         view.addSubview(scrollableStackView)
 
         viewModel.locationRecords.asDriver().drive(onNext: { [weak self] locations in
-            guard let `self` = self else { return }
+            guard let self = self else { return }
             self.scrollableStackView.clearTiles()
             locations.forEach { location in
                 let tile = UserLocationTile()

@@ -11,6 +11,7 @@ import Moya
 import RxSwift
 import RxCocoa
 import Moya_ObjectMapper
+import Networking
 
 final class LocationsViewModel {
     private let error = PublishSubject<String>()
@@ -25,7 +26,7 @@ final class LocationsViewModel {
     let allTeams = Variable<[Team]>([])
     let shownTeams = Variable<[Team]>([])
     
-    var locationRecords = Variable<[LocationRecord]>([])
+    var locationRecords = BehaviorRelay<[LocationRecord]>(value: [])
     
     var userTeamNumber: Int?
     
@@ -37,25 +38,35 @@ final class LocationsViewModel {
     
     init(provider: ServiceProviderType, locationRecords: Variable<[LocationRecord]>) {
         self.serviceProvider = provider
-        self.locationRecords.value = locationRecords.value
+        self.locationRecords.accept(locationRecords.value)
     }
     
     func downloadTeamLocation(team: Team) {
-        let teamSlug = "team-\(team.teamNumber!)"
-        apiProvider.request(.userLocations(teamSlug)) { [weak self] result in
-            guard let `self` = self else { return }
+
+        serviceProvider.apiService.fetchLocations(for: team.number) { [weak self] result in
+            guard let self = self else { return }
             switch result {
-            case let .success(response):
-                do {
-                    let locationRecords = try response.mapArray(LocationRecord.self)
-                    self.locationRecords.value = locationRecords.reversed()
-                } catch {
-                    self.error.onNext("Parsing error. Try again later.")
-                }
+            case .success(let locationRecords):
+                self.locationRecords.accept(locationRecords)
             case .failure:
                 self.error.onNext("Request error. Try again later.")
             }
         }
+//        let teamSlug = "team-\(team.teamNumber!)"
+//        apiProvider.request(.userLocations(teamSlug)) { [weak self] result in
+//            guard let `self` = self else { return }
+//            switch result {
+//            case let .success(response):
+//                do {
+//                    let locationRecords = try response.mapArray(LocationRecord.self)
+//                    self.locationRecords.value = locationRecords.reversed()
+//                } catch {
+//                    self.error.onNext("Parsing error. Try again later.")
+//                }
+//            case .failure:
+//                self.error.onNext("Request error. Try again later.")
+//            }
+//        }
     }
     
     func downloadTeams() {
@@ -64,7 +75,7 @@ final class LocationsViewModel {
             switch result {
             case .success(let teams):
                 print(teams)
-                //self.allTeams.value = teams
+                self.allTeams.value = teams
             case .failure(let error):
                 DispatchQueue.main.async {
                     Toast.showNegativeMessage(message: error.localizedDescription)

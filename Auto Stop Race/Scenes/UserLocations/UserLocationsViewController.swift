@@ -12,9 +12,10 @@ import RxSwift
 import RxCocoa
 import SnapKit
 import SKPhotoBrowser
+import Networking
 
 protocol UserLocationsViewControllerDelegate: class {
-    func showMapTapped( locationRecords: Variable<[LocationRecord]> )
+    func showMapTapped( locationRecords: BehaviorRelay<[LocationRecord]> )
     func postNewLocationTapped()
 }
 
@@ -60,7 +61,7 @@ class UserLocationsViewController: UIViewControllerWithMenu, UICollectionViewDel
 
         collectionView.register(UserLocationCell.self, forCellWithReuseIdentifier: UserLocationCell.Identifier)
         
-        viewModel.locationRecords.asObservable()
+        viewModel.locationRecords
             .bind(to: collectionView.rx.items(cellIdentifier: UserLocationCell.Identifier, cellType: UserLocationCell.self)) { _, location, cell in
                 cell.locationRecord = location
             }
@@ -68,7 +69,7 @@ class UserLocationsViewController: UIViewControllerWithMenu, UICollectionViewDel
  
         collectionView.rx.modelSelected(LocationRecord.self)
             .subscribe(onNext: { locationRecord in
-                if let image = locationRecord.image {
+                if let image = locationRecord.imageUrl {
                     var images = [SKPhoto]()
                     let imageUrl = ApiConfig.imageUrl + "\(locationRecord.id)/" + image
                     let photo = SKPhoto.photoWithImageURL(imageUrl)

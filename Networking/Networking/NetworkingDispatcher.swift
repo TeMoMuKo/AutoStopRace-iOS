@@ -13,7 +13,8 @@ public class NetworkingDispatcher {
     let baseURL: String
     private let sessionConfiguration = URLSessionConfiguration.default
     private lazy var session = URLSession(configuration: sessionConfiguration)
-    private var token: String?
+
+    private let tokenStorageProvider = TokenStorageProvider()
 
     private enum Config {
         static let headerTokenField = "x-auth-token"
@@ -29,7 +30,7 @@ public class NetworkingDispatcher {
 
     public func process<T: Decodable>(request: NetworkingRequest, completion: @escaping (Result<T, Error>) -> Void) {
 
-        guard let request = request.standardURLRequest(with: baseURL, token: token) else {
+        guard let request = request.standardURLRequest(with: baseURL, token: tokenStorageProvider.fetchToken()) else {
             completion(.failure(NetworkingError.badURL))
             return
         }
@@ -42,16 +43,23 @@ public class NetworkingDispatcher {
             }
 
             if let response = response as? HTTPURLResponse,
-                self.token == nil {
+                self.tokenStorageProvider.fetchToken() == nil {
                 if let headerTokenField = response.allHeaderFields[Config.headerTokenField] as? String {
-                    print(headerTokenField)
-                    self.token = headerTokenField
+                    self.tokenStorageProvider.store(token: headerTokenField)
                 }
             }
 
             if let data = data {
                 do {
-                    let responseObject = try JSONDecoder().decode(T.self, from: data)
+                    print(String(decoding: data, as: UTF8.self))
+
+                    let decoder = JSONDecoder()
+
+                    let formatter = DateFormatter()
+                    formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+
+                    decoder.dateDecodingStrategy = .formatted(formatter)
+                    let responseObject = try decoder.decode(T.self, from: data)
                     completion(.success(responseObject))
                 } catch let error {
                     completion(.failure(error))

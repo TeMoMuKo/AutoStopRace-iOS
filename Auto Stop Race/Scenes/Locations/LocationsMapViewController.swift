@@ -12,6 +12,7 @@ import GoogleMaps
 import RxSwift
 import RxCocoa
 import SKPhotoBrowser
+import Networking
 
 class LocationsMapViewController: UIViewControllerWithMenu, UICollectionViewDelegateFlowLayout, UISearchBarDelegate, GMSMapViewDelegate {
     let cellHeight: CGFloat = 80
@@ -112,7 +113,7 @@ class LocationsMapViewController: UIViewControllerWithMenu, UICollectionViewDele
         locationsSearchBar.rx.text.orEmpty
             .subscribe(onNext: { [weak self] query in
                 guard let `self` = self else { return }
-                self.viewModel.shownTeams.value = query.isEmpty ? self.viewModel.allTeams.value : self.viewModel.allTeams.value.filter { $0.teamNumber == Int(query) }
+                self.viewModel.shownTeams.value = query.isEmpty ? self.viewModel.allTeams.value : self.viewModel.allTeams.value.filter { $0.number == Int(query) }
                 self.updateConstraints()
             }).disposed(by: disposeBag)
         
@@ -124,7 +125,7 @@ class LocationsMapViewController: UIViewControllerWithMenu, UICollectionViewDele
         viewModel.teamSelected
             .subscribe(onNext: { [weak self] team in
                 guard let `self` = self else { return }
-                guard let teamNumber = team.teamNumber else { return }
+                let teamNumber = team.number
                 self.locationsSearchBar.rx.text.onNext("\(teamNumber)")
                 self.teamSelected(team: team )
                 self.shareUrlSufix = "?team=\(teamNumber)"
@@ -146,13 +147,13 @@ class LocationsMapViewController: UIViewControllerWithMenu, UICollectionViewDele
                 let marker = GMSMarker(position: position)
 
                 let markerView: UIImageView
-                if userLocation.image != nil && userLocation.image != "" {
+                if userLocation.imageUrl != nil && userLocation.imageUrl != "" {
                     markerView = UIImageView(image: #imageLiteral(resourceName: "asr_foto_marker"))
-                    marker.userData = ApiConfig.imageUrl + "\(userLocation.id)/" + userLocation.image!
-                    marker.snippet = (userLocation.created_at?.toString(withFormat: DateFormat.fullMap))! + "\n" + NSLocalizedString("marker_show_image_text", comment: "")
+                    marker.userData = ApiConfig.imageUrl + "\(userLocation.id)/" + userLocation.imageUrl!
+                    marker.snippet = userLocation.createdAt.toString(withFormat: DateFormat.fullMap) + "\n" + NSLocalizedString("marker_show_image_text", comment: "")
                 } else {
                     markerView = UIImageView(image: #imageLiteral(resourceName: "asr_marker"))
-                    marker.snippet = userLocation.created_at?.toString(withFormat: DateFormat.fullMap)
+                    marker.snippet = userLocation.createdAt.toString(withFormat: DateFormat.fullMap)
                 }
                 marker.iconView = markerView
                 marker.title = userLocation.message

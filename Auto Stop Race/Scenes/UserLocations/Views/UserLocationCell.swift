@@ -9,6 +9,7 @@
 import UIKit
 import SnapKit
 import CoreLocation
+import Networking
 
 class UserLocationCell: BaseUICollectionCell {
     
@@ -16,12 +17,12 @@ class UserLocationCell: BaseUICollectionCell {
     
     var locationRecord: LocationRecord? {
         didSet {
-            if locationRecord?.image != nil {
+            if locationRecord?.imageUrl != nil {
                 countryLabel.text = ""
                 countryLabel.backgroundColor = Theme.Color.blueMenu
                 imageView.image = UIImage(named: "ic_photo_camera_white")?.withRenderingMode(.alwaysTemplate)
                 imageView.tintColor = UIColor.white
-            } else if let locationCountry = locationRecord?.country_code {
+            } else if let locationCountry = locationRecord?.countryCode {
                 countryLabel.text =  locationCountry
                 countryLabel.backgroundColor = UIColor.init(string: locationCountry)
                 imageView.image = nil
@@ -45,7 +46,7 @@ class UserLocationCell: BaseUICollectionCell {
                 messageLabel.text = locationMessage
             }
             
-            if let createdAt = locationRecord?.created_at {
+            if let createdAt = locationRecord?.createdAt {
                 createdAtDateLabel.text = createdAt.toString(withFormat: "dd.MM")
                 createdAtTimeLabel.text = createdAt.toString(withFormat: "HH:mm")
                 syncView.image = UIImage(named: "ic_cloud_done")?.withRenderingMode(.alwaysTemplate)
