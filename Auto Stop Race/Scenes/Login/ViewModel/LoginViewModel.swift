@@ -53,7 +53,7 @@ final class LoginViewModel {
             case .success(let user):
                 DispatchQueue.main.async {
                     self.serviceProvider.userDefaultsService.setUserData(user: user)
-                    self.serviceProvider.authService.loginStatus().value = .logged
+                    self.serviceProvider.authService.loginStatus().accept(.logged)
                     Toast.showPositiveMessage(message: NSLocalizedString("msg_after_login", comment: "") + "\(user.firstName) \(user.lastName)")
                 }
             case .failure(let error):

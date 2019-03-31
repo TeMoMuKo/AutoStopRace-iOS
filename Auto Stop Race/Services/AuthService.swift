@@ -9,7 +9,9 @@
 import Foundation
 import Moya
 import RxSwift
+import RxCocoa
 import Moya_ObjectMapper
+import Networking
 
 enum AutenticationError: Swift.Error {
     case server
@@ -26,22 +28,23 @@ enum AutenticationStatus {
 
 protocol AuthServiceType {
     var isUserLoggedIn: Bool { get }
-    func loginStatus() -> Variable<AutenticationStatus>
+    func loginStatus() -> BehaviorRelay<AutenticationStatus>
     func validateToken()
     func logout()
 }
 
 final class AuthService: BaseService, AuthServiceType {
-    private let status = Variable(AutenticationStatus.none)
+    private let status = BehaviorRelay(value: AutenticationStatus.none)
     var isUserLoggedIn: Bool = false
-    
+
+    private let tokenStorageProvider = TokenStorageProvider()
+
     private let disposeBag = DisposeBag()
 
     override init(provider: ServiceProviderType) {
         super.init(provider: provider)
 
         status
-            .asObservable()
             .subscribe(onNext: { [unowned self] status in
                 switch status {
                 case .none:
@@ -54,15 +57,15 @@ final class AuthService: BaseService, AuthServiceType {
             }).disposed(by: disposeBag)
     }
     
-    func loginStatus() -> Variable<AutenticationStatus> {
+    func loginStatus() -> BehaviorRelay<AutenticationStatus> {
         return status
     }
     
     func validateToken() {
-        if self.provider.userDefaultsService.getAuthAccessToken() != nil {
-            checkTokenLifespan()
+        if tokenStorageProvider.fetchToken() != nil { 
+            status.accept(.logged)
         } else {
-            status.value = .none
+            status.accept(.none)
         }
     }
     
@@ -117,6 +120,6 @@ final class AuthService: BaseService, AuthServiceType {
     }
     
     func logout() {
-        status.value = .none
+        status.accept(.none)
     }
 }

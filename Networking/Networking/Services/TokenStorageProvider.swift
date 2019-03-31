@@ -20,19 +20,20 @@ protocol TokenStorageProviderProtocol {
     func clearToken()
 }
 
-struct TokenStorageProvider: TokenStorageProviderProtocol {
+public struct TokenStorageProvider: TokenStorageProviderProtocol {
 
+    public init() {}
     let keychain = Keychain(service: KeychainConstants.service)
 
     func store(token: String) {
         keychain[string: KeychainConstants.tokenKey] = token
     }
 
-    func fetchToken() -> String? {
+    public func fetchToken() -> String? {
         return keychain[KeychainConstants.tokenKey]
     }
 
-    func clearToken() {
+    public func clearToken() {
         keychain[string: KeychainConstants.tokenKey] = nil
     }
 }
