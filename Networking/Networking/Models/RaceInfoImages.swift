@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct RaceInfoImages: Codable {
+public struct RaceInfoImages: Codable {
     let campusMapImageUrl, scheduleImageUrl: String
 
     enum CodingKeys: String, CodingKey {

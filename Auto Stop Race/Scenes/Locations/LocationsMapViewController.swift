@@ -124,11 +124,11 @@ class LocationsMapViewController: UIViewControllerWithMenu, UICollectionViewDele
         
         viewModel.teamSelected
             .subscribe(onNext: { [weak self] team in
-                guard let `self` = self else { return }
+                guard let self = self else { return }
                 let teamNumber = team.number
                 self.locationsSearchBar.rx.text.onNext("\(teamNumber)")
                 self.teamSelected(team: team )
-                self.shareUrlSufix = "?team=\(teamNumber)"
+                self.shareUrlSufix = "/team/\(teamNumber)"
             }).disposed(by: disposeBag)
 
         view.addSubview(teamsCollectionView)

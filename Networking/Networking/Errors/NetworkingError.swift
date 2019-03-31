@@ -10,4 +10,5 @@ import Foundation
 
 public enum NetworkingError: Error {
     case badURL
+    case invalidJson
 }

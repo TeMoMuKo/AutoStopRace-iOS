@@ -82,6 +82,7 @@ PODS:
   - GoogleUtilities/UserDefaults (5.5.0):
     - GoogleUtilities/Logger
   - KeychainAccess (3.1.2)
+  - Kingfisher (5.3.1)
   - Moya (12.0.1):
     - Moya/Core (= 12.0.1)
   - Moya-ObjectMapper (2.8):
@@ -130,6 +131,7 @@ DEPENDENCIES:
   - Firebase/Messaging
   - GoogleMaps
   - KeychainAccess
+  - Kingfisher (~> 5.0)
   - Moya
   - Moya-ObjectMapper
   - Nimble
@@ -161,6 +163,7 @@ SPEC REPOS:
     - GoogleToolboxForMac
     - GoogleUtilities
     - KeychainAccess
+    - Kingfisher
     - Moya
     - Moya-ObjectMapper
     - nanopb
@@ -197,6 +200,7 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: ff31605b7d66400dcec09bed5861689aebadda4d
   GoogleUtilities: 6481e6318c5fcabaaa8513ef8120f329055d7c10
   KeychainAccess: b3816fddcf28aa29d94b10ec305cd52be14c472b
+  Kingfisher: d9e7e0b209b59b8f9873aa2f37654e81a7beea51
   Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
   Moya-ObjectMapper: c514b5eafcfd5e260f85f7a5bf66895a217e2b37
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
@@ -215,6 +219,6 @@ SPEC CHECKSUMS:
   SKPhotoBrowser: 76eb862685761707b5745fde7762757966565e07
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: bccc6daa9c90437a9817c2d57778e0486aad4b0e
+PODFILE CHECKSUM: b157cc6d374fb95b76686fccbad18a98a6d271ba
 
 COCOAPODS: 1.7.0.beta.3

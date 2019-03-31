@@ -12,6 +12,7 @@ import MapKit
 import CoreLocation
 import GoogleMaps
 import Eureka
+import Networking
 
 protocol PostNewLocationViewControllerDelegate: class {
     func backToLocationsScreen()
@@ -148,7 +149,7 @@ class PostNewLocationViewController: FormViewControllerWithBackButton, CLLocatio
     }
     
     func postNewLocation() {
-        let newLocation = CreateLocationRecordRequest()
+        let newLocation = CreateLocationModel()
         newLocation.latitude = latitude!
         newLocation.longitude = longitude!
         
@@ -159,13 +160,9 @@ class PostNewLocationViewController: FormViewControllerWithBackButton, CLLocatio
         }
         
         let imageRow: ImageRow? = form.rowBy(tag: "image_row")
-        if let image = imageRow?.value {
-            let imageData: Data = image.normalizedImage().jpegData(compressionQuality: 0.25)!
-            let base64Image = imageData.base64EncodedString()
-            let imageEncoded = "data:image/jpeg;base64,\(base64Image)"
-            newLocation.image = imageEncoded
-        }
-        
-        viewModel.saveNewLocationToDatabase(newLocation: newLocation)
+        let image = imageRow?.value
+        let locationImage = LocationImage(withImage: image)
+
+        viewModel.saveNewLocationToDatabase(newLocation: newLocation, locationImage: locationImage)
     }
 }

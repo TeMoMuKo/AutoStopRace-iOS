@@ -53,27 +53,26 @@ public final class ApiService: ApiServiceType {
         })
     }
 
-    public func postNewLocation(completion: @escaping (Result<LocationRecord, Error>) -> Void) {
+    public func postNewLocation(createLocationModel: CreateLocationModel, locationImage: LocationImage?, completion: @escaping (Result<LocationRecord, Error>) -> Void) {
         let boundary = generateBoundary()
 
-        let locationData = #"""
-            {
-                "latitude": 13.12318321,
-                "longitude": 24.1233424,
-                "message": "Send from iOS"
-            }
-            """#
+        guard let jsonData = try? JSONEncoder().encode(createLocationModel),
+            let jsonString = String(data: jsonData, encoding: .utf8) else {
+                completion(.failure(NetworkingError.invalidJson))
+                return
+        }
 
         let parameters: [String: String] = [
-            "locationData": locationData
+            "locationData": jsonString
         ]
 
-        let postNewLocationRequestData = createDataBody(withParameters: parameters, image: nil, boundary: boundary)
+        let postNewLocationRequestData = createDataBody(withParameters: parameters, image: locationImage, boundary: boundary)
 
         let postNewLocation = NetworkingRequest(path: "/locations",
                                                 method: .post,
                                                 headers: ["Content-Type":"multipart/form-data; boundary=\(boundary)"],
                                                 httpBody: postNewLocationRequestData)
+        
         networkingDispatcher.process(request: postNewLocation, completion: { result in
             completion(result)
         })

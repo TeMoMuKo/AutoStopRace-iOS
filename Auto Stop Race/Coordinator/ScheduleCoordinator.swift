@@ -8,6 +8,7 @@
 
 import UIKit
 import SKPhotoBrowser
+import Kingfisher
 
 final class ScheduleCoordinator: Coordinator {
 
@@ -18,14 +19,22 @@ final class ScheduleCoordinator: Coordinator {
     }
 
     func start() {
-        guard let url = URL(string: ApiConfig.assetsJsonUrl) else { return }
-        guard let imageAssets = try? AssetsInfo(fromURL: url) else { return }
+        guard let url = URL(string: ApiConfig.assetsJsonUrl),
+            let raceInfoImages = try? RaceInfoImages(fromURL: url),
+            let scheduleImageUrl = URL(string: raceInfoImages.scheduleImageUrl) else { return }
         var images = [SKPhoto]()
-        let photo = SKPhoto.photoWithImageURL(imageAssets.schedule)
-        photo.shouldCachePhotoURLImage = true
-        images.append(photo)
-        let browser = SKPhotoBrowser(photos: images)
-        browser.initializePageIndex(0)
-        baseViewController.present(browser, animated: true)
+        KingfisherManager.shared.retrieveImage(with: scheduleImageUrl, options: nil, progressBlock: nil) { result in
+            switch result {
+            case .success(let value):
+                let photo = SKPhoto.photoWithImage(value.image)
+                images.append(photo)
+                let browser = SKPhotoBrowser(photos: images)
+                browser.initializePageIndex(0)
+                self.baseViewController.present(browser, animated: true)
+                print("Image: \(value.image). Got from: \(value.cacheType)")
+            case .failure(let error):
+                print("Error: \(error)")
+            }
+        }
     }
 }

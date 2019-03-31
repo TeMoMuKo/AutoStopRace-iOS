@@ -13,5 +13,5 @@ public protocol ApiServiceType {
     func fetchTeams(completion: @escaping (Result<[Team], Error>) -> Void)
     func fetchUserLocations(completion: @escaping (Result<[LocationRecord], Error>) -> Void)
     func fetchLocations(for teamNumber: Int, completion: @escaping (Result<[LocationRecord], Error>) -> Void)
-    func postNewLocation(completion: @escaping (Result<LocationRecord, Error>) -> Void)
+    func postNewLocation(createLocationModel: CreateLocationModel, locationImage: LocationImage?, completion: @escaping (Result<LocationRecord, Error>) -> Void)
 }

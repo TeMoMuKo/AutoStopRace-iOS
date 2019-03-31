@@ -365,18 +365,10 @@
 			isa = PBXGroup;
 			children = (
 				E29F1BDC1E8B1D3C006D8178 /* Views */,
-				E244207F1E852CDD00556FDC /* ViewModel */,
 				E244207D1E852A3B00556FDC /* PostNewLocationViewController.swift */,
-			);
-			name = NewUserLocation;
-			sourceTree = "<group>";
-		};
-		E244207F1E852CDD00556FDC /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
 				E24420801E852D0400556FDC /* PostNewLocationViewModel.swift */,
 			);
-			name = ViewModel;
+			name = NewUserLocation;
 			sourceTree = "<group>";
 		};
 		E24FFC431E5B170D00F7686F /* ViewModel */ = {
@@ -1040,6 +1032,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya-ObjectMapper/Moya_ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
@@ -1064,6 +1057,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya_ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",

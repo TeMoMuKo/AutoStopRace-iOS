@@ -13,6 +13,9 @@
 		10213BE5224D07D800E4BE01 /* LocationImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10213BE4224D07D800E4BE01 /* LocationImage.swift */; };
 		10213BF3224FB84200E4BE01 /* TokenStorageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10213BF2224FB84200E4BE01 /* TokenStorageProvider.swift */; };
 		10213BF4224FB84200E4BE01 /* TokenStorageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10213BF2224FB84200E4BE01 /* TokenStorageProvider.swift */; };
+		10213C19224FDC4900E4BE01 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10213C18224FDC4900E4BE01 /* UIImage.swift */; };
+		10213C1A224FDC4900E4BE01 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10213C18224FDC4900E4BE01 /* UIImage.swift */; };
+		10213C1C2250D0B300E4BE01 /* RaceInfoImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10213C1B2250D0B300E4BE01 /* RaceInfoImages.swift */; };
 		106B4BE5223EF45500D80076 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106B4BE4223EF45500D80076 /* ApiService.swift */; };
 		106B4BE8223EF84F00D80076 /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106B4BE7223EF84F00D80076 /* NetworkingError.swift */; };
 		106B4BEB223EF8DB00D80076 /* NetworkingDispatcherProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106B4BEA223EF8DB00D80076 /* NetworkingDispatcherProtocol.swift */; };
@@ -59,6 +62,8 @@
 		10213BDA224C550700E4BE01 /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		10213BE4224D07D800E4BE01 /* LocationImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationImage.swift; sourceTree = "<group>"; };
 		10213BF2224FB84200E4BE01 /* TokenStorageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStorageProvider.swift; sourceTree = "<group>"; };
+		10213C18224FDC4900E4BE01 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		10213C1B2250D0B300E4BE01 /* RaceInfoImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaceInfoImages.swift; sourceTree = "<group>"; };
 		106B4BE4223EF45500D80076 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		106B4BE7223EF84F00D80076 /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
 		106B4BEA223EF8DB00D80076 /* NetworkingDispatcherProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingDispatcherProtocol.swift; sourceTree = "<group>"; };
@@ -191,6 +196,7 @@
 		10A593B7223EE01500235565 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				10213C18224FDC4900E4BE01 /* UIImage.swift */,
 				10A593B8223EE04F00235565 /* Bundle+Extension.swift */,
 				10213BDA224C550700E4BE01 /* Data+Extension.swift */,
 			);
@@ -209,6 +215,7 @@
 		10A593BF223EE4BA00235565 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				10213C1B2250D0B300E4BE01 /* RaceInfoImages.swift */,
 				10B8672722401CF80007E409 /* User.swift */,
 				10B8672A22401DB70007E409 /* Team.swift */,
 				10B8672D22401DCB0007E409 /* LocationRecord.swift */,
@@ -422,9 +429,11 @@
 				10B8672E22401DCB0007E409 /* LocationRecord.swift in Sources */,
 				10B8672B22401DB70007E409 /* Team.swift in Sources */,
 				10A593B5223EDFFB00235565 /* NetworkingDispatcher.swift in Sources */,
+				10213C19224FDC4900E4BE01 /* UIImage.swift in Sources */,
 				10213BF3224FB84200E4BE01 /* TokenStorageProvider.swift in Sources */,
 				10A593BD223EE0EF00235565 /* Logger.swift in Sources */,
 				10B86739224035B40007E409 /* ApiServiceType.swift in Sources */,
+				10213C1C2250D0B300E4BE01 /* RaceInfoImages.swift in Sources */,
 				10213BE5224D07D800E4BE01 /* LocationImage.swift in Sources */,
 				106B4BE8223EF84F00D80076 /* NetworkingError.swift in Sources */,
 				10A593B9223EE04F00235565 /* Bundle+Extension.swift in Sources */,
@@ -448,6 +457,7 @@
 				106B4BED223F07AB00D80076 /* AuthenticationServiceTests.swift in Sources */,
 				101FD5F9224B833900D6504D /* CreateLocationRequest.swift in Sources */,
 				10B8672922401CF80007E409 /* User.swift in Sources */,
+				10213C1A224FDC4900E4BE01 /* UIImage.swift in Sources */,
 				106B4BEE223F08D600D80076 /* NetworkingError.swift in Sources */,
 				10A593BE223EE0EF00235565 /* Logger.swift in Sources */,
 				10B8672C22401DB70007E409 /* Team.swift in Sources */,

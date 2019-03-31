@@ -1,4 +1,5 @@
-platform :ios, '9.0'
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '10.0'
 
 target 'Auto Stop Race' do
     use_frameworks!
@@ -29,7 +30,8 @@ target 'Auto Stop Race' do
     pod 'Firebase/Crash'
 
     pod 'KeychainAccess'
-
+    pod 'Kingfisher', '~> 5.0'
+    
     target 'Auto Stop RaceTests' do
     inherit! :search_paths
     # Pods for testing

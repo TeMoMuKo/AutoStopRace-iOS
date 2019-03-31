@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct LocationImage {
+public struct LocationImage {
     let key: String = "image"
     let filename: String = "test.jpeg"
     let data: Data
     let mimeType: String = "image/jpeg"
 
-    init?(withImage image: UIImage) {
-        guard let data = image.jpegData(compressionQuality: 0.7) else { return nil }
+    public init?(withImage image: UIImage?) {
+        guard let data = image?.normalizedImage().jpegData(compressionQuality: 0.25) else { return nil }
         self.data = data
     }
 }

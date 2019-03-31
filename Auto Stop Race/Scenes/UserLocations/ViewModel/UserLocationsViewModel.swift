@@ -33,9 +33,7 @@ final class UserLocationsViewModel {
     }
     
     func downloadLocations() {
-        serviceProvider.apiService.postNewLocation { _ in
-
-        }
+        
         serviceProvider.apiService.fetchUserLocations { [weak self] result in
             guard let self = self else { return }
             switch result {
