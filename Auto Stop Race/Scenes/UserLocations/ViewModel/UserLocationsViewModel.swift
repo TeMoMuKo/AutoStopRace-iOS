@@ -71,16 +71,16 @@ final class UserLocationsViewModel {
     }
     
     func saveRemoteLocationsToLocalDatabase() {
-        for locationRecord in self.locationRecords.value {
+        for locationRecord in locationRecords.value {
             //self.serviceProvider.realmDatabaseService.saveRemoteLocationsToLocalDatabase(locationRecord: locationRecord)
         }
     }
     
     func postNewLocationTapped() {
-        self.delegate?.postNewLocationTapped()
+        delegate?.postNewLocationTapped()
     }
     
     func showMapTapped() {
-        //self.delegate?.showMapTapped(locationRecords: locationRecords)
+        delegate?.showMapTapped(locationRecords: locationRecords)
     }
 }
