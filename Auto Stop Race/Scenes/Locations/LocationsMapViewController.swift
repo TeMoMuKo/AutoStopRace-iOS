@@ -146,7 +146,7 @@ class LocationsMapViewController: UIViewControllerWithMenu, UICollectionViewDele
                 let markerView: UIImageView
                 if userLocation.imageUrl != nil && userLocation.imageUrl != "" {
                     markerView = UIImageView(image: #imageLiteral(resourceName: "asr_foto_marker"))
-                    marker.userData = ApiConfig.imageUrl + "\(userLocation.id)/" + userLocation.imageUrl!
+                    marker.userData = userLocation.imageUrl!
                     marker.snippet = userLocation.createdAt.toString(withFormat: DateFormat.fullMap) + "\n" + NSLocalizedString("marker_show_image_text", comment: "")
                 } else {
                     markerView = UIImageView(image: #imageLiteral(resourceName: "asr_marker"))

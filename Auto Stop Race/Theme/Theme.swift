@@ -15,7 +15,7 @@ struct Theme {
         static let success = #colorLiteral(red: 0.3607843137, green: 0.7215686275, blue: 0.3607843137, alpha: 1)
         static let circleColor = #colorLiteral(red: 0.8352941176, green: 0, blue: 0, alpha: 1)
         static let grayBackgroundColor = #colorLiteral(red: 0.968627451, green: 0.968627451, blue: 0.968627451, alpha: 1)
-        static let separatorColor = #colorLiteral(red: 220, green: 220, blue: 220, alpha: 1.0)
+        static let separatorColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     }
 }
 

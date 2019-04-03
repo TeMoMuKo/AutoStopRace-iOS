@@ -27,7 +27,7 @@ class UserLocationTile: Tile {
                 tileLabelView.isHidden = false
                 tileLabel.text = message
             }
-            if let locationImage = location.imageUrl, let url = URL(string: ApiConfig.imageUrl + "\(location.id)/" + locationImage) {
+            if let locationImage = location.imageUrl, let url = URL(string: locationImage) {
                 locationImageView.isHidden = false
                 locationImageView.setImage(with: url)
                 let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleImageTap))
@@ -63,8 +63,7 @@ class UserLocationTile: Tile {
     }
 
     @objc private func handleImageTap() {
-        guard let location = location, let locationImage = location.imageUrl else { return }
-        let url = ApiConfig.imageUrl + "\(location.id)/" + locationImage
-        imageTapAction?(url, location.message)
+        guard let location = location, let locationImageUrl = location.imageUrl else { return }
+        imageTapAction?(locationImageUrl, location.message)
     }
 }

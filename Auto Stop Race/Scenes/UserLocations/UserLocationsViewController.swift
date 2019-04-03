@@ -69,9 +69,8 @@ class UserLocationsViewController: UIViewControllerWithMenu, UICollectionViewDel
  
         collectionView.rx.modelSelected(LocationRecord.self)
             .subscribe(onNext: { locationRecord in
-                if let image = locationRecord.imageUrl {
+                if let imageUrl = locationRecord.imageUrl {
                     var images = [SKPhoto]()
-                    let imageUrl = ApiConfig.imageUrl + "\(locationRecord.id)/" + image
                     let photo = SKPhoto.photoWithImageURL(imageUrl)
                     photo.caption = locationRecord.message
                     
@@ -82,8 +81,7 @@ class UserLocationsViewController: UIViewControllerWithMenu, UICollectionViewDel
                     browser.initializePageIndex(0)
                     self.navigationController?.present(browser, animated: true, completion: {})
                 }
-            })
-            .disposed(by: disposeBag)
+            }).disposed(by: disposeBag)
         
         collectionView.rx.setDelegate(self).disposed(by: disposeBag)
         
