@@ -21,18 +21,8 @@ final class LocationSyncService: BaseService, LocationSyncServiceType {
             let unsendLocationRecords = self.provider.realmDatabaseService.getUnsentLocationRecords()
             
             for unsendLocationRecord in unsendLocationRecords {
-                
-                let endpointClosure = {  (target: AsrApi) -> Endpoint in
-                    let defaultEndpoint = MoyaProvider.defaultEndpointMapping(for: target)
-                    return defaultEndpoint.adding(newHTTPHeaderFields:
-                        [
-                            "access-token": self.provider.userDefaultsService.getAuthAccessToken()!,
-                            "client": self.provider.userDefaultsService.getAuthClient()!,
-                            "uid": self.provider.userDefaultsService.getAuthUid()!
-                        ])
-                }
-                
-                let apiProvider = MoyaProvider<AsrApi>(endpointClosure: endpointClosure)
+
+                let apiProvider = MoyaProvider<AsrApi>()
                 
                 apiProvider.request(.postNewLocation(location: unsendLocationRecord), completion: { [weak self] result in
                     guard let `self` = self else { return }

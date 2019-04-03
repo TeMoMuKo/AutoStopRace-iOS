@@ -17,7 +17,7 @@ public class LocationRecord: Object, Codable {
     @objc public dynamic var countryName: String?
     @objc public dynamic var countryCode: String?
     @objc public dynamic var imageUrl: String?
-    @objc public dynamic var message: String
+    @objc public dynamic var message: String?
     @objc public dynamic var createdAt: Date
 
     override public static func primaryKey() -> String? {

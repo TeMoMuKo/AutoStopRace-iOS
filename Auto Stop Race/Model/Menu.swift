@@ -8,8 +8,7 @@
 
 import Foundation
 
-class Menu
-: NSObject {
+class Menu: NSObject {
     let name: String
     let imageName: String
     

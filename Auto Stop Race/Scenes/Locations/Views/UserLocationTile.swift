@@ -11,7 +11,7 @@ import Networking
 
 class UserLocationTile: Tile {
 
-    var imageTapAction: ((String, String) -> Void)?
+    var imageTapAction: ((String, String?) -> Void)?
 
     @IBOutlet private var locationImageView: UIImageView!
     @IBOutlet weak var tileLabelView: UIView!
@@ -22,9 +22,10 @@ class UserLocationTile: Tile {
     var location: LocationRecord? {
         didSet {
             guard let location = location else { return }
-            if !location.message.isEmpty {
+            if let message = location.message,
+                !message.isEmpty {
                 tileLabelView.isHidden = false
-                tileLabel.text = location.message
+                tileLabel.text = message
             }
             if let locationImage = location.imageUrl, let url = URL(string: ApiConfig.imageUrl + "\(location.id)/" + locationImage) {
                 locationImageView.isHidden = false

@@ -62,6 +62,7 @@ public class NetworkingDispatcher {
                     let responseObject = try decoder.decode(T.self, from: data)
                     completion(.success(responseObject))
                 } catch let error {
+                    print("❌ Networking error: \(error)")
                     completion(.failure(error))
                 }
             }

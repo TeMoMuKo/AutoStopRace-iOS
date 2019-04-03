@@ -62,10 +62,12 @@ class LocationsListViewController: UIViewControllerWithMenu {
         }).disposed(by: bag)
     }
 
-    func showImagePreview(imageUrl: String, caption: String) {
+    func showImagePreview(imageUrl: String, caption: String?) {
         var images = [SKPhoto]()
         let photo = SKPhoto.photoWithImageURL(imageUrl)
-        photo.caption = caption
+        if let caption = caption {
+            photo.caption = caption
+        }
 
         photo.shouldCachePhotoURLImage = true
         images.append(photo)

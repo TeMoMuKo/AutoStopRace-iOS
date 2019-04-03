@@ -15,8 +15,6 @@ import Networking
 
 final class LocationsViewModel {
     private let error = PublishSubject<String>()
-
-    let teamSelected = PublishSubject<Team>()
     
     private let apiProvider = MoyaProvider<AsrApi>()
     private let serviceProvider: ServiceProviderType

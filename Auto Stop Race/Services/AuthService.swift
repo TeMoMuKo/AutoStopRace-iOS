@@ -120,6 +120,8 @@ final class AuthService: BaseService, AuthServiceType {
     }
     
     func logout() {
+        tokenStorageProvider.clearToken()
+        self.provider.realmDatabaseService.clearDatabase()
         status.accept(.none)
     }
 }

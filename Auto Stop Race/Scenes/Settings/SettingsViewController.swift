@@ -88,8 +88,7 @@ class SettingsViewController: UIViewControllerWithMenu, UITableViewDelegate, UIT
         let alert = UIAlertController(title: NSLocalizedString("msg_logout_question", comment: ""), message: NSLocalizedString("msg_logout_info", comment: ""), preferredStyle: UIAlertController.Style.alert)
 
         alert.addAction(UIAlertAction(title: NSLocalizedString("msg_logout", comment: ""), style: UIAlertAction.Style.destructive, handler: {[unowned self] _ in
-            self.serviceProvider.userDefaultsService.clearAuth()
-            self.serviceProvider.authService.logout()
+             self.serviceProvider.authService.logout()
         }))
         
         alert.addAction(UIAlertAction(title: NSLocalizedString("msg_cancel", comment: ""), style: UIAlertAction.Style.cancel, handler: nil))

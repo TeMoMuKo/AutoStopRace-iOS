@@ -120,9 +120,6 @@ class LocationsMapViewController: UIViewControllerWithMenu, UICollectionViewDele
         teamsCollectionView.rx.setDelegate(self).disposed(by: disposeBag)
         
         teamsCollectionView.rx.modelSelected(Team.self)
-            .bind(to: viewModel.teamSelected).disposed(by: disposeBag)
-        
-        viewModel.teamSelected
             .subscribe(onNext: { [weak self] team in
                 guard let self = self else { return }
                 let teamNumber = team.number
