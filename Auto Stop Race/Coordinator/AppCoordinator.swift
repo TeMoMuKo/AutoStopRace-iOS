@@ -14,6 +14,7 @@ import Fabric
 import Crashlytics
 import GoogleMaps
 import Firebase
+import RealmSwift
 
 final class AppCoordinator: Coordinator {
 
@@ -32,7 +33,7 @@ final class AppCoordinator: Coordinator {
         try? reachability?.startNotifier()
 
         Fabric.with([Crashlytics.self])
-        
+        setupRealm()
         serviceProvider.authService.validateToken()
         serviceProvider.locationSyncService.synchronizeLocationsWithServer()
 
@@ -54,7 +55,13 @@ final class AppCoordinator: Coordinator {
         childCoordinators.append(menuCoordinator)
     }
 
-    func setupGMSServices() {
+    private func setupRealm() {
+        var config = Realm.Configuration.defaultConfiguration
+        config.deleteRealmIfMigrationNeeded = true
+        Realm.Configuration.defaultConfiguration = config
+    }
+
+    private func setupGMSServices() {
         guard let path = Bundle.main.path(forResource: "Keys", ofType: "plist") else { return }
         guard let dict = NSDictionary(contentsOfFile: path) else { return }
         let GMSServicesAPIKey = dict["GMSServicesAPIKey"] as? String

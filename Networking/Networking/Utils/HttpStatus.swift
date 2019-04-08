@@ -9,17 +9,17 @@
 import Foundation
 
 public enum HttpStatus: Int {
-    case OK = 200
-    case Created = 201
+    case ok = 200
+    case created = 201
 
-    case BadRequest = 400
-    case Unauthorized = 401
-    case Forbidden = 403
-    case NotFound = 404
-    case UnprocessableEntity = 422
+    case badRequest = 400
+    case unauthorized = 401
+    case forbidden = 403
+    case notFound = 404
+    case unprocessableEntity = 422
 
-    case InternalServerError = 500
-    case BadGateway = 502
+    case internalServerError = 500
+    case badGateway = 502
 
     public var isSuccess: Bool {
         return self.rawValue >= 200 && self.rawValue <= 299

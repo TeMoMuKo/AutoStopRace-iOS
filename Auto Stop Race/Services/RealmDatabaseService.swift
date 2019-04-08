@@ -26,8 +26,7 @@ final class RealmDatabaseService: BaseService, RealmDatabaseServiceType {
             let realm = try Realm()
             return try action(realm)
         } catch let error {
-            return nil
-            //fatalError("Failed \(operation) realm with error: \(error)")
+            fatalError("Failed \(operation) realm with error: \(error)")
         }
     }
 
@@ -67,8 +66,7 @@ final class RealmDatabaseService: BaseService, RealmDatabaseServiceType {
             try realm.write {
                 let locationThatExists = realm.objects(LocationRecord.self).filter("id == %@", locationRecord.id).first
                 if locationThatExists == nil {
-                   // let localLocationRecord = KwasLocationRecord(value: locationRecord)
-                   // realm.add(localLocationRecord)
+                    realm.add(locationRecord)
                 }
             }
         }
@@ -78,13 +76,13 @@ final class RealmDatabaseService: BaseService, RealmDatabaseServiceType {
         let remoteLocations = withRealm("Save remote locations to local database") { realm -> [LocationRecord] in
             var remoteLocations = Array(realm.objects(LocationRecord.self).sorted(byKeyPath: "created_at", ascending: false))
             let unsendLocations = Array(realm.objects(CreateLocationRecordRequest.self))
-//            for unsendLocation in unsendLocations {
-//                let locationRecord = KwasLocationRecord()
-//                locationRecord.latitude = unsendLocation.latitude
-//                locationRecord.longitude = unsendLocation.longitude
-//                locationRecord.message = unsendLocation.message
-//                remoteLocations.insert(locationRecord, at: remoteLocations.startIndex)
-//            }
+            for unsendLocation in unsendLocations {
+                let locationRecord = LocationRecord()
+                locationRecord.latitude = unsendLocation.latitude
+                locationRecord.longitude = unsendLocation.longitude
+                locationRecord.message = unsendLocation.message
+                remoteLocations.insert(locationRecord, at: remoteLocations.startIndex)
+            }
             return remoteLocations
         }
         return remoteLocations ?? []

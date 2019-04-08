@@ -24,5 +24,5 @@ final class ServiceProvider: ServiceProviderType {
     lazy var userDefaultsService: UserDefaultsServiceType = UserDefaultsService(provider: self)
     lazy var realmDatabaseService: RealmDatabaseServiceType = RealmDatabaseService(provider: self)
     lazy var locationSyncService: LocationSyncServiceType = LocationSyncService(provider: self)
-    lazy var apiService: ApiServiceType = ApiService(networkingDispatcher: NetworkingDispatcher())
+    lazy var apiService: ApiServiceType = ApiService(networkingDispatcher: NetworkingDispatcher(), multipartFormDataUtils: MultipartFormDataUtils())
 }

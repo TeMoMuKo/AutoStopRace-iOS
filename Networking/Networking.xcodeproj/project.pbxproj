@@ -9,13 +9,15 @@
 /* Begin PBXBuildFile section */
 		101FD5F8224B833900D6504D /* CreateLocationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101FD5F7224B833900D6504D /* CreateLocationRequest.swift */; };
 		101FD5F9224B833900D6504D /* CreateLocationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101FD5F7224B833900D6504D /* CreateLocationRequest.swift */; };
-		10213BDB224C550700E4BE01 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10213BDA224C550700E4BE01 /* Data+Extension.swift */; };
+		10213BDB224C550700E4BE01 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10213BDA224C550700E4BE01 /* Data.swift */; };
 		10213BE5224D07D800E4BE01 /* LocationImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10213BE4224D07D800E4BE01 /* LocationImage.swift */; };
 		10213BF3224FB84200E4BE01 /* TokenStorageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10213BF2224FB84200E4BE01 /* TokenStorageProvider.swift */; };
 		10213BF4224FB84200E4BE01 /* TokenStorageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10213BF2224FB84200E4BE01 /* TokenStorageProvider.swift */; };
 		10213C19224FDC4900E4BE01 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10213C18224FDC4900E4BE01 /* UIImage.swift */; };
 		10213C1A224FDC4900E4BE01 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10213C18224FDC4900E4BE01 /* UIImage.swift */; };
 		10213C1C2250D0B300E4BE01 /* RaceInfoImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10213C1B2250D0B300E4BE01 /* RaceInfoImages.swift */; };
+		103A1B15225B7B510051D5D8 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103A1B14225B7B510051D5D8 /* DateFormatter.swift */; };
+		106678A8225BE45100F4C5F1 /* MultipartDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106678A7225BE45100F4C5F1 /* MultipartDataProvider.swift */; };
 		106B4BE5223EF45500D80076 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106B4BE4223EF45500D80076 /* ApiService.swift */; };
 		106B4BE8223EF84F00D80076 /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106B4BE7223EF84F00D80076 /* NetworkingError.swift */; };
 		106B4BEB223EF8DB00D80076 /* NetworkingDispatcherProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106B4BEA223EF8DB00D80076 /* NetworkingDispatcherProtocol.swift */; };
@@ -28,8 +30,8 @@
 		10A59391223EDE3A00235565 /* Networking.h in Headers */ = {isa = PBXBuildFile; fileRef = 10A59383223EDE3900235565 /* Networking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		10A593B5223EDFFB00235565 /* NetworkingDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A593B4223EDFFB00235565 /* NetworkingDispatcher.swift */; };
 		10A593B6223EDFFB00235565 /* NetworkingDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A593B4223EDFFB00235565 /* NetworkingDispatcher.swift */; };
-		10A593B9223EE04F00235565 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A593B8223EE04F00235565 /* Bundle+Extension.swift */; };
-		10A593BA223EE04F00235565 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A593B8223EE04F00235565 /* Bundle+Extension.swift */; };
+		10A593B9223EE04F00235565 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A593B8223EE04F00235565 /* Bundle.swift */; };
+		10A593BA223EE04F00235565 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A593B8223EE04F00235565 /* Bundle.swift */; };
 		10A593BD223EE0EF00235565 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A593BC223EE0EF00235565 /* Logger.swift */; };
 		10A593BE223EE0EF00235565 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A593BC223EE0EF00235565 /* Logger.swift */; };
 		10A593C6223EEDA500235565 /* NetworkingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A593C5223EEDA500235565 /* NetworkingRequest.swift */; };
@@ -59,11 +61,13 @@
 
 /* Begin PBXFileReference section */
 		101FD5F7224B833900D6504D /* CreateLocationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLocationRequest.swift; sourceTree = "<group>"; };
-		10213BDA224C550700E4BE01 /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
+		10213BDA224C550700E4BE01 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		10213BE4224D07D800E4BE01 /* LocationImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationImage.swift; sourceTree = "<group>"; };
 		10213BF2224FB84200E4BE01 /* TokenStorageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStorageProvider.swift; sourceTree = "<group>"; };
 		10213C18224FDC4900E4BE01 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		10213C1B2250D0B300E4BE01 /* RaceInfoImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaceInfoImages.swift; sourceTree = "<group>"; };
+		103A1B14225B7B510051D5D8 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		106678A7225BE45100F4C5F1 /* MultipartDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipartDataProvider.swift; sourceTree = "<group>"; };
 		106B4BE4223EF45500D80076 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		106B4BE7223EF84F00D80076 /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
 		106B4BEA223EF8DB00D80076 /* NetworkingDispatcherProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingDispatcherProtocol.swift; sourceTree = "<group>"; };
@@ -79,7 +83,7 @@
 		10A593AD223EDEBB00235565 /* Debug-Tests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Debug-Tests.xcconfig"; sourceTree = "<group>"; };
 		10A593AE223EDEF600235565 /* Release-Tests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Release-Tests.xcconfig"; sourceTree = "<group>"; };
 		10A593B4223EDFFB00235565 /* NetworkingDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingDispatcher.swift; sourceTree = "<group>"; };
-		10A593B8223EE04F00235565 /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
+		10A593B8223EE04F00235565 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		10A593BC223EE0EF00235565 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		10A593C5223EEDA500235565 /* NetworkingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingRequest.swift; sourceTree = "<group>"; };
 		10B8672722401CF80007E409 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -122,6 +126,7 @@
 				106B4BE4223EF45500D80076 /* ApiService.swift */,
 				10B86738224035B40007E409 /* ApiServiceType.swift */,
 				10213BF2224FB84200E4BE01 /* TokenStorageProvider.swift */,
+				106678A7225BE45100F4C5F1 /* MultipartDataProvider.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -197,8 +202,9 @@
 			isa = PBXGroup;
 			children = (
 				10213C18224FDC4900E4BE01 /* UIImage.swift */,
-				10A593B8223EE04F00235565 /* Bundle+Extension.swift */,
-				10213BDA224C550700E4BE01 /* Data+Extension.swift */,
+				10A593B8223EE04F00235565 /* Bundle.swift */,
+				10213BDA224C550700E4BE01 /* Data.swift */,
+				103A1B14225B7B510051D5D8 /* DateFormatter.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -424,10 +430,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				10B86731224020500007E409 /* HttpStatus.swift in Sources */,
-				10213BDB224C550700E4BE01 /* Data+Extension.swift in Sources */,
+				106678A8225BE45100F4C5F1 /* MultipartDataProvider.swift in Sources */,
+				10213BDB224C550700E4BE01 /* Data.swift in Sources */,
 				101FD5F8224B833900D6504D /* CreateLocationRequest.swift in Sources */,
 				10B8672E22401DCB0007E409 /* LocationRecord.swift in Sources */,
 				10B8672B22401DB70007E409 /* Team.swift in Sources */,
+				103A1B15225B7B510051D5D8 /* DateFormatter.swift in Sources */,
 				10A593B5223EDFFB00235565 /* NetworkingDispatcher.swift in Sources */,
 				10213C19224FDC4900E4BE01 /* UIImage.swift in Sources */,
 				10213BF3224FB84200E4BE01 /* TokenStorageProvider.swift in Sources */,
@@ -436,7 +444,7 @@
 				10213C1C2250D0B300E4BE01 /* RaceInfoImages.swift in Sources */,
 				10213BE5224D07D800E4BE01 /* LocationImage.swift in Sources */,
 				106B4BE8223EF84F00D80076 /* NetworkingError.swift in Sources */,
-				10A593B9223EE04F00235565 /* Bundle+Extension.swift in Sources */,
+				10A593B9223EE04F00235565 /* Bundle.swift in Sources */,
 				10B8672822401CF80007E409 /* User.swift in Sources */,
 				106B4BE5223EF45500D80076 /* ApiService.swift in Sources */,
 				10A593C6223EEDA500235565 /* NetworkingRequest.swift in Sources */,
@@ -449,7 +457,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				10A593B6223EDFFB00235565 /* NetworkingDispatcher.swift in Sources */,
-				10A593BA223EE04F00235565 /* Bundle+Extension.swift in Sources */,
+				10A593BA223EE04F00235565 /* Bundle.swift in Sources */,
 				10213BF4224FB84200E4BE01 /* TokenStorageProvider.swift in Sources */,
 				10A5938F223EDE3A00235565 /* NetworkingDispatcherTests.swift in Sources */,
 				10B8673A224035B40007E409 /* ApiServiceType.swift in Sources */,

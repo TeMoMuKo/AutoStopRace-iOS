@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Team: Codable {
+public struct Team: Decodable {
     public let number: Int
     public let lastLocation: LocationRecord?
 }

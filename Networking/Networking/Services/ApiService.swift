@@ -11,9 +11,11 @@ import Foundation
 public final class ApiService: ApiServiceType {
 
     let networkingDispatcher: NetworkingDispatcher
+    let multipartFormDataUtils: MultipartFormDataUtils
 
-    public init(networkingDispatcher: NetworkingDispatcher) {
+    public init(networkingDispatcher: NetworkingDispatcher, multipartFormDataUtils: MultipartFormDataUtils) {
         self.networkingDispatcher = networkingDispatcher
+        self.multipartFormDataUtils = multipartFormDataUtils
     }
 
     public func signIn(email: String, password: String, completion: @escaping (Result<User, Error>) -> Void) {
@@ -54,7 +56,7 @@ public final class ApiService: ApiServiceType {
     }
 
     public func postNewLocation(createLocationModel: CreateLocationModel, locationImage: LocationImage?, completion: @escaping (Result<LocationRecord, Error>) -> Void) {
-        let boundary = generateBoundary()
+        let boundary = multipartFormDataUtils.generateBoundary()
 
         guard let jsonData = try? JSONEncoder().encode(createLocationModel),
             let jsonString = String(data: jsonData, encoding: .utf8) else {
@@ -66,7 +68,7 @@ public final class ApiService: ApiServiceType {
             "locationData": jsonString
         ]
 
-        let postNewLocationRequestData = createDataBody(withParameters: parameters, image: locationImage, boundary: boundary)
+        let postNewLocationRequestData = multipartFormDataUtils.createDataBody(withParameters: parameters, image: locationImage, boundary: boundary)
 
         let postNewLocation = NetworkingRequest(path: "/locations",
                                                 method: .post,
@@ -76,35 +78,5 @@ public final class ApiService: ApiServiceType {
         networkingDispatcher.process(request: postNewLocation, completion: { result in
             completion(result)
         })
-    }
-
-    func generateBoundary() -> String {
-        return "Boundary-\(NSUUID().uuidString)"
-    }
-
-    func createDataBody(withParameters params: [String: String]?, image: LocationImage?, boundary: String) -> Data {
-
-        let lineBreak = "\r\n"
-        var body = Data()
-
-        if let parameters = params {
-            for (key, value) in parameters {
-                body.append("--\(boundary + lineBreak)")
-                body.append("Content-Disposition: form-data; name=\"\(key)\"\(lineBreak + lineBreak)")
-                body.append("\(value + lineBreak)")
-            }
-        }
-
-        if let image = image {
-            body.append("--\(boundary + lineBreak)")
-            body.append("Content-Disposition: form-data; name=\"image\"; filename=\"\(image.filename)\"\(lineBreak)")
-            body.append("Content-Type: \(image.mimeType + lineBreak + lineBreak)")
-            body.append(image.data)
-            body.append(lineBreak)
-        }
-
-        body.append("--\(boundary)--\(lineBreak)")
-
-        return body
     }
 }

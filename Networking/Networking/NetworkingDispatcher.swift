@@ -42,6 +42,11 @@ public class NetworkingDispatcher {
                 return
             }
 
+            if let error = self.checkResponseForErrors(response) {
+                completion(.failure(error))
+                return
+            }
+
             if let response = response as? HTTPURLResponse,
                 self.tokenStorageProvider.fetchToken() == nil {
                 if let headerTokenField = response.allHeaderFields[Config.headerTokenField] as? String {
@@ -51,14 +56,8 @@ public class NetworkingDispatcher {
 
             if let data = data {
                 do {
-                    print(String(decoding: data, as: UTF8.self))
-
+                    print("💚 \(String(decoding: data, as: UTF8.self))")
                     let decoder = JSONDecoder()
-
-                    let formatter = DateFormatter()
-                    formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
-
-                    decoder.dateDecodingStrategy = .formatted(formatter)
                     let responseObject = try decoder.decode(T.self, from: data)
                     completion(.success(responseObject))
                 } catch let error {
@@ -67,5 +66,26 @@ public class NetworkingDispatcher {
                 }
             }
         }.resume()
+    }
+
+    private func checkResponseForErrors(_ response: URLResponse?) -> Error? {
+        guard let httpResponse = response as? HTTPURLResponse,
+            let statusCode = HttpStatus(rawValue: httpResponse.statusCode) else { return nil }
+        switch statusCode {
+        case .badRequest:
+            return NetworkingError.badRequest
+        case .unauthorized:
+            return NetworkingError.unauthorized
+        case .forbidden:
+            return NetworkingError.forbidden
+        case .notFound:
+            return NetworkingError.notFound
+        case .internalServerError:
+            return NetworkingError.internalServerError
+        case .badGateway:
+            return NetworkingError.badGateway
+        default:
+            return nil
+        }
     }
 }
