@@ -9,6 +9,7 @@
 import UIKit
 import SKPhotoBrowser
 import Kingfisher
+import Networking
 
 final class ScheduleCoordinator: Coordinator {
 

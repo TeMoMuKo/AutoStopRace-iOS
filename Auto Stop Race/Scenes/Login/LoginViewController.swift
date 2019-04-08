@@ -162,19 +162,10 @@ class LoginViewController: UIViewControllerWithBackButton {
     }
     
     @objc func handleResetPasswordTap() {
-        let alert = UIAlertController(title: NSLocalizedString("title_activity_reset_pass", comment: ""), message: NSLocalizedString("input_email_for_reset_message", comment: ""), preferredStyle: .alert)
-        
-        alert.addTextField(configurationHandler: { (textField) -> Void in
-            textField.placeholder = NSLocalizedString(NSLocalizedString("input_email_for_reset_placeholder", comment: ""), comment: "")
-        })
-        
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-            let textField = alert.textFields![0] as UITextField
-            let email = textField.text!
-            self.viewModel.resetPassword(email: email)
-        }))
-        
-        self.present(alert, animated: true, completion: nil)
+        if let url = URL(string: ApiConfig.apiResetPassRedirectUrl),
+            UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:])
+        }
     }
     
     private func setupConstraints() {

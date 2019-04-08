@@ -26,7 +26,6 @@
 		10A8D08B2091255300BC81CF /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A8D08A2091255300BC81CF /* Tile.swift */; };
 		10A8D0932091260100BC81CF /* UserLocationTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A8D0912091260100BC81CF /* UserLocationTile.swift */; };
 		10A8D0942091260100BC81CF /* UserLocationTile.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10A8D0922091260100BC81CF /* UserLocationTile.xib */; };
-		10A8D09620913BAA00BC81CF /* AssetsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A8D09520913BAA00BC81CF /* AssetsInfo.swift */; };
 		10A8D09820913E1800BC81CF /* CampusCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A8D09720913E1800BC81CF /* CampusCoordinator.swift */; };
 		10A8D09A20913E6800BC81CF /* ScheduleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A8D09920913E6800BC81CF /* ScheduleCoordinator.swift */; };
 		26239BDBC268876FCC5CE9E5 /* Pods_Auto_Stop_RaceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BBB8C0EF746FA10444FB4C1 /* Pods_Auto_Stop_RaceTests.framework */; };
@@ -45,7 +44,6 @@
 		E24FFC451E5B174D00F7686F /* PhrasebookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24FFC441E5B174D00F7686F /* PhrasebookViewModel.swift */; };
 		E25F73D81E56ADA7003DEB3C /* PartnersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25F73D71E56ADA7003DEB3C /* PartnersViewController.swift */; };
 		E2645F121E649430004C10F1 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2645F111E649430004C10F1 /* AuthService.swift */; };
-		E2645F141E649923004C10F1 /* AsrApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2645F131E649923004C10F1 /* AsrApi.swift */; };
 		E271C2C61E56460D00CD4F15 /* DashboardCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E271C2C51E56460C00CD4F15 /* DashboardCoordinator.swift */; };
 		E271C2CE1E5660EC00CD4F15 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E271C2CD1E5660EC00CD4F15 /* DashboardViewModel.swift */; };
 		E27CB7A81E5867C3006B2396 /* LocationsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27CB7A71E5867C3006B2396 /* LocationsMapViewController.swift */; };
@@ -70,7 +68,6 @@
 		E2C061491E5AB0BE0022D6F1 /* contact_data.csv in Resources */ = {isa = PBXBuildFile; fileRef = E2C061461E5AB0BE0022D6F1 /* contact_data.csv */; };
 		E2C0614B1E5AB0BE0022D6F1 /* phrasebook.csv in Resources */ = {isa = PBXBuildFile; fileRef = E2C061481E5AB0BE0022D6F1 /* phrasebook.csv */; };
 		E2C0614D1E5AB2920022D6F1 /* ContactCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C0614C1E5AB2920022D6F1 /* ContactCoordinator.swift */; };
-		E2C0E2051E8CD53A002511F5 /* CreateLocationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C0E2041E8CD53A002511F5 /* CreateLocationRequest.swift */; };
 		E2C239CC1E594732003818FB /* UIViewControllerWithMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C239CB1E594732003818FB /* UIViewControllerWithMenu.swift */; };
 		E2C239CF1E594B53003818FB /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C239CE1E594B53003818FB /* AboutViewController.swift */; };
 		E2C239D21E594D33003818FB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C239D11E594D33003818FB /* LoginViewController.swift */; };
@@ -157,7 +154,6 @@
 		10A8D08A2091255300BC81CF /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Tile.swift; path = "Auto Stop Race/Views/Tile.swift"; sourceTree = SOURCE_ROOT; };
 		10A8D0912091260100BC81CF /* UserLocationTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserLocationTile.swift; path = Locations/Views/UserLocationTile.swift; sourceTree = "<group>"; };
 		10A8D0922091260100BC81CF /* UserLocationTile.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserLocationTile.xib; path = Locations/Views/UserLocationTile.xib; sourceTree = "<group>"; };
-		10A8D09520913BAA00BC81CF /* AssetsInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsInfo.swift; sourceTree = "<group>"; };
 		10A8D09720913E1800BC81CF /* CampusCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampusCoordinator.swift; sourceTree = "<group>"; };
 		10A8D09920913E6800BC81CF /* ScheduleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCoordinator.swift; sourceTree = "<group>"; };
 		4B8598865727A3ED12825B80 /* Pods_Auto_Stop_Race.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Auto_Stop_Race.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,7 +175,6 @@
 		E24FFC441E5B174D00F7686F /* PhrasebookViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhrasebookViewModel.swift; path = Phrasebook/ViewModel/PhrasebookViewModel.swift; sourceTree = "<group>"; };
 		E25F73D71E56ADA7003DEB3C /* PartnersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PartnersViewController.swift; path = Partners/PartnersViewController.swift; sourceTree = "<group>"; };
 		E2645F111E649430004C10F1 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthService.swift; path = Services/AuthService.swift; sourceTree = "<group>"; };
-		E2645F131E649923004C10F1 /* AsrApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsrApi.swift; sourceTree = "<group>"; };
 		E271C2C51E56460C00CD4F15 /* DashboardCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardCoordinator.swift; sourceTree = "<group>"; };
 		E271C2CD1E5660EC00CD4F15 /* DashboardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		E27CB7A71E5867C3006B2396 /* LocationsMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationsMapViewController.swift; path = Locations/LocationsMapViewController.swift; sourceTree = "<group>"; };
@@ -204,7 +199,6 @@
 		E2C061461E5AB0BE0022D6F1 /* contact_data.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = contact_data.csv; path = Assets/contact_data.csv; sourceTree = "<group>"; };
 		E2C061481E5AB0BE0022D6F1 /* phrasebook.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = phrasebook.csv; path = Assets/phrasebook.csv; sourceTree = "<group>"; };
 		E2C0614C1E5AB2920022D6F1 /* ContactCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCoordinator.swift; sourceTree = "<group>"; };
-		E2C0E2041E8CD53A002511F5 /* CreateLocationRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateLocationRequest.swift; sourceTree = "<group>"; };
 		E2C239CB1E594732003818FB /* UIViewControllerWithMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewControllerWithMenu.swift; path = "Auto Stop Race/Views/UIViewControllerWithMenu.swift"; sourceTree = SOURCE_ROOT; };
 		E2C239CE1E594B53003818FB /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutViewController.swift; path = About/AboutViewController.swift; sourceTree = "<group>"; };
 		E2C239D11E594D33003818FB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Login/LoginViewController.swift; sourceTree = "<group>"; };
@@ -584,7 +578,6 @@
 				E2D9A2551E555CBF003324F7 /* Extensions */,
 				E2D9A24C1E553B58003324F7 /* Config */,
 				E2D9A2401E553389003324F7 /* Coordinator */,
-				E2D9A23D1E553381003324F7 /* Networking */,
 				1086404F208FCD3C00E97BD0 /* Utils */,
 				10A378F1204B546B00E0C536 /* SharedUIComponents */,
 				E2D9A20E1E5530FC003324F7 /* AppDelegate.swift */,
@@ -629,32 +622,6 @@
 				E2D9A2501E554915003324F7 /* Menu */,
 			);
 			path = Scenes;
-			sourceTree = "<group>";
-		};
-		E2D9A23D1E553381003324F7 /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				E2D9A23E1E553381003324F7 /* Endpoints */,
-				E2D9A23F1E553381003324F7 /* Models */,
-			);
-			path = Networking;
-			sourceTree = "<group>";
-		};
-		E2D9A23E1E553381003324F7 /* Endpoints */ = {
-			isa = PBXGroup;
-			children = (
-				E2645F131E649923004C10F1 /* AsrApi.swift */,
-			);
-			path = Endpoints;
-			sourceTree = "<group>";
-		};
-		E2D9A23F1E553381003324F7 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				E2C0E2041E8CD53A002511F5 /* CreateLocationRequest.swift */,
-				10A8D09520913BAA00BC81CF /* AssetsInfo.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		E2D9A2401E553389003324F7 /* Coordinator */ = {
@@ -1026,21 +993,16 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Auto Stop Race/Pods-Auto Stop Race-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CSV.swift/CSV.framework",
 				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
-				"${BUILT_PRODUCTS_DIR}/Moya-ObjectMapper/Moya_ObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxReachability/RxReachability.framework",
@@ -1051,21 +1013,16 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CSV.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya_ObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxReachability.framework",
@@ -1119,7 +1076,6 @@
 				E24420751E84B99800556FDC /* UserLocationsCoordinator.swift in Sources */,
 				E2645F121E649430004C10F1 /* AuthService.swift in Sources */,
 				E24420731E84B86200556FDC /* UserLocationCell.swift in Sources */,
-				E2C0E2051E8CD53A002511F5 /* CreateLocationRequest.swift in Sources */,
 				E2D011571E5D9DC50021936A /* PhraseViewModelType.swift in Sources */,
 				E2D011501E5D95AB0021936A /* BaseService.swift in Sources */,
 				E2D9A2441E5534DA003324F7 /* AppCoordinator.swift in Sources */,
@@ -1150,7 +1106,6 @@
 				E244207E1E852A3B00556FDC /* PostNewLocationViewController.swift in Sources */,
 				E29F88A21E5F15F5008F1F46 /* Contact.swift in Sources */,
 				E29F1BE31E8B2F44006D8178 /* CLLocationCoordinate2D.swift in Sources */,
-				E2645F141E649923004C10F1 /* AsrApi.swift in Sources */,
 				E29293BC1E8223350083A1DD /* SettingsViewController.swift in Sources */,
 				10A8D0932091260100BC81CF /* UserLocationTile.swift in Sources */,
 				E2C061441E5A99F50022D6F1 /* Menu.swift in Sources */,
@@ -1175,7 +1130,6 @@
 				E2A6AACC1E80E07E00E8118B /* UserDefaultsService.swift in Sources */,
 				E2D9A20F1E5530FC003324F7 /* AppDelegate.swift in Sources */,
 				E29CDC911E56876F00F59B4C /* MenuViewModel.swift in Sources */,
-				10A8D09620913BAA00BC81CF /* AssetsInfo.swift in Sources */,
 				E2D9A25F1E55744E003324F7 /* UIView.swift in Sources */,
 				E2D90C7D1E596CAA00435A9F /* PhrasebookViewController.swift in Sources */,
 				E2D9A2481E55369E003324F7 /* DashboardViewController.swift in Sources */,

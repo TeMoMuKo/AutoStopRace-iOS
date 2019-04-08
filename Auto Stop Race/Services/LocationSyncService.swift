@@ -8,7 +8,6 @@
 
 import Foundation
 import RealmSwift
-import Moya
 
 protocol LocationSyncServiceType {
     func synchronizeLocationsWithServer()
@@ -17,40 +16,26 @@ protocol LocationSyncServiceType {
 final class LocationSyncService: BaseService, LocationSyncServiceType {
     
     func synchronizeLocationsWithServer() {
-        if self.provider.authService.isUserLoggedIn {
-            let unsendLocationRecords = self.provider.realmDatabaseService.getUnsentLocationRecords()
-            
-            for unsendLocationRecord in unsendLocationRecords {
+        guard provider.authService.isUserLoggedIn else { return }
 
-                let apiProvider = MoyaProvider<AsrApi>()
-                
-                apiProvider.request(.postNewLocation(location: unsendLocationRecord), completion: { [weak self] result in
-                    guard let `self` = self else { return }
-                    
+        DispatchQueue.main.async {
+            let unsendLocationRecords = self.provider.realmDatabaseService.getUnsentLocationRecords()
+
+            for unsendLocationRecord in unsendLocationRecords {
+                self.provider.apiService.postNewLocation(createLocationModel: unsendLocationRecord, locationImage: nil) { [weak self] result in
+                    guard let self = self else { return }
                     switch result {
-                    case let .success(response):
-                        let statusCode = response.statusCode
-                        
-                        if let status = HttpStatus(rawValue: statusCode) {
-                            switch status {
-                            case .Created:
-                                    Toast.showPositiveMessage(message: NSLocalizedString("sended_location", comment: ""))
-                                    self.provider.realmDatabaseService.removeLocationRecord(locationRecord: unsendLocationRecord)
-                            case .Unauthorized:
-                                do {
-//                                    let error = try response.mapObject(ErrorResponse.self) as ErrorResponse
-//                                    Toast.showNegativeMessage(message: error.errors)
-                                } catch {
-                                    
-                                }
-                            default:
-                                Toast.showHttpStatusError(status: status)
-                            }
+                    case .success:
+                        DispatchQueue.main.async {
+                            Toast.showPositiveMessage(message: NSLocalizedString("sended_location", comment: ""))
+                            self.provider.realmDatabaseService.removeLocationRecord(locationRecord: unsendLocationRecord)
                         }
-                    case let .failure(error):
-                        Toast.showNegativeMessage(message: error.localizedDescription)
+                    case .failure(let error):
+                        DispatchQueue.main.async {
+                            Toast.showNegativeMessage(message: error.localizedDescription)
+                        }
                     }
-                })
+                }
             }
         }
     }

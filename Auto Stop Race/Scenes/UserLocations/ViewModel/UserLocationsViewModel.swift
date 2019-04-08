@@ -7,16 +7,13 @@
 //
 
 import Foundation
-import Moya
 import RxSwift
 import RxCocoa
-import Moya_ObjectMapper
 import Networking
 
 final class UserLocationsViewModel {
     private let error = PublishSubject<String>()
 
-    private let apiProvider = MoyaProvider<AsrApi>()
     private let serviceProvider: ServiceProviderType
     
     private let disposeBag = DisposeBag()

@@ -7,10 +7,8 @@
 //
 
 import Foundation
-import Moya
 import RxSwift
 import RxCocoa
-import Moya_ObjectMapper
 import Networking
 
 enum AutenticationError: Swift.Error {
@@ -121,7 +119,9 @@ final class AuthService: BaseService, AuthServiceType {
     
     func logout() {
         tokenStorageProvider.clearToken()
-        self.provider.realmDatabaseService.clearDatabase()
+        DispatchQueue.main.async {
+            self.provider.realmDatabaseService.clearDatabase()
+        }
         status.accept(.none)
     }
 }

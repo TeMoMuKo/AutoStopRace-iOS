@@ -8,10 +8,7 @@ target 'Auto Stop Race' do
     pod 'RxCocoa'
     pod 'SnapKit'
     
-    pod 'Moya'
-    
     pod 'CSV.swift'
-    pod 'Moya-ObjectMapper'
 
     pod 'RealmSwift'
     pod 'GoogleMaps'

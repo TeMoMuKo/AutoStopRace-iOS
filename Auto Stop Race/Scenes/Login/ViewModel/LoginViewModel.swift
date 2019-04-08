@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Moya
 import RxSwift
 import RxCocoa
 
@@ -65,40 +64,6 @@ final class LoginViewModel {
                 self.activityIndicator.value = false
             }
         }
-//        apiProvider.request(.singIn(email: email, password: password), completion: { [weak self] result in
-//            guard let `self` = self else { return }
-//            switch result {
-//            case let .success(response):
-//                let statusCode = response.statusCode
-//                guard let status = HttpStatus(rawValue: statusCode) else { return }
-//                switch status {
-//                case .OK :
-//                    do {
-//                        if let httpResponse = response.response {
-//                            self.serviceProvider.userDefaultsService.setAuthorizationHeaders(httpResponse: httpResponse)
-//                        }
-//                        let user = try response.mapObject(User.self) as User
-//                        self.serviceProvider.userDefaultsService.setUserData(user: user)
-//                        self.serviceProvider.authService.loginStatus().value = .logged
-//                        Toast.showPositiveMessage(message: NSLocalizedString("msg_after_login", comment: "") + "\(user.firstName!) \(user.lastName!)")
-//                    } catch {
-//
-//                    }
-//                case .Unauthorized:
-//                    do {
-//                        let error = try response.mapObject(ErrorResponse.self) as ErrorResponse
-//                        Toast.showNegativeMessage(message: error.errors)
-//                    } catch {
-//
-//                    }
-//                default:
-//                    Toast.showHttpStatusError(status: status)
-//                }
-//            case let .failure(error):
-//                Toast.showNegativeMessage(message: error.localizedDescription)
-//            }
-//            self.activityIndicator.value = false
-//        })
     }
 
     // TODO: Not working in Api

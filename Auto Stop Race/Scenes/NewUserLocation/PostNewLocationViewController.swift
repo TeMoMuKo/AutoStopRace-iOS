@@ -149,7 +149,7 @@ class PostNewLocationViewController: FormViewControllerWithBackButton, CLLocatio
     }
     
     func postNewLocation() {
-        let newLocation = CreateLocationModel()
+        let newLocation = CreateLocationRecordRequest()
         newLocation.latitude = latitude!
         newLocation.longitude = longitude!
         

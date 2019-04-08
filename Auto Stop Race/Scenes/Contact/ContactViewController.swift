@@ -87,8 +87,9 @@ class ContactViewController: UIViewControllerWithMenu, UICollectionViewDelegateF
     }
 
     func openUrl(urlString: String) {
-        if UIApplication.shared.canOpenURL(URL(string: urlString)!) {
-            UIApplication.shared.openURL(URL(string: urlString)!)
+        if let url = URL(string: urlString),
+            UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url, options: [:])
         }
     }
     

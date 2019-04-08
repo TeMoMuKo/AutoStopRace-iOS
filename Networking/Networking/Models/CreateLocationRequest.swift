@@ -10,10 +10,11 @@ import Foundation
 import Realm
 import RealmSwift
 
-public class CreateLocationModel: RealmSwift.Object, Codable {
-    @objc public dynamic var latitude: Double = 0.0
-    @objc public dynamic var longitude: Double = 0.0
-    @objc public dynamic var message: String = ""
+@objcMembers public class CreateLocationRecordRequest: RealmSwift.Object, Codable {
+    public dynamic var id = UUID().uuidString
+    public dynamic var latitude: Double = 0.0
+    public dynamic var longitude: Double = 0.0
+    public dynamic var message: String = ""
 
     private enum CodingKeys: String, CodingKey {
         case latitude
@@ -28,5 +29,8 @@ public class CreateLocationModel: RealmSwift.Object, Codable {
         longitude = try container.decode(Double.self, forKey: .longitude)
         message = try container.decode(String.self, forKey: .message)
     }
- 
+
+    override public static func primaryKey() -> String? {
+        return "id"
+    }
 }

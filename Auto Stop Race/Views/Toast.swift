@@ -49,26 +49,7 @@ class Toast {
             })
         })
     }
-    
-    class func showHttpStatusError(status: HttpStatus) {
-        switch status {
-        case .BadRequest:
-            showAlert(backgroundColor: UIColor.red, textColor: UIColor.white, message: NSLocalizedString("error_400", comment: ""))
-        case .Unauthorized:
-            showAlert(backgroundColor: UIColor.red, textColor: UIColor.white, message: NSLocalizedString("error_401", comment: ""))
-        case .Forbidden:
-            showAlert(backgroundColor: UIColor.red, textColor: UIColor.white, message: NSLocalizedString("error_403", comment: ""))
-        case .NotFound:
-            showAlert(backgroundColor: UIColor.red, textColor: UIColor.white, message: NSLocalizedString("error_404", comment: ""))
-        case .InternalServerError:
-            showAlert(backgroundColor: UIColor.red, textColor: UIColor.white, message: NSLocalizedString("error_500", comment: ""))
-        case .BadGateway:
-            showAlert(backgroundColor: UIColor.red, textColor: UIColor.white, message: NSLocalizedString("error_502", comment: ""))
-        default:
-            showAlert(backgroundColor: UIColor.red, textColor: UIColor.white, message: NSLocalizedString("error_404", comment: ""))
-        }
-    }
-    
+
     class func showMessage(message: String) {
         showAlert(backgroundColor: UIColor.darkGray, textColor: UIColor.white, message: message)
     }

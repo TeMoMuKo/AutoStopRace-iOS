@@ -1,5 +1,4 @@
 PODS:
-  - Alamofire (4.8.2)
   - Crashlytics (3.12.0):
     - Fabric (~> 1.9.0)
   - CSV.swift (2.3.1)
@@ -83,23 +82,12 @@ PODS:
     - GoogleUtilities/Logger
   - KeychainAccess (3.1.2)
   - Kingfisher (5.3.1)
-  - Moya (12.0.1):
-    - Moya/Core (= 12.0.1)
-  - Moya-ObjectMapper (2.8):
-    - Moya-ObjectMapper/Core (= 2.8)
-  - Moya-ObjectMapper/Core (2.8):
-    - Moya (~> 12.0)
-    - ObjectMapper (~> 3.4)
-  - Moya/Core (12.0.1):
-    - Alamofire (~> 4.1)
-    - Result (~> 4.0)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
   - Nimble (8.0.1)
-  - ObjectMapper (3.4.2)
   - Protobuf (3.7.0)
   - Quick (2.0.0)
   - ReachabilitySwift (4.3.1)
@@ -108,7 +96,6 @@ PODS:
   - Realm/Headers (3.14.1)
   - RealmSwift (3.14.1):
     - Realm (= 3.14.1)
-  - Result (4.1.0)
   - RxAtomic (4.4.2)
   - RxCocoa (4.4.2):
     - RxSwift (>= 4.4.2, ~> 4.4)
@@ -132,8 +119,6 @@ DEPENDENCIES:
   - GoogleMaps
   - KeychainAccess
   - Kingfisher (~> 5.0)
-  - Moya
-  - Moya-ObjectMapper
   - Nimble
   - Quick
   - ReachabilitySwift
@@ -146,7 +131,6 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - Alamofire
     - Crashlytics
     - CSV.swift
     - Eureka
@@ -164,17 +148,13 @@ SPEC REPOS:
     - GoogleUtilities
     - KeychainAccess
     - Kingfisher
-    - Moya
-    - Moya-ObjectMapper
     - nanopb
     - Nimble
-    - ObjectMapper
     - Protobuf
     - Quick
     - ReachabilitySwift
     - Realm
     - RealmSwift
-    - Result
     - RxAtomic
     - RxCocoa
     - RxReachability
@@ -183,7 +163,6 @@ SPEC REPOS:
     - SnapKit
 
 SPEC CHECKSUMS:
-  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
   CSV.swift: d16f671b3090a2c0525d5f2165b18319074aae2b
   Eureka: 28ea296f06710f6745266b71f17862048941a32d
@@ -201,17 +180,13 @@ SPEC CHECKSUMS:
   GoogleUtilities: 6481e6318c5fcabaaa8513ef8120f329055d7c10
   KeychainAccess: b3816fddcf28aa29d94b10ec305cd52be14c472b
   Kingfisher: d9e7e0b209b59b8f9873aa2f37654e81a7beea51
-  Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
-  Moya-ObjectMapper: c514b5eafcfd5e260f85f7a5bf66895a217e2b37
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Nimble: 45f786ae66faa9a709624227fae502db55a8bdd0
-  ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
   Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
   Quick: ce1276c7c27ba2da3cb2fd0cde053c3648b3b22d
   ReachabilitySwift: 4032e2f59586e11e3b0ebe15b167abdd587a388b
   Realm: e12c9c2387d05c5bba3a9c394838f5870e85763b
   RealmSwift: a82eab9b04c3e1616082c7e17aa300740847769c
-  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   RxAtomic: d00e97c10db88c6f08540e0bf2752fc5a2404167
   RxCocoa: 477990dc3b4c3ff55fb0ac77e1cc06244e0aaec8
   RxReachability: 053f2d913db44998242ade488ccaef558f3ce7cb
@@ -219,6 +194,6 @@ SPEC CHECKSUMS:
   SKPhotoBrowser: 76eb862685761707b5745fde7762757966565e07
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: b157cc6d374fb95b76686fccbad18a98a6d271ba
+PODFILE CHECKSUM: 27eb89476df2d22fb34fb0c197e99c0e62786104
 
 COCOAPODS: 1.7.0.beta.3

@@ -147,8 +147,9 @@ class AboutViewController: UIViewControllerWithMenu {
     }
     
     @objc func rateAppButtonTapped() {
-        if UIApplication.shared.canOpenURL(URL(string: AboutConfig.appStoreRateUrl)!) {
-            UIApplication.shared.openURL(URL(string: AboutConfig.appStoreRateUrl)!)
+        if let url = URL(string: AboutConfig.appStoreRateUrl),
+            UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url, options: [:])
         } else {
             showAlert(title: NSLocalizedString("app_store_error_title", comment: ""), message: "")
         }

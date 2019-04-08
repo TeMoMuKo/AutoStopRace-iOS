@@ -11,7 +11,7 @@ struct ApiConfig {
     static let headerFieldToken = "access-token"
     static let headerFieldClient = "client"
     static let headerFieldUid = "uid"
-    static let apiResetPassRedirectUrl = "http://autostoprace.pl"
+    static let apiResetPassRedirectUrl = "https://app.autostoprace.pl/password-reset/request"
     static let shareMapUrl = "https://mapa.autostoprace.pl/"
     static let assetsJsonUrl = "https://dev.api.autostoprace.pl/raceinfo/images"
 }

@@ -9,7 +9,7 @@
 import Foundation
 
 public struct RaceInfoImages: Codable {
-    let campusMapImageUrl, scheduleImageUrl: String
+    public let campusMapImageUrl, scheduleImageUrl: String
 
     enum CodingKeys: String, CodingKey {
         case campusMapImageUrl
@@ -18,11 +18,11 @@ public struct RaceInfoImages: Codable {
 }
 
 extension RaceInfoImages {
-    init(data: Data) throws {
+    public init(data: Data) throws {
         self = try JSONDecoder().decode(RaceInfoImages.self, from: data)
     }
     
-    init(fromURL url: URL) throws {
+    public init(fromURL url: URL) throws {
         try self.init(data: try Data(contentsOf: url))
     }
 }

@@ -55,7 +55,7 @@ public final class ApiService: ApiServiceType {
         })
     }
 
-    public func postNewLocation(createLocationModel: CreateLocationModel, locationImage: LocationImage?, completion: @escaping (Result<LocationRecord, Error>) -> Void) {
+    public func postNewLocation(createLocationModel: CreateLocationRecordRequest, locationImage: LocationImage?, completion: @escaping (Result<LocationRecord, Error>) -> Void) {
         let boundary = multipartFormDataUtils.generateBoundary()
 
         guard let jsonData = try? JSONEncoder().encode(createLocationModel),
