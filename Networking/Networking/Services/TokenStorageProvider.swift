@@ -10,7 +10,7 @@ import Foundation
 import KeychainAccess
 
 private struct KeychainConstants {
-    static let service = "RIgnasiak.Torianin.AutoStopRace"
+    static let service = "com.piotrholub.Auto-Stop-Race"
     static let tokenKey = "token"
 }
 
