@@ -10,6 +10,7 @@
 		10213BFE224FBD6B00E4BE01 /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10213BFD224FBD6B00E4BE01 /* Networking.framework */; };
 		10213BFF224FBD6B00E4BE01 /* Networking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10213BFD224FBD6B00E4BE01 /* Networking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		106678AD225C942B00F4C5F1 /* Config in Resources */ = {isa = PBXBuildFile; fileRef = 106678AC225C942A00F4C5F1 /* Config */; };
+		106678C8225CA15400F4C5F1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106678C7225CA15400F4C5F1 /* Constants.swift */; };
 		107118E02084288100422C61 /* LocationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107118DF2084288100422C61 /* LocationsListViewController.swift */; };
 		10732CF82084089A0024DE78 /* Partners.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10732CF72084089A0024DE78 /* Partners.xcassets */; };
 		1086404A208E1EF600E97BD0 /* ApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10864049208E1EF600E97BD0 /* ApplicationViewController.swift */; };
@@ -135,6 +136,7 @@
 		02CDF65244D5C80A24E795FE /* Pods_Auto_Stop_RaceUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Auto_Stop_RaceUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		10213BFD224FBD6B00E4BE01 /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		106678AC225C942A00F4C5F1 /* Config */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Config; sourceTree = "<group>"; };
+		106678C7225CA15400F4C5F1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		107118DF2084288100422C61 /* LocationsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationsListViewController.swift; path = Locations/LocationsListViewController.swift; sourceTree = "<group>"; };
 		10732CF62083FBDD0024DE78 /* Auto Stop Race.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Auto Stop Race.entitlements"; sourceTree = "<group>"; };
 		10732CF72084089A0024DE78 /* Partners.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Partners.xcassets; path = "Auto Stop Race/Resources/Assets/Partners.xcassets"; sourceTree = "<group>"; };
@@ -576,6 +578,7 @@
 				1086404F208FCD3C00E97BD0 /* Utils */,
 				10A378F1204B546B00E0C536 /* SharedUIComponents */,
 				E2D9A20E1E5530FC003324F7 /* AppDelegate.swift */,
+				106678C7225CA15400F4C5F1 /* Constants.swift */,
 				106678AC225C942A00F4C5F1 /* Config */,
 				E2D9A2171E5530FC003324F7 /* LaunchScreen.storyboard */,
 				E2D9A21A1E5530FC003324F7 /* Info.plist */,
@@ -1108,6 +1111,7 @@
 				10A8D08B2091255300BC81CF /* Tile.swift in Sources */,
 				E28622901E5AECAA008938FC /* LoginViewModel.swift in Sources */,
 				E2D2EB3F1E5AF6B000C56A61 /* UIViewControllerWithBackButton.swift in Sources */,
+				106678C8225CA15400F4C5F1 /* Constants.swift in Sources */,
 				10A8D09820913E1800BC81CF /* CampusCoordinator.swift in Sources */,
 				10A8D0892091252900BC81CF /* ScrollableStackView.swift in Sources */,
 				10A378E5204B4BF000E0C536 /* Theme+UIButton.swift in Sources */,
