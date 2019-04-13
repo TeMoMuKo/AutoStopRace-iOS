@@ -47,6 +47,7 @@
 		10B8673A224035B40007E409 /* ApiServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B86738224035B40007E409 /* ApiServiceType.swift */; };
 		7B6D7B32452BDFCA383B9916 /* Pods_NetworkingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 585EE6C7F3B394B4A7D10EE0 /* Pods_NetworkingTests.framework */; };
 		89092858B75D776C5D277AB6 /* Pods_Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B9F1A002E5C0A9B321EF67C /* Pods_Networking.framework */; };
+		981887EA22623EE50012A4E2 /* Competition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981887E922623EE50012A4E2 /* Competition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		531121E1A366E596A25D1DEA /* Pods-NetworkingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkingTests.debug.xcconfig"; path = "Target Support Files/Pods-NetworkingTests/Pods-NetworkingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		585EE6C7F3B394B4A7D10EE0 /* Pods_NetworkingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NetworkingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D2F9F81E9229DDF0918C819 /* Pods-NetworkingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkingTests.release.xcconfig"; path = "Target Support Files/Pods-NetworkingTests/Pods-NetworkingTests.release.xcconfig"; sourceTree = "<group>"; };
+		981887E922623EE50012A4E2 /* Competition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Competition.swift; sourceTree = "<group>"; };
 		986C302F85AEE4871D1E320B /* Pods-Networking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Networking.debug.xcconfig"; path = "Target Support Files/Pods-Networking/Pods-Networking.debug.xcconfig"; sourceTree = "<group>"; };
 		A20994554AF509809B47620B /* Pods-Networking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Networking.release.xcconfig"; path = "Target Support Files/Pods-Networking/Pods-Networking.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -227,6 +229,7 @@
 				10B8672D22401DCB0007E409 /* LocationRecord.swift */,
 				101FD5F7224B833900D6504D /* CreateLocationRequest.swift */,
 				10213BE4224D07D800E4BE01 /* LocationImage.swift */,
+				981887E922623EE50012A4E2 /* Competition.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -391,9 +394,24 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-NetworkingTests/Pods-NetworkingTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NetworkingTests/Pods-NetworkingTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-NetworkingTests/Pods-NetworkingTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -448,6 +466,7 @@
 				10B8672822401CF80007E409 /* User.swift in Sources */,
 				106B4BE5223EF45500D80076 /* ApiService.swift in Sources */,
 				10A593C6223EEDA500235565 /* NetworkingRequest.swift in Sources */,
+				981887EA22623EE50012A4E2 /* Competition.swift in Sources */,
 				106B4BEB223EF8DB00D80076 /* NetworkingDispatcherProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

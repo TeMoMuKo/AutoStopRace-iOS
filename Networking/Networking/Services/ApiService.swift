@@ -38,6 +38,14 @@ public final class ApiService: ApiServiceType {
             completion(result)
         })
     }
+    
+    public func fetchCompetitions(completion: @escaping (Result<[Competition], Error>) -> Void) {
+        let teamsNetworkingRequest = NetworkingRequest(path: "/raceinfo/competitions",
+                                                       method: .get)
+        networkingDispatcher.process(request: teamsNetworkingRequest, completion: { result in
+            completion(result)
+        })
+    }
 
     public func fetchUserLocations(completion: @escaping (Result<[LocationRecord], Error>) -> Void) {
         let userLocationsNetworkingRequest = NetworkingRequest(path: "/user/team/locations",
