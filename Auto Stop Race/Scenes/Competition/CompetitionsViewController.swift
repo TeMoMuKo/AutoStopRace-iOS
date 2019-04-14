@@ -53,7 +53,7 @@ class CompetitionsViewController: UIViewControllerWithMenu {
                         self.showMessage(text: NSLocalizedString("no_competitions", comment: ""))
                     }
                 }
-            case .failure(let error):
+            case .failure:
                 self.competitions = []
                 DispatchQueue.main.async {
                     self.showMessage(text: NSLocalizedString("error_404", comment: ""))

@@ -224,6 +224,6 @@ class LocationsMapViewController: UIViewControllerWithMenu, UICollectionViewDele
     }
     
     @objc func dismissKeyboard() {
-        locationsSearchBar.resignFirstResponder()
+        view.endEditing(true)
     }
 }

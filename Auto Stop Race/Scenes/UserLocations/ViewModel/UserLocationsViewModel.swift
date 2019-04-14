@@ -12,7 +12,7 @@ import RxCocoa
 import Networking
 
 final class UserLocationsViewModel {
-    private let error = PublishSubject<String>()
+    let error = PublishSubject<String>()
 
     private let serviceProvider: ServiceProviderType
     
@@ -35,8 +35,16 @@ final class UserLocationsViewModel {
             case .success(let locationRecords):
                 self.locationRecords.accept(locationRecords)
                 self.saveRemoteLocationsToLocalDatabase()
-            case .failure:
-                self.error.onNext("Request error. Try again later.")
+            case .failure(let error):
+                switch error {
+                case NetworkingError.unauthorized:
+                    DispatchQueue.main.async {
+                        self.serviceProvider.authService.logout()
+                    }
+                    self.error.onNext(error.localizedDescription)
+                default:
+                    self.error.onNext(error.localizedDescription)
+                }
                 self.loadLocationsFromDatabase()
             }
         }

@@ -58,6 +58,7 @@ class UserLocationsViewController: UIViewControllerWithMenu, UICollectionViewDel
         setupPostNewLocationBarButton()
         setupCollectionView()
         setupRefreshControl()
+        setupErrorBindings()
 
         collectionView.register(UserLocationCell.self, forCellWithReuseIdentifier: UserLocationCell.Identifier)
         
@@ -87,7 +88,7 @@ class UserLocationsViewController: UIViewControllerWithMenu, UICollectionViewDel
         
         setupConstraints()
     }
-    
+
     func setupNavigationBarTitle() {
         let titleLabel = navigationItem.titleView as! UILabel
         titleLabel.text = NSLocalizedString("app_name", comment: "")
@@ -111,7 +112,15 @@ class UserLocationsViewController: UIViewControllerWithMenu, UICollectionViewDel
         refreshControl.addTarget(self, action: #selector(self.refresh), for: UIControlEvents.valueChanged)
         collectionView.addSubview(refreshControl)
     }
-    
+
+    private func setupErrorBindings() {
+        viewModel.error.subscribe(onNext: {  error in
+            DispatchQueue.main.async {
+                Toast.showNegativeMessage(message: error)
+            }
+        }).disposed(by: disposeBag)
+    }
+
     @objc func refresh(sender: AnyObject) {
         viewModel.downloadLocations()
         refreshControl.endRefreshing()

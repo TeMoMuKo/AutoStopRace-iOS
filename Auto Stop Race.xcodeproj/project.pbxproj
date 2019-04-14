@@ -11,7 +11,6 @@
 		10213BFF224FBD6B00E4BE01 /* Networking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10213BFD224FBD6B00E4BE01 /* Networking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		106678C8225CA15400F4C5F1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106678C7225CA15400F4C5F1 /* Constants.swift */; };
 		107118E02084288100422C61 /* LocationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107118DF2084288100422C61 /* LocationsListViewController.swift */; };
-		10732CF82084089A0024DE78 /* Partners.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10732CF72084089A0024DE78 /* Partners.xcassets */; };
 		1082386222636FA200AA99EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1082386022636FA200AA99EA /* GoogleService-Info.plist */; };
 		1082386322636FA200AA99EA /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1082386122636FA200AA99EA /* Keys.plist */; };
 		1082386722637E1E00AA99EA /* CompetitionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1082386522637E1E00AA99EA /* CompetitionCell.swift */; };
@@ -143,7 +142,6 @@
 		106678C7225CA15400F4C5F1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		107118DF2084288100422C61 /* LocationsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationsListViewController.swift; path = Locations/LocationsListViewController.swift; sourceTree = "<group>"; };
 		10732CF62083FBDD0024DE78 /* Auto Stop Race.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Auto Stop Race.entitlements"; sourceTree = "<group>"; };
-		10732CF72084089A0024DE78 /* Partners.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Partners.xcassets; path = "Auto Stop Race/Resources/Assets/Partners.xcassets"; sourceTree = "<group>"; };
 		1082386022636FA200AA99EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1082386122636FA200AA99EA /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		1082386522637E1E00AA99EA /* CompetitionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompetitionCell.swift; sourceTree = "<group>"; };
@@ -340,7 +338,6 @@
 			isa = PBXGroup;
 			children = (
 				10A378EA204B540E00E0C536 /* Assets.xcassets */,
-				10732CF72084089A0024DE78 /* Partners.xcassets */,
 			);
 			name = Assets;
 			path = ..;
@@ -882,7 +879,6 @@
 				10A8D0942091260100BC81CF /* UserLocationTile.xib in Resources */,
 				1082386222636FA200AA99EA /* GoogleService-Info.plist in Resources */,
 				10A378F0204B541800E0C536 /* Localizable.strings in Resources */,
-				10732CF82084089A0024DE78 /* Partners.xcassets in Resources */,
 				E2C061491E5AB0BE0022D6F1 /* contact_data.csv in Resources */,
 				1082386C22637E7600AA99EA /* CompetitionCell.xib in Resources */,
 				E2D9A2191E5530FC003324F7 /* LaunchScreen.storyboard in Resources */,
