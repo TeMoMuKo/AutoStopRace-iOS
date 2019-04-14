@@ -12,6 +12,12 @@
 		106678C8225CA15400F4C5F1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106678C7225CA15400F4C5F1 /* Constants.swift */; };
 		107118E02084288100422C61 /* LocationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107118DF2084288100422C61 /* LocationsListViewController.swift */; };
 		10732CF82084089A0024DE78 /* Partners.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10732CF72084089A0024DE78 /* Partners.xcassets */; };
+		1082386222636FA200AA99EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1082386022636FA200AA99EA /* GoogleService-Info.plist */; };
+		1082386322636FA200AA99EA /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1082386122636FA200AA99EA /* Keys.plist */; };
+		1082386722637E1E00AA99EA /* CompetitionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1082386522637E1E00AA99EA /* CompetitionCell.swift */; };
+		1082386822637E1E00AA99EA /* CompetitionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1082386622637E1E00AA99EA /* CompetitionsViewController.swift */; };
+		1082386C22637E7600AA99EA /* CompetitionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1082386A22637E7600AA99EA /* CompetitionCell.xib */; };
+		1082386D22637E7600AA99EA /* CompetitionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1082386B22637E7600AA99EA /* CompetitionsViewController.xib */; };
 		1086404A208E1EF600E97BD0 /* ApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10864049208E1EF600E97BD0 /* ApplicationViewController.swift */; };
 		1086404C208E20CD00E97BD0 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1086404B208E20CD00E97BD0 /* Coordinator.swift */; };
 		10864051208FCD5D00E97BD0 /* TextFieldTraits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10864050208FCD5D00E97BD0 /* TextFieldTraits.swift */; };
@@ -29,12 +35,6 @@
 		10A8D09A20913E6800BC81CF /* ScheduleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A8D09920913E6800BC81CF /* ScheduleCoordinator.swift */; };
 		26239BDBC268876FCC5CE9E5 /* Pods_Auto_Stop_RaceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BBB8C0EF746FA10444FB4C1 /* Pods_Auto_Stop_RaceTests.framework */; };
 		4887C077F88B77BAB7C130DB /* Pods_Auto_Stop_Race.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8598865727A3ED12825B80 /* Pods_Auto_Stop_Race.framework */; };
-		981887DB226230D00012A4E2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 981887D9226230D00012A4E2 /* GoogleService-Info.plist */; };
-		981887DC226230D00012A4E2 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 981887DA226230D00012A4E2 /* Keys.plist */; };
-		981887E322623B3F0012A4E2 /* CompetitionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981887E122623B3F0012A4E2 /* CompetitionsViewController.swift */; };
-		981887E422623B3F0012A4E2 /* CompetitionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 981887E222623B3F0012A4E2 /* CompetitionsViewController.xib */; };
-		981887E722623D080012A4E2 /* CompetitionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981887E522623D080012A4E2 /* CompetitionCell.swift */; };
-		981887E822623D080012A4E2 /* CompetitionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 981887E622623D080012A4E2 /* CompetitionCell.xib */; };
 		DA538D4B80EC4BDAED594663 /* Pods_Auto_Stop_RaceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02CDF65244D5C80A24E795FE /* Pods_Auto_Stop_RaceUITests.framework */; };
 		E2044EE81EA7C98A007B1C86 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2044EE71EA7C98A007B1C86 /* String.swift */; };
 		E21BBB5F1EA8B27B005D54FC /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21BBB5E1EA8B27B005D54FC /* UIImage.swift */; };
@@ -144,6 +144,12 @@
 		107118DF2084288100422C61 /* LocationsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationsListViewController.swift; path = Locations/LocationsListViewController.swift; sourceTree = "<group>"; };
 		10732CF62083FBDD0024DE78 /* Auto Stop Race.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Auto Stop Race.entitlements"; sourceTree = "<group>"; };
 		10732CF72084089A0024DE78 /* Partners.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Partners.xcassets; path = "Auto Stop Race/Resources/Assets/Partners.xcassets"; sourceTree = "<group>"; };
+		1082386022636FA200AA99EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1082386122636FA200AA99EA /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
+		1082386522637E1E00AA99EA /* CompetitionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompetitionCell.swift; sourceTree = "<group>"; };
+		1082386622637E1E00AA99EA /* CompetitionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompetitionsViewController.swift; sourceTree = "<group>"; };
+		1082386A22637E7600AA99EA /* CompetitionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompetitionCell.xib; sourceTree = "<group>"; };
+		1082386B22637E7600AA99EA /* CompetitionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompetitionsViewController.xib; sourceTree = "<group>"; };
 		10864049208E1EF600E97BD0 /* ApplicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationViewController.swift; sourceTree = "<group>"; };
 		1086404B208E20CD00E97BD0 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		10864050208FCD5D00E97BD0 /* TextFieldTraits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTraits.swift; sourceTree = "<group>"; };
@@ -162,12 +168,6 @@
 		4B8598865727A3ED12825B80 /* Pods_Auto_Stop_Race.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Auto_Stop_Race.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58D55683FD9F9BA2A36DEF50 /* Pods-Auto Stop RaceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Auto Stop RaceTests.debug.xcconfig"; path = "Target Support Files/Pods-Auto Stop RaceTests/Pods-Auto Stop RaceTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5BBB8C0EF746FA10444FB4C1 /* Pods_Auto_Stop_RaceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Auto_Stop_RaceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		981887D9226230D00012A4E2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		981887DA226230D00012A4E2 /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
-		981887E122623B3F0012A4E2 /* CompetitionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionsViewController.swift; sourceTree = "<group>"; };
-		981887E222623B3F0012A4E2 /* CompetitionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompetitionsViewController.xib; sourceTree = "<group>"; };
-		981887E522623D080012A4E2 /* CompetitionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionCell.swift; sourceTree = "<group>"; };
-		981887E622623D080012A4E2 /* CompetitionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompetitionCell.xib; sourceTree = "<group>"; };
 		9A24FE8257801F8DF4E8056C /* Pods-Auto Stop RaceUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Auto Stop RaceUITests.debug.xcconfig"; path = "Target Support Files/Pods-Auto Stop RaceUITests/Pods-Auto Stop RaceUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9B2AD946D3FF2D028F3F74BC /* Pods-Auto Stop RaceUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Auto Stop RaceUITests.release.xcconfig"; path = "Target Support Files/Pods-Auto Stop RaceUITests/Pods-Auto Stop RaceUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DCFC9C02EE3F87678F1F8682 /* Pods-Auto Stop Race.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Auto Stop Race.debug.xcconfig"; path = "Target Support Files/Pods-Auto Stop Race/Pods-Auto Stop Race.debug.xcconfig"; sourceTree = "<group>"; };
@@ -291,6 +291,34 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		1082385F22636FA200AA99EA /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				1082386022636FA200AA99EA /* GoogleService-Info.plist */,
+				1082386122636FA200AA99EA /* Keys.plist */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		1082386422637E1E00AA99EA /* Competition */ = {
+			isa = PBXGroup;
+			children = (
+				1082386922637E7600AA99EA /* Views */,
+				1082386522637E1E00AA99EA /* CompetitionCell.swift */,
+				1082386622637E1E00AA99EA /* CompetitionsViewController.swift */,
+			);
+			path = Competition;
+			sourceTree = "<group>";
+		};
+		1082386922637E7600AA99EA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1082386A22637E7600AA99EA /* CompetitionCell.xib */,
+				1082386B22637E7600AA99EA /* CompetitionsViewController.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		1086404F208FCD3C00E97BD0 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -333,34 +361,6 @@
 				10A8D08A2091255300BC81CF /* Tile.swift */,
 			);
 			name = ScrollableStackView;
-			sourceTree = "<group>";
-		};
-		981887D8226230D00012A4E2 /* Config */ = {
-			isa = PBXGroup;
-			children = (
-				981887D9226230D00012A4E2 /* GoogleService-Info.plist */,
-				981887DA226230D00012A4E2 /* Keys.plist */,
-			);
-			path = Config;
-			sourceTree = "<group>";
-		};
-		981887DD22623A530012A4E2 /* Competitions */ = {
-			isa = PBXGroup;
-			children = (
-				981887E122623B3F0012A4E2 /* CompetitionsViewController.swift */,
-				981887E522623D080012A4E2 /* CompetitionCell.swift */,
-				981887E022623AA70012A4E2 /* Views */,
-			);
-			name = Competitions;
-			sourceTree = "<group>";
-		};
-		981887E022623AA70012A4E2 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				981887E222623B3F0012A4E2 /* CompetitionsViewController.xib */,
-				981887E622623D080012A4E2 /* CompetitionCell.xib */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		AD37CBD815376D1D419698D3 /* Frameworks */ = {
@@ -433,9 +433,9 @@
 		E27CB7AA1E586993006B2396 /* Contact */ = {
 			isa = PBXGroup;
 			children = (
-				E27CB7B01E586B38006B2396 /* ViewModel */,
 				E27CB7AD1E586A91006B2396 /* Views */,
 				E27CB7AB1E5869AD006B2396 /* ContactViewController.swift */,
+				E27CB7B11E586B59006B2396 /* ContactViewModel.swift */,
 			);
 			name = Contact;
 			sourceTree = "<group>";
@@ -446,14 +446,6 @@
 				E27CB7AE1E586AAB006B2396 /* ContactCell.swift */,
 			);
 			name = Views;
-			sourceTree = "<group>";
-		};
-		E27CB7B01E586B38006B2396 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				E27CB7B11E586B59006B2396 /* ContactViewModel.swift */,
-			);
-			name = ViewModel;
 			sourceTree = "<group>";
 		};
 		E29293BA1E82229C0083A1DD /* Settings */ = {
@@ -604,7 +596,6 @@
 		E2D9A20D1E5530FC003324F7 /* Auto Stop Race */ = {
 			isa = PBXGroup;
 			children = (
-				981887D8226230D00012A4E2 /* Config */,
 				10732CF62083FBDD0024DE78 /* Auto Stop Race.entitlements */,
 				E2D9A23C1E55337A003324F7 /* Scenes */,
 				10A378DF204B2FA900E0C536 /* Theme */,
@@ -616,6 +607,7 @@
 				E2D9A2401E553389003324F7 /* Coordinator */,
 				1086404F208FCD3C00E97BD0 /* Utils */,
 				10A378F1204B546B00E0C536 /* SharedUIComponents */,
+				1082385F22636FA200AA99EA /* Config */,
 				E2D9A20E1E5530FC003324F7 /* AppDelegate.swift */,
 				106678C7225CA15400F4C5F1 /* Constants.swift */,
 				E2D9A2171E5530FC003324F7 /* LaunchScreen.storyboard */,
@@ -645,11 +637,11 @@
 		E2D9A23C1E55337A003324F7 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				981887DD22623A530012A4E2 /* Competitions */,
 				E2D9A2451E55365D003324F7 /* Dashboard */,
 				E244207C1E8529D000556FDC /* NewUserLocation */,
 				E244206B1E84B58500556FDC /* UserLocations */,
 				E27CB7A61E5863A7006B2396 /* Locations */,
+				1082386422637E1E00AA99EA /* Competition */,
 				E29293BA1E82229C0083A1DD /* Settings */,
 				E2D90C7B1E596C8C00435A9F /* Phrasebook */,
 				E2C239D01E594D1B003818FB /* Login */,
@@ -838,7 +830,7 @@
 				TargetAttributes = {
 					E2D9A20A1E5530FC003324F7 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = Q3J6238RP7;
+						DevelopmentTeam = VCKS6267S9;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -888,14 +880,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				10A8D0942091260100BC81CF /* UserLocationTile.xib in Resources */,
-				981887DB226230D00012A4E2 /* GoogleService-Info.plist in Resources */,
+				1082386222636FA200AA99EA /* GoogleService-Info.plist in Resources */,
 				10A378F0204B541800E0C536 /* Localizable.strings in Resources */,
 				10732CF82084089A0024DE78 /* Partners.xcassets in Resources */,
-				981887E822623D080012A4E2 /* CompetitionCell.xib in Resources */,
 				E2C061491E5AB0BE0022D6F1 /* contact_data.csv in Resources */,
+				1082386C22637E7600AA99EA /* CompetitionCell.xib in Resources */,
 				E2D9A2191E5530FC003324F7 /* LaunchScreen.storyboard in Resources */,
-				981887E422623B3F0012A4E2 /* CompetitionsViewController.xib in Resources */,
-				981887DC226230D00012A4E2 /* Keys.plist in Resources */,
+				1082386322636FA200AA99EA /* Keys.plist in Resources */,
+				1082386D22637E7600AA99EA /* CompetitionsViewController.xib in Resources */,
 				10A378EE204B540E00E0C536 /* Assets.xcassets in Resources */,
 				E2C0614B1E5AB0BE0022D6F1 /* phrasebook.csv in Resources */,
 			);
@@ -1089,6 +1081,7 @@
 				E2C239CC1E594732003818FB /* UIViewControllerWithMenu.swift in Sources */,
 				E2D011541E5D9D810021936A /* PhraseViewModel.swift in Sources */,
 				E2C239CF1E594B53003818FB /* AboutViewController.swift in Sources */,
+				1082386822637E1E00AA99EA /* CompetitionsViewController.swift in Sources */,
 				E2C239D21E594D33003818FB /* LoginViewController.swift in Sources */,
 				E27CB7AF1E586AAB006B2396 /* ContactCell.swift in Sources */,
 				E29F88991E5EFFC1008F1F46 /* LocationsCoordinator.swift in Sources */,
@@ -1104,7 +1097,6 @@
 				E2C5EE9B1E9C1A8D00BD5838 /* LocationSyncService.swift in Sources */,
 				E24420751E84B99800556FDC /* UserLocationsCoordinator.swift in Sources */,
 				E2645F121E649430004C10F1 /* AuthService.swift in Sources */,
-				981887E322623B3F0012A4E2 /* CompetitionsViewController.swift in Sources */,
 				E24420731E84B86200556FDC /* UserLocationCell.swift in Sources */,
 				E2D011571E5D9DC50021936A /* PhraseViewModelType.swift in Sources */,
 				E2D011501E5D95AB0021936A /* BaseService.swift in Sources */,
@@ -1124,7 +1116,6 @@
 				E2E0D88E1E57F9FF00844509 /* PartnerImageCell.swift in Sources */,
 				E2C5EE991E9C0C5D00BD5838 /* RealmDatabaseService.swift in Sources */,
 				E2C0613F1E5A67A90022D6F1 /* MenuCoordinator.swift in Sources */,
-				981887E722623D080012A4E2 /* CompetitionCell.swift in Sources */,
 				E2D0114E1E5D94F00021936A /* ServiceProvider.swift in Sources */,
 				E24420711E84B82900556FDC /* UserLocationsViewModel.swift in Sources */,
 				E2D2EB3D1E5AEDF000C56A61 /* LoginViewCoordinator.swift in Sources */,
@@ -1133,6 +1124,7 @@
 				1086404C208E20CD00E97BD0 /* Coordinator.swift in Sources */,
 				E25F73D81E56ADA7003DEB3C /* PartnersViewController.swift in Sources */,
 				E271C2CE1E5660EC00CD4F15 /* DashboardViewModel.swift in Sources */,
+				1082386722637E1E00AA99EA /* CompetitionCell.swift in Sources */,
 				E29F1BDF1E8B1D76006D8178 /* ImagePickerController.swift in Sources */,
 				E244207E1E852A3B00556FDC /* PostNewLocationViewController.swift in Sources */,
 				E29F88A21E5F15F5008F1F46 /* Contact.swift in Sources */,
@@ -1328,12 +1320,12 @@
 				CODE_SIGN_ENTITLEMENTS = "Auto Stop Race/Auto Stop Race.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = Q3J6238RP7;
+				DEVELOPMENT_TEAM = VCKS6267S9;
 				INFOPLIST_FILE = "Auto Stop Race/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.piotrholub.Auto-Stop-Race2";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.piotrholub.Auto-Stop-Race";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1348,12 +1340,12 @@
 				CODE_SIGN_ENTITLEMENTS = "Auto Stop Race/Auto Stop Race.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = Q3J6238RP7;
+				DEVELOPMENT_TEAM = VCKS6267S9;
 				INFOPLIST_FILE = "Auto Stop Race/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.piotrholub.Auto-Stop-Race2";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.piotrholub.Auto-Stop-Race";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

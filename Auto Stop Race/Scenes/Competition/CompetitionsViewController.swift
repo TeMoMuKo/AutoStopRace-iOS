@@ -11,9 +11,9 @@ import Networking
 
 class CompetitionsViewController: UIViewControllerWithMenu {
     
-    @IBOutlet weak var competitionsTableView: UITableView!
-    @IBOutlet weak var indicator: UIActivityIndicatorView!
-    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet var competitionsTableView: UITableView!
+    @IBOutlet var indicator: UIActivityIndicatorView!
+    @IBOutlet var messageLabel: UILabel!
     
     var apiService: ApiServiceType!
     
@@ -21,7 +21,6 @@ class CompetitionsViewController: UIViewControllerWithMenu {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupTitle()
         setupTableView()
         loadData()
@@ -44,9 +43,7 @@ class CompetitionsViewController: UIViewControllerWithMenu {
     
     private func loadData() {
         indicator.startAnimating()
-        
         hideMessage()
-        
         apiService.fetchCompetitions { result in
             switch result {
             case .success(let competitions):
@@ -65,9 +62,7 @@ class CompetitionsViewController: UIViewControllerWithMenu {
             DispatchQueue.main.async {
                 self.indicator.stopAnimating()
                 self.competitionsTableView.reloadData()
-                
             }
-            
         }
     }
     
@@ -91,5 +86,4 @@ extension CompetitionsViewController: UITableViewDataSource, UITableViewDelegate
         cell.model = competitions[indexPath.item]
         return cell
     }
-    
 }

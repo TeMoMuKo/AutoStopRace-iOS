@@ -59,11 +59,9 @@ class ContactViewController: UIViewControllerWithMenu, UICollectionViewDelegateF
         
         viewModel.modelSelected
             .subscribe(onNext: { [weak self] clickedContact in
-                guard let `self` = self else { return }
-                
+                guard let self = self else { return }
                 self.contactSelected(contact: clickedContact )
-            })
-            .disposed(by: disposeBag)
+            }).disposed(by: disposeBag)
                 
         collectionView.rx.setDelegate(self).disposed(by: disposeBag)
         setupConstraints()
@@ -79,8 +77,8 @@ class ContactViewController: UIViewControllerWithMenu, UICollectionViewDelegateF
             openUrl(urlString: "mailto://\(contact.value)")
         case "web_page":
             openUrl(urlString: "\(contact.value)")
-        case "fan_page":
-            openUrl(urlString: "fb://profile/\(contact.value)")
+        case "instagram":
+            openUrl(urlString: "\(contact.value)")
         default:
             break   
         }
