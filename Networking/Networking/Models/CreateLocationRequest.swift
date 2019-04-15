@@ -15,11 +15,13 @@ import RealmSwift
     public dynamic var latitude: Double = 0.0
     public dynamic var longitude: Double = 0.0
     public dynamic var message: String = ""
+    public dynamic var imageFileName: String = ""
 
     private enum CodingKeys: String, CodingKey {
         case latitude
         case longitude
         case message
+        case imageFileName
     }
 
     required convenience public init(from decoder: Decoder) throws {
@@ -28,6 +30,7 @@ import RealmSwift
         latitude = try container.decode(Double.self, forKey: .latitude)
         longitude = try container.decode(Double.self, forKey: .longitude)
         message = try container.decode(String.self, forKey: .message)
+        imageFileName = try container.decode(String.self, forKey: .imageFileName)
     }
 
     override public static func primaryKey() -> String? {

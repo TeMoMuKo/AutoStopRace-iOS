@@ -4,15 +4,12 @@ PODS:
   - CSV.swift (2.3.1)
   - Eureka (4.3.1)
   - Fabric (1.9.0)
-  - Firebase/Core (5.20.0):
+  - Firebase/Core (5.20.1):
     - Firebase/CoreOnly
     - FirebaseAnalytics (= 5.8.0)
-  - Firebase/CoreOnly (5.20.0):
+  - Firebase/CoreOnly (5.20.1):
     - FirebaseCore (= 5.4.1)
-  - Firebase/Crash (5.20.0):
-    - Firebase/Core
-    - FirebaseCrash (= 3.1.1)
-  - Firebase/Messaging (5.20.0):
+  - Firebase/Messaging (5.20.1):
     - Firebase/CoreOnly
     - FirebaseMessaging (= 3.5.0)
   - FirebaseAnalytics (5.8.0):
@@ -28,12 +25,6 @@ PODS:
   - FirebaseCore (5.4.1):
     - GoogleUtilities/Environment (~> 5.2)
     - GoogleUtilities/Logger (~> 5.2)
-  - FirebaseCrash (3.1.1):
-    - FirebaseAnalytics (~> 5.1)
-    - FirebaseInstanceID (~> 3.2)
-    - GoogleToolboxForMac/Logger (~> 2.1)
-    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
-    - Protobuf (~> 3.5)
   - FirebaseInstanceID (3.8.1):
     - FirebaseCore (~> 5.2)
     - GoogleUtilities/Environment (~> 5.2)
@@ -57,11 +48,6 @@ PODS:
   - GoogleMaps/Base (3.0.3)
   - GoogleMaps/Maps (3.0.3):
     - GoogleMaps/Base
-  - GoogleToolboxForMac/Defines (2.2.0)
-  - GoogleToolboxForMac/Logger (2.2.0):
-    - GoogleToolboxForMac/Defines (= 2.2.0)
-  - "GoogleToolboxForMac/NSData+zlib (2.2.0)":
-    - GoogleToolboxForMac/Defines (= 2.2.0)
   - GoogleUtilities/AppDelegateSwizzler (5.5.0):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
@@ -114,7 +100,6 @@ DEPENDENCIES:
   - Eureka
   - Fabric
   - Firebase/Core
-  - Firebase/Crash
   - Firebase/Messaging
   - GoogleMaps
   - KeychainAccess
@@ -139,12 +124,10 @@ SPEC REPOS:
     - FirebaseAnalytics
     - FirebaseAnalyticsInterop
     - FirebaseCore
-    - FirebaseCrash
     - FirebaseInstanceID
     - FirebaseMessaging
     - GoogleAppMeasurement
     - GoogleMaps
-    - GoogleToolboxForMac
     - GoogleUtilities
     - KeychainAccess
     - Kingfisher
@@ -167,16 +150,14 @@ SPEC CHECKSUMS:
   CSV.swift: d16f671b3090a2c0525d5f2165b18319074aae2b
   Eureka: 28ea296f06710f6745266b71f17862048941a32d
   Fabric: f988e33c97f08930a413e08123064d2e5f68d655
-  Firebase: 5090da4bb82900179004133bb2b2178919387fd9
+  Firebase: 2f5235e62f141cb86181c3af0dfe4509706351ac
   FirebaseAnalytics: fd72a26bf8dac84cefba2f0864366f718555a5b0
   FirebaseAnalyticsInterop: efbe45c8385ec626e29f9525e5ebd38520dfb6c1
   FirebaseCore: f1a9a8be1aee4bf71a2fc0f4096df6788bdfda61
-  FirebaseCrash: 011365f2c0dfac64315109103ed350bacfcdc03f
   FirebaseInstanceID: a122b0c258720cf250551bb2bedf48c699f80d90
   FirebaseMessaging: 4235f949ce1c4e827aeb19705ba5c53f9b85aa10
   GoogleAppMeasurement: 1624046ab1bcc5e170061a56ef5679000b079c8e
   GoogleMaps: fd5c9fa58871781b9fb94d4936f19c69fe60ce32
-  GoogleToolboxForMac: ff31605b7d66400dcec09bed5861689aebadda4d
   GoogleUtilities: 6481e6318c5fcabaaa8513ef8120f329055d7c10
   KeychainAccess: b3816fddcf28aa29d94b10ec305cd52be14c472b
   Kingfisher: d9e7e0b209b59b8f9873aa2f37654e81a7beea51
@@ -194,6 +175,6 @@ SPEC CHECKSUMS:
   SKPhotoBrowser: 76eb862685761707b5745fde7762757966565e07
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: 27eb89476df2d22fb34fb0c197e99c0e62786104
+PODFILE CHECKSUM: 9b9f1f5527d5c5c1351e6b608267e5a6bffb1764
 
 COCOAPODS: 1.7.0.beta.3

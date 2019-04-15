@@ -24,7 +24,6 @@ target 'Auto Stop Race' do
 
     pod 'Firebase/Core'
     pod 'Firebase/Messaging'
-    pod 'Firebase/Crash'
 
     pod 'KeychainAccess'
     pod 'Kingfisher', '~> 5.0'

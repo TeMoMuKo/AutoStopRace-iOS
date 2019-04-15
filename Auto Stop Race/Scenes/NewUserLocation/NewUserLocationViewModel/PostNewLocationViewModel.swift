@@ -35,6 +35,9 @@ final class PostNewLocationViewModel {
             switch result {
             case .success:
                 DispatchQueue.main.async {
+                    if newLocation.imageFileName != "" {
+                        self.serviceProvider.documentsDataService.removeImageFromDocuments(with: newLocation.imageFileName)
+                    }
                     self.serviceProvider.realmDatabaseService.removeLocationRecord(locationRecord: newLocation)
                     Toast.showPositiveMessage(message: NSLocalizedString("sended_location", comment: ""))
                 }

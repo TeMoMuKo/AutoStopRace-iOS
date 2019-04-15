@@ -16,6 +16,7 @@ protocol ServiceProviderType: class {
     var realmDatabaseService: RealmDatabaseServiceType { get }
     var locationSyncService: LocationSyncServiceType { get }
     var apiService: ApiServiceType { get }
+    var documentsDataService: DocumentsDataServiceType { get }
 }
 
 final class ServiceProvider: ServiceProviderType {
@@ -25,4 +26,5 @@ final class ServiceProvider: ServiceProviderType {
     lazy var realmDatabaseService: RealmDatabaseServiceType = RealmDatabaseService(provider: self)
     lazy var locationSyncService: LocationSyncServiceType = LocationSyncService(provider: self)
     lazy var apiService: ApiServiceType = ApiService(networkingDispatcher: NetworkingDispatcher(), multipartFormDataUtils: MultipartFormDataUtils())
+    lazy var documentsDataService: DocumentsDataServiceType = DocumentsDataService(provider: self)
 }

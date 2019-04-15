@@ -36,8 +36,8 @@ final class LocationsViewModel {
         self.locationRecords.accept(locationRecords.value)
     }
     
-    func downloadTeamLocation(team: Team) {
-        serviceProvider.apiService.fetchLocations(for: team.number) { [weak self] result in
+    func downloadTeamLocation(teamNumber: Int) {
+        serviceProvider.apiService.fetchLocations(for: teamNumber) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let locationRecords):

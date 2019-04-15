@@ -76,6 +76,7 @@ final class AuthService: BaseService, AuthServiceType {
         tokenStorageProvider.clearToken()
         DispatchQueue.main.async {
             self.provider.realmDatabaseService.clearDatabase()
+            self.provider.documentsDataService.removeImageFolderInDocuments()
         }
     }
 }

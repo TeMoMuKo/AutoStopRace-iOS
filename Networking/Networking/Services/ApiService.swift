@@ -66,7 +66,9 @@ public final class ApiService: ApiServiceType {
     public func postNewLocation(createLocationModel: CreateLocationRecordRequest, locationImage: LocationImage?, completion: @escaping (Result<LocationRecord, Error>) -> Void) {
         let boundary = multipartFormDataUtils.generateBoundary()
 
-        guard let jsonData = try? JSONEncoder().encode(createLocationModel),
+        let createLocationRequestData = CreateLocationRequestData(latitude: createLocationModel.latitude, longitude: createLocationModel.longitude, message: createLocationModel.message)
+        
+        guard let jsonData = try? JSONEncoder().encode(createLocationRequestData),
             let jsonString = String(data: jsonData, encoding: .utf8) else {
                 completion(.failure(NetworkingError.invalidJson))
                 return

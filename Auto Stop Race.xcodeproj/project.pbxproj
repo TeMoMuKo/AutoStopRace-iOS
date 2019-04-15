@@ -32,6 +32,7 @@
 		10A8D0942091260100BC81CF /* UserLocationTile.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10A8D0922091260100BC81CF /* UserLocationTile.xib */; };
 		10A8D09820913E1800BC81CF /* CampusCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A8D09720913E1800BC81CF /* CampusCoordinator.swift */; };
 		10A8D09A20913E6800BC81CF /* ScheduleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A8D09920913E6800BC81CF /* ScheduleCoordinator.swift */; };
+		10CEBD542264C891009F6A90 /* DocumentsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CEBD532264C891009F6A90 /* DocumentsDataService.swift */; };
 		26239BDBC268876FCC5CE9E5 /* Pods_Auto_Stop_RaceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BBB8C0EF746FA10444FB4C1 /* Pods_Auto_Stop_RaceTests.framework */; };
 		4887C077F88B77BAB7C130DB /* Pods_Auto_Stop_Race.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8598865727A3ED12825B80 /* Pods_Auto_Stop_Race.framework */; };
 		DA538D4B80EC4BDAED594663 /* Pods_Auto_Stop_RaceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02CDF65244D5C80A24E795FE /* Pods_Auto_Stop_RaceUITests.framework */; };
@@ -163,6 +164,7 @@
 		10A8D0922091260100BC81CF /* UserLocationTile.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserLocationTile.xib; path = Locations/Views/UserLocationTile.xib; sourceTree = "<group>"; };
 		10A8D09720913E1800BC81CF /* CampusCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampusCoordinator.swift; sourceTree = "<group>"; };
 		10A8D09920913E6800BC81CF /* ScheduleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCoordinator.swift; sourceTree = "<group>"; };
+		10CEBD532264C891009F6A90 /* DocumentsDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsDataService.swift; sourceTree = "<group>"; };
 		4B8598865727A3ED12825B80 /* Pods_Auto_Stop_Race.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Auto_Stop_Race.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58D55683FD9F9BA2A36DEF50 /* Pods-Auto Stop RaceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Auto Stop RaceTests.debug.xcconfig"; path = "Target Support Files/Pods-Auto Stop RaceTests/Pods-Auto Stop RaceTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5BBB8C0EF746FA10444FB4C1 /* Pods_Auto_Stop_RaceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Auto_Stop_RaceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -543,6 +545,7 @@
 				E2A6AACB1E80E07E00E8118B /* UserDefaultsService.swift */,
 				E2C5EE981E9C0C5D00BD5838 /* RealmDatabaseService.swift */,
 				E2C5EE9A1E9C1A8D00BD5838 /* LocationSyncService.swift */,
+				10CEBD532264C891009F6A90 /* DocumentsDataService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -1013,7 +1016,6 @@
 				"${PODS_ROOT}/Target Support Files/Pods-Auto Stop Race/Pods-Auto Stop Race-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CSV.swift/CSV.framework",
 				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
@@ -1033,7 +1035,6 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CSV.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
@@ -1124,6 +1125,7 @@
 				E29F1BDF1E8B1D76006D8178 /* ImagePickerController.swift in Sources */,
 				E244207E1E852A3B00556FDC /* PostNewLocationViewController.swift in Sources */,
 				E29F88A21E5F15F5008F1F46 /* Contact.swift in Sources */,
+				10CEBD542264C891009F6A90 /* DocumentsDataService.swift in Sources */,
 				E29F1BE31E8B2F44006D8178 /* CLLocationCoordinate2D.swift in Sources */,
 				E29293BC1E8223350083A1DD /* SettingsViewController.swift in Sources */,
 				10A8D0932091260100BC81CF /* UserLocationTile.swift in Sources */,

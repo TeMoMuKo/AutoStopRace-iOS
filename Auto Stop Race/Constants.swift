@@ -39,8 +39,8 @@ struct UIConfig {
 }
 
 struct GMSConfig {
-    static let initialLatitude = 51.108029
-    static let initialLongitude = 14.270389
+    static let initialLatitude = 45.0
+    static let initialLongitude = 19.0
     static let initialZoom = 5.0
 }
 

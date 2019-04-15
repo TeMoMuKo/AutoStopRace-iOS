@@ -18,6 +18,8 @@ class UserLocationTile: Tile {
     @IBOutlet private var tileLabel: UILabel!
     @IBOutlet weak var timeLabelView: UIView!
     @IBOutlet private var timeLabel: UILabel!
+    @IBOutlet private var locationLabelView: UIView!
+    @IBOutlet var locationLabel: UILabel!
 
     var location: LocationRecord? {
         didSet {
@@ -35,6 +37,11 @@ class UserLocationTile: Tile {
             }
             timeLabelView.isHidden = false
             timeLabel.text = location.createdAt.toString(withFormat: "MM-dd-yyyy HH:mm")
+            if let address = location.address,
+                !address.isEmpty {
+                locationLabelView.isHidden = false
+                locationLabel.text = "📍 \(address)"
+            }
         }
     }
 

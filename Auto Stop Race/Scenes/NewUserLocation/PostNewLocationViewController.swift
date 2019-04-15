@@ -163,6 +163,33 @@ class PostNewLocationViewController: FormViewControllerWithBackButton, CLLocatio
         let image = imageRow?.value
         let locationImage = LocationImage(withImage: image)
 
+        if let locationImage = locationImage {
+            let uuid = NSUUID().uuidString.lowercased()
+            let fileName =  "\(uuid).jpeg"
+            let folderName = "ImagesFolder"
+            saveImageToDirectory(imageData: locationImage.data, fileName: fileName, folderName: folderName)
+            newLocation.imageFileName = fileName
+        }
+        
         viewModel.saveNewLocationToDatabase(newLocation: newLocation, locationImage: locationImage)
+    }
+
+    private func saveImageToDirectory(imageData: Data, fileName: String, folderName: String) {
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true) as NSArray
+        let documentsDirectory = paths.object(at: 0) as! NSString
+        let path = documentsDirectory.appendingPathComponent(folderName) as NSString
+        if !FileManager.default.fileExists(atPath: path as String) {
+            do {
+                try FileManager.default.createDirectory(atPath: path as String, withIntermediateDirectories: true, attributes: nil)
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        }
+        let imagePath = path.appendingPathComponent(fileName)
+        if !FileManager.default.fileExists(atPath: imagePath as String) {
+            try? imageData.write(to: URL(fileURLWithPath: imagePath))
+        } else if FileManager.default.fileExists(atPath: imagePath as String) {
+            try? imageData.write(to: URL(fileURLWithPath: imagePath))
+        }
     }
 }

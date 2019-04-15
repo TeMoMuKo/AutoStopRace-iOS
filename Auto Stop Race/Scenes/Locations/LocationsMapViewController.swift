@@ -14,7 +14,7 @@ import RxCocoa
 import SKPhotoBrowser
 import Networking
 
-class LocationsMapViewController: UIViewControllerWithMenu, UICollectionViewDelegateFlowLayout, UISearchBarDelegate, GMSMapViewDelegate {
+class LocationsMapViewController: UIViewControllerWithMenu, UICollectionViewDelegateFlowLayout, GMSMapViewDelegate {
     let cellHeight: CGFloat = 80
 
     var viewModel: LocationsViewModel!
@@ -24,6 +24,7 @@ class LocationsMapViewController: UIViewControllerWithMenu, UICollectionViewDele
     let locationsSearchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.barTintColor = Theme.Color.blueMenu
+        searchBar.returnKeyType = .done
         return searchBar
     }()
     
@@ -95,13 +96,7 @@ class LocationsMapViewController: UIViewControllerWithMenu, UICollectionViewDele
                                                              attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         view.addSubview(locationsSearchBar)
     }
-    
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        self.viewModel.downloadTeams()
-        self.viewModel.shownTeams.value = self.viewModel.allTeams.value
-        updateConstraints()
-    }
-    
+
     private func setupDropDownList() {
         teamsCollectionView.register(TeamLocationCell.self, forCellWithReuseIdentifier: TeamLocationCell.Identifier)
         
@@ -113,7 +108,7 @@ class LocationsMapViewController: UIViewControllerWithMenu, UICollectionViewDele
         locationsSearchBar.rx.text.orEmpty
             .subscribe(onNext: { [weak self] query in
                 guard let `self` = self else { return }
-                self.viewModel.shownTeams.value = query.isEmpty ? self.viewModel.allTeams.value : self.viewModel.allTeams.value.filter { $0.number == Int(query) }
+                self.viewModel.shownTeams.value = query.isEmpty ? self.viewModel.allTeams.value : self.viewModel.allTeams.value.filter { String($0.number).contains(query) }
                 self.updateConstraints()
             }).disposed(by: disposeBag)
         
@@ -124,7 +119,7 @@ class LocationsMapViewController: UIViewControllerWithMenu, UICollectionViewDele
                 guard let self = self else { return }
                 let teamNumber = team.number
                 self.locationsSearchBar.rx.text.onNext("\(teamNumber)")
-                self.teamSelected(team: team )
+                self.teamSelected(teamNumber: teamNumber )
                 self.shareUrlSufix = "team/\(teamNumber)"
             }).disposed(by: disposeBag)
 
@@ -133,7 +128,7 @@ class LocationsMapViewController: UIViewControllerWithMenu, UICollectionViewDele
 
     private func setupBindings() {
         viewModel.locationRecords.asDriver().drive(onNext: { [weak self] locations in
-            guard let `self` = self else { return }
+            guard let self = self else { return }
             let tabBarControllerItems = self.tabBarController?.tabBar.items
             if let tabArray = tabBarControllerItems {
                 tabArray[1].isEnabled = !locations.isEmpty
@@ -142,6 +137,7 @@ class LocationsMapViewController: UIViewControllerWithMenu, UICollectionViewDele
             for userLocation in locations {
                 let position = CLLocationCoordinate2D(latitude: userLocation.latitude, longitude: userLocation.longitude)
                 let marker = GMSMarker(position: position)
+                marker.tracksViewChanges = false
 
                 let markerView: UIImageView
                 if userLocation.imageUrl != nil && userLocation.imageUrl != "" {
@@ -156,13 +152,20 @@ class LocationsMapViewController: UIViewControllerWithMenu, UICollectionViewDele
                 marker.title = userLocation.message
                 marker.map = self.mapView
             }
+
+            if let lastLocation = locations.first {
+                let camera = GMSCameraPosition.camera(withLatitude: lastLocation.latitude, longitude: lastLocation.longitude, zoom: 5)
+                self.mapView.camera = camera
+                self.mapView.animate(to: camera)
+            }
+
             self.viewModel.shownTeams.value = []
             self.updateConstraints()
         }).disposed(by: disposeBag)
     }
 
-    private func teamSelected(team: Team) {
-        viewModel.downloadTeamLocation(team: team)
+    private func teamSelected(teamNumber: Int) {
+        viewModel.downloadTeamLocation(teamNumber: teamNumber)
     }
 
     func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
@@ -200,8 +203,8 @@ class LocationsMapViewController: UIViewControllerWithMenu, UICollectionViewDele
     }
     
     func updateConstraints() {
-        let cellsCount = self.viewModel.shownTeams.value.count
-        self.heightConstraint?.update(offset: (cellsCount < 4 ? cellsCount : 4) * 80)
+        let cellsCount = viewModel.shownTeams.value.count
+        heightConstraint?.update(offset: (cellsCount < 4 ? cellsCount : 4) * 80)
     }
     
     private func setupConstraints() {
@@ -224,6 +227,39 @@ class LocationsMapViewController: UIViewControllerWithMenu, UICollectionViewDele
     }
     
     @objc func dismissKeyboard() {
-        view.endEditing(true)
+        DispatchQueue.main.async {
+            self.viewModel.shownTeams.value = []
+            self.updateConstraints()
+            self.view.endEditing(true)
+        }
     }
 }
+
+extension LocationsMapViewController: UISearchBarDelegate {
+
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        DispatchQueue.main.async {
+            self.viewModel.downloadTeams()
+            self.viewModel.shownTeams.value = self.viewModel.allTeams.value
+            self.updateConstraints()
+        }
+    }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchBarText = searchBar.text,
+            let teamNumber = Int(searchBarText) else { return }
+        teamSelected(teamNumber: teamNumber)
+        shareUrlSufix = "team/\(teamNumber)"
+        view.endEditing(true)
+    }
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == "" {
+            DispatchQueue.main.async {
+                self.viewModel.shownTeams.value = []
+                self.updateConstraints()
+            }
+        }
+    }
+}
+

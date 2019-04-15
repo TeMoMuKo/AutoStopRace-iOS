@@ -35,10 +35,9 @@ final class AppCoordinator: Coordinator {
         Fabric.with([Crashlytics.self])
         setupRealm()
         serviceProvider.authService.validateToken()
-        serviceProvider.locationSyncService.synchronizeLocationsWithServer()
 
         reachability?.rx.isReachable.subscribe(onNext: { [weak self] isReachable in
-                guard let `self` = self else { return }
+                guard let self = self else { return }
                 if isReachable {
                     self.serviceProvider.locationSyncService.synchronizeLocationsWithServer()
                 }

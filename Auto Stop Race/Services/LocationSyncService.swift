@@ -8,6 +8,7 @@
 
 import Foundation
 import RealmSwift
+import Networking
 
 protocol LocationSyncServiceType {
     func synchronizeLocationsWithServer()
@@ -22,12 +23,16 @@ final class LocationSyncService: BaseService, LocationSyncServiceType {
             let unsendLocationRecords = self.provider.realmDatabaseService.getUnsentLocationRecords()
 
             for unsendLocationRecord in unsendLocationRecords {
-                self.provider.apiService.postNewLocation(createLocationModel: unsendLocationRecord, locationImage: nil) { [weak self] result in
+                let image = LocationImage(withImage: self.provider.documentsDataService.getImage(with: unsendLocationRecord.imageFileName))
+                self.provider.apiService.postNewLocation(createLocationModel: unsendLocationRecord, locationImage: image) { [weak self] result in
                     guard let self = self else { return }
                     switch result {
                     case .success:
                         DispatchQueue.main.async {
                             Toast.showPositiveMessage(message: NSLocalizedString("sended_location", comment: ""))
+                            if unsendLocationRecord.imageFileName != "" {
+                                self.provider.documentsDataService.removeImageFromDocuments(with: unsendLocationRecord.imageFileName)
+                            }
                             self.provider.realmDatabaseService.removeLocationRecord(locationRecord: unsendLocationRecord)
                         }
                     case .failure(let error):

@@ -45,6 +45,7 @@
 		10B86732224020500007E409 /* HttpStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B86730224020500007E409 /* HttpStatus.swift */; };
 		10B86739224035B40007E409 /* ApiServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B86738224035B40007E409 /* ApiServiceType.swift */; };
 		10B8673A224035B40007E409 /* ApiServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B86738224035B40007E409 /* ApiServiceType.swift */; };
+		10CEBD522264C772009F6A90 /* CreateLocationRequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CEBD512264C772009F6A90 /* CreateLocationRequestData.swift */; };
 		7B6D7B32452BDFCA383B9916 /* Pods_NetworkingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 585EE6C7F3B394B4A7D10EE0 /* Pods_NetworkingTests.framework */; };
 		89092858B75D776C5D277AB6 /* Pods_Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B9F1A002E5C0A9B321EF67C /* Pods_Networking.framework */; };
 		981887EA22623EE50012A4E2 /* Competition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981887E922623EE50012A4E2 /* Competition.swift */; };
@@ -92,6 +93,7 @@
 		10B8672D22401DCB0007E409 /* LocationRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRecord.swift; sourceTree = "<group>"; };
 		10B86730224020500007E409 /* HttpStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpStatus.swift; sourceTree = "<group>"; };
 		10B86738224035B40007E409 /* ApiServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceType.swift; sourceTree = "<group>"; };
+		10CEBD512264C772009F6A90 /* CreateLocationRequestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLocationRequestData.swift; sourceTree = "<group>"; };
 		3B9F1A002E5C0A9B321EF67C /* Pods_Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		531121E1A366E596A25D1DEA /* Pods-NetworkingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkingTests.debug.xcconfig"; path = "Target Support Files/Pods-NetworkingTests/Pods-NetworkingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		585EE6C7F3B394B4A7D10EE0 /* Pods_NetworkingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NetworkingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -230,6 +232,7 @@
 				101FD5F7224B833900D6504D /* CreateLocationRequest.swift */,
 				10213BE4224D07D800E4BE01 /* LocationImage.swift */,
 				981887E922623EE50012A4E2 /* Competition.swift */,
+				10CEBD512264C772009F6A90 /* CreateLocationRequestData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -394,24 +397,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-NetworkingTests/Pods-NetworkingTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NetworkingTests/Pods-NetworkingTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
-				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
-				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-NetworkingTests/Pods-NetworkingTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -461,6 +449,7 @@
 				10B86739224035B40007E409 /* ApiServiceType.swift in Sources */,
 				10213C1C2250D0B300E4BE01 /* RaceInfoImages.swift in Sources */,
 				10213BE5224D07D800E4BE01 /* LocationImage.swift in Sources */,
+				10CEBD522264C772009F6A90 /* CreateLocationRequestData.swift in Sources */,
 				106B4BE8223EF84F00D80076 /* NetworkingError.swift in Sources */,
 				10A593B9223EE04F00235565 /* Bundle.swift in Sources */,
 				10B8672822401CF80007E409 /* User.swift in Sources */,
