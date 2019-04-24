@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Networking/Networking.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Auto Stop Race.xcodeproj">
    </FileRef>
    <FileRef

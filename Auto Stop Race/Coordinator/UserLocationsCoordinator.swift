@@ -8,6 +8,8 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
+import Networking
 
 final class UserLocationsCoordinator: Coordinator {
 
@@ -30,7 +32,7 @@ final class UserLocationsCoordinator: Coordinator {
 
 extension UserLocationsCoordinator: UserLocationsViewControllerDelegate {
     
-    func showMapTapped( locationRecords: Variable<[LocationRecord]> ) {
+    func showMapTapped( locationRecords: BehaviorRelay<[LocationRecord]> ) {
         let coordinator = LocationsCoordinator(baseViewController: baseViewController, serviceProvider: serviceProvider)
         coordinator.startWithUserLocations( locationRecords: locationRecords )
     }

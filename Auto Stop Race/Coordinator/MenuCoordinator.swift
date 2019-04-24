@@ -55,6 +55,10 @@ extension MenuCoordinator: MenuViewControllerDelegate {
             let prasebookViewModel = PhrasebookViewModel(provider: serviceProvider)
             let phrasebookViewController = PhrasebookViewController(viewModel: prasebookViewModel)
             baseViewController.setMainController(viewController: UINavigationController(rootViewController: phrasebookViewController))
+        case .competitions:
+            let competitionsViewController = CompetitionsViewController(nibName: "CompetitionsViewController", bundle: nil)
+            competitionsViewController.apiService = serviceProvider.apiService
+            baseViewController.setMainController(viewController: UINavigationController(rootViewController: competitionsViewController))
         case .contact:
             let coordinator = ContactCoordinator(baseViewController: baseViewController)
             coordinator.start()

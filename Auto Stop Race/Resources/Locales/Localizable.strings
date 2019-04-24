@@ -16,11 +16,15 @@
 "title_campus" = "Mapa campingu";
 "title_schedule" = "Harmonogram wydarzeń";
 "title_phrasebook" = "Krótkie rozmówki";
+"title_competitions" = "Konkursy";
 "title_contact" = "Kontakt do organizatorów";
 "title_partners" = "Partnerzy";
 "title_settings" = "Ustawienia";
 "title_about" = "O aplikacji";
 "title_login" = "Logowanie";
+
+// Competitions
+"no_competitions" = "Chwilowo brak konkursów...";
 
 // Dashboard
 "dashboard_login_button" = "PRZEJDŹ DO LOGOWANIA";
@@ -29,7 +33,7 @@
 // HttpStatusErrors
 
 "error_400" = "Nieprawidłowe żądanie";
-"error_401" = "Nieprawidłowe dane logowania";
+"error_401" = "Niepoprawne dane logowania lub nieaktywne konto";
 "error_403" = "Brak uprawnień";
 "error_404" = "Coś się popsuło. Spróbuj ponownie później…";
 "error_500" = "Błąd połączenia z serwerem";

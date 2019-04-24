@@ -25,7 +25,12 @@ class Toast {
         label.layer.shadowColor = UIColor.gray.cgColor
         label.layer.shadowOffset = CGSize(width: 4, height: 3)
         label.layer.shadowOpacity = 0.3
-        label.frame = CGRect(x: appDelegate.window!.frame.size.width, y: 64, width: appDelegate.window!.frame.size.width, height: 44)
+        
+        if #available(iOS 11.0, *) {
+            label.frame = CGRect(x: appDelegate.window!.frame.size.width, y: UIApplication.shared.keyWindow!.safeAreaInsets.top, width: appDelegate.window!.frame.size.width, height: 44)
+        } else {
+            label.frame = CGRect(x: appDelegate.window!.frame.size.width, y: 64, width: appDelegate.window!.frame.size.width, height: 44)
+        }
         
         label.alpha = 1
         
@@ -49,26 +54,7 @@ class Toast {
             })
         })
     }
-    
-    class func showHttpStatusError(status: HttpStatus) {
-        switch status {
-        case .BadRequest:
-            showAlert(backgroundColor: UIColor.red, textColor: UIColor.white, message: NSLocalizedString("error_400", comment: ""))
-        case .Unauthorized:
-            showAlert(backgroundColor: UIColor.red, textColor: UIColor.white, message: NSLocalizedString("error_401", comment: ""))
-        case .Forbidden:
-            showAlert(backgroundColor: UIColor.red, textColor: UIColor.white, message: NSLocalizedString("error_403", comment: ""))
-        case .NotFound:
-            showAlert(backgroundColor: UIColor.red, textColor: UIColor.white, message: NSLocalizedString("error_404", comment: ""))
-        case .InternalServerError:
-            showAlert(backgroundColor: UIColor.red, textColor: UIColor.white, message: NSLocalizedString("error_500", comment: ""))
-        case .BadGateway:
-            showAlert(backgroundColor: UIColor.red, textColor: UIColor.white, message: NSLocalizedString("error_502", comment: ""))
-        default:
-            showAlert(backgroundColor: UIColor.red, textColor: UIColor.white, message: NSLocalizedString("error_404", comment: ""))
-        }
-    }
-    
+
     class func showMessage(message: String) {
         showAlert(backgroundColor: UIColor.darkGray, textColor: UIColor.white, message: message)
     }

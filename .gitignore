@@ -71,3 +71,5 @@ codesigndoc_exports/xcodebuild-output.log
 
 Keys.plist
 GoogleService-Info.plist
+
+.DS_Store

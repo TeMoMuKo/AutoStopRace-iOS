@@ -8,6 +8,7 @@
 
 import Foundation
 import RealmSwift
+import Networking
 
 protocol RealmDatabaseServiceType {
     func clearDatabase()
@@ -55,7 +56,9 @@ final class RealmDatabaseService: BaseService, RealmDatabaseServiceType {
     func removeLocationRecord(locationRecord: CreateLocationRecordRequest) {
         _ = withRealm("Remove location record") { realm in
             try realm.write {
-                realm.delete(locationRecord)
+                if let locationThatExists = realm.objects(CreateLocationRecordRequest.self).filter("id == %@", locationRecord.id).first {
+                    realm.delete(locationThatExists)
+                }
             }
         }
     }
@@ -65,8 +68,7 @@ final class RealmDatabaseService: BaseService, RealmDatabaseServiceType {
             try realm.write {
                 let locationThatExists = realm.objects(LocationRecord.self).filter("id == %@", locationRecord.id).first
                 if locationThatExists == nil {
-                    let localLocationRecord = LocationRecord(value: locationRecord)
-                    realm.add(localLocationRecord)
+                    realm.add(locationRecord)
                 }
             }
         }
@@ -74,7 +76,7 @@ final class RealmDatabaseService: BaseService, RealmDatabaseServiceType {
     
     func getLocationRecords() -> [LocationRecord] {
         let remoteLocations = withRealm("Save remote locations to local database") { realm -> [LocationRecord] in
-            var remoteLocations = Array(realm.objects(LocationRecord.self).sorted(byKeyPath: "created_at", ascending: false))
+            var remoteLocations = Array(realm.objects(LocationRecord.self).sorted(byKeyPath: "createdAt", ascending: false))
             let unsendLocations = Array(realm.objects(CreateLocationRecordRequest.self))
             for unsendLocation in unsendLocations {
                 let locationRecord = LocationRecord()
